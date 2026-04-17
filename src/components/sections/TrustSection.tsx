@@ -10,7 +10,7 @@ export const TrustSection = () => {
 
   // Definimos la estructura de datos que NO cambia (IDs, Iconos, Iniciales)
   const testimonialsData = [
-    { id: "miri", name: "Miriam Di Rocco", initial: "M" },
+    { id: "miri", name: "Miriam Del Giudice", initial: "M" },
     { id: "camila", name: "Camila", initial: "C" },
     { id: "iara", name: "Iara", initial: "I" }
   ];
