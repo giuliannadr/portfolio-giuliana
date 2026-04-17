@@ -9,7 +9,7 @@ const menuItems = [
   { id: "about", label: "Sobre mí", icon: <User size={20} />, href: "#about" },
   { id: "trust", label: "Feedback", icon: <ShieldCheck size={20} />, href: "#trust" },
   { id: "projects", label: "Proyectos", icon: <Folder size={20} />, href: "#projects" },
-  { id: "services", label: "Servicios", icon: <Briefcase size={20} />, href: "#services" },
+  { id: "tech", label: "Tecnologías", icon: <Briefcase size={20} />, href: "#tech" },
   { id: "contact", label: "Contacto", icon: <Mail size={20} />, href: "#contact" },
 ];
 

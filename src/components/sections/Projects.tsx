@@ -1,4 +1,4 @@
-import { ArrowUpRight, X, Eye, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, X, Eye, ChevronLeft, ChevronRight, Github } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
@@ -77,7 +77,7 @@ export const Projects = () => {
     { 
       id: "unik", 
       video: "./Unik-web.mp4", 
-      liveUrl: "https://unik-kappa.vercel.app/", 
+      liveUrl: "https://somosunik.vercel.app/", 
       githubUrl: "https://github.com/giuliannadr/Unik.git", 
       type: "professional", 
       stack: ["Next.js 15", "TypeScript", "Framer Motion"],
@@ -91,9 +91,12 @@ export const Projects = () => {
       type: "professional", 
       stack: ["React.js", "TypeScript", "EmailJS"]
     },
-    { id: "trivia", image: "./triviaproject.png", type: "academic", stack: ["Java", "Spring MVC", "WebSockets"] },
-    { id: "hardware", image: "./tiendaonline.png", type: "academic", stack: ["Angular", "Node.js", "MySQL"] },
-    { id: "nlp", image: "./ExamGenerator.png", githubUrl: "https://github.com/varelafacu/NLPExamGenerator.git", type: "academic", stack: [".NET 9", "C#", "NLP"] }
+    { id: "trivia", image: "./triviaproject.png", type: "academic", githubUrl: "https://github.com/Chouny1109/TP-TALLER-WEB-I.git",
+      stack: ["Java", "Spring MVC", "WebSockets", "MySQL", "Hibernate", "Maven", "Scrum"] },
+    { id: "hardware", image: "./tiendaonline.png", type: "academic", githubUrl: "https://github.com/AngelDNK/TP-TW2-Grupo7.git",
+      stack: ["Angular", "Node.js", "REST API", "Sequelize", "MySQL", "RxJS", "Tailwind"]},
+    { id: "nlp", image: "./ExamGenerator.png", githubUrl: "https://github.com/varelafacu/NLPExamGenerator.git", type: "academic",   stack: [".NET 9", "C#", "EF Core", "NLP", "SQL Server", "LINQ", "Clean Architecture"],
+     }
   ];
 
   const projects: Project[] = projectBaseData.map(p => {
@@ -163,18 +166,24 @@ useEffect(() => {
     <section id="projects" className="py-32 bg-transparent">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* CABECERA */}
-        <div className="mb-24 space-y-12">
-          <AnimatedSection>
-            <div className="space-y-6">
-              <span className="text-[#FF6F00] text-[10px] font-bold uppercase tracking-[0.5em] block">
-                {t('projects.subtitle')}
-              </span>
-              <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-white leading-[0.8] mb-4">
-                {t('projects.title')} <br />
-                <span className="text-white/10 italic font-serif font-light">{t('projects.titleFaded')}</span>
-              </h2>
-            </div>
-          </AnimatedSection>
+        <div className="mb-16 md:mb-20 space-y-8"> {/* Reduje el margen inferior de 24 a 16/20 */}
+  <AnimatedSection>
+    <div className="space-y-4"> {/* Reduje el espacio entre el span y el h2 */}
+      
+      <span className="text-[#FF6F00] text-[9px] font-bold uppercase tracking-[0.4em] block">
+        {t('projects.subtitle')}
+      </span>
+
+      <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white leading-[0.9] mb-4 uppercase">
+        {t('projects.title')} <br />
+        <span className="text-white/20 italic font-serif font-light">
+          {t('projects.titleFaded')}
+        </span>
+      </h2>
+      
+    </div>
+  </AnimatedSection>
+
 
           {/* TABS */}
           <div className="flex gap-12 border-b border-white/5">
@@ -343,11 +352,17 @@ useEffect(() => {
                             {t('projects.labels.live')}
                           </a>
                         )}
-                        {selectedProject.githubUrl && (
-                          <a href={selectedProject.githubUrl} target="_blank" rel="noreferrer" className="flex-1 py-6 bg-white/5 text-white border border-white/10 rounded-2xl font-bold text-[11px] uppercase tracking-widest text-center hover:bg-white/10 transition-all">
-                            {t('projects.labels.github')}
-                          </a>
-                        )}
+                       {selectedProject.githubUrl && (
+  <a 
+    href={selectedProject.githubUrl} 
+    target="_blank" 
+    rel="noreferrer" 
+    className="flex-1 py-6 bg-white/5 text-white border border-white/10 rounded-2xl font-bold text-[11px] uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-white/10 transition-all group"
+  >
+    <Github size={18} className="text-[#FF6F00] group-hover:scale-110 transition-transform" />
+    {t('projects.labels.github')}
+  </a>
+)}
                       </div>
                     </div>
                   </motion.div>

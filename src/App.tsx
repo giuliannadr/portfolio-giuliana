@@ -8,7 +8,7 @@ import { Projects } from "@/components/sections/Projects";
 
 import { TrustSection } from "./components/sections/TrustSection";
 import { ProcessSection } from "./components/sections/ProcessSection";
-import { ServicesSection } from "./components/sections/ServicesSection";
+import { TechSection } from "./components/sections/TechSection";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <ProcessSection />
      
       <Projects />
-      <ServicesSection />
+      <TechSection />
      
     </Layout>
   );

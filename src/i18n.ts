@@ -14,158 +14,165 @@ const en = {
   profileCard: {
   role: "Hi! I'm Giuli, and I'm ready to work together to transform your business."
 },
-  about:  {
-    "badge": "About my approach",
-    "title": "Design with purpose,",
-    "titleItalic": "code with precision.",
-    "p1": "Hi! I'm <0>Giuliana</0>. I'm very close to graduating as a Web Developer, a journey where I discovered that my true passion is <1>bridging worlds</1>.",
-    "p2": "I believe that behind every click there's a person looking for a solution or an emotion. That's why I use my technical foundation to give you security and my visual sensitivity so that your clients don't just visit your site, but <1>feel at home</1> while discovering what you have to offer.",
+"about": {
+    "badge": "Development & Design",
+    "title": "Technical Engineering,",
+    "titleItalic": "aesthetics with soul.",
+    "p1": "Hi! I'm <0>Giuliana</0>. I'm finishing my degree in Web Development, a journey where I've learned that my true strength lies in <1>merging backend logic with a unique visual sensitivity</1>.",
+    "p2": "I work with a stack including <1>React, Angular, Java, and .NET</1>. I focus on building real-world, functional solutions, prioritizing code quality as much as user experience. My goal is to add value through digital products that not only run flawlessly but also carry a polished visual identity using tools like Affinity.",
     "stats": {
-      "exp": "2+",
-      "expLabel": "Years Exp.",
+      "exp": "Jr.",
+      "expLabel": "Level",
       "dedication": "100%",
       "dedicationLabel": "Dedication"
     }
-  
 },
-trust: {
-  "badge": "Made with dedication",
-  "title": "Your idea,",
-  "titleFaded": "in good hands.",
-  "description": "I get involved in every detail to ensure your web is exactly what you need.",
+"trust": {
+  "badge": "Quality Assurance",
+  "title": "Impactful projects,",
+  "titleFaded": "precision code.",
+  "description": "I get involved in every stage of development to ensure the final product exceeds both technical and visual expectations.",
   "metrics": {
-    "speed": { "label": "Fast Load", "value": "Excellent", "tooltip": "Your page opens instantly. This prevents customers from getting tired of waiting." },
-    "direct": { "label": "Direct Attention", "value": "1 to 1", "tooltip": "You always talk to me. No agencies, so your ideas are understood the first time." },
-    "modern": { "label": "Modern Web", "value": "Guaranteed", "tooltip": "I use technology that doesn't go obsolete. Your site will be secure today and for many years." }
+    "speed": { 
+      "label": "Performance", 
+      "value": "Optimized", 
+      "tooltip": "Focused on Core Web Vitals to ensure minimal load times and a seamless user experience." 
+    },
+    "direct": { 
+      "label": "Transparency", 
+      "value": "Effective", 
+      "tooltip": "Clear communication and constant technical progress reporting throughout the development cycle." 
+    },
+    "modern": { 
+      "label": "Modern Stack", 
+      "value": "Scalable", 
+      "tooltip": "Architectures built with leading technologies that guarantee security and easy long-term maintenance." 
+    }
   },
   "testimonials": {
-    "miri": { "role": "La Quinta Miri — Owner", "text": "Giuliana immediately understood the warmth I wanted to convey. Since we launched the web, inquiries have become more professional and the booking process is much smoother." },
-    "camila": { "role": "Unik — Creative Director", "text": "Moving from a Canva PDF to a professional website totally changed how clients see us. Giuliana achieved a digital identity with animations that really breaks the mold." },
-    "iara": { "role": "Unik — Business Strategy", "text": "We wanted access to our work and WhatsApp contact to be direct and professional. Giuliana gave us a flawless solution that simplified the arrival of new clients." }
+    "miri": { 
+      "role": "La Quinta Miri — Client", 
+      "text": "Giuliana immediately understood the warmth I wanted to convey. Since we launched the web, inquiries have become more professional and the booking process is much smoother." 
+    },
+    "camila": { 
+      "role": "Unik — Creative Director", 
+      "text": "Moving from a static portfolio to an interactive website changed how the market perceives us. Giuliana achieved a high-level digital identity with top-tier animations." 
+    },
+    "iara": { 
+      "role": "Unik — Business Strategy", 
+      "text": "We were looking for professional and direct integration. Giuliana provided a flawless solution that optimized our new client acquisition flow." 
+    }
   }
 },
 process: {
-  "badge": "How I work",
-  "title": "Let's make it",
-  "titleItalic": "happen together.",
-  "quote": "\"My process is designed so you enjoy the journey as much as the final result.\"",
+  "badge": "Technical Workflow",
+  "title": "From concept,",
+  "titleItalic": "to deployment.",
+  "quote": "\"Solid architecture and thorough planning are the foundation of a successful digital product.\"",
   "steps": {
     "step1": {
-      "title": "Chat & Strategy",
-      "description": "We take a moment to understand your business. I don't design just for the sake of it; I design so your project grows and you feel at ease.",
-      "tags": ["Active listening", "Your vision", "Action plan"]
+      "title": "Requirements & Analysis",
+      "description": "I analyze project needs to define the ideal architecture. I don't write code without first understanding the technical and functional impact of the product.",
+      "tags": ["Roadmap", "Tech definition", "Goals"]
     },
     "step2": {
-      "title": "Team Sketching",
-      "description": "I present the visual idea and we polish it together. I want you to feel that the web has your essence in every corner before coding.",
-      "tags": ["Real feedback", "Back and forth", "Your brand"]
+      "title": "Architecture & Prototyping",
+      "description": "I define the data structure and user flow. I use Affinity to design high-fidelity interfaces that serve as a blueprint before development begins.",
+      "tags": ["UI/UX Design", "Structure", "Validation"]
     },
     "step3": {
-      "title": "Magic & Development",
-      "description": "I bring the design to code with animations that guide your customers. You'll have a link to see your web come to life step by step.",
-      "tags": ["Transparency", "Zero surprises", "Quality"]
+      "title": "Development & Testing",
+      "description": "I implement the solution using a modern, scalable stack. I apply Clean Code best practices and conduct testing to ensure bug-free delivery.",
+      "tags": ["Full Stack Dev", "Code Quality", "Optimization"]
     },
     "step4": {
-      "title": "Flight & Company",
-      "description": "We launch your web, but I won't let go of your hand. I'll teach you how to manage everything so you're free to update content whenever you want.",
-      "tags": ["Autonomy", "Support", "Shared success"]
+      "title": "Deployment & Maintenance",
+      "description": "Product launch in production environments (like Vercel/Azure). I ensure the system is autonomous and provide support for future scalability.",
+      "tags": ["Deployment", "Tech Support", "Scalability"]
     }
   }
 },
-    projects: {
-      subtitle: "Selected Works",
-      title: "Quality over quantity.",
-      titleFaded: "A selection of technical challenges.",
-     
-      tabs: {
-        professional: "Professional",
-        academic: "Academic"
-      },
-      labels: {
-        challenge: "Technical Challenge",
-        stack: "Core Stack",
-        github: "View on GitHub",
-        live: "Live Site",
-        viewProcess: "View Process",
-      viewWork: "View Final Web"
-       
-      },
-      items: {
-        unik: {
-        "title": "Unik",
-        "category": "Design & Development",
-        "description": "From a static Canva presentation to a high-performance web platform.",
-        "longDescription": "The team had a portfolio designed in Canva that didn't achieve the fluidity or technical professionalism their work deserved. Staying true to the essence of the original design, I created this high-performance landing page, bringing their identity into a robust, sophisticated, and fully functional web environment."
-      },
-      miri: {
-        "title": "La Quinta Miri",
-        "category": "Design & Development",
-        "description": "Warm digital presence for a vacation spot, without the social media pressure.",
-        "longDescription": "Miriam had no social media presence and wanted to highlight her space without the extreme exposure of constantly managing notifications. Besides positioning her place on Google Maps, I created this landing page to be as warm and eye-catching as possible, capturing the essence of the spot and facilitating direct contact."
-      },
-        trivia: {
-          title: "Distributed Trivia Engine",
-          category: "Java / Spring MVC / WebSockets / MySQL",
-          description: "Collaborative multiplayer trivia platform with real-time game modes and synchronized player sessions.",
-          longDescription: "Team-based project focused on building a real-time multiplayer trivia system using Spring MVC. I was responsible for designing game modes, WebSocket-based synchronization, and match progression logic."
-        },
-        hardware: {
-          title: "Enterprise Inventory Hub",
-          category: "Angular / Node.js / REST API / Sequelize / MySQL",
-          description: "Team-developed inventory and e-commerce platform with role-based access control and administrative tools.",
-          longDescription: "Collaborative project focused on developing a full-stack inventory management system. I contributed to backend APIs, database integration, and frontend components for administrative workflows."
-        },
-        nlp: {
-          title: "AI Semantic Engine",
-          category: ".NET 9 / C# / NLP / Entity Framework / SQL Server",
-          description: "Collaborative assessment platform that generates and evaluates exams using NLP techniques.",
-          longDescription: "Team project aimed at building an automated exam generation system using .NET and NLP. I worked on data processing, application logic, and report generation features."
-        }
-      }
-    },
-    services: {
-  badge: "Proposition",
-  title: "Strategic",
-  titleItalic: "Services",
-  cta: {
-    badge: "Have a project in mind?",
-    title: "Request a quote",
-    faded: "— now"
+  projects: {
+  "subtitle": "Selected Works",
+  "title": "Technical quality,",
+  "titleFaded": "business results.",
+  "tabs": {
+    "professional": "Freelance",
+    "academic": "Academic Projects"
   },
-  items: {
-web: {
-  title: "Web Design & Development",
-  subtitle: "Your professional presence",
-  description: "Diseñamos la estructura ideal según tu objetivo: desde una Landing Page de alto impacto para conversiones rápidas, hasta sitios Multi-sección para una narrativa de marca completa.",
-  details: [
-    "One-page (Landing) o Multi-sección",
-    "Diseño UI/UX exclusivo",
-    "Optimización SEO & Performance",
-    "Adaptabilidad 100% Mobile"
-  ]
-},
-    store: {
-      title: "E-commerce",
-      subtitle: "24/7 Sales",
-      description: "We turn your catalog into an easy-to-use online sales machine.",
-      details: ["Payment gateways", "Stock management", "Easy admin panel", "Monthly sales reports"]
+  "labels": {
+    "challenge": "Technical Challenge",
+    "stack": "Core Stack",
+    "github": "View on GitHub",
+    "live": "Live Site",
+    "viewProcess": "View Design Process",
+    "viewWork": "View Final Web"
+  },
+  "items": {
+    "unik": {
+      "title": "Unik Agency",
+      "category": "Frontend Development",
+      "description": "Migration from static assets (Canva) to high-performance interactive web platform.",
+      "longDescription": "I led the digital transition for Unik agency, transforming a static portfolio into a seamless web experience. I implemented advanced animations with Framer Motion and optimized performance to achieve minimal load times, elevating brand perception for their corporate clients."
     },
-    systems: {
-      title: "Custom Systems",
-      subtitle: "Intelligent Management",
-      description: "We automate your company processes with personalized tools.",
-      details: ["Relational databases", "Report automation", "Internal control panels", "Advanced data security"]
+    "miri": {
+      "title": "La Quinta Miri",
+      "category": "Full Stack & SEO",
+      "description": "Full-scale digitization and direct contact system for the tourism sector.",
+      "longDescription": "I developed a custom digital solution for a vacation complex. The project ranged from UI design to search engine optimization (Local SEO) and the integration of direct booking channels, professionalizing lead acquisition without relying on external platforms."
     },
-    maintenance: {
-      title: "Maintenance",
-      subtitle: "Technical Support",
-      description: "We take care of keeping your web safe, fast, and working correctly.",
-      details: ["Daily backups", "Security patches", "Priority support", "Uptime monitoring"]
+    "trivia": {
+      "title": "Distributed Trivia Engine",
+      "category": "Backend Engineering",
+      "description": "Real-time multiplayer platform with distributed session synchronization.",
+      "longDescription": "A high-complexity technical project focused on distributed systems. I implemented real-time game logic via WebSockets and Spring MVC, ensuring data consistency across multiple concurrent clients."
+    },
+    "hardware": {
+      "title": "Enterprise Inventory Hub",
+      "category": "Full Stack Development",
+      "description": "Inventory management system with RESTful architecture and RBAC.",
+      "longDescription": "Development of an administrative e-commerce platform. I designed the Role-Based Access Control (RBAC) and internal APIs under REST standards, using Sequelize for MySQL persistence management."
+    },
+    "nlp": {
+      "title": "AI Semantic Engine",
+      "category": "Software Architecture",
+      "description": "Natural Language Processing (NLP) platform for automated assessment.",
+      "longDescription": "Implementation of a semantic engine under .NET 9. I worked on the persistence layer with Entity Framework and data processing logic for dynamic analytical report generation."
     }
-  },
-  modal: {
-    includes: "What's included?",
-    button: "Request a quote"
+  }
+},
+   
+  tech: {
+    "subtitle": "Tech Stack",
+    "title": "Tools &",
+    "titleItalic": "Technologies",
+    "categories": {
+      "frontend": {
+        "title": "Frontend & Web",
+        "skills": "React / Angular / TypeScript / JavaScript (ES6+) / HTML5 / CSS3 / WebSockets",
+        "details": "Developing modern, reactive interfaces using next-gen frameworks, featuring dynamic rendering support (Razor, Thymeleaf) and robust styling with Bootstrap."
+      },
+      "backend": {
+        "title": "Backend & Architecture",
+        "skills": "Node.js / .NET 9 / Java Spring Boot / PHP / Python / Microservices",
+        "details": "Building scalable systems under SOLID principles and Clean Code. Experience in distributed architectures and data persistence using ORMs like Prisma, Entity Framework, and Hibernate."
+      },
+      "database": {
+        "title": "Databases & Data",
+        "skills": "PostgreSQL / SQL Server / MySQL / MongoDB (NoSQL)",
+        "details": "Design and optimization of relational and non-relational schemas, ensuring data integrity and efficiency in complex queries."
+      },
+      "devops": {
+        "title": "DevOps & Methodologies",
+        "skills": "Docker / CI/CD (GitHub Actions) / Git / Vercel / RESTful APIs / Scrum",
+        "details": "Software lifecycle management through containerization, automated deployments, and agile methodologies for a professional and collaborative workflow."
+      },
+      "languages": {
+        "title": "Languages & Communication",
+        "skills": "English (B2/C1) / Portuguese (Basic)",
+        "details": "Ability to work in international environments with an advanced level of technical and conversational English, facilitating communication within global teams."
+      }
+    }
   }
 },
    
@@ -177,7 +184,7 @@ web: {
   "backToTop": "Back to top",
   "emailSubject": "Contact from your Portfolio"
 }
-  }
+  
 };
 
 const es = {
@@ -194,158 +201,167 @@ const es = {
   role: "¡Hola! Soy Giuli, y estoy lista para que trabajemos juntos en transformar tu negocio."
 },
   
-  about: {
-    "badge": "Sobre mi enfoque",
-    "title": "Diseño con propósito,",
-    "titleItalic": "programo con precisión.",
-    "p1": "¡Hola! Soy <0>Giuliana</0>. Estoy a muy poquito de recibirme como Desarrolladora Web, un camino donde descubrí que mi verdadera pasión es <1>unir mundos</1>.",
-    "p2": "Siento que detrás de cada clic hay una persona buscando una solución o una emoción. Por eso, uso mi base técnica para darte seguridad y mi sensibilidad visual para que tus clientes no solo visiten tu web, sino que <1>se sientan como en casa</1> mientras descubren lo que tenés para ofrecer.",
+about: {
+    "badge": "Desarrollo y Diseño",
+    "title": "Ingeniería técnica,",
+    "titleItalic": "estética con alma.",
+    "p1": "¡Hola! Soy <0>Giuliana</0>. Estoy en la etapa final de mi formación como Desarrolladora Web, un camino donde descubrí que mi verdadera pasión es <1>unir la lógica de backend con una sensibilidad visual única</1>.",
+    "p2": "Trabajo con un stack que incluye <1>React, Angular, Node.js, Java y .NET</1>. Me enfoco en crear soluciones reales y funcionales, cuidando la calidad del código tanto como la experiencia del usuario. Mi objetivo es aportar valor a través de productos digitales que no solo funcionen bien, sino que tengan una identidad visual cuidada desde herramientas como Affinity.",
     "stats": {
-      "exp": "2+",
-      "expLabel": "Años Exp.",
+      "exp": "Jr.",
+      "expLabel": "Nivel",
       "dedication": "100%",
-      "dedicationLabel": "Dedicación"
-    
-  }
+      "dedicationLabel": "Compromiso"
+    }
 },
 trust: {
-  "badge": "Hecho con dedicación",
-  "title": "Tu idea,",
-  "titleFaded": "en buenas manos.",
-  "description": "Me involucro en cada detalle para que tu web sea exactamente lo que necesitás.",
+  "badge": "Garantía de calidad",
+  "title": "Proyectos con impacto,",
+  "titleFaded": "código de precisión.",
+  "description": "Me involucro en cada etapa del desarrollo para asegurar que el producto final supere las expectativas técnicas y visuales.",
   "metrics": {
-    "speed": { "label": "Carga Rápida", "value": "Excelente", "tooltip": "Tu página abre al instante. Esto evita que los clientes se cansen de esperar." },
-    "direct": { "label": "Atención Directa", "value": "1 a 1", "tooltip": "Hablás siempre conmigo. Sin agencias, para que tus ideas se entiendan a la primera." },
-    "modern": { "label": "Web Moderna", "value": "Garantizada", "tooltip": "Uso tecnología que no queda vieja. Tu sitio será seguro hoy y por muchos años." }
+    "speed": { 
+      "label": "Performance", 
+      "value": "Optimizado", 
+      "tooltip": "Enfoque en Core Web Vitals para asegurar tiempos de carga mínimos y una experiencia fluida." 
+    },
+    "direct": { 
+      "label": "Transparencia", 
+      "value": "Efectiva", 
+      "tooltip": "Comunicación clara y reporte de avances técnicos constantes durante todo el ciclo de desarrollo." 
+    },
+    "modern": { 
+      "label": "Stack Moderno", 
+      "value": "Escalable", 
+      "tooltip": "Arquitecturas construidas con tecnologías líderes que garantizan seguridad y fácil mantenimiento a futuro." 
+    }
   },
   "testimonials": {
-    "miri": { "role": "La Quinta Miri — Propietaria", "text": "Giuliana entendió enseguida la calidez que quería transmitir. Desde que lanzamos la web, las consultas se profesionalizaron y el proceso de reserva es mucho más fluido." },
-    "camila": { "role": "Unik — Directora Creativa", "text": "Pasar de un PDF en Canva a una web profesional cambió totalmente cómo nos ven los clientes. Giuliana logró una identidad digital con animaciones que realmente rompe lo convencional." },
-    "iara": { "role": "Unik — Business Strategy", "text": "Buscábamos que el acceso a nuestro trabajo y el contacto por WhatsApp fuera directo y profesional. Giuliana nos dio una solución impecable que simplificó la llegada de nuevos clientes." }
+    "miri": { 
+      "role": "La Quinta Miri — Client", 
+      "text": "Giuliana entendió enseguida la calidez que quería transmitir. Desde que lanzamos la web, las consultas se profesionalizaron y el proceso de reserva es mucho más fluido." 
+    },
+    "camila": { 
+      "role": "Unik — Creative Director", 
+      "text": "Pasar de un portfolio estático a una web interactiva cambió cómo nos percibe el mercado. Giuliana logró una identidad digital con animaciones de alto nivel." 
+    },
+    "iara": { 
+      "role": "Unik — Business Strategy", 
+      "text": "Buscábamos una integración directa y profesional. Giuliana nos dio una solución impecable que optimizó el flujo de llegada de nuevos clientes." 
+    }
   }
 },
 process: {
-  "badge": "Cómo trabajo",
-  "title": "Hagámoslo",
-  "titleItalic": "realidad juntos.",
-  "quote": "\"Mi proceso está diseñado para que disfrutes el camino tanto como el resultado final.\"",
+  "badge": "Workflow técnico",
+  "title": "Del concepto,",
+  "titleItalic": "al despliegue.",
+  "quote": "\"La arquitectura sólida y la planificación son la base de un producto digital exitoso.\"",
   "steps": {
     "step1": {
-      "title": "Charla & Estrategia",
-      "description": "Nos tomamos un momento para entender tu negocio. No diseño por diseñar; diseño para que tu proyecto crezca y vos estés tranquila.",
-      "tags": ["Escucha activa", "Tu visión", "Plan de acción"]
+      "title": "Requerimientos & Análisis",
+      "description": "Analizo las necesidades del proyecto para definir la arquitectura ideal. No escribo código sin antes entender el impacto técnico y funcional del producto.",
+      "tags": ["Roadmap", "Definición técnica", "Objetivos"]
     },
     "step2": {
-      "title": "Boceto en Equipo",
-      "description": "Te presento la idea visual y la pulimos juntos. Quiero que sientas que la web tiene tu esencia en cada rincón antes de programar.",
-      "tags": ["Feedback real", "Idas y vueltas", "Tu marca"]
+      "title": "Arquitectura & Prototipado",
+      "description": "Defino la estructura de datos y el flujo de usuario. Utilizo Affinity para diseñar interfaces de alta fidelidad que sirven como blueprint antes del desarrollo.",
+      "tags": ["UI/UX Design", "Estructura", "Validación"]
     },
     "step3": {
-      "title": "Magia & Desarrollo",
-      "description": "Llevo el diseño al código con animaciones que guían a tus clientes. Vas a tener un link para ver cómo tu web cobra vida paso a paso.",
-      "tags": ["Transparencia", "Cero sorpresas", "Calidad"]
+      "title": "Desarrollo & Testing",
+      "description": "Implemento la solución utilizando un stack moderno y escalable. Aplico buenas prácticas de Clean Code y realizo pruebas para garantizar un código libre de errores.",
+      "tags": ["Full Stack Dev", "Code Quality", "Optimization"]
     },
     "step4": {
-      "title": "Vuelo & Compañía",
-      "description": "Lanzamos tu web, pero no te suelto la mano. Te enseño a manejar todo para que seas libre de actualizar tu contenido cuando quieras.",
-      "tags": ["Autonomía", "Soporte", "Éxito compartido"]
+      "title": "Despliegue & Mantenimiento",
+      "description": "Lanzamiento del producto en entornos de producción (como Vercel/Azure). Aseguro que el sistema sea autónomo y brindo soporte para futuras escalabilidades.",
+      "tags": ["Deployment", "Soporte técnico", "Escalabilidad"]
     }
   }
 },
-    projects: {
-      subtitle: "Trabajos Seleccionados",
-      title: "Calidad sobre cantidad.",
-      titleFaded: "Una selección de desafíos técnicos.",
-      tabs: {
-        professional: "Profesionales",
-        academic: "Académicos"
+   projects: {
+  "subtitle": "Trabajos Seleccionados",
+  "title": "Calidad técnica,",
+  "titleFaded": "resultados de negocio.",
+  "tabs": {
+    "professional": "Freelance",
+    "academic": "Proyectos Académicos"
+  },
+  "labels": {
+    "challenge": "Desafío Técnico",
+    "stack": "Stack Principal",
+    "github": "Ver en GitHub",
+    "live": "Sitio en Vivo",
+    "viewProcess": "Ver Proceso de Diseño",
+    "viewWork": "Ver Web Final"
+  },
+  "items": {
+    "unik": {
+      "title": "Unik Agency",
+      "category": "Frontend Development",
+      "description": "Migración de activo estático (Canva) a plataforma web interactiva de alto rendimiento.",
+      "longDescription": "Lideré la transición digital de la agencia Unik, transformando un portfolio estático en una experiencia web fluida. Implementé animaciones avanzadas con Framer Motion y optimicé el rendimiento logrando tiempos de carga mínimos, elevando la percepción de marca frente a sus clientes corporativos."
+    },
+    "miri": {
+      "title": "La Quinta Miri",
+      "category": "Full Stack & SEO",
+      "description": "Digitalización integral y sistema de contacto directo para sector turístico.",
+      "longDescription": "Desarrollé una solución digital a medida para un complejo vacacional. El proyecto incluyó desde el diseño de interfaz hasta el posicionamiento en motores de búsqueda (SEO local) y la integración de canales de reserva directos, profesionalizando la captación de leads sin depender de plataformas externas."
+    },
+    "trivia": {
+      "title": "Motor de Trivia Distribuido",
+      "category": "Backend Engineering",
+      "description": "Plataforma multijugador en tiempo real con sincronización de sesiones distribuida.",
+      "longDescription": "Proyecto de alta complejidad técnica centrado en sistemas distribuidos. Implementé la lógica de juego real-time mediante WebSockets y Spring MVC, asegurando la consistencia de datos entre múltiples clientes concurrentes."
+    },
+    "hardware": {
+      "title": "Enterprise Inventory Hub",
+      "category": "Full Stack Development",
+      "description": "Sistema de gestión de inventario con arquitectura RESTful y RBAC.",
+      "longDescription": "Desarrollo de una plataforma administrativa de e-commerce. Diseñé el control de acceso basado en roles (RBAC) y las APIs de consumo interno bajo estándares REST, utilizando Sequelize para el manejo de persistencia en MySQL."
+    },
+    "nlp": {
+      "title": "AI Semantic Engine",
+      "category": "Software Architecture",
+      "description": "Plataforma de procesamiento de lenguaje natural (NLP) para evaluación automatizada.",
+      "longDescription": "Implementación de un motor semántico bajo .NET 9. Trabajé en la capa de persistencia con Entity Framework y en la lógica de procesamiento de datos para la generación dinámica de reportes analíticos."
+    }
+  }
+},
+ 
+
+  tech: {
+    "subtitle": "Stack Tecnológico",
+    "title": "Herramientas &",
+    "titleItalic": "Tecnologías",
+    "categories": {
+      "frontend": {
+        "title": "Frontend & Web",
+        "skills": "React / Angular / TypeScript / JavaScript (ES6+) / HTML5 / CSS3 / WebSockets",
+        "details": "Desarrollo de interfaces modernas y reactivas utilizando frameworks de última generación, con soporte para renderizado dinámico (Razor, Thymeleaf) y estilos robustos con Bootstrap."
       },
-      labels: {
-        challenge: "Desafío Técnico",
-        stack: "Stack Principal",
-        github: "Ver en GitHub",
-        live: "Sitio en Vivo",
-        viewProcess: "Ver Proceso",
-        viewWork: "Ver Web Final"
+      "backend": {
+        "title": "Backend & Arquitectura",
+        "skills": "Node.js / .NET 9 / Java Spring Boot / PHP / Python / Microservicios",
+        "details": "Construcción de sistemas escalables bajo principios SOLID y Clean Code. Experiencia en arquitecturas distribuidas y persistencia de datos con ORMs como Prisma, Entity Framework y Hibernate."
       },
-      items: {
-       unik: {
-        "title": "Unik",
-        "category": "Diseño & Desarrollo",
-        "description": "De una presentación estática en Canva a una plataforma web de alto rendimiento.",
-        "longDescription": "Las chicas tenían un portfolio diseñado en Canva que no lograba la fluidez ni el profesionalismo técnico que su trabajo merecía. Siendo fiel a la esencia del diseño original, creé esta landing page de alto rendimiento, llevando su identidad a un entorno web robusto, sofisticado y totalmente funcional."
+      "database": {
+        "title": "Bases de Datos & Data",
+        "skills": "PostgreSQL / SQL Server / MySQL / MongoDB (NoSQL)",
+        "details": "Diseño y optimización de esquemas relacionales y no relacionales, garantizando la integridad de los datos y la eficiencia en consultas complejas."
       },
-      miri: {
-        "title": "La Quinta Miri",
-        "category": "Diseño & Desarrollo",
-        "description": "Presencia digital cálida para un espacio de descanso, sin la presión de las redes sociales.",
-        "longDescription": "Miriam no tenía presencia en las redes y buscaba destacar su espacio sin la exposición extrema de estar siempre pendiente de las notificaciones. Aparte de posicionar su quinta en Google Maps, creé esta landing para que sea lo más cálida y llamativa posible, capturando la esencia del lugar y facilitando el contacto directo."
+      "devops": {
+        "title": "DevOps & Metodologías",
+        "skills": "Docker / CI/CD (GitHub Actions) / Git / Vercel / APIs RESTful / Scrum",
+        "details": "Gestión del ciclo de vida del software mediante contenedores, automatización de despliegues y metodologías ágiles para un flujo de trabajo profesional y colaborativo."
       },
-        trivia: {
-          title: "Motor de Trivia Distribuido",
-          category: "Java / Spring MVC / WebSockets / MySQL",
-          description: "Plataforma de trivia multijugador colaborativa con modos de juego en tiempo real.",
-          longDescription: "Proyecto grupal centrado en un sistema multijugador real-time. Implementé los modos supervivencia y competitivo usando WebSockets para la sincronización."
-        },
-        hardware: {
-          title: "Hub de Inventario Empresarial",
-          category: "Angular / Node.js / REST API / Sequelize / MySQL",
-          description: "Plataforma de e-commerce e inventario con control de acceso basado en roles.",
-          longDescription: "Contribuí al desarrollo de APIs, integración de base de datos y componentes administrativos para flujos de usuario y gestión de productos."
-        },
-        nlp: {
-          title: "Motor Semántico de IA",
-          category: ".NET 9 / C# / NLP / Entity Framework / SQL Server",
-          description: "Plataforma que genera y evalúa exámenes automáticamente usando técnicas de NLP.",
-          longDescription: "Trabajé en el procesamiento de datos y la lógica de aplicación para la generación de reportes automáticos en PDF y flujos de evaluación backend."
-        }
+      "languages": {
+        "title": "Idiomas & Comunicación",
+        "skills": "Inglés (B2/C1) / Portugués (Básico)",
+        "details": "Capacidad para trabajar en entornos internacionales con un nivel avanzado de inglés técnico y conversacional, facilitando la comunicación en equipos globales."
       }
-    },
-    services: {
-  badge: "Propuesta",
-  title: "Servicios",
-  titleItalic: "Estratégicos",
-  cta: {
-    badge: "¿Tenés un proyecto en mente?",
-    title: "Solicitar presupuesto",
-    faded: "— ahora"
-  },
-  items: {
-    web: {
-  title: "Diseño & Desarrollo Web",
-  subtitle: "Tu presencia profesional",
-  description: "Creamos la estructura ideal según tu objetivo: desde una Landing Page de alto impacto para conversiones rápidas, hasta sitios Multi-sección para una narrativa de marca completa.",
-  details: [
-    "Landing Page o Sitios Multi-sección",
-    "Diseño UI/UX exclusivo",
-    "Optimización SEO & Performance",
-    "Adaptabilidad 100% Mobile"
-  ]
-},
-    store: {
-      title: "Tienda Online",
-      subtitle: "Ventas 24/7",
-      description: "Convertimos tu catálogo en una máquina de ventas online fácil de usar.",
-      details: ["Pasarelas de pago", "Gestión de stock e inventario", "Panel de administración fácil", "Reportes de ventas mensuales"]
-    },
-    systems: {
-      title: "Sistemas a Medida",
-      subtitle: "Gestión Inteligente",
-      description: "Automatizamos procesos de tu empresa con herramientas personalizadas.",
-      details: ["Bases de datos relacionales", "Automatización de reportes", "Paneles de control internos", "Seguridad de datos avanzada"]
-    },
-    maintenance: {
-      title: "Mantenimiento",
-      subtitle: "Soporte Técnico",
-      description: "Nos ocupamos de que tu web esté siempre segura, rápida y funcionando correctamente.",
-      details: ["Backups diarios preventivos", "Parches de seguridad", "Soporte técnico prioritario", "Monitoreo de tiempo en línea"]
     }
   },
-  modal: {
-    includes: "¿Qué incluye?",
-    button: "Solicitar presupuesto"
-  }
-},
    footer: {
   "status": "Disponible para nuevos proyectos",
   "titleLine1": "Trabajemos",
