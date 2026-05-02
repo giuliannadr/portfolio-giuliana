@@ -191,8 +191,8 @@ const es = {
   translation: {
    hero: {
   badge: "Disponible para nuevas ideas",
-  title1: "FULL STACK",
-  title2: "DESARROLLADORA Y DISEÑADORA",
+  title1: "DESARROLLADORA",
+  title2: "FULL STACK",
   description: "Diseño y desarrollo experiencias web a medida donde la estética y la técnica se encuentran. Mi enfoque es simple: acompañarte en el proceso para crear un sitio que refleje la esencia de tu proyecto.",
   viewWork: "Ver mis trabajos",
   contact: "Hablemos de tu idea"
