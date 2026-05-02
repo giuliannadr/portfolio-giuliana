@@ -18,6 +18,7 @@ export const AboutSection = () => {
             <motion.img 
               src="/profile1.png" 
               className="h-auto object-contain object-bottom cursor-pointer"
+              alt="Giuliana Di Rocco - Full Stack Web Developer Portfolio"
               animate={{ scale: 1.30, x: -60, y: -10 }}
               whileHover={{ y: -30, rotate: -4 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -38,7 +39,7 @@ export const AboutSection = () => {
                   <img 
                     src="/profile1.png" 
                     className="w-full h-full object-cover object-top" 
-                    alt="Profile Avatar"
+                    alt="Giuliana Di Rocco - Profile Avatar"
                   />
                 </div>
                 <div className="absolute bottom-1 right-1 w-4 h-4 bg-[#FF6F00] border-2 border-[#27272a] rounded-full"></div>

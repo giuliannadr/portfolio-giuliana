@@ -92,6 +92,7 @@ export const Hero = () => {
 
         {/* Title Container */}
         <h1 className="font-black tracking-tighter text-zinc-900 dark:text-white mb-8 leading-[0.9] flex flex-col">
+          <span className="sr-only">Giuliana Di Rocco - Web Developer & Software Architect</span>
           <span className="block whitespace-nowrap text-[clamp(1.8rem,5vw,4rem)] uppercase">
             {t('hero.title1')}
           </span>

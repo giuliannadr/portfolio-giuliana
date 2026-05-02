@@ -39,7 +39,7 @@ const ProjectCard = ({ project, onSelect }: { project: Project; onSelect: (id: s
           />
         ) : (
           <img 
-            src={project.image} alt="" 
+            src={project.image} alt={`${project.title} - ${project.category}`} 
             className="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-in-out" 
           />
         )}
@@ -266,7 +266,7 @@ useEffect(() => {
                         {selectedProject.video ? (
                           <video src={selectedProject.video} autoPlay muted loop playsInline className="w-full h-full object-cover" />
                         ) : (
-                          <img src={selectedProject.image} className="w-full h-full object-cover" alt="" />
+                          <img src={selectedProject.image} className="w-full h-full object-cover" alt={`${selectedProject.title} project preview`} />
                         )}
                       </motion.div>
                     ) : (
@@ -283,7 +283,7 @@ useEffect(() => {
                               onClick={() => setFullscreenImageIdx(index)}
                               className="group relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-white/5 bg-zinc-900 shadow-2xl cursor-zoom-in"
                             >
-                              <img src={img} className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" alt="" />
+                              <img src={img} className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" alt={`${selectedProject.title} design process step ${index + 1}`} />
                               <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
                               
                               <div className="absolute top-4 left-4 z-[1002]">
@@ -404,7 +404,7 @@ useEffect(() => {
               <img 
                 src={selectedProject.process[fullscreenImageIdx]} 
                 className="w-full h-full object-contain"
-                alt="Process view"
+                alt={`${selectedProject.title} process detailed view - ${fullscreenImageIdx < 3 ? "Before" : "After"}`}
               />
               <div className="absolute bottom-10 left-10">
                 <span className={`px-4 py-2 text-[10px] uppercase tracking-[0.2em] rounded-full font-bold border ${fullscreenImageIdx < 3 ? 'bg-white/5 border-white/10 text-white/50' : 'bg-[#FF6F00] border-[#FF6F00] text-white'}`}>
