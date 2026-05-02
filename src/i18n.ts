@@ -5,8 +5,8 @@ const en = {
   translation: {
   hero: {
   badge: "Available for new ideas",
-  title1: "CRAFTING YOUR",
-  title2: "DIGITAL ESSENCE.",
+  title1: "FULL STACK",
+  title2: "DEVELOPER & DESIGNER",
   description: "I design and develop custom web experiences where aesthetics and technology meet. My approach is simple: walking alongside you to create a site that truly reflects the heart of your project.",
   viewWork: "View my work",
   contact: "Let's talk"
@@ -191,8 +191,8 @@ const es = {
   translation: {
    hero: {
   badge: "Disponible para nuevas ideas",
-  title1: "CREANDO TU",
-  title2: "ESENCIA DIGITAL.", // Esta palabra cambiará lentamente a naranja
+  title1: "FULL STACK",
+  title2: "DESARROLLADORA Y DISEÑADORA",
   description: "Diseño y desarrollo experiencias web a medida donde la estética y la técnica se encuentran. Mi enfoque es simple: acompañarte en el proceso para crear un sitio que refleje la esencia de tu proyecto.",
   viewWork: "Ver mis trabajos",
   contact: "Hablemos de tu idea"
