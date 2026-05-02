@@ -6,7 +6,7 @@ const en = {
   hero: {
   badge: "Available for new ideas",
   title1: "FULL STACK",
-  title2: "DEVELOPER & DESIGNER",
+  title2: "DEVELOPER",
   description: "I design and develop custom web experiences where aesthetics and technology meet. My approach is simple: walking alongside you to create a site that truly reflects the heart of your project.",
   viewWork: "View my work",
   contact: "Let's talk"
