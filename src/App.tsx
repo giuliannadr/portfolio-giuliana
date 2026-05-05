@@ -8,6 +8,7 @@ import { Projects } from "@/components/sections/Projects";
 
 import { TrustSection } from "./components/sections/TrustSection";
 import { TechSection } from "./components/sections/TechSection";
+import { WhatsNext } from "./components/sections/Whatsnext";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
      
       <Projects />
       <TechSection />
-     
+      <WhatsNext />
     </Layout>
   );
 }

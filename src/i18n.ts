@@ -146,6 +146,24 @@ const en = {
         }
       }
     },
+   whatsNext: {
+  badge: "Growth mindset",
+  title: "Always",
+  titleItalic: "moving forward.",
+  tags: {
+    starting:   "Incoming 2027",
+    exploring:  "Exploring",
+    studying:   "Studying",
+    practicing: "Practicing",
+  },
+  items: {
+    utn:        "Information Systems Engineering — UTN",
+    utnSub:     "Universidad Tecnológica Nacional · Entrance course: 2026 · Degree start: 2027",
+    nextjs:     "Next.js App Router & Server Components",
+    systemDesign: "System Design & Scalable Architectures",
+    postgres:   "PostgreSQL — advanced queries & performance",
+  },
+},
     footer: {
       status: "Available for new opportunities",
       titleLine1: "Let's work",
@@ -302,6 +320,24 @@ const es = {
         }
       }
     },
+    whatsNext: {
+  badge: "Crecimiento continuo",
+  title: "Siempre",
+  titleItalic: "en movimiento.",
+  tags: {
+    starting:   "Ingreso 2027",
+    exploring:  "Explorando",
+    studying:   "Estudiando",
+    practicing: "Practicando",
+  },
+  items: {
+    utn:        "Ingeniería en Sistemas de la Información — UTN",
+    utnSub:     "Universidad Tecnológica Nacional · Curso de ingreso: 2026 · Inicio carrera: 2027",
+    nextjs:     "Next.js App Router & Server Components",
+    systemDesign: "System Design & Arquitecturas Escalables",
+    postgres:   "PostgreSQL — queries avanzadas y performance",
+  },
+},
     footer: {
       status: "Disponible para nuevas oportunidades",
       titleLine1: "Trabajemos",
