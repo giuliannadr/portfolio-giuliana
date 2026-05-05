@@ -71,25 +71,27 @@ export const ProfileCard = ({
             "{displayRole}"
           </p>
 
-          <div className="flex justify-center gap-5 mt-6 mb-1">
-            <a href="https://wa.me/5491128341223" target="_blank" rel="noopener noreferrer">
-              <FaWhatsapp className="text-[#FF6F00] w-6 h-6 hover:scale-125 transition-transform" />
-            </a>
+          <div className="flex justify-center gap-5 mt-6 mb-1"> 
             <a href="https://linkedin.com/in/giulianadirocco" target="_blank" rel="noopener noreferrer">
               <FaLinkedinIn className="text-[#FF6F00] w-6 h-6 hover:scale-125 transition-transform" />
-            </a>
-            <a href="https://github.com/giuliannadr" target="_blank" rel="noopener noreferrer">
+            </a> 
+             <a href="https://github.com/giuliannadr" target="_blank" rel="noopener noreferrer">
               <FaGithub className="text-[#FF6F00] w-6 h-6 hover:scale-125 transition-transform" />
             </a>
-            <a href="https://instagram.com/giulianna.dev" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="text-[#FF6F00] w-6 h-6 hover:scale-125 transition-transform" />
-            </a>
+            
             <button 
               onClick={handleEmailClick}
               className="cursor-pointer focus:outline-none"
             >
               <HiOutlineMail className="text-[#FF6F00] w-6 h-6 hover:scale-125 transition-transform" />
             </button>
+            <a href="https://wa.me/5491128341223" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp className="text-[#FF6F00] w-6 h-6 hover:scale-125 transition-transform" />
+            </a>
+            <a href="https://instagram.com/giulianna.dev" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="text-[#FF6F00] w-6 h-6 hover:scale-125 transition-transform" />
+            </a>
+            
           </div>
         </div>
       </div>

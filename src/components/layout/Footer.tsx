@@ -24,10 +24,11 @@ export const Footer = () => {
     window.open(gmailUrl, "_blank");
   };
 
-  const socialLinks = [ 
-    { icon: Instagram, href: "https://instagram.com/giulianna.dev", label: "Instagram" },
+  const socialLinks = [  
     { icon: Linkedin, href: "https://linkedin.com/in/giulianadirocco", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/giuliannadr", label: "GitHub" },
+    { icon: Instagram, href: "https://instagram.com/giulianna.dev", label: "Instagram" },
+   
     ];
 
   return (
@@ -58,7 +59,7 @@ export const Footer = () => {
         </motion.h2>
 
         {/* Botones de Contacto Prioritarios */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full justify-center">
+        <div className="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full justify-center flex-wrap">
           
           {/* Email con opción de copiar */}
           <div className="group relative flex items-center bg-zinc-100 dark:bg-zinc-900/50 p-1.5 pl-5 rounded-2xl border border-transparent hover:border-[#FF6F00]/30 transition-all w-full sm:w-auto">
@@ -76,7 +77,18 @@ export const Footer = () => {
             </button>
           </div>
 
-          {/* WhatsApp con SVG Original */}
+          {/* LinkedIn */}
+          <a 
+            href="https://linkedin.com/in/giulianadirocco"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-6 py-4 bg-[#0A66C2]/10 border border-[#0A66C2]/20 text-[#0A66C2] rounded-2xl font-bold hover:bg-[#0A66C2] hover:text-white transition-all duration-300 w-full sm:w-auto justify-center shadow-lg shadow-[#0A66C2]/5 group"
+          >
+            <Linkedin className="w-5 h-5 group-hover:text-white transition-colors" />
+            LINKEDIN
+          </a>
+
+          {/* WhatsApp */}
           <a 
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"

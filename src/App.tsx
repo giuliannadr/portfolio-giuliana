@@ -7,7 +7,6 @@ import { Projects } from "@/components/sections/Projects";
 
 
 import { TrustSection } from "./components/sections/TrustSection";
-import { ProcessSection } from "./components/sections/ProcessSection";
 import { TechSection } from "./components/sections/TechSection";
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
       <Hero />
        <AboutSection />
       <TrustSection />
-      <ProcessSection />
+     
      
       <Projects />
       <TechSection />
