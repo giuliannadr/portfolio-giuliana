@@ -23,8 +23,8 @@ const PILLARS = [
   },
   {
     num: "02", color: "#7C3AED",
-    es: { title: "Experiencia en producción", body: "3 proyectos reales deployados y funcionando. Trabajo freelance desde enero 2025. Cada uno implicó planificación real, deadlines reales y clientes reales." },
-    en: { title: "Production experience",   body: "3 real projects deployed and running. Freelance work since January 2025. Each one involved real planning, real deadlines and real clients." },
+    es: { title: "Experiencia en producción", body: "3 proyectos reales deployados y funcionando. Trabajo freelance desde diciembre 2025. Cada uno implicó planificación real, deadlines reales y clientes reales." },
+    en: { title: "Production experience",   body: "3 real projects deployed and running. Freelance work since December 2025. Each one involved real planning, real deadlines and real clients." },
   },
   {
     num: "03", color: "#06B6D4",

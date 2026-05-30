@@ -13,7 +13,7 @@ const TIMELINE = [
   {
     num: "01",
     color: "#CC1500",
-    from: { es: "Ene 2025", en: "Jan 2025" },
+    from: { es: "Dic 2025", en: "Dec 2025" },
     to:   { es: "Presente", en: "Present"  },
     role: { es: "Desarrolladora Web Full-Stack", en: "Full-Stack Web Developer" },
     ctx:  { es: "Freelance",                     en: "Freelance"                },

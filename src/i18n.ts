@@ -139,28 +139,28 @@ const en = {
       categories: {
         frontend: {
           title: "Frontend & Web",
-          skills: "React / Angular / Lit Element / Next.js 15 / TypeScript / JavaScript ES6+ / HTML5 / CSS3",
-          details: "Component-based interface development with Angular, React and Lit Element (Web Components). Performance-focused with Next.js 15 SSR and advanced animations with Framer Motion. Hybrid 4+1 availability."
+          skills: "Angular 21 / Angular Signals / React 18 / Next.js 15 / Lit Element / TypeScript / JavaScript ES6+ / Tailwind CSS v4 / Framer Motion / Zustand / Vite / PWA",
+          details: "Component-based development with Angular 21 (Signals), React 18 and Lit Element (Web Components). SSR with Next.js 15, fluid animations with Framer Motion, state management with Zustand and internationalization with react-i18next."
         },
         backend: {
           title: "Backend & Architecture",
-          skills: "Node.js / Java Spring Boot / Spring Framework 4+ / .NET 9 / Spring Data JPA / PHP",
-          details: "Scalable systems under SOLID, Clean Architecture and TDD. REST API development with JWT and RBAC security. Quality assurance via JUnit and xUnit unit testing. Scrum collaboration with analysts, QAs and tech leads."
+          skills: "Node.js / Java Spring Boot / Spring Framework 4+ / Spring MVC / ASP.NET Core (.NET 9) / Supabase / WebRTC / Vercel Functions / PHP",
+          details: "Scalable systems under Clean Architecture, SOLID and TDD. REST APIs with JWT, OAuth 2.0 and RBAC security. Supabase RLS, WebRTC for real-time features. Unit testing with JUnit and xUnit. Scrum with analysts, QAs and tech leads."
         },
         database: {
           title: "Databases & Data",
-          skills: "PostgreSQL / SQL Server / MySQL / MongoDB (NoSQL)",
-          details: "Design and optimization of relational and non-relational schemas, ensuring data integrity and efficiency in complex queries."
+          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore — Prisma / Sequelize / Hibernate / Entity Framework Core",
+          details: "Relational and non-relational schema design. ORM experience with Prisma, Sequelize, Hibernate and Entity Framework Core — ensuring data integrity and query efficiency across complex systems."
         },
         devops: {
-          title: "DevOps & Methodologies",
-          skills: "Docker / CI/CD (GitHub Actions) / Git / Vercel / RESTful APIs / Scrum",
-          details: "Software lifecycle management through containerization, automated deployments, and agile methodologies for a professional and collaborative workflow."
+          title: "DevOps & Tooling",
+          skills: "Git / GitHub Actions / Docker / Vercel / CI/CD / Electron / Capacitor (Android & iOS) / Core Web Vitals / Turborepo",
+          details: "Automated pipelines with GitHub Actions, containerization with Docker and deploy on Vercel. Cross-platform development with Electron and Capacitor. Performance monitoring via Core Web Vitals and monorepo management with Turborepo."
         },
         languages: {
           title: "Languages & Communication",
           skills: "English (B2/C1) / Portuguese (Basic)",
-          details: "Ability to work in international environments with an advanced level of technical and conversational English, facilitating communication within global teams."
+          details: "Advanced technical and conversational English — able to work in international teams, write documentation and participate in code reviews fully in English."
         }
       }
     },
@@ -331,28 +331,28 @@ const es = {
       categories: {
         frontend: {
           title: "Frontend & Web",
-          skills: "React / Angular / Lit Element / Next.js 15 / TypeScript / JavaScript ES6+ / HTML5 / CSS3",
-          details: "Desarrollo de interfaces basado en componentes con Angular, React y Lit Element (Web Components). Rendimiento optimizado con Next.js 15 SSR y animaciones avanzadas con Framer Motion. Disponibilidad híbrida 4+1."
+          skills: "Angular 21 / Angular Signals / React 18 / Next.js 15 / Lit Element / TypeScript / JavaScript ES6+ / Tailwind CSS v4 / Framer Motion / Zustand / Vite / PWA",
+          details: "Desarrollo basado en componentes con Angular 21 (Signals), React 18 y Lit Element (Web Components). SSR con Next.js 15, animaciones fluidas con Framer Motion, estado global con Zustand e internacionalización con react-i18next."
         },
         backend: {
           title: "Backend & Arquitectura",
-          skills: "Node.js / Java Spring Boot / Spring Framework 4+ / .NET 9 / Spring Data JPA / PHP",
-          details: "Sistemas escalables bajo SOLID, Clean Architecture y TDD. Desarrollo de APIs REST con seguridad JWT y RBAC. Garantía de calidad mediante pruebas unitarias con JUnit y xUnit. Colaboración Scrum con analistas, QAs y tech leads."
+          skills: "Node.js / Java Spring Boot / Spring Framework 4+ / Spring MVC / ASP.NET Core (.NET 9) / Supabase / WebRTC / Vercel Functions / PHP",
+          details: "Sistemas escalables bajo Clean Architecture, SOLID y TDD. APIs REST con seguridad JWT, OAuth 2.0 y RBAC. Supabase RLS, WebRTC para funcionalidades en tiempo real. Pruebas unitarias con JUnit y xUnit. Colaboración Scrum con analistas, QAs y tech leads."
         },
         database: {
           title: "Bases de Datos & Data",
-          skills: "PostgreSQL / SQL Server / MySQL / MongoDB (NoSQL)",
-          details: "Diseño y optimización de esquemas relacionales y no relacionales, garantizando la integridad de los datos y la eficiencia en consultas complejas."
+          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore — Prisma / Sequelize / Hibernate / Entity Framework Core",
+          details: "Diseño de esquemas relacionales y no relacionales. Experiencia con ORMs: Prisma, Sequelize, Hibernate y Entity Framework Core — garantizando integridad de datos y eficiencia en consultas de sistemas complejos."
         },
         devops: {
-          title: "DevOps & Metodologías",
-          skills: "Docker / CI/CD (GitHub Actions) / Git / Vercel / APIs RESTful / Scrum",
-          details: "Gestión del ciclo de vida del software mediante contenedores, automatización de despliegues y metodologías ágiles para un flujo de trabajo profesional y colaborativo."
+          title: "DevOps & Herramientas",
+          skills: "Git / GitHub Actions / Docker / Vercel / CI/CD / Electron / Capacitor (Android & iOS) / Core Web Vitals / Turborepo",
+          details: "Pipelines automatizados con GitHub Actions, contenedores con Docker y deploy en Vercel. Desarrollo multiplataforma con Electron y Capacitor. Monitoreo de performance con Core Web Vitals y gestión de monorepos con Turborepo."
         },
         languages: {
           title: "Idiomas & Comunicación",
           skills: "Inglés (B2/C1) / Portugués (Básico)",
-          details: "Capacidad para trabajar en entornos internacionales con un nivel avanzado de inglés técnico y conversacional, facilitando la comunicación en equipos globales."
+          details: "Inglés técnico y conversacional avanzado — capaz de trabajar en equipos internacionales, escribir documentación y participar en code reviews completamente en inglés."
         }
       }
     },
