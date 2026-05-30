@@ -25,6 +25,7 @@ interface Project {
   liveUrl?: string;
   githubUrl?: string;
   visitLabel?: string;
+  inProgress?: boolean;
   stack: string[];
   type: ProjectCategory;
   process?: string[];
@@ -184,10 +185,10 @@ export const Projects = () => {
   const [showAll,     setShowAll]     = useState(false);
 
   const rawData = [
-    { id: "aura",           image: "./aura-preview.png",      liveUrl: "https://facuujuarez.vercel.app",            githubUrl: "https://github.com/giuliannadr/FacuuJuarez-Aura",   type: "professional", stack: ["Next.js 15 App Router", "Turborepo", "TypeScript", "Supabase", "PostgreSQL", "Drizzle ORM", "Supabase Auth", "Tailwind CSS v4", "Zod", "React Hook Form", "Vercel"] },
+    { id: "aura",           image: "./aura-preview.png",      liveUrl: "https://facuujuarez.vercel.app",            githubUrl: "https://github.com/giuliannadr/FacuuJuarez-Aura",   type: "professional", inProgress: true, stack: ["Next.js 15 App Router", "Turborepo", "TypeScript", "Supabase", "PostgreSQL", "Drizzle ORM", "Supabase Auth", "Tailwind CSS v4", "Zod", "React Hook Form", "Vercel"] },
     { id: "portfolio",      image: "./portfolio-preview.png", liveUrl: "https://dev.giulianadirocco.com/design-system", visitLabel: lang === "en" ? "View Design System" : "Ver Design System", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["React 18", "TypeScript", "Vite", "Framer Motion", "react-i18next", "Firebase Firestore", "Lit Element 3", "Web Components", "Vercel"] },
-    { id: "9669",           image: "./9669-preview.png",      liveUrl: "https://av-admin-dashboard.vercel.app",     githubUrl: "https://github.com/giuliannadr/9669club",           type: "professional", stack: ["React 18", "TypeScript", "Vite", "Next.js 15", "Turborepo", "LiveKit", "WebRTC", "Canvas API", "Vercel Functions", "pnpm Workspaces"] },
-    { id: "atout",          image: "./atout-preview.png",     liveUrl: "https://atout-delta.vercel.app",            githubUrl: "https://github.com/giuliannadr/Atout",              type: "professional", stack: ["React 19", "TypeScript", "Vite", "Zustand", "Supabase", "Electron", "Capacitor", "GitHub Actions", "Vercel"] },
+    { id: "9669",           image: "./9669-preview.png",      liveUrl: "https://av-admin-dashboard.vercel.app",     githubUrl: "https://github.com/giuliannadr/9669club",           type: "professional", inProgress: true, stack: ["React 18", "TypeScript", "Vite", "Next.js 15", "Turborepo", "LiveKit", "WebRTC", "Canvas API", "Vercel Functions", "pnpm Workspaces"] },
+    { id: "atout",          image: "./atout-preview.png",     liveUrl: "https://atout-delta.vercel.app",            githubUrl: "https://github.com/giuliannadr/Atout",              type: "professional", inProgress: true, stack: ["React 19", "TypeScript", "Vite", "Zustand", "Supabase", "Electron", "Capacitor", "GitHub Actions", "Vercel"] },
     { id: "unik",           image: "./unik-mockup.webp",    liveUrl: "https://somosunik.vercel.app/",              githubUrl: "https://github.com/giuliannadr/Unik.git",           type: "professional", stack: ["Next.js 15", "TypeScript", "Framer Motion"], process: ["./antes1.png","./antes2.png","./antes3.png","./despues1.png","./despues2.png","./despues3.png"] },
     { id: "la-quinta-miri", image: "./miri-mockup.webp",    liveUrl: "https://laquintamiri.vercel.app/",           githubUrl: "https://github.com/giuliannadr/LaQuintaMiri.git",  type: "professional", stack: ["React.js", "TypeScript", "EmailJS"] },
     { id: "emme",           image: "./emme-mockup.webp",    liveUrl: "https://www.emmedigital.com.ar/",            type: "professional", stack: ["React.js", "TypeScript", "Framer Motion"] },
@@ -335,15 +336,23 @@ export const Projects = () => {
                   style={{ background: accent }} />
 
                 {/* number + category */}
-                <div className="absolute top-0 left-0 right-0 p-5 flex items-center justify-between z-10">
+                <div className="absolute top-0 left-0 right-0 p-5 flex items-start justify-between z-10">
                   <motion.span animate={{ color: isHov ? accent : "rgba(255,255,255,0.35)" }} transition={{ duration: 0.3 }}
                     className="font-black" style={{ fontFamily: "Poppins, sans-serif", fontSize: "0.58rem", letterSpacing: "0.18em" }}>
                     0{i + 1}
                   </motion.span>
-                  <motion.span animate={{ opacity: isHov ? 0.6 : 0.3 }} transition={{ duration: 0.3 }}
-                    className="text-[9px] font-black uppercase tracking-[0.3em] text-white" style={{ fontFamily: "Poppins, sans-serif" }}>
-                    {p.category}
-                  </motion.span>
+                  <div className="flex flex-col items-end gap-1.5">
+                    <motion.span animate={{ opacity: isHov ? 0.6 : 0.3 }} transition={{ duration: 0.3 }}
+                      className="text-[9px] font-black uppercase tracking-[0.3em] text-white" style={{ fontFamily: "Poppins, sans-serif" }}>
+                      {p.category}
+                    </motion.span>
+                    {p.inProgress && (
+                      <span className="text-[7px] font-black uppercase tracking-[0.18em] px-1.5 py-0.5"
+                        style={{ fontFamily: "Poppins, sans-serif", color: "#D97706", background: "rgba(217,119,6,0.10)", border: "1px solid rgba(217,119,6,0.28)" }}>
+                        {lang === "en" ? "In progress" : "En proceso"}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 {/* Bottom content */}
