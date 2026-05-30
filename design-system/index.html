@@ -172,18 +172,28 @@
     }
     footer a:hover { color: var(--gl-accent); }
     .footer-links { display: flex; gap: 24px; }
+
+    /* ── i18n: hide inactive lang ───────────────────── */
+    [data-lang] { display: none; }
+    [data-lang].active { display: revert; }
   </style>
 </head>
 <body>
 
   <header>
     <a href="https://dev.giulianadirocco.com" class="header-logo">Design System — Giuliana Di Rocco</a>
-    <a href="https://dev.giulianadirocco.com" class="header-link">← Back to portfolio</a>
+    <a href="https://dev.giulianadirocco.com" class="header-link">
+      <span data-lang="en">← Back to portfolio</span>
+      <span data-lang="es">← Volver al portfolio</span>
+    </a>
   </header>
 
   <main>
     <h1 class="page-title">Design System</h1>
-    <p class="page-subtitle">web components. any framework.</p>
+    <p class="page-subtitle">
+      <span data-lang="en">web components. any framework.</span>
+      <span data-lang="es">web components. cualquier framework.</span>
+    </p>
 
     <!-- ── gl-badge ── -->
     <section class="section">
@@ -192,17 +202,27 @@
         <span class="section-title">gl-badge</span>
       </div>
       <p class="section-description">
-        Status badge with animated pulse dot. Variants: <code>available</code>, <code>busy</code>, <code>default</code>.
-        Renders uppercase text with a pulsing indicator dot.
+        <span data-lang="en">Status badge with animated pulse dot. Variants: <code>available</code>, <code>busy</code>, <code>default</code>. Renders uppercase text with a pulsing indicator dot.</span>
+        <span data-lang="es">Badge de estado con punto pulsante animado. Variantes: <code>available</code>, <code>busy</code>, <code>default</code>. Renderiza texto en mayúsculas con un indicador pulsante.</span>
       </p>
-      <div class="code-label">Usage</div>
+      <div class="code-label">
+        <span data-lang="en">Usage</span>
+        <span data-lang="es">Uso</span>
+      </div>
       <pre class="code-block">&lt;gl-badge label="Open to work" variant="available"&gt;&lt;/gl-badge&gt;
 &lt;gl-badge label="In a project" variant="busy"&gt;&lt;/gl-badge&gt;
 &lt;gl-badge label="Full Stack Dev" variant="default"&gt;&lt;/gl-badge&gt;</pre>
       <div class="demo">
-        <gl-badge label="Open to work" variant="available"></gl-badge>
-        <gl-badge label="In a project" variant="busy"></gl-badge>
-        <gl-badge label="Full Stack Dev" variant="default"></gl-badge>
+        <span data-lang="en" style="display:contents">
+          <gl-badge label="Open to work" variant="available"></gl-badge>
+          <gl-badge label="In a project" variant="busy"></gl-badge>
+          <gl-badge label="Full Stack Dev" variant="default"></gl-badge>
+        </span>
+        <span data-lang="es" style="display:contents">
+          <gl-badge label="Disponible" variant="available"></gl-badge>
+          <gl-badge label="En un proyecto" variant="busy"></gl-badge>
+          <gl-badge label="Full Stack Dev" variant="default"></gl-badge>
+        </span>
       </div>
     </section>
 
@@ -213,10 +233,13 @@
         <span class="section-title">gl-skill-tag</span>
       </div>
       <p class="section-description">
-        Monospace skill tag with colored border per proficiency level.
-        Levels: <code>strong</code> (#CC1500), <code>learning</code> (#7C3AED), <code>familiar</code> (white/15).
+        <span data-lang="en">Monospace skill tag with colored border per proficiency level. Levels: <code>strong</code> (#CC1500), <code>learning</code> (#7C3AED), <code>familiar</code> (white/15).</span>
+        <span data-lang="es">Tag de habilidad monospace con borde coloreado por nivel. Niveles: <code>strong</code> (#CC1500), <code>learning</code> (#7C3AED), <code>familiar</code> (blanco/15).</span>
       </p>
-      <div class="code-label">Usage</div>
+      <div class="code-label">
+        <span data-lang="en">Usage</span>
+        <span data-lang="es">Uso</span>
+      </div>
       <pre class="code-block">&lt;gl-skill-tag label="React 18"      level="strong"&gt;&lt;/gl-skill-tag&gt;
 &lt;gl-skill-tag label="Lit Element 3" level="learning"&gt;&lt;/gl-skill-tag&gt;
 &lt;gl-skill-tag label="Rust"          level="familiar"&gt;&lt;/gl-skill-tag&gt;</pre>
@@ -238,10 +261,13 @@
         <span class="section-title">gl-project-card</span>
       </div>
       <p class="section-description">
-        Project card with dark background, hover border accent and top line animation.
-        Pass <code>stack</code> as a comma-separated string.
+        <span data-lang="en">Project card with dark background, hover border accent and top line animation. Pass <code>stack</code> as a comma-separated string.</span>
+        <span data-lang="es">Tarjeta de proyecto con fondo oscuro, borde accent en hover y animación de línea superior. Pasá <code>stack</code> como string separado por comas.</span>
       </p>
-      <div class="code-label">Usage</div>
+      <div class="code-label">
+        <span data-lang="en">Usage</span>
+        <span data-lang="es">Uso</span>
+      </div>
       <pre class="code-block">&lt;gl-project-card
   title="Aura DJ System"
   description="Business management platform for a DJ agency."
@@ -250,13 +276,24 @@
   github-url="https://github.com/giuliannadr/FacuuJuarez-Aura"
 &gt;&lt;/gl-project-card&gt;</pre>
       <div class="demo" style="display:block;">
-        <gl-project-card
-          title="Aura DJ Management System"
-          description="Business management platform for a DJ agency — Turborepo monorepo with 3 Next.js 15 apps sharing a Supabase PostgreSQL database."
-          stack="Next.js 15 App Router, Turborepo, TypeScript, Supabase, Drizzle ORM, Supabase Auth, Tailwind CSS v4"
-          live-url="https://facuujuarez.vercel.app"
-          github-url="https://github.com/giuliannadr/FacuuJuarez-Aura"
-        ></gl-project-card>
+        <span data-lang="en" style="display:block">
+          <gl-project-card
+            title="Aura DJ Management System"
+            description="Business management platform for a DJ agency — Turborepo monorepo with 3 Next.js 15 apps sharing a Supabase PostgreSQL database."
+            stack="Next.js 15 App Router, Turborepo, TypeScript, Supabase, Drizzle ORM, Supabase Auth, Tailwind CSS v4"
+            live-url="https://facuujuarez.vercel.app"
+            github-url="https://github.com/giuliannadr/FacuuJuarez-Aura"
+          ></gl-project-card>
+        </span>
+        <span data-lang="es" style="display:block">
+          <gl-project-card
+            title="Aura DJ Management System"
+            description="Plataforma de gestión para una agencia de DJs — monorepo Turborepo con 3 apps Next.js 15 compartiendo una base de datos Supabase PostgreSQL."
+            stack="Next.js 15 App Router, Turborepo, TypeScript, Supabase, Drizzle ORM, Supabase Auth, Tailwind CSS v4"
+            live-url="https://facuujuarez.vercel.app"
+            github-url="https://github.com/giuliannadr/FacuuJuarez-Aura"
+          ></gl-project-card>
+        </span>
       </div>
     </section>
 
@@ -267,24 +304,24 @@
         <span class="section-title">gl-contact-button</span>
       </div>
       <p class="section-description">
-        CTA button. Variants: <code>primary</code> (white bg → accent on hover),
-        <code>ghost</code> (transparent, white/20 border → accent border on hover).
-        Sharp edges, uppercase, spaced tracking.
+        <span data-lang="en">CTA button. Variants: <code>primary</code> (white bg → accent on hover), <code>ghost</code> (transparent, white/20 border → accent border on hover). Sharp edges, uppercase, spaced tracking.</span>
+        <span data-lang="es">Botón CTA. Variantes: <code>primary</code> (bg blanco → accent en hover), <code>ghost</code> (transparente, borde white/20 → borde accent en hover). Bordes rectos, uppercase, tracking espaciado.</span>
       </p>
-      <div class="code-label">Usage</div>
+      <div class="code-label">
+        <span data-lang="en">Usage</span>
+        <span data-lang="es">Uso</span>
+      </div>
       <pre class="code-block">&lt;gl-contact-button href="mailto:hi@example.com" label="Let's work together" variant="primary"&gt;&lt;/gl-contact-button&gt;
 &lt;gl-contact-button href="https://github.com/giuliannadr" label="View GitHub" variant="ghost"&gt;&lt;/gl-contact-button&gt;</pre>
       <div class="demo">
-        <gl-contact-button
-          href="mailto:giulianadiroccodev@gmail.com"
-          label="Let's work together"
-          variant="primary"
-        ></gl-contact-button>
-        <gl-contact-button
-          href="https://github.com/giuliannadr"
-          label="View GitHub"
-          variant="ghost"
-        ></gl-contact-button>
+        <span data-lang="en" style="display:contents">
+          <gl-contact-button href="mailto:giulianadiroccodev@gmail.com" label="Let's work together" variant="primary"></gl-contact-button>
+          <gl-contact-button href="https://github.com/giuliannadr" label="View GitHub" variant="ghost"></gl-contact-button>
+        </span>
+        <span data-lang="es" style="display:contents">
+          <gl-contact-button href="mailto:giulianadiroccodev@gmail.com" label="Trabajemos juntos" variant="primary"></gl-contact-button>
+          <gl-contact-button href="https://github.com/giuliannadr" label="Ver GitHub" variant="ghost"></gl-contact-button>
+        </span>
       </div>
     </section>
 
@@ -298,6 +335,23 @@
       <a href="https://linkedin.com/in/giulianadirocco">LinkedIn</a>
     </div>
   </footer>
+
+  <script>
+    // Read ?lang= from URL, default to "en"
+    const lang = new URLSearchParams(location.search).get("lang") === "es" ? "es" : "en";
+    document.documentElement.lang = lang;
+
+    // Activate matching lang spans, hide the other
+    document.querySelectorAll("[data-lang]").forEach(el => {
+      if (el.dataset.lang === lang) {
+        el.classList.add("active");
+        // Restore inline display override if set (display:contents / display:block)
+        el.style.display = el.style.display || "";
+      } else {
+        el.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
 </html>
