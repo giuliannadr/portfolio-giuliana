@@ -502,7 +502,7 @@ export const Projects = () => {
                             <a href={selected.liveUrl} target="_blank" rel="noreferrer"
                               className="flex-1 flex items-center justify-center gap-3 py-4 bg-white text-black font-black text-[10px] uppercase tracking-widest hover:bg-[#CC1500] hover:text-white transition-all group"
                               style={{ fontFamily: "Poppins, sans-serif" }}>
-                              {lang === "en" ? "Visit site" : "Ver sitio"}
+                              {selected.visitLabel ?? (lang === "en" ? "Visit site" : "Ver sitio")}
                               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                             </a>
                           )}
