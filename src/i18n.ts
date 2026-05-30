@@ -138,9 +138,9 @@ const en = {
         },
         portfolio: {
           title: "Personal Portfolio",
-          category: "Frontend Architecture",
-          description: "Bilingual portfolio with React, Firebase and full EN/ES internationalization.",
-          longDescription: "Portfolio built with React 18 + TypeScript + Vite. Full EN/ES internationalization with react-i18next, Framer Motion animations, Firebase Firestore for dynamic reviews, technical SEO with og:tags and canonical URL, automated CI/CD on Vercel with Speed Insights."
+          category: "Frontend + Design System",
+          description: "Bilingual portfolio with an embedded Lit Element 3 design system — real web components shipped to production.",
+          longDescription: "React 18 + TypeScript + Vite. Full EN/ES internationalization (react-i18next), Framer Motion animations, Firebase Firestore for dynamic reviews, technical SEO with og:tags and canonical URL, CI/CD on Vercel with Speed Insights. Includes a live Design System built with Lit Element 3: reusable, framework-agnostic web components using Shadow DOM, CSS custom properties and TypeScript reactive properties — deployed at /design-system."
         },
         "9669": {
           title: "9669 Club",
@@ -362,9 +362,9 @@ const es = {
         },
         portfolio: {
           title: "Portfolio Personal",
-          category: "Frontend Architecture",
-          description: "Portfolio bilingüe con React, Firebase e internacionalización completa EN/ES.",
-          longDescription: "Portfolio construido con React 18 + TypeScript + Vite. Internacionalización completa EN/ES con react-i18next, animaciones con Framer Motion, Firebase Firestore para reviews dinámicas, SEO técnico con og:tags y canonical URL, CI/CD automatizado en Vercel con Speed Insights."
+          category: "Frontend + Design System",
+          description: "Portfolio bilingüe con un design system en Lit Element 3 integrado — web components reales en producción.",
+          longDescription: "React 18 + TypeScript + Vite. Internacionalización EN/ES completa (react-i18next), animaciones con Framer Motion, Firebase Firestore para reviews dinámicas, SEO técnico con og:tags y canonical URL, CI/CD en Vercel con Speed Insights. Incluye un Design System en vivo construido con Lit Element 3: web components reutilizables y agnósticos al framework usando Shadow DOM, CSS custom properties y reactive properties con TypeScript — deployado en /design-system."
         },
         "9669": {
           title: "9669 Club",

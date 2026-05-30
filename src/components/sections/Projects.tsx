@@ -24,6 +24,7 @@ interface Project {
   video?: string;
   liveUrl?: string;
   githubUrl?: string;
+  visitLabel?: string;
   stack: string[];
   type: ProjectCategory;
   process?: string[];
@@ -184,10 +185,9 @@ export const Projects = () => {
 
   const rawData = [
     { id: "aura",           image: "./aura-preview.png",      liveUrl: "https://facuujuarez.vercel.app",            githubUrl: "https://github.com/giuliannadr/FacuuJuarez-Aura",   type: "professional", stack: ["Next.js 15 App Router", "Turborepo", "TypeScript", "Supabase", "PostgreSQL", "Drizzle ORM", "Supabase Auth", "Tailwind CSS v4", "Zod", "React Hook Form", "Vercel"] },
-    { id: "portfolio",      image: "./portfolio-preview.png", liveUrl: "https://dev.giulianadirocco.com/design-system", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["React 18", "TypeScript", "Vite", "Framer Motion", "react-i18next", "Firebase Firestore", "Vercel", "SEO técnico"] },
+    { id: "portfolio",      image: "./portfolio-preview.png", liveUrl: "https://dev.giulianadirocco.com/design-system", visitLabel: lang === "en" ? "View Design System" : "Ver Design System", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["React 18", "TypeScript", "Vite", "Framer Motion", "react-i18next", "Firebase Firestore", "Lit Element 3", "Web Components", "Vercel"] },
     { id: "9669",           image: "./9669-preview.png",      liveUrl: "https://av-admin-dashboard.vercel.app",     githubUrl: "https://github.com/giuliannadr/9669club",           type: "professional", stack: ["React 18", "TypeScript", "Vite", "Next.js 15", "Turborepo", "LiveKit", "WebRTC", "Canvas API", "Vercel Functions", "pnpm Workspaces"] },
     { id: "atout",          image: "./atout-preview.png",     liveUrl: "https://atout-delta.vercel.app",            githubUrl: "https://github.com/giuliannadr/Atout",              type: "professional", stack: ["React 19", "TypeScript", "Vite", "Zustand", "Supabase", "Electron", "Capacitor", "GitHub Actions", "Vercel"] },
-    { id: "design-system",  image: "./portfolio-preview.png", liveUrl: "https://dev.giulianadirocco.com/design-system", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["Lit Element 3", "TypeScript", "Web Components", "Shadow DOM", "CSS Custom Properties", "Vite"] },
     { id: "unik",           image: "./unik-mockup.webp",    liveUrl: "https://somosunik.vercel.app/",              githubUrl: "https://github.com/giuliannadr/Unik.git",           type: "professional", stack: ["Next.js 15", "TypeScript", "Framer Motion"], process: ["./antes1.png","./antes2.png","./antes3.png","./despues1.png","./despues2.png","./despues3.png"] },
     { id: "la-quinta-miri", image: "./miri-mockup.webp",    liveUrl: "https://laquintamiri.vercel.app/",           githubUrl: "https://github.com/giuliannadr/LaQuintaMiri.git",  type: "professional", stack: ["React.js", "TypeScript", "EmailJS"] },
     { id: "emme",           image: "./emme-mockup.webp",    liveUrl: "https://www.emmedigital.com.ar/",            type: "professional", stack: ["React.js", "TypeScript", "Framer Motion"] },
@@ -360,7 +360,7 @@ export const Projects = () => {
                             <a href={p.liveUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
                               className="flex items-center gap-2 px-4 py-2 bg-white text-black font-black text-[10px] uppercase tracking-widest hover:bg-[#CC1500] hover:text-white transition-all"
                               style={{ fontFamily: "Poppins, sans-serif" }}>
-                              {lang === "en" ? "Visit site" : "Ver sitio"}
+                              {p.visitLabel ?? (lang === "en" ? "Visit site" : "Ver sitio")}
                               <ArrowUpRight size={11} />
                             </a>
                           )}
