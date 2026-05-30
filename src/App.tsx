@@ -7,19 +7,23 @@ import { TrustSection } from "./components/sections/TrustSection";
 import { Projects } from "@/components/sections/Projects";
 import { TechSection } from "./components/sections/TechSection";
 import { WhatsNext } from "./components/sections/Whatsnext";
+import { Loader } from "@/components/ui/Loader";
 
 function App() {
   return (
-    <Layout>
-      <Hero />
-      <Marquee />
-      <AboutSection />
-      <ExperienceSection />
-      <TrustSection />
-      <Projects />
-      <TechSection />
-      <WhatsNext />
-    </Layout>
+    <>
+      <Loader onDone={() => {}} />
+      <Layout>
+        <Hero />
+        <Marquee />
+        <AboutSection />
+        <ExperienceSection />
+        <TrustSection />
+        <Projects />
+        <TechSection />
+        <WhatsNext />
+      </Layout>
+    </>
   );
 }
 
