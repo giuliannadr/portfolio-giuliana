@@ -129,6 +129,36 @@ const en = {
           category: "Creative Development",
           description: "Interactive digital invitation for a XV years celebration.",
           longDescription: "Custom design for a XV years party invitation. Smooth animations, custom typography and a responsive layout that captures the celebration's aesthetic perfectly."
+        },
+        aura: {
+          title: "Aura DJ Management System",
+          category: "Full Stack — Turborepo Monorepo",
+          description: "Business management platform for a DJ agency built as a Turborepo monorepo with 3 Next.js 15 apps.",
+          longDescription: "End-to-end business management system for a DJ agency. Turborepo monorepo with 3 Next.js 15 (App Router) applications sharing a PostgreSQL database via Drizzle ORM on Supabase. Features: role-based access (facundo, aura_admin, aura_member), two-round booking system with unique tokens, client event portal, content CMS, and availability calendar. Supabase Auth with Row Level Security. In development."
+        },
+        portfolio: {
+          title: "Personal Portfolio",
+          category: "Frontend Architecture",
+          description: "Bilingual portfolio with React, Firebase and full EN/ES internationalization.",
+          longDescription: "Portfolio built with React 18 + TypeScript + Vite. Full EN/ES internationalization with react-i18next, Framer Motion animations, Firebase Firestore for dynamic reviews, technical SEO with og:tags and canonical URL, automated CI/CD on Vercel with Speed Insights."
+        },
+        "9669": {
+          title: "9669 Club",
+          category: "Real-time Engineering",
+          description: "Real-time DJ streaming platform with WebRTC and live visual effects.",
+          longDescription: "Full-stack real-time platform for live DJ sessions. WebRTC infrastructure with LiveKit Cloud for audio/video streaming. Visual effects with Canvas API (film grain, VHS glitch) and CSS blend modes applied to live video — zero performance impact on stream. Turborepo monorepo with pnpm workspaces, API routes on Vercel Functions. In development."
+        },
+        atout: {
+          title: "Atout",
+          category: "Cross-platform App",
+          description: "Cross-platform project management app — web, desktop and mobile from one codebase.",
+          longDescription: "Single React 19/TypeScript codebase running on web (Vercel), desktop (Electron for Win/Mac/Linux) and mobile (Capacitor for Android/iOS). Supabase backend with PostgreSQL, Auth, Storage and Row Level Security. Zustand for global state, GitHub Actions pipelines for Electron releases and Android builds. PWA support. In development."
+        },
+        "design-system": {
+          title: "Web Components Design System",
+          category: "Frontend Engineering",
+          description: "Design system built with Lit Element 3 — reusable web components that work in any framework.",
+          longDescription: "Collection of web components built with Lit 3 + TypeScript following the portfolio's design language. Uses Shadow DOM for style encapsulation, CSS custom properties for theming, and reactive properties with type safety. Components are framework-agnostic — they work in React, Angular, Vue or vanilla HTML."
         }
       }
     },
@@ -149,8 +179,8 @@ const en = {
         },
         database: {
           title: "Databases & Data",
-          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore — Prisma / Sequelize / Hibernate / Entity Framework Core",
-          details: "Relational and non-relational schema design. ORM experience with Prisma, Sequelize, Hibernate and Entity Framework Core — ensuring data integrity and query efficiency across complex systems."
+          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore — Prisma / Drizzle ORM / Sequelize / Hibernate / Entity Framework Core",
+          details: "Relational and non-relational schema design. ORM experience with Prisma, Drizzle ORM, Sequelize, Hibernate and Entity Framework Core — ensuring data integrity and query efficiency across complex systems."
         },
         devops: {
           title: "DevOps & Tooling",
@@ -173,6 +203,7 @@ const en = {
     exploring:  "Exploring",
     studying:   "Studying",
     practicing: "Practicing",
+    building:   "Building",
   },
   items: {
     utn:        "Bachelor's in Data Science",
@@ -180,6 +211,7 @@ const en = {
     nextjs:     "Next.js App Router & Server Components",
     systemDesign: "System Design & Scalable Architectures",
     postgres:   "PostgreSQL — advanced queries & performance",
+    litElement: "Lit Element 3 — Web Components Design System",
   },
 },
     footer: {
@@ -321,6 +353,36 @@ const es = {
           category: "Desarrollo Creativo",
           description: "Invitación digital interactiva para una celebración de 15 años.",
           longDescription: "Diseño a medida para invitación de XV años. Animaciones suaves, tipografía personalizada y layout responsive que captura perfectamente la estética de la celebración."
+        },
+        aura: {
+          title: "Aura DJ Management System",
+          category: "Full Stack — Turborepo Monorepo",
+          description: "Plataforma de gestión para una agencia de DJs construida como monorepo Turborepo con 3 apps Next.js 15.",
+          longDescription: "Sistema de gestión end-to-end para una agencia de DJs. Monorepo Turborepo con 3 aplicaciones Next.js 15 (App Router) que comparten una base de datos PostgreSQL via Drizzle ORM en Supabase. Incluye: control de acceso por roles (facundo, aura_admin, aura_member), sistema de reservas de dos rondas con tokens únicos, portal de eventos para clientes, CMS de contenido y calendario de disponibilidad. Supabase Auth con Row Level Security. En desarrollo."
+        },
+        portfolio: {
+          title: "Portfolio Personal",
+          category: "Frontend Architecture",
+          description: "Portfolio bilingüe con React, Firebase e internacionalización completa EN/ES.",
+          longDescription: "Portfolio construido con React 18 + TypeScript + Vite. Internacionalización completa EN/ES con react-i18next, animaciones con Framer Motion, Firebase Firestore para reviews dinámicas, SEO técnico con og:tags y canonical URL, CI/CD automatizado en Vercel con Speed Insights."
+        },
+        "9669": {
+          title: "9669 Club",
+          category: "Ingeniería en Tiempo Real",
+          description: "Plataforma de streaming para DJs en tiempo real con WebRTC y efectos visuales en vivo.",
+          longDescription: "Plataforma full-stack para sesiones de DJ en vivo. Infraestructura WebRTC con LiveKit Cloud para streaming de audio y video. Efectos visuales con Canvas API (grano de película, glitch VHS) y CSS blend modes aplicados al video en vivo — sin impacto en el stream. Monorepo Turborepo con pnpm workspaces, rutas de API en Vercel Functions. En desarrollo."
+        },
+        atout: {
+          title: "Atout",
+          category: "App Multiplataforma",
+          description: "App de gestión de proyectos multiplataforma — web, desktop y mobile desde un solo codebase.",
+          longDescription: "Un único codebase React 19/TypeScript que corre en web (Vercel), desktop (Electron para Win/Mac/Linux) y mobile (Capacitor para Android/iOS). Backend Supabase con PostgreSQL, Auth, Storage y Row Level Security. Zustand para estado global, pipelines de GitHub Actions para releases de Electron y builds Android. Soporte PWA. En desarrollo."
+        },
+        "design-system": {
+          title: "Design System con Web Components",
+          category: "Frontend Engineering",
+          description: "Design system con Lit Element 3 — web components reutilizables que funcionan en cualquier framework.",
+          longDescription: "Colección de web components construidos con Lit 3 + TypeScript siguiendo el lenguaje visual del portfolio. Usa Shadow DOM para encapsulación de estilos, CSS custom properties para theming, y reactive properties con tipado TypeScript. Los componentes son agnósticos al framework — funcionan en React, Angular, Vue o HTML vanilla."
         }
       }
     },
@@ -341,8 +403,8 @@ const es = {
         },
         database: {
           title: "Bases de Datos & Data",
-          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore — Prisma / Sequelize / Hibernate / Entity Framework Core",
-          details: "Diseño de esquemas relacionales y no relacionales. Experiencia con ORMs: Prisma, Sequelize, Hibernate y Entity Framework Core — garantizando integridad de datos y eficiencia en consultas de sistemas complejos."
+          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore — Prisma / Drizzle ORM / Sequelize / Hibernate / Entity Framework Core",
+          details: "Diseño de esquemas relacionales y no relacionales. Experiencia con ORMs: Prisma, Drizzle ORM, Sequelize, Hibernate y Entity Framework Core — garantizando integridad de datos y eficiencia en consultas de sistemas complejos."
         },
         devops: {
           title: "DevOps & Herramientas",
@@ -365,6 +427,7 @@ const es = {
     exploring:  "Explorando",
     studying:   "Estudiando",
     practicing: "Practicando",
+    building:   "Construyendo",
   },
   items: {
     utn:        "Licenciatura en Ciencias de Datos",
@@ -372,6 +435,7 @@ const es = {
     nextjs:     "Next.js App Router & Server Components",
     systemDesign: "System Design & Arquitecturas Escalables",
     postgres:   "PostgreSQL — queries avanzadas y performance",
+    litElement: "Lit Element 3 — Design System con Web Components",
   },
 },
     footer: {

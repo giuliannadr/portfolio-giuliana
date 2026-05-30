@@ -26,7 +26,7 @@ const TIMELINE = [
   {
     num: "02",
     color: "#7C3AED",
-    from: { es: "2024",    en: "2024"   },
+    from: { es: "Ago 2024", en: "Aug 2024" },
     to:   { es: "Presente", en: "Present" },
     role: { es: "Mentora Técnica en Desarrollo Web", en: "Web Development Mentor" },
     ctx:  { es: "Particular · UNLaM",               en: "Private · UNLaM"        },

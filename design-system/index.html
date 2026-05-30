@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System — Giuliana Di Rocco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+  <script type="module" src="../src/design-system/main.ts"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gl-accent: #CC1500;
+      --gl-bg:     #0A0A0A;
+      --gl-text:   #ffffff;
+    }
+
+    body {
+      background: var(--gl-bg);
+      color: var(--gl-text);
+      font-family: "Poppins", sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Layout ─────────────────────────────────────── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    header a { color: inherit; text-decoration: none; }
+    .header-logo {
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+    .header-link {
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.30);
+      transition: color 0.2s;
+    }
+    .header-link:hover { color: var(--gl-accent); }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    /* ── Page title ─────────────────────────────────── */
+    .page-title {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 0.9;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, #CC1500 0%, #ffffff 45%, #7C3AED 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .page-subtitle {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      font-family: "Georgia", serif;
+      color: rgba(255,255,255,0.18);
+      margin-bottom: 56px;
+    }
+
+    /* ── Sections ───────────────────────────────────── */
+    .section { margin-bottom: 72px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .section-number {
+      font-size: 0.55rem;
+      font-weight: 900;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.20);
+    }
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.60);
+    }
+    .section-description {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 24px;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── Code block ─────────────────────────────────── */
+    .code-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 16px 20px;
+      font-family: "Courier New", monospace;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.50);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .code-label {
+      font-size: 0.55rem;
+      font-weight: 900;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.20);
+      margin-bottom: 6px;
+    }
+
+    /* ── Demo area ──────────────────────────────────── */
+    .demo {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    /* ── Footer ─────────────────────────────────────── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer span {
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+    footer a {
+      color: rgba(255,255,255,0.30);
+      text-decoration: none;
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--gl-accent); }
+    .footer-links { display: flex; gap: 24px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="https://dev.giulianadirocco.com" class="header-logo">Design System — Giuliana Di Rocco</a>
+    <a href="https://dev.giulianadirocco.com" class="header-link">← Back to portfolio</a>
+  </header>
+
+  <main>
+    <h1 class="page-title">Design System</h1>
+    <p class="page-subtitle">web components. any framework.</p>
+
+    <!-- ── gl-badge ── -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <span class="section-title">gl-badge</span>
+      </div>
+      <p class="section-description">
+        Status badge with animated pulse dot. Variants: <code>available</code>, <code>busy</code>, <code>default</code>.
+        Renders uppercase text with a pulsing indicator dot.
+      </p>
+      <div class="code-label">Usage</div>
+      <pre class="code-block">&lt;gl-badge label="Open to work" variant="available"&gt;&lt;/gl-badge&gt;
+&lt;gl-badge label="In a project" variant="busy"&gt;&lt;/gl-badge&gt;
+&lt;gl-badge label="Full Stack Dev" variant="default"&gt;&lt;/gl-badge&gt;</pre>
+      <div class="demo">
+        <gl-badge label="Open to work" variant="available"></gl-badge>
+        <gl-badge label="In a project" variant="busy"></gl-badge>
+        <gl-badge label="Full Stack Dev" variant="default"></gl-badge>
+      </div>
+    </section>
+
+    <!-- ── gl-skill-tag ── -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <span class="section-title">gl-skill-tag</span>
+      </div>
+      <p class="section-description">
+        Monospace skill tag with colored border per proficiency level.
+        Levels: <code>strong</code> (#CC1500), <code>learning</code> (#7C3AED), <code>familiar</code> (white/15).
+      </p>
+      <div class="code-label">Usage</div>
+      <pre class="code-block">&lt;gl-skill-tag label="React 18"      level="strong"&gt;&lt;/gl-skill-tag&gt;
+&lt;gl-skill-tag label="Lit Element 3" level="learning"&gt;&lt;/gl-skill-tag&gt;
+&lt;gl-skill-tag label="Rust"          level="familiar"&gt;&lt;/gl-skill-tag&gt;</pre>
+      <div class="demo">
+        <gl-skill-tag label="React 18"       level="strong"></gl-skill-tag>
+        <gl-skill-tag label="TypeScript"     level="strong"></gl-skill-tag>
+        <gl-skill-tag label="Node.js"        level="strong"></gl-skill-tag>
+        <gl-skill-tag label="Lit Element 3"  level="learning"></gl-skill-tag>
+        <gl-skill-tag label="Drizzle ORM"    level="learning"></gl-skill-tag>
+        <gl-skill-tag label="Rust"           level="familiar"></gl-skill-tag>
+        <gl-skill-tag label="Go"             level="familiar"></gl-skill-tag>
+      </div>
+    </section>
+
+    <!-- ── gl-project-card ── -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <span class="section-title">gl-project-card</span>
+      </div>
+      <p class="section-description">
+        Project card with dark background, hover border accent and top line animation.
+        Pass <code>stack</code> as a comma-separated string.
+      </p>
+      <div class="code-label">Usage</div>
+      <pre class="code-block">&lt;gl-project-card
+  title="Aura DJ System"
+  description="Business management platform for a DJ agency."
+  stack="Next.js 15, Turborepo, Supabase, Drizzle ORM"
+  live-url="https://facuujuarez.vercel.app"
+  github-url="https://github.com/giuliannadr/FacuuJuarez-Aura"
+&gt;&lt;/gl-project-card&gt;</pre>
+      <div class="demo" style="display:block;">
+        <gl-project-card
+          title="Aura DJ Management System"
+          description="Business management platform for a DJ agency — Turborepo monorepo with 3 Next.js 15 apps sharing a Supabase PostgreSQL database."
+          stack="Next.js 15 App Router, Turborepo, TypeScript, Supabase, Drizzle ORM, Supabase Auth, Tailwind CSS v4"
+          live-url="https://facuujuarez.vercel.app"
+          github-url="https://github.com/giuliannadr/FacuuJuarez-Aura"
+        ></gl-project-card>
+      </div>
+    </section>
+
+    <!-- ── gl-contact-button ── -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <span class="section-title">gl-contact-button</span>
+      </div>
+      <p class="section-description">
+        CTA button. Variants: <code>primary</code> (white bg → accent on hover),
+        <code>ghost</code> (transparent, white/20 border → accent border on hover).
+        Sharp edges, uppercase, spaced tracking.
+      </p>
+      <div class="code-label">Usage</div>
+      <pre class="code-block">&lt;gl-contact-button href="mailto:hi@example.com" label="Let's work together" variant="primary"&gt;&lt;/gl-contact-button&gt;
+&lt;gl-contact-button href="https://github.com/giuliannadr" label="View GitHub" variant="ghost"&gt;&lt;/gl-contact-button&gt;</pre>
+      <div class="demo">
+        <gl-contact-button
+          href="mailto:giulianadiroccodev@gmail.com"
+          label="Let's work together"
+          variant="primary"
+        ></gl-contact-button>
+        <gl-contact-button
+          href="https://github.com/giuliannadr"
+          label="View GitHub"
+          variant="ghost"
+        ></gl-contact-button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 Giuliana Di Rocco</span>
+    <div class="footer-links">
+      <a href="https://dev.giulianadirocco.com">Portfolio</a>
+      <a href="https://github.com/giuliannadr/portfolio-giuliana">GitHub</a>
+      <a href="https://linkedin.com/in/giulianadirocco">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>

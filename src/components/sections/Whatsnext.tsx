@@ -16,6 +16,7 @@ export const WhatsNext = () => {
   const blobY = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
 
   const learningItems = [
+    { label: t("whatsNext.items.litElement"),    tag: t("whatsNext.tags.building"),   icon: <Code2 className="w-4 h-4" /> },
     { label: t("whatsNext.items.nextjs"),        tag: t("whatsNext.tags.exploring"),  icon: <Code2 className="w-4 h-4" /> },
     { label: t("whatsNext.items.systemDesign"),  tag: t("whatsNext.tags.studying"),   icon: <Code2 className="w-4 h-4" /> },
     { label: t("whatsNext.items.postgres"),      tag: t("whatsNext.tags.practicing"), icon: <Code2 className="w-4 h-4" /> },
@@ -96,7 +97,7 @@ export const WhatsNext = () => {
         </motion.div>
 
         {/* Learning items grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {learningItems.map((item, i) => (
             <motion.div
               key={i}
