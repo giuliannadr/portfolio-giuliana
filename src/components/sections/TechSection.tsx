@@ -129,13 +129,20 @@ export const TechSection = () => {
               onClick={() => isMobile && setHoveredIndex(hoveredIndex === index ? null : index)}
               className="group relative py-6 md:py-8 border-b border-white/[0.05] cursor-pointer overflow-hidden"
             >
+              {/* Background gradient */}
               <motion.div
                 initial={false}
                 animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -10 }}
                 className="absolute inset-0 z-0 bg-gradient-to-r from-[#CC1500]/6 to-transparent pointer-events-none"
-                style={{ borderLeft: isHovered ? "2px solid #CC1500" : "2px solid transparent" }}
               />
-              <div className="relative z-10 flex flex-col">
+              {/* Red left accent line — separate so it never overlaps the number */}
+              <motion.div
+                initial={false}
+                animate={{ opacity: isHovered ? 1 : 0 }}
+                className="absolute left-0 inset-y-0 w-[2px] z-0 pointer-events-none"
+                style={{ background: "#CC1500" }}
+              />
+              <div className="relative z-10 flex flex-col pl-3">
                 <div className="flex items-center gap-4">
                   <span className={`text-[10px] font-mono transition-colors duration-500 ${isHovered ? "text-[#CC1500]" : "text-white/10"}`}>
                     {cat.id}

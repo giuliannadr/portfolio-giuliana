@@ -1,4 +1,4 @@
-import { ArrowUpRight, X, Eye, ChevronLeft, ChevronRight, Github } from "lucide-react";
+import { ArrowUpRight, X, Eye, ChevronLeft, ChevronRight, ChevronDown, Github } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -180,6 +180,7 @@ export const Projects = () => {
   const [hoveredId,   setHoveredId]   = useState<string | null>(null);
   const [selectedId,  setSelectedId]  = useState<string | null>(null);
   const [processId,   setProcessId]   = useState<string | null>(null);
+  const [showAll,     setShowAll]     = useState(false);
 
   const rawData = [
     { id: "aura",           image: "./giuliprofile.jpeg",   liveUrl: "https://facuujuarez.vercel.app",            githubUrl: "https://github.com/giuliannadr/FacuuJuarez-Aura",   type: "professional", stack: ["Next.js 15 App Router", "Turborepo", "TypeScript", "Supabase", "PostgreSQL", "Drizzle ORM", "Supabase Auth", "Tailwind CSS v4", "Zod", "React Hook Form", "Vercel"] },
@@ -212,9 +213,15 @@ export const Projects = () => {
     } as Project;
   });
 
-  const filtered   = projects.filter(p => p.type === activeTab);
-  const selected   = projects.find(p => p.id === selectedId);
+  const VISIBLE_COUNT = 6;
+
+  const filtered    = projects.filter(p => p.type === activeTab);
+  const visible     = showAll ? filtered : filtered.slice(0, VISIBLE_COUNT);
+  const hasMore     = !showAll && filtered.length > VISIBLE_COUNT;
+  const selected    = projects.find(p => p.id === selectedId);
   const processProj = projects.find(p => p.id === processId);
+
+  useEffect(() => { setShowAll(false); }, [activeTab]);
 
   useEffect(() => {
     const locked = selectedId !== null || processId !== null;
@@ -287,11 +294,10 @@ export const Projects = () => {
       </div>
 
       {/* Grid */}
-      <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="relative z-20 grid grid-cols-1 md:grid-cols-3 gap-3">
         <AnimatePresence mode="popLayout">
-          {filtered.map((p, i) => {
+          {visible.map((p, i) => {
             const accent = ACCENTS[projects.indexOf(p) % ACCENTS.length];
-            const isLast = i === filtered.length - 1 && filtered.length % 2 !== 0;
             const isHov  = hoveredId === p.id;
 
             return (
@@ -303,7 +309,7 @@ export const Projects = () => {
                 onHoverStart={() => setHoveredId(p.id)}
                 onHoverEnd={() => setHoveredId(null)}
                 onClick={() => setSelectedId(p.id)}
-                className={`group relative overflow-hidden cursor-pointer bg-[#0A0A0A] aspect-[16/9]${isLast ? " md:col-span-2 md:aspect-[32/9]" : ""}`}
+                className="group relative overflow-hidden cursor-pointer bg-[#0A0A0A] aspect-[16/9]"
               >
                 {/* media */}
                 <motion.div className="absolute inset-0" animate={{ scale: isHov ? 1.05 : 1 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
@@ -388,6 +394,26 @@ export const Projects = () => {
           })}
         </AnimatePresence>
       </div>
+
+      {/* Show more */}
+      {hasMore && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="relative z-20 flex justify-center mt-6"
+        >
+          <button
+            onClick={() => setShowAll(true)}
+            className="flex items-center gap-2.5 px-7 py-3.5 border border-[#0A0A0A]/[0.14] text-[#0A0A0A]/35 font-black text-[9px] uppercase tracking-[0.3em] hover:border-[#CC1500] hover:text-[#CC1500] transition-all duration-300"
+            style={{ fontFamily: "Poppins, sans-serif" }}
+          >
+            {lang === "en"
+              ? `Show more · ${filtered.length - VISIBLE_COUNT} more`
+              : `Ver más · ${filtered.length - VISIBLE_COUNT} más`}
+            <ChevronDown size={11} />
+          </button>
+        </motion.div>
+      )}
 
       {/* ── MODAL ── */}
       <AnimatePresence>
