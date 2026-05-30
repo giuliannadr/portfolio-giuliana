@@ -16,8 +16,8 @@ export default {
         card: "hsl(var(--card))",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['"Instrument Serif"', 'serif'],
+        sans: ['Poppins', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
         poppins: ['Poppins', 'sans-serif'],
       }
     },

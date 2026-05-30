@@ -1,136 +1,317 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { ArrowUpRight, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-// --- COMPONENTE TECH CARROUSEL ---
-const technologies = [
-  { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Angular", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
-  { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-  { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-  { name: "Tailwind", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-  { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-  { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { name: "Spring", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
-  { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "C#", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
-  { name: ".NET", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" },
-  { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-  { name: "SQL Server", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
-  { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-  { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", white: true },
-];
+// ── Typewriter ─────────────────────────────────────────────────────────────
+const WORDS_ES = ["FULL STACK DEV", "REACT DEV", "NODE.JS", "TYPESCRIPT", "JUNIOR DEV"];
+const WORDS_EN = ["FULL STACK DEV", "REACT DEV", "NODE.JS", "TYPESCRIPT", "OPEN TO WORK"];
 
-const TechCarrousel = () => {
-  const repeatedTechs = [...technologies, ...technologies, ...technologies];
+const TypewriterWord = ({ lang }: { lang: string }) => {
+  const words = lang === "en" ? WORDS_EN : WORDS_ES;
+  const [wordIdx, setWordIdx]       = useState(0);
+  const [charIdx, setCharIdx]       = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = words[wordIdx];
+    if (!isDeleting && charIdx === current.length) {
+      const t = setTimeout(() => setIsDeleting(true), 1500);
+      return () => clearTimeout(t);
+    }
+    if (isDeleting && charIdx === 0) {
+      setIsDeleting(false);
+      setWordIdx(i => (i + 1) % words.length);
+      return;
+    }
+    const t = setTimeout(
+      () => setCharIdx(i => isDeleting ? i - 1 : i + 1),
+      isDeleting ? 42 : 88,
+    );
+    return () => clearTimeout(t);
+  }, [charIdx, isDeleting, wordIdx, words]);
 
   return (
-    <div className="relative w-full mt-16 overflow-hidden">
-      {/* Estilos inyectados para evitar errores de TypeScript */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); }
-        }
-        .animate-marquee {
-          display: inline-flex;
-          animation: marquee 40s linear infinite;
-        }
-      `}} />
-
-      <div
-        className="relative overflow-hidden py-4"
-        style={{
-          maskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)"
-        }}
+    <div className="flex items-center justify-center gap-2 my-2" style={{ height: 26 }}>
+      <span className="text-[#CC1500]/50 font-mono text-sm select-none">{">"}</span>
+      <span
+        className="font-black uppercase text-white/60 text-[0.82rem]"
+        style={{ fontFamily: "Poppins, sans-serif", letterSpacing: "0.38em", minWidth: "1ch" }}
       >
-        <div className="flex animate-marquee whitespace-nowrap gap-12 hover:[animation-play-state:paused]">
-          {repeatedTechs.map((tech, idx) => (
-            <div key={idx} className="group flex flex-col items-center justify-center min-w-[70px] cursor-pointer">
-              <img
-                src={tech.logo}
-                alt={tech.name}
-                className={`w-8 h-8 md:w-9 md:h-9 transition-all duration-300 transform-gpu group-hover:scale-110 
-                  ${tech.white ? "dark:brightness-0 dark:invert" : ""}`}
-              />
-              <span className="mt-2 text-zinc-500 dark:text-zinc-400 font-medium text-[10px] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {tech.name}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
+        {words[wordIdx].slice(0, charIdx)}
+      </span>
+      <span className="cursor-blink text-[#CC1500] font-mono text-sm select-none">_</span>
     </div>
   );
 };
 
-// --- COMPONENTE HERO ---
-export const Hero = () => {
-  const { t, i18n } = useTranslation();
-  const whatsappNumber = "5491128341223"; 
-  const message = encodeURIComponent("¡Hola! Vi tu portfolio y me gustaría hablar sobre una idea que tengo.");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+// ── Vertical side scroller ─────────────────────────────────────────────────
+const SIDE_ITEMS = ["REACT","NODE.JS","TYPESCRIPT","FULL STACK","JAVA","C#","ANGULAR","SPRING","SQL","GIT","ARGENTINA"];
+const SideScroller = ({ reverse = false, side }: { reverse?: boolean; side: "left" | "right" }) => {
+  const triple = [...SIDE_ITEMS, ...SIDE_ITEMS, ...SIDE_ITEMS];
+  return (
+    <div
+      className="hidden lg:flex absolute top-0 bottom-0 flex-col items-center overflow-hidden pointer-events-none"
+      style={{ [side]: 0, width: 28, zIndex: 5 }}
+    >
+      <motion.div
+        className="flex flex-col items-center"
+        animate={{ y: reverse ? ["-33.33%", "0%"] : ["0%", "-33.33%"] }}
+        transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
+      >
+        {triple.map((item, i) => (
+          <span
+            key={i}
+            className="font-black uppercase text-white/[0.07] block"
+            style={{
+              fontFamily: "Poppins, sans-serif", fontSize: 7, letterSpacing: "0.4em",
+              writingMode: "vertical-lr",
+              transform: side === "left" ? "rotate(180deg)" : "none",
+              marginTop: 14, marginBottom: 14,
+            }}
+          >
+            {item}
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
-  const cvFileName = i18n.language === 'en' ? 'CV_Giuliana_DiRocco_EN.pdf' : 'CV_Giuliana_DiRocco_ES.pdf';
+// ── Highlight mark ─────────────────────────────────────────────────────────
+const Highlight = ({ children }: { children: React.ReactNode }) => (
+  <mark style={{ background: "rgba(204,21,0,0.28)", color: "#fff", padding: "2px 8px 4px", fontStyle: "italic", fontFamily: "'Playfair Display', serif", borderRadius: 0 }}>
+    {children}
+  </mark>
+);
+
+// ── Live time ──────────────────────────────────────────────────────────────
+const BuenosAiresTime = () => {
+  const [t, setT] = useState("");
+  useEffect(() => {
+    const update = () => setT(new Date().toLocaleTimeString("es-AR", { timeZone: "America/Argentina/Buenos_Aires", hour: "2-digit", minute: "2-digit", second: "2-digit" }));
+    update();
+    const id = setInterval(update, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return <span className="font-mono text-white/30 text-[9px] tracking-widest tabular-nums">{t}</span>;
+};
+
+// ── Blobs & dots ──────────────────────────────────────────────────────────
+const BLOBS = [
+  { color: "#CC1500", cls: "blob-1", w: 440, x: "70%", y: "40%", op: 0.10 },
+  { color: "#7C3AED", cls: "blob-2", w: 380, x: "10%", y: "50%", op: 0.09 },
+  { color: "#06B6D4", cls: "blob-1", w: 300, x: "52%", y: "5%",  op: 0.07 },
+  { color: "#D97706", cls: "blob-2", w: 260, x: "32%", y: "82%", op: 0.07 },
+  { color: "#EC4899", cls: "blob-1", w: 220, x: "18%", y: "15%", op: 0.06 },
+];
+
+const DOTS = [
+  { top: "20%", left: "65%", size: 4, delay: 0,   dur: 4.2, color: "#CC1500" },
+  { top: "63%", left: "78%", size: 3, delay: 1.2, dur: 5.1, color: "#7C3AED" },
+  { top: "38%", left: "87%", size: 5, delay: 0.6, dur: 3.8, color: "#06B6D4" },
+  { top: "55%", left: "58%", size: 3, delay: 1.8, dur: 4.6, color: "#D97706" },
+  { top: "80%", left: "70%", size: 4, delay: 0.3, dur: 5.5, color: "#EC4899" },
+];
+
+// ── Primary CTA button ─────────────────────────────────────────────────────
+const BLOB_GRAD = [
+  "radial-gradient(ellipse 90% 160% at 8% 50%, rgba(204,21,0,0.50), transparent 55%)",
+  "radial-gradient(ellipse 80% 140% at 92% 50%, rgba(124,58,237,0.42), transparent 55%)",
+  "radial-gradient(ellipse 60% 110% at 50% -15%, rgba(6,182,212,0.30), transparent 50%)",
+  "#ffffff",
+].join(", ");
+
+const HeroProjBtn = ({ lang }: { lang: string }) => {
+  const [hov, setHov] = useState(false);
+  return (
+    <motion.a
+      href="#projects"
+      onHoverStart={() => setHov(true)}
+      onHoverEnd={() => setHov(false)}
+      whileTap={{ scale: 0.97 }}
+      className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-white text-[#0A0A0A] font-black text-[9px] uppercase tracking-[0.3em] overflow-hidden"
+      style={{ fontFamily: "Poppins, sans-serif" }}
+    >
+      <span className="absolute inset-0 pointer-events-none transition-opacity duration-500" style={{ opacity: hov ? 1 : 0, background: BLOB_GRAD }} />
+      <span className="relative z-10 flex items-center gap-2.5">
+        {lang === "en" ? "View my projects" : "Ver mis proyectos"}
+        <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+      </span>
+    </motion.a>
+  );
+};
+
+// ── Hero ───────────────────────────────────────────────────────────────────
+export const Hero = () => {
+  const { i18n } = useTranslation();
+  const lang = i18n.language === "en" ? "en" : "es";
+
+  const [lx, setLx] = useState(50);
+  const [ly, setLy] = useState(50);
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+
+  useEffect(() => {
+    const handle = (e: MouseEvent) => {
+      const nx = e.clientX / window.innerWidth;
+      const ny = e.clientY / window.innerHeight;
+      setLx(nx * 100); setLy(ny * 100);
+      rawX.set((nx - 0.5) * 2); rawY.set((ny - 0.5) * 2);
+    };
+    window.addEventListener("mousemove", handle);
+    return () => window.removeEventListener("mousemove", handle);
+  }, [rawX, rawY]);
+
+  const blobX = useSpring(useTransform(rawX, [-1, 1], [-25, 25]), { stiffness: 25, damping: 25 });
+  const blobY = useSpring(useTransform(rawY, [-1, 1], [-25, 25]), { stiffness: 25, damping: 25 });
+  const ringX = useSpring(useTransform(rawX, [-1, 1], [-15, 15]), { stiffness: 40, damping: 25 });
+  const ringY = useSpring(useTransform(rawY, [-1, 1], [-15, 15]), { stiffness: 40, damping: 25 });
+  const dotsX = useSpring(useTransform(rawX, [-1, 1], [-8,  8]),  { stiffness: 60, damping: 25 });
+  const dotsY = useSpring(useTransform(rawY, [-1, 1], [-8,  8]),  { stiffness: 60, damping: 25 });
+
+  const line1Gradient = `
+    radial-gradient(ellipse 55% 90% at ${10 + lx * 0.10}% ${50 + ly * 0.06}%, rgba(124,58,237,0.95) 0%, transparent 52%),
+    radial-gradient(ellipse 60% 80% at ${78 + lx * 0.07}% ${38 + ly * 0.10}%, rgba(204,21,0,0.95) 0%, transparent 52%),
+    radial-gradient(ellipse 50% 70% at ${50 + lx * 0.04}% ${2  + ly * 0.15}%, rgba(6,182,212,0.85) 0%, transparent 45%),
+    radial-gradient(ellipse 40% 55% at ${38 - lx * 0.06}% ${90 - ly * 0.08}%, rgba(217,119,6,0.80) 0%, transparent 42%),
+    radial-gradient(ellipse 35% 50% at ${15 + lx * 0.05}% ${12 + ly * 0.09}%, rgba(236,72,153,0.75) 0%, transparent 38%),
+    linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1))
+  `;
+
+  const line2Gradient = `
+    radial-gradient(ellipse 55% 90% at ${10 + lx * 0.10}% ${50 + ly * 0.06}%, rgba(180,80,255,0.75) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at ${78 + lx * 0.07}% ${38 + ly * 0.10}%, rgba(255,60,20,0.85) 0%, transparent 52%),
+    radial-gradient(ellipse 50% 70% at ${50 + lx * 0.04}% ${2  + ly * 0.15}%, rgba(6,182,212,0.60) 0%, transparent 45%),
+    radial-gradient(ellipse 40% 55% at ${38 - lx * 0.06}% ${90 - ly * 0.08}%, rgba(251,146,60,0.65) 0%, transparent 42%),
+    linear-gradient(rgba(204,21,0,1), rgba(204,21,0,1))
+  `;
+
+  const whatsappUrl = `https://wa.me/5491128341223?text=${encodeURIComponent("¡Hola! Vi tu portfolio y me gustaría hablar sobre una oportunidad.")}`;
 
   return (
-    <section id="home" className="w-full pt-4 lg:pt-10 pr-6 sm:pr-8">
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="text-center lg:text-left max-w-full lg:max-w-[750px]"
-      >
-        {/* Badge */}
-        <div className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FF6F00]/20 bg-[#FF6F00]/5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF6F00] mx-auto lg:mx-0">
-          <Sparkles size={12} className="animate-pulse" />
-          {t('hero.badge')}
-        </div>
+    <section id="home" className="relative bg-[#0A0A0A] min-h-screen flex flex-col pt-14 overflow-hidden">
 
-        {/* Title Container */}
-        <h1 className="font-black tracking-tighter text-zinc-900 dark:text-white mb-8 leading-[0.9] flex flex-col">
-          <span className="sr-only">Giuliana Di Rocco - Junior Full Stack Developer | React, Node.js, TypeScript</span>
-          <span className="block whitespace-nowrap text-[clamp(1.8rem,5vw,4rem)] uppercase">
-            {t('hero.title1')}
-          </span>
-          <span 
-            className="text-[#FF6F00] italic font-light font-serif whitespace-nowrap transition-all duration-[1500ms] ease-in-out hover:brightness-125 cursor-pointer block leading-[1.1] text-[clamp(1.5rem,4.5vw,5rem)]"
-          >
-            {t('hero.title2')}
-          </span>
-        </h1>
+      <SideScroller side="left" />
+      <SideScroller side="right" reverse />
 
-        {/* Description */}
-        <p className="max-w-xl text-lg md:text-xl text-zinc-500 dark:text-zinc-400 mb-12 leading-relaxed mx-auto lg:mx-0 font-medium italic">
-          {t('hero.description')}
-        </p>
-
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a
-            href="#projects"
-            className="group px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-2xl hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-3 shadow-xl shadow-black/5"
-          >
-            {t('hero.viewWork')} 
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
-
-          <a
-            href={`/${cvFileName}`} 
-            download={cvFileName}
-            className="px-8 py-4 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white font-bold rounded-2xl hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-3"
-          >
-            {t('hero.downloadCV')}
-          </a>
-        </div>
-
-        <TechCarrousel />
+      {/* Blobs */}
+      <motion.div className="absolute inset-0 pointer-events-none" style={{ x: blobX, y: blobY, zIndex: 1 }}>
+        {BLOBS.map((b, i) => (
+          <div key={i} className={`${b.cls} absolute blur-3xl`}
+            style={{ background: b.color, width: b.w, height: b.w, left: b.x, top: b.y, opacity: b.op, transform: "translate(-50%,-50%)" }} />
+        ))}
       </motion.div>
+
+      {/* Rings */}
+      <motion.div className="hidden lg:block absolute pointer-events-none"
+        style={{ x: ringX, y: ringY, right: "-8%", top: "50%", translateY: "-50%", zIndex: 2 }}>
+        <motion.div style={{ width: "min(55vw,620px)", height: "min(55vw,620px)", border: "1px solid rgba(204,21,0,0.09)", borderRadius: "50%" }}
+          animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 90, ease: "linear" }} />
+        <motion.div style={{ position: "absolute", inset: "14%", border: "1px solid rgba(124,58,237,0.06)", borderRadius: "50%" }}
+          animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 60, ease: "linear" }} />
+        <motion.div style={{ position: "absolute", inset: "30%", border: "1px solid rgba(6,182,212,0.07)", borderRadius: "50%" }}
+          animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 40, ease: "linear" }} />
+        <div style={{ position: "absolute", inset: "49.6%", background: "#CC1500", borderRadius: "50%" }} />
+      </motion.div>
+
+      {/* Floating dots */}
+      <motion.div className="absolute inset-0 pointer-events-none" style={{ x: dotsX, y: dotsY, zIndex: 3 }}>
+        {DOTS.map((dot, i) => (
+          <motion.div key={i} className="absolute rounded-full"
+            style={{ top: dot.top, left: dot.left, width: dot.size, height: dot.size, background: dot.color }}
+            animate={{ y: [0, -14, 0], opacity: [0.4, 0.75, 0.4] }}
+            transition={{ repeat: Infinity, duration: dot.dur, delay: dot.delay, ease: "easeInOut" }} />
+        ))}
+      </motion.div>
+
+      {/* Top meta */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+        className="relative z-10 px-5 sm:px-12 lg:px-16 pt-5 pb-3 flex items-center justify-between">
+        <div className="flex items-center gap-2.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-[8px] font-black uppercase tracking-[0.5em] text-white/35" style={{ fontFamily: "Poppins, sans-serif" }}>
+            {lang === "en" ? "Open to work" : "Disponible"}
+          </span>
+        </div>
+        <div className="flex items-center gap-3">
+          <BuenosAiresTime />
+          <span className="text-white/15 text-[9px]">·</span>
+          <span className="text-[8px] font-black uppercase tracking-[0.5em] text-white/25" style={{ fontFamily: "Poppins, sans-serif" }}>ARG</span>
+        </div>
+      </motion.div>
+
+      {/* Main content */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 sm:px-10 py-6">
+
+        <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38, duration: 0.5 }}
+          className="text-white/30 mb-2 mt-10 sm:mt-0"
+          style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: "clamp(0.95rem,1.6vw,1.3rem)" }}>
+          {lang === "en" ? "Hello, I'm —" : "Hola, soy —"}
+        </motion.p>
+
+        {/* Name */}
+        <div className="mb-1 mt-6 sm:mt-0">
+          <div className="overflow-hidden">
+            <motion.h1 initial={{ y: "105%" }} animate={{ y: 0 }}
+              transition={{ duration: 0.9, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-black uppercase text-[clamp(2.8rem,17vw,4.5rem)] sm:text-[clamp(3.2rem,12vw,16rem)]"
+              style={{ fontFamily: "Poppins, sans-serif", letterSpacing: "-0.04em", lineHeight: 0.84, backgroundImage: line1Gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              GIULIANA
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h1 initial={{ y: "105%" }} animate={{ y: 0 }}
+              transition={{ duration: 0.9, delay: 0.54, ease: [0.16, 1, 0.3, 1] }}
+              className="block text-[clamp(2rem,13vw,3.4rem)] sm:text-[clamp(2.4rem,10vw,13rem)]"
+              style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontWeight: 400, letterSpacing: "-0.015em", lineHeight: 0.92, backgroundImage: line2Gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Di Rocco
+            </motion.h1>
+          </div>
+        </div>
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }} className="mt-4 sm:mt-0">
+          <TypewriterWord lang={lang} />
+        </motion.div>
+
+        <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+          transition={{ delay: 0.72, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="h-px bg-white/12 my-4 origin-center w-full" style={{ maxWidth: "min(500px,80vw)" }} />
+
+        <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.82, duration: 0.55 }}
+          className="text-white/50 leading-relaxed mb-10 text-[0.72rem] sm:text-[clamp(1rem,1.9vw,1.25rem)]"
+          style={{ maxWidth: "min(580px,88vw)" }}>
+          {lang === "en" ? (
+            <>Junior Full Stack Developer specializing in{" "}<Highlight>React, Node.js and TypeScript</Highlight>. I build scalable web applications end to end — from architecture to production deployment.</>
+          ) : (
+            <>Desarrolladora Full Stack especializada en{" "}<Highlight>React, Node.js y TypeScript</Highlight>. Construyo aplicaciones web escalables de punta a punta — desde la arquitectura hasta el deploy en producción.</>
+          )}
+        </motion.p>
+
+        {/* CTA buttons */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.92, duration: 0.5 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12 w-full sm:w-auto px-2 sm:px-0">
+          <HeroProjBtn lang={lang} />
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 border border-white/18 text-white/50 font-black text-[9px] uppercase tracking-[0.3em] hover:border-[#CC1500] hover:text-white transition-all duration-300"
+            style={{ fontFamily: "Poppins, sans-serif" }}>
+            {lang === "en" ? "Let's talk" : "Hablemos"}
+          </a>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.05 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5">
+          <span className="text-[8px] font-black uppercase tracking-[0.45em] text-white/35" style={{ fontFamily: "Poppins, sans-serif" }}>
+            {lang === "en" ? "Full Stack Development" : "Desarrollo Full Stack"}
+          </span>
+          <div className="hidden sm:block h-px w-6 bg-white/15" />
+          <span className="text-[8px] font-black uppercase tracking-[0.45em] text-white/35" style={{ fontFamily: "Poppins, sans-serif" }}>
+            React · Node.js · TypeScript
+          </span>
+        </motion.div>
+      </div>
     </section>
   );
 };

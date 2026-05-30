@@ -7,7 +7,7 @@ const en = {
       badge: "Open to new opportunities",
       title1: "FULL STACK",
       title2: "DEVELOPER",
-      description: "Junior Full Stack Developer specializing in React, Node.js and TypeScript. I build scalable web applications end to end — from architecture to production deployment.",
+      description: "Full Stack Developer specializing in TypeScript, Angular and React. I transform business requirements into technical solutions within agile teams — from component architecture to production deployment.",
       viewWork: "View my projects",
       downloadCV: "Download CV",
       contact: "Let's talk"
@@ -47,7 +47,7 @@ const en = {
         modern: {
           label: "GPA",
           value: "8.72",
-          tooltip: "18 of 20 subjects completed at Universidad Nacional de La Matanza, graduating 2025."
+          tooltip: "18 of 20 subjects completed at Universidad Nacional de La Matanza, graduating July 2026."
         }
       },
       testimonials: {
@@ -111,6 +111,24 @@ const en = {
           category: "Software Architecture",
           description: "Natural Language Processing (NLP) platform for automated assessment.",
           longDescription: "Implementation of a semantic engine under .NET 9. I worked on the persistence layer with Entity Framework and data processing logic for dynamic analytical report generation."
+        },
+        emme: {
+          title: "Emme Digital",
+          category: "Frontend Development",
+          description: "High-performance website for a creative digital agency.",
+          longDescription: "Full design and development of the corporate site for Emme Digital agency. I implemented fluid animations with Framer Motion, performance optimization and a visual identity aligned with their brand positioning."
+        },
+        invBoda: {
+          title: "Wedding Invitation",
+          category: "Creative Development",
+          description: "Animated digital invitation for a wedding with RSVP system.",
+          longDescription: "Custom web invitation with cinematic animations and a guest confirmation system. Optimized for mobile and cross-browser compatibility to ensure a memorable experience for every guest."
+        },
+        invXv: {
+          title: "XV Invitation",
+          category: "Creative Development",
+          description: "Interactive digital invitation for a XV years celebration.",
+          longDescription: "Custom design for a XV years party invitation. Smooth animations, custom typography and a responsive layout that captures the celebration's aesthetic perfectly."
         }
       }
     },
@@ -121,13 +139,13 @@ const en = {
       categories: {
         frontend: {
           title: "Frontend & Web",
-          skills: "React / Angular / TypeScript / JavaScript (ES6+) / HTML5 / CSS3 / WebSockets",
-          details: "Developing modern, reactive interfaces using next-gen frameworks, featuring dynamic rendering support (Razor, Thymeleaf) and robust styling with Bootstrap."
+          skills: "React / Angular / Lit Element / Next.js 15 / TypeScript / JavaScript ES6+ / HTML5 / CSS3",
+          details: "Component-based interface development with Angular, React and Lit Element (Web Components). Performance-focused with Next.js 15 SSR and advanced animations with Framer Motion. Hybrid 4+1 availability."
         },
         backend: {
           title: "Backend & Architecture",
-          skills: "Node.js / .NET 9 / Java Spring Boot / PHP / Python / Microservices",
-          details: "Building scalable systems under SOLID principles and Clean Code. Experience in distributed architectures and data persistence using ORMs like Prisma, Entity Framework, and Hibernate."
+          skills: "Node.js / Java Spring Boot / Spring Framework 4+ / .NET 9 / Spring Data JPA / PHP",
+          details: "Scalable systems under SOLID, Clean Architecture and TDD. REST API development with JWT and RBAC security. Quality assurance via JUnit and xUnit unit testing. Scrum collaboration with analysts, QAs and tech leads."
         },
         database: {
           title: "Databases & Data",
@@ -151,14 +169,14 @@ const en = {
   title: "Always",
   titleItalic: "moving forward.",
   tags: {
-    starting:   "Incoming 2027",
+    starting:   "Starting Aug 2026",
     exploring:  "Exploring",
     studying:   "Studying",
     practicing: "Practicing",
   },
   items: {
-    utn:        "Information Systems Engineering — UTN",
-    utnSub:     "Universidad Tecnológica Nacional · Entrance course: 2026 · Degree start: 2027",
+    utn:        "Bachelor's in Data Science",
+    utnSub:     "Starting August 2026",
     nextjs:     "Next.js App Router & Server Components",
     systemDesign: "System Design & Scalable Architectures",
     postgres:   "PostgreSQL — advanced queries & performance",
@@ -181,7 +199,7 @@ const es = {
       badge: "Disponible para nuevas oportunidades",
       title1: "DESARROLLADORA",
       title2: "FULL STACK",
-      description: "Desarrolladora Full Stack especializada en React, Node.js y TypeScript. Construyo aplicaciones web escalables de punta a punta — desde la arquitectura hasta el deploy en producción.",
+      description: "Desarrolladora Full Stack especializada en TypeScript, Angular y React. Transformo requerimientos de negocio en soluciones técnicas dentro de equipos ágiles — desde la arquitectura de componentes hasta el deploy en producción.",
       viewWork: "Ver mis proyectos",
       downloadCV: "Descargar CV",
       contact: "Hablemos"
@@ -221,7 +239,7 @@ const es = {
         modern: {
           label: "Promedio académico",
           value: "8.72",
-          tooltip: "18 de 20 materias promocionadas en la Universidad Nacional de La Matanza, egreso 2025."
+          tooltip: "18 de 20 materias promocionadas en la Universidad Nacional de La Matanza, egreso julio 2026."
         }
       },
       testimonials: {
@@ -285,6 +303,24 @@ const es = {
           category: "Software Architecture",
           description: "Plataforma de procesamiento de lenguaje natural (NLP) para evaluación automatizada.",
           longDescription: "Implementación de un motor semántico bajo .NET 9. Trabajé en la capa de persistencia con Entity Framework y en la lógica de procesamiento de datos para la generación dinámica de reportes analíticos."
+        },
+        emme: {
+          title: "Emme Digital",
+          category: "Frontend Development",
+          description: "Sitio web de alta performance para una agencia creativa digital.",
+          longDescription: "Diseño y desarrollo completo del sitio corporativo de la agencia Emme Digital. Implementé animaciones fluidas con Framer Motion, optimización de performance e identidad visual alineada con su posicionamiento de marca."
+        },
+        invBoda: {
+          title: "Invitación de Boda",
+          category: "Desarrollo Creativo",
+          description: "Invitación digital animada para una boda con sistema de confirmación.",
+          longDescription: "Invitación web personalizada con animaciones cinematográficas y sistema de confirmación de asistencia. Optimizada para mobile y compatibilidad cross-browser para garantizar una experiencia memorable."
+        },
+        invXv: {
+          title: "Invitación de XV",
+          category: "Desarrollo Creativo",
+          description: "Invitación digital interactiva para una celebración de 15 años.",
+          longDescription: "Diseño a medida para invitación de XV años. Animaciones suaves, tipografía personalizada y layout responsive que captura perfectamente la estética de la celebración."
         }
       }
     },
@@ -295,13 +331,13 @@ const es = {
       categories: {
         frontend: {
           title: "Frontend & Web",
-          skills: "React / Angular / TypeScript / JavaScript (ES6+) / HTML5 / CSS3 / WebSockets",
-          details: "Desarrollo de interfaces modernas y reactivas utilizando frameworks de última generación, con soporte para renderizado dinámico (Razor, Thymeleaf) y estilos robustos con Bootstrap."
+          skills: "React / Angular / Lit Element / Next.js 15 / TypeScript / JavaScript ES6+ / HTML5 / CSS3",
+          details: "Desarrollo de interfaces basado en componentes con Angular, React y Lit Element (Web Components). Rendimiento optimizado con Next.js 15 SSR y animaciones avanzadas con Framer Motion. Disponibilidad híbrida 4+1."
         },
         backend: {
           title: "Backend & Arquitectura",
-          skills: "Node.js / .NET 9 / Java Spring Boot / PHP / Python / Microservicios",
-          details: "Construcción de sistemas escalables bajo principios SOLID y Clean Code. Experiencia en arquitecturas distribuidas y persistencia de datos con ORMs como Prisma, Entity Framework y Hibernate."
+          skills: "Node.js / Java Spring Boot / Spring Framework 4+ / .NET 9 / Spring Data JPA / PHP",
+          details: "Sistemas escalables bajo SOLID, Clean Architecture y TDD. Desarrollo de APIs REST con seguridad JWT y RBAC. Garantía de calidad mediante pruebas unitarias con JUnit y xUnit. Colaboración Scrum con analistas, QAs y tech leads."
         },
         database: {
           title: "Bases de Datos & Data",
@@ -325,14 +361,14 @@ const es = {
   title: "Siempre",
   titleItalic: "en movimiento.",
   tags: {
-    starting:   "Ingreso 2027",
+    starting:   "Agosto 2026",
     exploring:  "Explorando",
     studying:   "Estudiando",
     practicing: "Practicando",
   },
   items: {
-    utn:        "Ingeniería en Sistemas de la Información — UTN",
-    utnSub:     "Universidad Tecnológica Nacional · Curso de ingreso: 2026 · Inicio carrera: 2027",
+    utn:        "Licenciatura en Ciencias de Datos",
+    utnSub:     "Inicio: agosto 2026",
     nextjs:     "Next.js App Router & Server Components",
     systemDesign: "System Design & Arquitecturas Escalables",
     postgres:   "PostgreSQL — queries avanzadas y performance",
