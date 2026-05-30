@@ -183,11 +183,11 @@ export const Projects = () => {
   const [showAll,     setShowAll]     = useState(false);
 
   const rawData = [
-    { id: "aura",           image: "./giuliprofile.jpeg",   liveUrl: "https://facuujuarez.vercel.app",            githubUrl: "https://github.com/giuliannadr/FacuuJuarez-Aura",   type: "professional", stack: ["Next.js 15 App Router", "Turborepo", "TypeScript", "Supabase", "PostgreSQL", "Drizzle ORM", "Supabase Auth", "Tailwind CSS v4", "Zod", "React Hook Form", "Vercel"] },
-    { id: "portfolio",      image: "./giuliprofile.jpeg",   liveUrl: "https://dev.giulianadirocco.com/design-system", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["React 18", "TypeScript", "Vite", "Framer Motion", "react-i18next", "Firebase Firestore", "Vercel", "SEO técnico"] },
-    { id: "9669",           image: "./giuliprofile.jpeg",   liveUrl: "https://av-admin-dashboard.vercel.app",     githubUrl: "https://github.com/giuliannadr/9669club",           type: "professional", stack: ["React 18", "TypeScript", "Vite", "Next.js 15", "Turborepo", "LiveKit", "WebRTC", "Canvas API", "Vercel Functions", "pnpm Workspaces"] },
-    { id: "atout",          image: "./giuliprofile.jpeg",   liveUrl: "https://atout-delta.vercel.app",            githubUrl: "https://github.com/giuliannadr/Atout",              type: "professional", stack: ["React 19", "TypeScript", "Vite", "Zustand", "Supabase", "Electron", "Capacitor", "GitHub Actions", "Vercel"] },
-    { id: "design-system",  image: "./giuliprofile.jpeg",   liveUrl: "https://dev.giulianadirocco.com/design-system", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["Lit Element 3", "TypeScript", "Web Components", "Shadow DOM", "CSS Custom Properties", "Vite"] },
+    { id: "aura",           image: "./aura-preview.png",      liveUrl: "https://facuujuarez.vercel.app",            githubUrl: "https://github.com/giuliannadr/FacuuJuarez-Aura",   type: "professional", stack: ["Next.js 15 App Router", "Turborepo", "TypeScript", "Supabase", "PostgreSQL", "Drizzle ORM", "Supabase Auth", "Tailwind CSS v4", "Zod", "React Hook Form", "Vercel"] },
+    { id: "portfolio",      image: "./portfolio-preview.png", liveUrl: "https://dev.giulianadirocco.com/design-system", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["React 18", "TypeScript", "Vite", "Framer Motion", "react-i18next", "Firebase Firestore", "Vercel", "SEO técnico"] },
+    { id: "9669",           image: "./9669-preview.png",      liveUrl: "https://av-admin-dashboard.vercel.app",     githubUrl: "https://github.com/giuliannadr/9669club",           type: "professional", stack: ["React 18", "TypeScript", "Vite", "Next.js 15", "Turborepo", "LiveKit", "WebRTC", "Canvas API", "Vercel Functions", "pnpm Workspaces"] },
+    { id: "atout",          image: "./atout-preview.png",     liveUrl: "https://atout-delta.vercel.app",            githubUrl: "https://github.com/giuliannadr/Atout",              type: "professional", stack: ["React 19", "TypeScript", "Vite", "Zustand", "Supabase", "Electron", "Capacitor", "GitHub Actions", "Vercel"] },
+    { id: "design-system",  image: "./portfolio-preview.png", liveUrl: "https://dev.giulianadirocco.com/design-system", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["Lit Element 3", "TypeScript", "Web Components", "Shadow DOM", "CSS Custom Properties", "Vite"] },
     { id: "unik",           image: "./unik-mockup.webp",    liveUrl: "https://somosunik.vercel.app/",              githubUrl: "https://github.com/giuliannadr/Unik.git",           type: "professional", stack: ["Next.js 15", "TypeScript", "Framer Motion"], process: ["./antes1.png","./antes2.png","./antes3.png","./despues1.png","./despues2.png","./despues3.png"] },
     { id: "la-quinta-miri", image: "./miri-mockup.webp",    liveUrl: "https://laquintamiri.vercel.app/",           githubUrl: "https://github.com/giuliannadr/LaQuintaMiri.git",  type: "professional", stack: ["React.js", "TypeScript", "EmailJS"] },
     { id: "emme",           image: "./emme-mockup.webp",    liveUrl: "https://www.emmedigital.com.ar/",            type: "professional", stack: ["React.js", "TypeScript", "Framer Motion"] },
@@ -384,8 +384,8 @@ export const Projects = () => {
                     )}
                   </AnimatePresence>
 
-                  <h3 className="font-black tracking-tighter italic leading-none text-white"
-                    style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.5rem, 2.8vw, 2.8rem)" }}>
+                  <h3 className="font-black uppercase leading-tight text-white"
+                    style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(0.85rem, 1.4vw, 1.05rem)", letterSpacing: "-0.02em" }}>
                     {p.title}
                   </h3>
                 </div>
