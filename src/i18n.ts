@@ -145,8 +145,8 @@ const en = {
         "9669": {
           title: "9669 Club",
           category: "Real-time Engineering",
-          description: "Real-time DJ streaming platform with WebRTC and live visual effects.",
-          longDescription: "Full-stack real-time platform for live DJ sessions. WebRTC infrastructure with LiveKit Cloud for audio/video streaming. Visual effects with Canvas API (film grain, VHS glitch) and CSS blend modes applied to live video — zero performance impact on stream. Turborepo monorepo with pnpm workspaces, API routes on Vercel Functions. In development."
+          description: "Live event streaming: guests broadcast from their phones via WebRTC, admin selects up to 4 simultaneous feeds, projector shows them with retro film effects — all in real time.",
+          longDescription: "Real-time live streaming platform for events — parties, shows, concerts. Three roles: Guest scans a QR code on their phone and streams from their camera via WebRTC — no app install needed. Admin has a control panel with all connected cameras visible in real time, selects up to 4 simultaneous feeds for the projector, controls visual effects (Retro B&W filter + event name overlay) and generates the guest QR. Stage/Projector displays fullscreen the feeds chosen by the admin — with the retro filter: B&W video, film grain, VHS glitches and an old-camera HUD with timecode and event name. Effects are applied only in the projector view; guests always stream in original quality. QR never shown on the projector. Built with LiveKit Cloud for WebRTC, Turborepo monorepo with pnpm workspaces, Vercel Functions. In development."
         },
         atout: {
           title: "Atout",
@@ -369,8 +369,8 @@ const es = {
         "9669": {
           title: "9669 Club",
           category: "Ingeniería en Tiempo Real",
-          description: "Plataforma de streaming para DJs en tiempo real con WebRTC y efectos visuales en vivo.",
-          longDescription: "Plataforma full-stack para sesiones de DJ en vivo. Infraestructura WebRTC con LiveKit Cloud para streaming de audio y video. Efectos visuales con Canvas API (grano de película, glitch VHS) y CSS blend modes aplicados al video en vivo — sin impacto en el stream. Monorepo Turborepo con pnpm workspaces, rutas de API en Vercel Functions. En desarrollo."
+          description: "Streaming en vivo para eventos: los invitados transmiten desde el celular via WebRTC, el admin selecciona hasta 4 feeds simultáneos, el proyector los muestra con efectos retro — todo en tiempo real.",
+          longDescription: "Plataforma de streaming en vivo en tiempo real para eventos — fiestas, shows, conciertos. Tres roles: el Invitado escanea un QR desde su celular y transmite su cámara via WebRTC — sin instalar nada. El Admin tiene un panel de control con todas las cámaras conectadas en tiempo real, selecciona hasta 4 feeds simultáneos para el proyector, controla efectos visuales (filtro Retro B&N + nombre del evento) y genera el QR para los invitados. El Proyector/Stage muestra en fullscreen los feeds elegidos por el admin — con filtro retro: video en blanco y negro, grano de película, glitches de VHS y HUD de cámara antigua con timecode y nombre del evento. Los efectos se aplican solo en la vista del proyector; los invitados siempre graban en calidad original. El QR nunca aparece en el proyector. Construido con LiveKit Cloud para WebRTC, monorepo Turborepo con pnpm workspaces, Vercel Functions. En desarrollo."
         },
         atout: {
           title: "Atout",
