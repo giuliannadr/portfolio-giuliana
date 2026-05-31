@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { ArrowUpRight, Copy, Check, Instagram, Linkedin, Github } from "lucide-react";
+import { ArrowUpRight, Copy, Check, Linkedin, Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const BLOBS = [
@@ -56,22 +56,21 @@ export const Footer = () => {
 
   const whatsappUrl = `https://wa.me/5491150403408?text=${encodeURIComponent(
     lang === "en"
-      ? "Hi! I saw your portfolio and I'd love to talk."
-      : "¡Hola! Vi tu portfolio y me gustaría hablar."
+      ? "Hi Giuliana! I saw your portfolio and I'd like to talk about an opportunity."
+      : "¡Hola Giuliana! Vi tu portfolio y me gustaría hablar sobre una oportunidad."
   )}`;
 
   const headline  = lang === "en" ? "Let's connect."  : "Conectemos.";
   const sub       = lang === "en"
-    ? "I'm open to new opportunities. Drop me a message and I'll reply within 24 hours."
-    : "Estoy disponible para nuevas oportunidades. Escribime y te respondo en menos de 24 horas.";
-  const btn       = lang === "en" ? "Write on WhatsApp" : "Escribime por WhatsApp";
-  const note      = lang === "en" ? "No commitment. Just a conversation." : "Sin compromiso. Solo una charla.";
-  const label     = lang === "en" ? "Open to work"    : "Disponible";
+    ? "Junior Full Stack Developer — React, Node.js & TypeScript. Open for full-time roles or contract projects. I'll reply within 24 hours."
+    : "Desarrolladora Full Stack — React, Node.js y TypeScript. Disponible para posiciones full-time o proyectos freelance. Respondo en menos de 24 horas.";
+  const btn       = lang === "en" ? "Send me an email" : "Escribime un email";
+  const whatsappLabel = lang === "en" ? "or chat on WhatsApp" : "o escribime por WhatsApp";
+  const label     = lang === "en" ? "Open to opportunities" : "Disponible";
 
   const socials = [
-    { icon: Instagram, href: "https://instagram.com/giulianna.dev",     label: "Instagram" },
-    { icon: Linkedin,  href: "https://linkedin.com/in/giulianadirocco",  label: "LinkedIn"  },
-    { icon: Github,    href: "https://github.com/giuliannadr",            label: "GitHub"    },
+    { icon: Linkedin, href: "https://linkedin.com/in/giulianadirocco", label: "LinkedIn" },
+    { icon: Github,   href: "https://github.com/giuliannadr",           label: "GitHub"  },
   ];
 
   return (
@@ -148,11 +147,9 @@ export const Footer = () => {
         {sub}
       </motion.p>
 
-      {/* CTA Button */}
+      {/* CTA Button — primary: email */}
       <motion.a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={`mailto:${email}`}
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -161,7 +158,7 @@ export const Footer = () => {
         whileTap={{ scale: 0.98 }}
         onHoverStart={() => setBtnHov(true)}
         onHoverEnd={() => setBtnHov(false)}
-        className="relative z-10 inline-flex items-center gap-3 overflow-hidden bg-white text-[#0A0A0A] font-black text-[10px] uppercase tracking-[0.3em] px-10 py-5 mb-5"
+        className="relative z-10 inline-flex items-center gap-3 overflow-hidden bg-white text-[#0A0A0A] font-black text-[10px] uppercase tracking-[0.3em] px-10 py-5 mb-4"
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
         <span
@@ -182,16 +179,21 @@ export const Footer = () => {
         </span>
       </motion.a>
 
-      <motion.p
+      {/* Secondary: WhatsApp */}
+      <motion.a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.55 }}
-        className="relative z-10 text-[9px] font-black uppercase tracking-[0.4em] text-white/20 mb-8"
+        transition={{ delay: 0.5 }}
+        className="relative z-10 flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.35em] text-white/25 hover:text-white/60 transition-colors duration-300 mb-10"
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
-        {note}
-      </motion.p>
+        {whatsappLabel}
+        <ArrowUpRight size={10} />
+      </motion.a>
 
       {/* Email copy + social icons */}
       <motion.div
