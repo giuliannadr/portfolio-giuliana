@@ -404,22 +404,25 @@ export const Projects = () => {
         </AnimatePresence>
       </div>
 
-      {/* Show more */}
-      {hasMore && (
+      {/* Show more / Show less */}
+      {filtered.length > VISIBLE_COUNT && (
         <motion.div
           initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
           className="relative z-20 flex justify-center mt-6"
         >
           <button
-            onClick={() => setShowAll(true)}
+            onClick={() => setShowAll(prev => !prev)}
             className="flex items-center gap-2.5 px-7 py-3.5 border border-[#0A0A0A]/[0.14] text-[#0A0A0A]/35 font-black text-[9px] uppercase tracking-[0.3em] hover:border-[#CC1500] hover:text-[#CC1500] transition-all duration-300"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
-            {lang === "en"
-              ? `Show more · ${filtered.length - VISIBLE_COUNT} more`
-              : `Ver más · ${filtered.length - VISIBLE_COUNT} más`}
-            <ChevronDown size={11} />
+            {showAll
+              ? (lang === "en" ? "Show less" : "Ver menos")
+              : (lang === "en" ? `Show more · ${filtered.length - VISIBLE_COUNT} more` : `Ver más · ${filtered.length - VISIBLE_COUNT} más`)
+            }
+            <motion.span animate={{ rotate: showAll ? 180 : 0 }} transition={{ duration: 0.3 }}>
+              <ChevronDown size={11} />
+            </motion.span>
           </button>
         </motion.div>
       )}
