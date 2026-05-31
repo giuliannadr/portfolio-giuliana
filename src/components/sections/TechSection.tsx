@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, useMemo } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useInView } from "framer-motion";
+import { useRef, useMemo } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { SPOTS_DARK } from "@/lib/textGradients";
 
@@ -8,77 +8,42 @@ const BLOBS = [
   { color: "#06B6D4", w: 280, x: "85%", y: "60%", op: 0.06, cls: "blob-2" },
 ];
 
-interface Category {
-  id: string;
-  title: string;
-  skills: string;
-  details: string;
-}
+const COLORS = [
+  "#CC1500", "#7C3AED", "#06B6D4", "#EC4899", "#D97706",
+  "#10B981", "#CC1500", "#7C3AED", "#06B6D4", "#EC4899",
+];
+
+const CATEGORY_KEYS = [
+  "languages", "frontend", "backend", "security", "database",
+  "architecture", "testing", "devops", "methodologies",
+];
 
 export const TechSection = () => {
   const { t } = useTranslation();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [mousePos,     setMousePos]     = useState({ x: -100, y: -100 });
-  const [isInside,     setIsInside]     = useState(false);
-  const [isMobile,     setIsMobile]     = useState(false);
-
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const ref  = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
 
-  const categories: Category[] = useMemo(() => (
-    [
-      { id: "01", key: "languages"     },
-      { id: "02", key: "frontend"      },
-      { id: "03", key: "backend"       },
-      { id: "04", key: "security"      },
-      { id: "05", key: "database"      },
-      { id: "06", key: "architecture"  },
-      { id: "07", key: "testing"       },
-      { id: "08", key: "devops"        },
-      { id: "09", key: "methodologies" },
-      { id: "10", key: "spokenLangs"   },
-    ].map(cat => ({
-      id:      cat.id,
-      title:   t(`tech.categories.${cat.key}.title`),
-      skills:  t(`tech.categories.${cat.key}.skills`),
-      details: t(`tech.categories.${cat.key}.details`),
-    }))
-  ), [t]);
+  const categories = useMemo(() =>
+    CATEGORY_KEYS.map((key, i) => ({
+      id:     String(i + 1).padStart(2, "0"),
+      key,
+      title:  t(`tech.categories.${key}.title`),
+      skills: t(`tech.categories.${key}.skills`).split(" / ").map(s => s.trim()),
+      color:  COLORS[i],
+    })), [t]);
 
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    const handleMouseMove = (e: MouseEvent) => { if (!isMobile) setMousePos({ x: e.clientX, y: e.clientY }); };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [isMobile]);
+  /* spoken languages — separate full-width row */
+  const spokenSkills = useMemo(() =>
+    t("tech.categories.spokenLangs.skills").split(" / ").map(s => s.trim()), [t]);
 
   return (
     <section
       ref={ref}
       id="tech"
-      onMouseEnter={() => !isMobile && setIsInside(true)}
-      onMouseLeave={() => { if (!isMobile) setIsInside(false); setHoveredIndex(null); }}
-      className={`bg-[#0A0A0A] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative overflow-hidden select-none transition-all duration-300 ${isInside && !isMobile ? "cursor-none" : "cursor-default"}`}
+      className="bg-[#0A0A0A] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative overflow-hidden"
     >
-      {/* Custom cursor dot */}
-      <AnimatePresence>
-        {isInside && !isMobile && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1.5 }} exit={{ opacity: 0, scale: 0 }}
-            className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full"
-            style={{ x: mousePos.x, y: mousePos.y, translateX: "-50%", translateY: "-50%", width: "8px", height: "8px", backgroundColor: "#CC1500", mixBlendMode: "difference" }}
-            transition={{ type: "spring", damping: 35, stiffness: 400, mass: 0.3 }}
-          />
-        )}
-      </AnimatePresence>
-
       {/* Edge fades */}
       <div className="absolute inset-x-0 top-0 h-28 pointer-events-none z-10"
         style={{ background: "linear-gradient(to bottom, #0A0A0A, transparent)" }} />
@@ -120,61 +85,91 @@ export const TechSection = () => {
         </motion.h2>
       </div>
 
-      {/* Accordion list */}
-      <div className="flex flex-col border-t border-white/[0.06] relative z-10">
-        {categories.map((cat, index) => {
-          const isHovered = hoveredIndex === index;
-          return (
+      {/* ── Main grid (9 categories) ── */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] mb-px">
+        {categories.map((cat, i) => (
+          <motion.div
+            key={cat.key}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 + i * 0.05 }}
+            className="bg-[#0A0A0A] p-6 group hover:bg-white/[0.03] transition-colors duration-300"
+          >
+            {/* Accent line */}
             <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              onMouseEnter={() => !isMobile && setHoveredIndex(index)}
-              onMouseLeave={() => !isMobile && setHoveredIndex(null)}
-              onClick={() => isMobile && setHoveredIndex(hoveredIndex === index ? null : index)}
-              className="group relative py-6 md:py-8 border-b border-white/[0.05] cursor-pointer overflow-hidden"
-            >
-              {/* Background gradient */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -10 }}
-                className="absolute inset-0 z-0 bg-gradient-to-r from-[#CC1500]/6 to-transparent pointer-events-none"
-              />
-              {/* Red left accent line — separate so it never overlaps the number */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: isHovered ? 1 : 0 }}
-                className="absolute left-0 inset-y-0 w-[2px] z-0 pointer-events-none"
-                style={{ background: "#CC1500" }}
-              />
-              <div className="relative z-10 flex flex-col pl-3">
-                <div className="flex items-center gap-4">
-                  <span className={`text-[10px] font-mono transition-colors duration-500 ${isHovered ? "text-[#CC1500]" : "text-white/10"}`}>
-                    {cat.id}
-                  </span>
-                  <h3 className={`text-xl md:text-3xl font-bold transition-all duration-500 ease-out italic font-serif ${isHovered ? "text-white md:translate-x-4" : "text-white/30"}`}>
-                    {cat.title}
-                  </h3>
-                  <div className={`ml-auto hidden md:block transition-all duration-500 ${isHovered ? "opacity-0 translate-x-4" : "opacity-25"}`}>
-                    <p className="text-[10px] font-medium tracking-widest uppercase text-white">
-                      {cat.skills.split("/").slice(0, 3).join(" / ")}...
-                    </p>
-                  </div>
-                </div>
-                <motion.div
-                  initial={false}
-                  animate={{ height: isHovered ? "auto" : 0, opacity: isHovered ? 1 : 0, marginTop: isHovered ? 12 : 0 }}
-                  transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                  className="overflow-hidden md:ml-12"
+              className="h-[2px] w-8 mb-5 origin-left"
+              style={{ background: cat.color }}
+              initial={{ scaleX: 0 }}
+              animate={isInView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.05 }}
+            />
+
+            {/* Number + title */}
+            <div className="flex items-baseline gap-2.5 mb-4">
+              <span className="text-[9px] font-black font-mono leading-none shrink-0" style={{ color: cat.color, fontFamily: "Poppins, sans-serif" }}>
+                {cat.id}
+              </span>
+              <h3 className="font-black uppercase text-white/55 group-hover:text-white/90 transition-colors duration-300 leading-tight"
+                style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(0.72rem, 1.1vw, 0.82rem)", letterSpacing: "0.04em" }}>
+                {cat.title}
+              </h3>
+            </div>
+
+            {/* Skill tags */}
+            <div className="flex flex-wrap gap-1.5">
+              {cat.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="text-[8px] font-mono text-white/28 px-2 py-[3px] border border-white/[0.07] bg-white/[0.02] leading-none group-hover:text-white/45 group-hover:border-white/12 transition-colors duration-300"
                 >
-                  <p className="text-[#CC1500] text-[11px] md:text-xs font-bold tracking-[0.2em] mb-2 uppercase">{cat.skills}</p>
-                  <p className="text-white/40 text-[11px] md:text-sm max-w-3xl leading-relaxed">{cat.details}</p>
-                </motion.div>
-              </div>
-            </motion.div>
-          );
-        })}
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
+
+      {/* ── Spoken Languages — full-width bar ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="relative z-10 bg-[#0A0A0A] border-t-0 group hover:bg-white/[0.03] transition-colors duration-300"
+        style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
+      >
+        <div className="px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
+          {/* Left: label */}
+          <div className="flex items-center gap-2.5 shrink-0">
+            <motion.div
+              className="h-[2px] w-6 origin-left"
+              style={{ background: "#EC4899" }}
+              initial={{ scaleX: 0 }}
+              animate={isInView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.65 }}
+            />
+            <span className="text-[9px] font-black font-mono" style={{ color: "#EC4899", fontFamily: "Poppins, sans-serif" }}>10</span>
+            <h3 className="font-black uppercase text-white/55 group-hover:text-white/90 transition-colors duration-300"
+              style={{ fontFamily: "Poppins, sans-serif", fontSize: "0.78rem", letterSpacing: "0.04em" }}>
+              {t("tech.categories.spokenLangs.title")}
+            </h3>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden sm:block h-px flex-shrink-0 w-6 bg-white/10" />
+
+          {/* Right: language pills */}
+          <div className="flex flex-wrap gap-2">
+            {spokenSkills.map((lang) => (
+              <span key={lang}
+                className="text-[8.5px] font-mono text-white/35 px-3 py-1.5 border border-white/[0.08] bg-white/[0.02] group-hover:text-white/55 group-hover:border-white/15 transition-colors duration-300 leading-none">
+                {lang}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
     </section>
   );
 };
