@@ -120,7 +120,7 @@ export const TechSection = () => {
               {cat.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="text-[8px] font-mono text-white/28 px-2 py-[3px] border border-white/[0.07] bg-white/[0.02] leading-none group-hover:text-white/45 group-hover:border-white/12 transition-colors duration-300"
+                  className="text-[9.5px] font-mono text-white/32 px-2 py-[3px] border border-white/[0.07] bg-white/[0.02] leading-none group-hover:text-white/55 group-hover:border-white/15 transition-colors duration-300"
                 >
                   {skill}
                 </span>
@@ -158,7 +158,7 @@ export const TechSection = () => {
             <div className="flex flex-wrap gap-1.5">
               {spokenSkills.map((lang) => (
                 <span key={lang}
-                  className="text-[8px] font-mono text-white/28 px-2 py-[3px] border border-white/[0.07] bg-white/[0.02] leading-none group-hover:text-white/45 group-hover:border-white/12 transition-colors duration-300">
+                  className="text-[9.5px] font-mono text-white/32 px-2 py-[3px] border border-white/[0.07] bg-white/[0.02] leading-none group-hover:text-white/55 group-hover:border-white/15 transition-colors duration-300">
                   {lang}
                 </span>
               ))}
