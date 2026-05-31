@@ -61,7 +61,7 @@ export const Navbar = () => {
     <>
       {/* ── DESKTOP NAV ── */}
       <nav
-        className={`hidden md:flex fixed top-0 left-0 right-0 z-50 h-16 items-center justify-between px-10 lg:px-14 transition-all duration-300 ${
+        className={`hidden lg:flex fixed top-0 left-0 right-0 z-50 h-16 items-center justify-between px-10 lg:px-14 transition-all duration-300 ${
           scrolled
             ? "bg-[#0A0A0A] border-b border-white/8 shadow-[0_1px_0_0_rgba(255,255,255,0.04)]"
             : "bg-transparent"
@@ -119,7 +119,7 @@ export const Navbar = () => {
 
       {/* ── MOBILE HEADER ── */}
       <div
-        className={`md:hidden fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-5 transition-all duration-300 ${
+        className={`lg:hidden fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-5 transition-all duration-300 ${
           scrolled ? "bg-[#0A0A0A] border-b border-white/8" : "bg-transparent"
         }`}
       >
@@ -151,7 +151,7 @@ export const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-0 z-[100] bg-[#0A0A0A] flex flex-col px-6 py-8"
+            className="lg:hidden fixed inset-0 z-[100] bg-[#0A0A0A] flex flex-col px-6 py-8"
           >
             <div className="flex justify-between items-center mb-16">
               <span

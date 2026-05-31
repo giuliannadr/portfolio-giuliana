@@ -145,7 +145,7 @@ export const AboutSection = () => {
       </motion.div>
 
       {/* Pillars */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#0A0A0A]/[0.06]">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#0A0A0A]/[0.06]">
         {PILLARS.map((p, i) => {
           const c = lang === "en" ? p.en : p.es;
           return (
