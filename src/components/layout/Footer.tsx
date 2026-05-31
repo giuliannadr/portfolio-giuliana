@@ -61,9 +61,7 @@ export const Footer = () => {
   )}`;
 
   const headline  = lang === "en" ? "Let's connect."  : "Conectemos.";
-  const sub       = lang === "en"
-    ? "Junior Full Stack Developer — React, Node.js & TypeScript. Open for full-time roles or contract projects. I'll reply within 24 hours."
-    : "Desarrolladora Full Stack — React, Node.js y TypeScript. Disponible para posiciones full-time o proyectos freelance. Respondo en menos de 24 horas.";
+  const sub       = "Full Stack Developer. Full-time · Part-time · Freelance.";
   const btn       = lang === "en" ? "Send me an email" : "Escribime un email";
   const whatsappLabel = lang === "en" ? "or chat on WhatsApp" : "o escribime por WhatsApp";
   const label     = lang === "en" ? "Open to opportunities" : "Disponible";
