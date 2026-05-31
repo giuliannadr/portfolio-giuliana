@@ -461,26 +461,25 @@ export const Projects = () => {
                   </div>
                 </div>
 
-                {/* Scrollable content */}
-                <div className="overflow-y-auto scrollbar-hide flex-1">
-                  <div className="flex flex-col lg:flex-row min-h-[420px]">
-                    {/* media */}
-                    <div className="relative lg:w-1/2 min-h-[260px] bg-[#0c0c0c] hidden lg:block">
-                      {selected.video
-                        ? <AutoplayVideo src={selected.video} className="w-full h-full object-cover" />
-                        : selected.image
-                          ? <img src={selected.image} className="w-full h-full object-cover" alt="" />
-                          : (() => {
-                              const idx = projects.findIndex(p => p.id === selected.id);
-                              const ac = ACCENTS[idx % ACCENTS.length];
-                              return <div className="w-full h-full" style={{ background: `radial-gradient(ellipse 80% 80% at 35% 45%, ${ac}45 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 70% 65%, ${ac}20 0%, transparent 55%), #0A0A0A` }} />;
-                            })()
-                      }
-                    </div>
+                {/* Content: image fixed, only right panel scrolls */}
+                <div className="flex flex-col lg:flex-row flex-1 overflow-hidden">
+                  {/* media — fixed left panel, never scrolls */}
+                  <div className="relative lg:w-1/2 bg-[#0c0c0c] hidden lg:block">
+                    {selected.video
+                      ? <AutoplayVideo src={selected.video} className="w-full h-full object-cover" />
+                      : selected.image
+                        ? <img src={selected.image} className="w-full h-full object-cover" alt="" />
+                        : (() => {
+                            const idx = projects.findIndex(p => p.id === selected.id);
+                            const ac = ACCENTS[idx % ACCENTS.length];
+                            return <div className="w-full h-full" style={{ background: `radial-gradient(ellipse 80% 80% at 35% 45%, ${ac}45 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 70% 65%, ${ac}20 0%, transparent 55%), #0A0A0A` }} />;
+                          })()
+                    }
+                  </div>
 
-                    {/* info */}
-                    <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }}
-                      className="lg:w-1/2 p-8 md:p-10 flex flex-col justify-center bg-[#111]">
+                  {/* info — scrollable right panel */}
+                  <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }}
+                    className="lg:w-1/2 p-8 md:p-10 flex flex-col justify-start bg-[#111] overflow-y-auto scrollbar-hide">
                       {selected.inProgress && (
                         <div className="flex items-center gap-3 px-4 py-3 mb-6 border border-amber-500/35 bg-amber-500/8">
                           <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
@@ -527,8 +526,7 @@ export const Projects = () => {
                           )}
                         </div>
                       </div>
-                    </motion.div>
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
