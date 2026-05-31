@@ -481,6 +481,14 @@ export const Projects = () => {
                     {/* info */}
                     <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }}
                       className="lg:w-1/2 p-8 md:p-10 flex flex-col justify-center bg-[#111]">
+                      {selected.inProgress && (
+                        <div className="flex items-center gap-3 px-4 py-3 mb-6 border border-amber-500/35 bg-amber-500/8">
+                          <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
+                          <span className="text-amber-400 font-black text-[9px] uppercase tracking-[0.28em]" style={{ fontFamily: "Poppins, sans-serif" }}>
+                            {lang === "en" ? "In progress — not yet completed" : "En proceso — aún no finalizado"}
+                          </span>
+                        </div>
+                      )}
                       <h2 className="font-black tracking-tighter italic leading-[0.88] text-white mb-6"
                         style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                         {selected.title}

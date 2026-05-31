@@ -151,8 +151,8 @@ const en = {
         atout: {
           title: "Atout",
           category: "Cross-platform App",
-          description: "Cross-platform project management app — web, desktop and mobile from one codebase.",
-          longDescription: "Single React 19/TypeScript codebase running on web (Vercel), desktop (Electron for Win/Mac/Linux) and mobile (Capacitor for Android/iOS). Supabase backend with PostgreSQL, Auth, Storage and Row Level Security. Zustand for global state, GitHub Actions pipelines for Electron releases and Android builds. PWA support. In development."
+          description: "All-in-one platform for freelancers and digital agencies — project management, content calendars, invoicing, booking and team in one codebase for web, desktop and mobile.",
+          longDescription: "All-in-one management platform for freelancers and digital agencies. Five core modules: Project management with phases, deliverables, review rounds and a client portal where clients track progress in real time — without accessing the admin panel. Community Manager with monthly content calendar, Kanban pipeline (Draft → Scheduled → Published), per-post metadata (caption, platforms, priority, cover image, media via Supabase Storage, inspiration links, performance metrics) and client-facing calendar sharing. Task system with priorities, subtasks, deadlines and team assignment. Invoice generator with payment tracking. Booking system with configurable availability (/book/your-name public link). Team management with shared resources and internal notes. Plans: free / pro / agency. Single React 19/TypeScript codebase on web (Vercel), desktop (Electron for Win/Mac/Linux) and mobile (Capacitor for Android/iOS). Supabase: PostgreSQL, Auth, Storage, Row Level Security. Zustand, GitHub Actions CI/CD, PWA. In development."
         },
         "design-system": {
           title: "Web Components Design System",
@@ -167,30 +167,55 @@ const en = {
       title: "Tools &",
       titleItalic: "Technologies",
       categories: {
+        languages: {
+          title: "Languages",
+          skills: "TypeScript / JavaScript ES6+ / Java 1.8+ / C# .NET 9 / PHP / Python",
+          details: "Core programming languages across all projects. TypeScript as primary language for type-safe full-stack development, Java for enterprise backend with Spring, C# for .NET 9 projects, PHP for legacy integrations, and Python for scripting and data tooling."
+        },
         frontend: {
           title: "Frontend & Web",
-          skills: "Angular 21 / Angular Signals / React 18 / Next.js 15 / Lit Element / TypeScript / JavaScript ES6+ / Tailwind CSS v4 / Framer Motion / Zustand / Vite / PWA",
-          details: "Component-based development with Angular 21 (Signals), React 18 and Lit Element (Web Components). SSR with Next.js 15, fluid animations with Framer Motion, state management with Zustand and internationalization with react-i18next."
+          skills: "Angular 21 / Angular Signals / React 18/19 / Next.js 15 / Lit Element / Tailwind CSS v4 / Framer Motion / Zustand / react-i18next / Vite / PWA / Barcode API",
+          details: "Component-based development with Angular 21 (Signals), React 18/19 and Lit Element (Web Components). SSR with Next.js 15, fluid animations with Framer Motion, state management with Zustand, internationalization with react-i18next and fast builds with Vite. PWA and Barcode API for mobile features."
         },
         backend: {
-          title: "Backend & Architecture",
-          skills: "Node.js / Java Spring Boot / Spring Framework 4+ / Spring MVC / ASP.NET Core (.NET 9) / Supabase / WebRTC / Vercel Functions / PHP",
-          details: "Scalable systems under Clean Architecture, SOLID and TDD. REST APIs with JWT, OAuth 2.0 and RBAC security. Supabase RLS, WebRTC for real-time features. Unit testing with JUnit and xUnit. Scrum with analysts, QAs and tech leads."
+          title: "Backend",
+          skills: "Node.js / ASP.NET Core (.NET 9) / Java Spring Boot / Spring Framework 4+ / Spring MVC / Supabase / WebRTC / REST APIs / Vercel Functions",
+          details: "Scalable server-side systems with Node.js, ASP.NET Core (.NET 9) and Java Spring Boot / Spring MVC. Supabase for hosted PostgreSQL with RLS, WebRTC via LiveKit for real-time features, REST APIs under Clean Architecture, and Vercel Functions for serverless endpoints."
+        },
+        security: {
+          title: "Security",
+          skills: "JWT / OAuth 2.0 / RBAC / Supabase RLS / Bearer Tokens",
+          details: "Authentication and authorization across all layers: JWT for stateless API security, OAuth 2.0 for third-party integrations, RBAC for multi-role access control, Supabase Row Level Security for database-level policies, and Bearer Tokens for service-to-service communication."
         },
         database: {
-          title: "Databases & Data",
-          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore — Prisma / Drizzle ORM / Sequelize / Hibernate / Entity Framework Core",
-          details: "Relational and non-relational schema design. ORM experience with Prisma, Drizzle ORM, Sequelize, Hibernate and Entity Framework Core — ensuring data integrity and query efficiency across complex systems."
+          title: "Databases",
+          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore / Prisma / Drizzle ORM / Sequelize / Hibernate / Entity Framework Core",
+          details: "Relational and non-relational schema design. ORM tooling: Prisma and Drizzle ORM for modern TypeScript projects, Sequelize for Node.js, Hibernate for Java, and Entity Framework Core for .NET — ensuring data integrity and query efficiency across complex systems."
+        },
+        architecture: {
+          title: "Architecture",
+          skills: "Clean Architecture / SOLID / Design Patterns / Microservices / Turborepo / Monorepos",
+          details: "Software design with Clean Architecture and SOLID principles. Familiarity with common Design Patterns (Repository, Factory, Observer). Experience with Microservices decomposition and Turborepo/Monorepo setups for multi-app workspaces sharing libraries and tooling."
+        },
+        testing: {
+          title: "Testing",
+          skills: "JUnit / xUnit / TDD / Unit Testing / in-memory fakes",
+          details: "Unit testing across the full stack: JUnit for Java Spring applications, xUnit for .NET projects, and in-memory fakes for isolating dependencies. Test-Driven Development (TDD) as a design methodology to build more maintainable, well-scoped components from the ground up."
         },
         devops: {
-          title: "DevOps & Tooling",
+          title: "DevOps",
           skills: "Git / GitHub Actions / Docker / Vercel / CI/CD / Electron / Capacitor (Android & iOS) / Core Web Vitals / Turborepo",
-          details: "Automated pipelines with GitHub Actions, containerization with Docker and deploy on Vercel. Cross-platform development with Electron and Capacitor. Performance monitoring via Core Web Vitals and monorepo management with Turborepo."
+          details: "Automated CI/CD pipelines with GitHub Actions for web, Electron desktop (Win/Mac/Linux) and Capacitor mobile (Android/iOS) releases. Containerization with Docker, deployments on Vercel with Speed Insights and Core Web Vitals monitoring. Monorepo orchestration with Turborepo."
         },
-        languages: {
-          title: "Languages & Communication",
-          skills: "English (B2/C1) / Portuguese (Basic)",
-          details: "Advanced technical and conversational English — able to work in international teams, write documentation and participate in code reviews fully in English."
+        methodologies: {
+          title: "Methodologies",
+          skills: "Scrum / Agile / AI-Assisted Development / Technical SEO / Code Review",
+          details: "Agile development with Scrum — sprint planning, retrospectives and cross-functional collaboration with analysts, QAs and tech leads. AI-Assisted Development using Claude Code and Antigravity to boost productivity. Technical SEO best practices and structured code review process."
+        },
+        spokenLangs: {
+          title: "Spoken Languages",
+          skills: "Spanish (native) / English B2/C1 / Portuguese (basic)",
+          details: "Spanish native speaker. Advanced English (B2/C1) — able to work in international teams, write technical documentation and participate in code reviews fully in English. Basic Portuguese for reading and written communication."
         }
       }
     },
@@ -375,8 +400,8 @@ const es = {
         atout: {
           title: "Atout",
           category: "App Multiplataforma",
-          description: "App de gestión de proyectos multiplataforma — web, desktop y mobile desde un solo codebase.",
-          longDescription: "Un único codebase React 19/TypeScript que corre en web (Vercel), desktop (Electron para Win/Mac/Linux) y mobile (Capacitor para Android/iOS). Backend Supabase con PostgreSQL, Auth, Storage y Row Level Security. Zustand para estado global, pipelines de GitHub Actions para releases de Electron y builds Android. Soporte PWA. En desarrollo."
+          description: "Plataforma todo-en-uno para freelancers y agencias digitales — gestión de proyectos, calendarios de contenido, facturación, reservas y equipo en un codebase para web, desktop y mobile.",
+          longDescription: "Plataforma de gestión todo-en-uno para freelancers y agencias digitales. Cinco módulos principales: Gestión de proyectos con fases, entregables, rondas de revisión y portal del cliente en tiempo real — los clientes ven el progreso sin acceder al panel interno. Community Manager con calendario de contenido mensual, pipeline Kanban (Borrador → Programado → Publicado), metadatos por post (caption, plataformas, prioridad, imagen de portada, archivos multimedia via Supabase Storage, links de inspiración, métricas de performance) y calendario compartible con el cliente. Sistema de tareas con prioridades, subtareas, fechas límite y asignación de equipo. Generador de facturas + seguimiento de pagos. Sistema de reservas con disponibilidad configurable (link público /book/tu-nombre). Gestión de equipo con recursos compartidos y notas internas. Planes: free / pro / agency. Un único codebase React 19/TypeScript en web (Vercel), desktop (Electron para Win/Mac/Linux) y mobile (Capacitor para Android/iOS). Supabase: PostgreSQL, Auth, Storage, Row Level Security. Zustand, GitHub Actions CI/CD, PWA. En desarrollo."
         },
         "design-system": {
           title: "Design System con Web Components",
@@ -391,30 +416,55 @@ const es = {
       title: "Herramientas &",
       titleItalic: "Tecnologías",
       categories: {
+        languages: {
+          title: "Lenguajes",
+          skills: "TypeScript / JavaScript ES6+ / Java 1.8+ / C# .NET 9 / PHP / Python",
+          details: "Lenguajes de programación principales en todos los proyectos. TypeScript como lenguaje primario para desarrollo full-stack con tipos seguros, Java para backend empresarial con Spring, C# para proyectos .NET 9, PHP para integraciones legacy y Python para scripting y herramientas de datos."
+        },
         frontend: {
           title: "Frontend & Web",
-          skills: "Angular 21 / Angular Signals / React 18 / Next.js 15 / Lit Element / TypeScript / JavaScript ES6+ / Tailwind CSS v4 / Framer Motion / Zustand / Vite / PWA",
-          details: "Desarrollo basado en componentes con Angular 21 (Signals), React 18 y Lit Element (Web Components). SSR con Next.js 15, animaciones fluidas con Framer Motion, estado global con Zustand e internacionalización con react-i18next."
+          skills: "Angular 21 / Angular Signals / React 18/19 / Next.js 15 / Lit Element / Tailwind CSS v4 / Framer Motion / Zustand / react-i18next / Vite / PWA / Barcode API",
+          details: "Desarrollo basado en componentes con Angular 21 (Signals), React 18/19 y Lit Element (Web Components). SSR con Next.js 15, animaciones fluidas con Framer Motion, estado global con Zustand, internacionalización con react-i18next y builds rápidos con Vite. Soporte PWA y Barcode API para funciones mobile."
         },
         backend: {
-          title: "Backend & Arquitectura",
-          skills: "Node.js / Java Spring Boot / Spring Framework 4+ / Spring MVC / ASP.NET Core (.NET 9) / Supabase / WebRTC / Vercel Functions / PHP",
-          details: "Sistemas escalables bajo Clean Architecture, SOLID y TDD. APIs REST con seguridad JWT, OAuth 2.0 y RBAC. Supabase RLS, WebRTC para funcionalidades en tiempo real. Pruebas unitarias con JUnit y xUnit. Colaboración Scrum con analistas, QAs y tech leads."
+          title: "Backend",
+          skills: "Node.js / ASP.NET Core (.NET 9) / Java Spring Boot / Spring Framework 4+ / Spring MVC / Supabase / WebRTC / REST APIs / Vercel Functions",
+          details: "Sistemas de servidor escalables con Node.js, ASP.NET Core (.NET 9) y Java Spring Boot / Spring MVC. Supabase para PostgreSQL alojado con RLS, WebRTC via LiveKit para funciones en tiempo real, APIs REST bajo Clean Architecture y Vercel Functions para endpoints serverless."
+        },
+        security: {
+          title: "Seguridad",
+          skills: "JWT / OAuth 2.0 / RBAC / Supabase RLS / Bearer Tokens",
+          details: "Autenticación y autorización en todas las capas: JWT para seguridad de APIs sin estado, OAuth 2.0 para integraciones de terceros, RBAC para control de acceso multi-rol, Supabase Row Level Security para políticas a nivel de base de datos y Bearer Tokens para comunicación entre servicios."
         },
         database: {
-          title: "Bases de Datos & Data",
-          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore — Prisma / Drizzle ORM / Sequelize / Hibernate / Entity Framework Core",
-          details: "Diseño de esquemas relacionales y no relacionales. Experiencia con ORMs: Prisma, Drizzle ORM, Sequelize, Hibernate y Entity Framework Core — garantizando integridad de datos y eficiencia en consultas de sistemas complejos."
+          title: "Bases de Datos",
+          skills: "PostgreSQL / MySQL / SQL Server / MongoDB / Firebase Firestore / Prisma / Drizzle ORM / Sequelize / Hibernate / Entity Framework Core",
+          details: "Diseño de esquemas relacionales y no relacionales. ORMs: Prisma y Drizzle ORM para proyectos TypeScript modernos, Sequelize para Node.js, Hibernate para Java y Entity Framework Core para .NET — garantizando integridad de datos y eficiencia en consultas de sistemas complejos."
+        },
+        architecture: {
+          title: "Arquitectura",
+          skills: "Clean Architecture / SOLID / Design Patterns / Microservices / Turborepo / Monorepos",
+          details: "Diseño de software con Clean Architecture y principios SOLID. Familiaridad con patrones de diseño comunes (Repository, Factory, Observer). Experiencia con descomposición en Microservicios y configuraciones Turborepo/Monorepo para workspaces multi-aplicación con librerías y herramientas compartidas."
+        },
+        testing: {
+          title: "Testing",
+          skills: "JUnit / xUnit / TDD / Unit Testing / in-memory fakes",
+          details: "Pruebas unitarias en todo el stack: JUnit para aplicaciones Java Spring, xUnit para proyectos .NET e in-memory fakes para aislar dependencias. Test-Driven Development (TDD) como metodología de diseño para construir componentes más mantenibles y bien delimitados desde el inicio."
         },
         devops: {
-          title: "DevOps & Herramientas",
+          title: "DevOps",
           skills: "Git / GitHub Actions / Docker / Vercel / CI/CD / Electron / Capacitor (Android & iOS) / Core Web Vitals / Turborepo",
-          details: "Pipelines automatizados con GitHub Actions, contenedores con Docker y deploy en Vercel. Desarrollo multiplataforma con Electron y Capacitor. Monitoreo de performance con Core Web Vitals y gestión de monorepos con Turborepo."
+          details: "Pipelines de CI/CD automatizados con GitHub Actions para releases web, desktop con Electron (Win/Mac/Linux) y mobile con Capacitor (Android/iOS). Contenedores con Docker, deploys en Vercel con Speed Insights y monitoreo de Core Web Vitals. Orquestación de monorepos con Turborepo."
         },
-        languages: {
-          title: "Idiomas & Comunicación",
-          skills: "Inglés (B2/C1) / Portugués (Básico)",
-          details: "Inglés técnico y conversacional avanzado — capaz de trabajar en equipos internacionales, escribir documentación y participar en code reviews completamente en inglés."
+        methodologies: {
+          title: "Metodologías",
+          skills: "Scrum / Agile / Desarrollo Asistido por IA / SEO Técnico / Code Review",
+          details: "Desarrollo ágil con Scrum — planificación de sprints, retrospectivas y colaboración multifuncional con analistas, QAs y tech leads. Desarrollo Asistido por IA con Claude Code y Antigravity para aumentar la productividad. Buenas prácticas de SEO técnico y proceso estructurado de code review."
+        },
+        spokenLangs: {
+          title: "Idiomas",
+          skills: "Español (nativo) / Inglés B2/C1 / Portugués (básico)",
+          details: "Hablante nativa de español. Inglés avanzado (B2/C1) — capaz de trabajar en equipos internacionales, escribir documentación técnica y participar en code reviews completamente en inglés. Portugués básico para lectura y comunicación escrita."
         }
       }
     },

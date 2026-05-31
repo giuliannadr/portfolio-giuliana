@@ -29,11 +29,16 @@ export const TechSection = () => {
 
   const categories: Category[] = useMemo(() => (
     [
-      { id: "01", key: "frontend"  },
-      { id: "02", key: "backend"   },
-      { id: "03", key: "database"  },
-      { id: "04", key: "devops"    },
-      { id: "05", key: "languages" },
+      { id: "01", key: "languages"     },
+      { id: "02", key: "frontend"      },
+      { id: "03", key: "backend"       },
+      { id: "04", key: "security"      },
+      { id: "05", key: "database"      },
+      { id: "06", key: "architecture"  },
+      { id: "07", key: "testing"       },
+      { id: "08", key: "devops"        },
+      { id: "09", key: "methodologies" },
+      { id: "10", key: "spokenLangs"   },
     ].map(cat => ({
       id:      cat.id,
       title:   t(`tech.categories.${cat.key}.title`),

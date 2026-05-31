@@ -189,7 +189,6 @@ export const Hero = () => {
     linear-gradient(rgba(204,21,0,1), rgba(204,21,0,1))
   `;
 
-  const whatsappUrl = `https://wa.me/5491128341223?text=${encodeURIComponent("¡Hola! Vi tu portfolio y me gustaría hablar sobre una oportunidad.")}`;
 
   return (
     <section id="home" className="relative bg-[#0A0A0A] min-h-screen flex flex-col pt-14 overflow-hidden">
@@ -301,11 +300,6 @@ export const Hero = () => {
             style={{ fontFamily: "Poppins, sans-serif" }}>
             <Download size={10} />
             {lang === "en" ? "Download CV" : "Descargar CV"}
-          </a>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 border border-white/18 text-white/50 font-black text-[9px] uppercase tracking-[0.3em] hover:border-[#CC1500] hover:text-white transition-all duration-300"
-            style={{ fontFamily: "Poppins, sans-serif" }}>
-            {lang === "en" ? "Let's talk" : "Hablemos"}
           </a>
         </motion.div>
 
