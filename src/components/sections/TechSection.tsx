@@ -93,7 +93,7 @@ export const TechSection = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.1 + i * 0.05 }}
-            className="bg-[#0A0A0A] p-6 group hover:bg-white/[0.03] transition-colors duration-300"
+            className="card-sheen bg-[#0A0A0A] p-6 group hover:bg-white/[0.03] transition-colors duration-300"
           >
             {/* Accent line */}
             <motion.div
@@ -134,7 +134,7 @@ export const TechSection = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="bg-[#0A0A0A] p-6 group hover:bg-white/[0.03] transition-colors duration-300 lg:col-span-3"
+          className="card-sheen bg-[#0A0A0A] p-6 group hover:bg-white/[0.03] transition-colors duration-300 lg:col-span-3"
         >
           {/* Accent line */}
           <motion.div

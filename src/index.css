@@ -76,6 +76,33 @@
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .cursor-blink { animation: blink 0.85s step-start infinite; }
 
+/* Tech card sheen — diagonal light sweep on hover */
+@keyframes card-sheen {
+  from { transform: translateX(-100%) skewX(-12deg); }
+  to   { transform: translateX(300%)  skewX(-12deg); }
+}
+.card-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.card-sheen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.055) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(-12deg);
+  pointer-events: none;
+}
+.card-sheen:hover::after {
+  animation: card-sheen 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Grain texture overlay */
 body::after {
   content: '';
