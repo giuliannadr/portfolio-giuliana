@@ -85,8 +85,8 @@ export const TechSection = () => {
         </motion.h2>
       </div>
 
-      {/* ── Main grid (9 categories) ── */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] mb-px">
+      {/* ── Grid: 9 categories + spoken languages (10th, beside 09 at 2-col / full-width at 3-col) ── */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
         {categories.map((cat, i) => (
           <motion.div
             key={cat.key}
@@ -128,47 +128,44 @@ export const TechSection = () => {
             </div>
           </motion.div>
         ))}
+
+        {/* ── 10 — Spoken Languages: beside 09 at sm (2-col), full-width at lg (3-col) ── */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="bg-[#0A0A0A] p-6 group hover:bg-white/[0.03] transition-colors duration-300 lg:col-span-3"
+        >
+          {/* Accent line */}
+          <motion.div
+            className="h-[2px] w-8 mb-5 origin-left"
+            style={{ background: "#EC4899" }}
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.65 }}
+          />
+
+          {/* Number + title + pills — horizontal at lg */}
+          <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+            <div className="flex items-baseline gap-2.5 shrink-0">
+              <span className="text-[9px] font-black font-mono leading-none" style={{ color: "#EC4899", fontFamily: "Poppins, sans-serif" }}>10</span>
+              <h3 className="font-black uppercase text-white/55 group-hover:text-white/90 transition-colors duration-300 leading-tight"
+                style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(0.72rem, 1.1vw, 0.82rem)", letterSpacing: "0.04em" }}>
+                {t("tech.categories.spokenLangs.title")}
+              </h3>
+            </div>
+            <div className="hidden lg:block h-px w-6 bg-white/10 shrink-0" />
+            <div className="flex flex-wrap gap-1.5">
+              {spokenSkills.map((lang) => (
+                <span key={lang}
+                  className="text-[8px] font-mono text-white/28 px-2 py-[3px] border border-white/[0.07] bg-white/[0.02] leading-none group-hover:text-white/45 group-hover:border-white/12 transition-colors duration-300">
+                  {lang}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
-
-      {/* ── Spoken Languages — full-width bar ── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="relative z-10 bg-[#0A0A0A] border-t-0 group hover:bg-white/[0.03] transition-colors duration-300"
-        style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
-      >
-        <div className="px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
-          {/* Left: label */}
-          <div className="flex items-center gap-2.5 shrink-0">
-            <motion.div
-              className="h-[2px] w-6 origin-left"
-              style={{ background: "#EC4899" }}
-              initial={{ scaleX: 0 }}
-              animate={isInView ? { scaleX: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.65 }}
-            />
-            <span className="text-[9px] font-black font-mono" style={{ color: "#EC4899", fontFamily: "Poppins, sans-serif" }}>10</span>
-            <h3 className="font-black uppercase text-white/55 group-hover:text-white/90 transition-colors duration-300"
-              style={{ fontFamily: "Poppins, sans-serif", fontSize: "0.78rem", letterSpacing: "0.04em" }}>
-              {t("tech.categories.spokenLangs.title")}
-            </h3>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden sm:block h-px flex-shrink-0 w-6 bg-white/10" />
-
-          {/* Right: language pills */}
-          <div className="flex flex-wrap gap-2">
-            {spokenSkills.map((lang) => (
-              <span key={lang}
-                className="text-[8.5px] font-mono text-white/35 px-3 py-1.5 border border-white/[0.08] bg-white/[0.02] group-hover:text-white/55 group-hover:border-white/15 transition-colors duration-300 leading-none">
-                {lang}
-              </span>
-            ))}
-          </div>
-        </div>
-      </motion.div>
 
     </section>
   );
