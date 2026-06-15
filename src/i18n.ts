@@ -112,6 +112,12 @@ const en = {
           description: "Natural Language Processing (NLP) platform for automated assessment.",
           longDescription: "Implementation of a semantic engine under .NET 9. I worked on the persistence layer with Entity Framework and data processing logic for dynamic analytical report generation."
         },
+        muda: {
+          title: "MUDA",
+          category: "Full Stack Development",
+          description: "End-to-end digital presence for a creative fashion studio — public SPA + custom admin panel.",
+          longDescription: "Designed and developed MUDA's complete digital presence from scratch. Multi-section SPA covering creative productions, art direction, social content, talent agency, events and studio rental — each section with its own SEO-friendly URL. Includes an interactive talent database where models, photographers and makeup artists upload their profile and apply to join the agency. The custom admin panel lets the founders manage talents, productions and applications in real time — accepting an application automatically converts it into a published talent. Full technical SEO: local business structured data, sitemap, Open Graph and Google Search Console verification."
+        },
         emme: {
           title: "Emme Digital",
           category: "Frontend Development",
@@ -360,6 +366,12 @@ const es = {
           category: "Software Architecture",
           description: "Plataforma de procesamiento de lenguaje natural (NLP) para evaluación automatizada.",
           longDescription: "Implementación de un motor semántico bajo .NET 9. Trabajé en la capa de persistencia con Entity Framework y en la lógica de procesamiento de datos para la generación dinámica de reportes analíticos."
+        },
+        muda: {
+          title: "MUDA",
+          category: "Full Stack Development",
+          description: "Presencia digital completa para una productora creativa de moda — SPA pública + panel admin a medida.",
+          longDescription: "Diseñé y desarrollé de cero la presencia digital completa de MUDA. SPA multisección con identidad editorial que cubre producciones creativas, dirección artística, contenido para redes, agencia de talentos, eventos y alquiler de estudio — cada sección con su propia URL para SEO. Incluye una base de talentos interactiva donde modelos, fotógrafxs y maquilladorxs cargan su perfil y postulan para entrar a la agencia. El panel admin permite a las fundadoras gestionar talentos, producciones y postulaciones en tiempo real — aceptar una postulación la convierte automáticamente en talento publicado. SEO técnico integral: datos estructurados de negocio local, sitemap, Open Graph y verificación en Google Search Console."
         },
         emme: {
           title: "Emme Digital",
