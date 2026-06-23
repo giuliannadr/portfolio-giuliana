@@ -150,9 +150,9 @@ const en = {
         },
         costear: {
           title: "CosteAR",
-          category: "Full Stack · FinTech",
-          description: "Real-time financial copilot for cost analysts in agro-industrial SMEs — conversational WhatsApp interface + analytical dashboard.",
-          longDescription: "CosteAR is a real-time financial copilot built for cost professionals in Argentine agro-industrial SMEs. The system provides an asynchronous conversational interface via WhatsApp API (Node.js backend) for seamless data ingestion — users submit cost data through natural conversation. The dynamic analytics dashboard (React) processes and visualizes that data in real time: cost breakdowns by category, margin evolution, breakeven analysis and KPI cards. Split architecture: backend by Giuliana (Node.js, WhatsApp API, REST), frontend by Santiago Briz (React). In development."
+          category: "Full Stack · Enterprise Tools",
+          description: "Financial copilot and operator portal for agro-industrial SMEs. Features a custom operator chat for natural data ingestion (text/images/PDFs) and real-time cost analytics dashboard. Developed for the Emprende U 2026 competition.",
+          longDescription: "CosteAR is a financial copilot and cost management system designed for agro-industrial SMEs. Instead of using generic messaging apps, it features a built-in custom operator portal where workshop operators can submit raw cost data, invoices, and PDFs directly through an integrated chat interface. An automated AI assistant parses these documents for the cost analyst, who reviews them via a dynamic dashboard. Built with Clean Architecture on the backend (Node.js, Fastify, Prisma, PostgreSQL, Redis, BullMQ) and React 19 (TypeScript, TanStack Router, Tailwind CSS v4) on the frontend. Currently in development for the Emprende U 2026 competition."
         },
         portfolio: {
           title: "Personal Portfolio",
@@ -405,9 +405,9 @@ const es = {
         },
         costear: {
           title: "CosteAR",
-          category: "Full Stack · FinTech",
-          description: "Copiloto financiero en tiempo real para costistas de PyMEs agroindustriales — interfaz conversacional por WhatsApp + dashboard analítico.",
-          longDescription: "CosteAR es un copiloto financiero en tiempo real diseñado para profesionales de costos en PyMEs agroindustriales argentinas. El sistema ofrece una interfaz conversacional asincrónica vía WhatsApp API (backend Node.js) para la ingesta de datos sin fricción — los usuarios ingresan información de costos a través de una conversación natural. El dashboard analítico dinámico (React) procesa y visualiza esos datos en tiempo real: desglose de costos por categoría, evolución de márgenes, análisis de punto de equilibrio y tarjetas de KPIs. Arquitectura dividida: backend por Giuliana (Node.js, WhatsApp API, REST), frontend por Santiago Briz (React). En desarrollo."
+          category: "Full Stack · Herramientas Enterprise",
+          description: "Copiloto financiero y portal de operarios para PyMEs agroindustriales. Cuenta con un chat propio de operarios para ingesta de datos (texto/imágenes/PDFs) y dashboard analítico en tiempo real. Desarrollado para el concurso Emprende U 2026.",
+          longDescription: "CosteAR es un copiloto financiero y sistema de gestión de costos diseñado para PyMEs agroindustriales. En lugar de usar apps de mensajería genéricas, cuenta con un portal propio integrado donde los operarios de taller envían datos de costos, facturas y remitos mediante un chat interno. Un asistente de IA analiza automáticamente estos documentos para el analista de costos, quien los valida y gestiona desde un dashboard analítico en tiempo real. Desarrollado bajo Clean Architecture en el backend (Node.js, Fastify, Prisma, PostgreSQL, Redis, BullMQ) y React 19 (TypeScript, TanStack Router, Tailwind CSS v4) en el frontend. Actualmente en desarrollo para el concurso Emprende U 2026."
         },
         repostory: {
           title: "Repostory",
