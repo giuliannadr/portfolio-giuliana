@@ -237,8 +237,8 @@ const en = {
     building:   "Building",
   },
   items: {
-    utn:        "Bachelor's in Data Science",
-    utnSub:     "Starting August 2026",
+    utn:        "Bachelor's in Artificial Intelligence",
+    utnSub:     "UBP — Universidad Blas Pascal · Starting August 2026",
     nextjs:     "Next.js App Router & Server Components",
     systemDesign: "System Design & Scalable Architectures",
     postgres:   "PostgreSQL — advanced queries & performance",
@@ -492,8 +492,8 @@ const es = {
     building:   "Construyendo",
   },
   items: {
-    utn:        "Licenciatura en Ciencias de Datos",
-    utnSub:     "Inicio: agosto 2026",
+    utn:        "Licenciatura en Inteligencia Artificial",
+    utnSub:     "UBP — Universidad Blas Pascal · Inicio: agosto 2026",
     nextjs:     "Next.js App Router & Server Components",
     systemDesign: "System Design & Arquitecturas Escalables",
     postgres:   "PostgreSQL — queries avanzadas y performance",
