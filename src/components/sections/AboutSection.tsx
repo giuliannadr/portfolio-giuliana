@@ -11,7 +11,7 @@ const BLOBS = [
 
 const STATS = [
   { es: "8.72 · Promedio UNLaM",         en: "8.72 · GPA UNLaM",              color: "#CC1500" },
-  { es: "3 proyectos en producción",      en: "3 production projects",          color: "#7C3AED" },
+  { es: "7 proyectos en producción",      en: "7 production projects",          color: "#7C3AED" },
   { es: "UNLAM · Egreso Jul 2026",          en: "UNLAM · Graduating Jul 2026",    color: "#06B6D4" },
 ];
 
