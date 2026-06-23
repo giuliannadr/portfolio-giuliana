@@ -31,10 +31,10 @@ const TIMELINE = [
     role: { es: "Mentora Técnica en Desarrollo Web", en: "Web Development Mentor" },
     ctx:  { es: "Particular · UNLaM",               en: "Private · UNLaM"        },
     body: {
-      es: "Diseño de itinerarios en algoritmos, estructuras de datos, JavaScript, React y SQL para estudiantes universitarios. Code reviews con retroalimentación en Clean Code, Git y diseño relacional.",
-      en: "Learning path design in algorithms, data structures, JavaScript, React and SQL for university students. Code reviews with Clean Code, Git and relational design feedback.",
+      es: "Diseño de itinerarios en algoritmos, estructuras de datos, JavaScript, Java, React, Node.js y SQL para estudiantes universitarios. Code reviews con retroalimentación en Clean Code, Git y diseño relacional.",
+      en: "Learning path design in algorithms, data structures, JavaScript, Java, React, Node.js and SQL for university students. Code reviews with Clean Code, Git and relational design feedback.",
     },
-    tags: ["JavaScript", "React", "SQL", "Algorithms", "Git"],
+    tags: ["JavaScript", "Java", "React", "Node.js", "SQL", "Algorithms", "Git"],
   },
   {
     num: "03",

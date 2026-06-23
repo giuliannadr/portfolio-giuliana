@@ -20,7 +20,7 @@ const en = {
       title: "Clean code,",
       titleItalic: "scalable solutions.",
       p1: "Hi! I'm <0>Giuliana</0>. I'm finishing my degree in Web Development, a journey where I've learned that my true strength lies in <1>merging solid backend architecture with clean, functional frontend experiences</1>.",
-      p2: "I work with React, Node.js, TypeScript, Angular, Java and .NET, focusing on scalable architecture, code quality and clean APIs. My goal is to deliver digital products that are technically sound, maintainable and built to last.",
+      p2: "I build with React, Node.js, TypeScript, Angular, Java and .NET, with a focus on microservice and event-driven architectures, clean APIs and code quality. I also integrate Generative AI tools — Groq API, Claude and FastAPI/Python — into real products, from architecture to production.",
       stats: {
         exp: "8.72",
         expLabel: "GPA",
@@ -135,6 +135,12 @@ const en = {
           category: "Creative Development",
           description: "Interactive digital invitation for a XV years celebration.",
           longDescription: "Custom design for a XV years party invitation. Smooth animations, custom typography and a responsive layout that captures the celebration's aesthetic perfectly."
+        },
+        repostory: {
+          title: "Repostory",
+          category: "SaaS · Generative AI",
+          description: "SaaS that analyzes GitHub repositories with Generative AI — automated technical descriptions via advanced prompt engineering.",
+          longDescription: "SaaS in active development that analyzes GitHub repositories with Generative AI. Backend in FastAPI with authenticated REST endpoints, modular architecture and horizontal scalability design. Pipeline with Groq API and llama-3.3-70b to generate precise technical descriptions through advanced prompt engineering. Built to scale from the ground up."
         },
         aura: {
           title: "Aura DJ Management System",
@@ -275,7 +281,7 @@ const es = {
       title: "Código limpio,",
       titleItalic: "soluciones escalables.",
       p1: "¡Hola! Soy <0>Giuliana</0>. Estoy en la etapa final de mi formación como Desarrolladora Web, un camino donde descubrí que mi verdadera fortaleza está en <1>combinar arquitectura backend sólida con experiencias frontend limpias y funcionales</1>.",
-      p2: "Trabajo con React, Node.js, TypeScript, Angular, Java y .NET, con foco en arquitectura escalable, calidad de código y APIs limpias. Mi objetivo es entregar productos digitales técnicamente sólidos, mantenibles y construidos para durar.",
+      p2: "Construyo con React, Node.js, TypeScript, Angular, Java y .NET, con foco en arquitecturas de microservicios y orientadas a eventos, APIs limpias y calidad de código. También integro herramientas de IA Generativa — Groq API, Claude y FastAPI/Python — en productos reales, desde la arquitectura hasta producción.",
       stats: {
         exp: "8.72",
         expLabel: "Promedio",
@@ -390,6 +396,12 @@ const es = {
           category: "Desarrollo Creativo",
           description: "Invitación digital interactiva para una celebración de 15 años.",
           longDescription: "Diseño a medida para invitación de XV años. Animaciones suaves, tipografía personalizada y layout responsive que captura perfectamente la estética de la celebración."
+        },
+        repostory: {
+          title: "Repostory",
+          category: "SaaS · IA Generativa",
+          description: "SaaS que analiza repositorios GitHub con IA Generativa — descripciones técnicas automatizadas via prompt engineering avanzado.",
+          longDescription: "SaaS en desarrollo activo que analiza repositorios GitHub con IA Generativa. Backend en FastAPI con endpoints REST autenticados, arquitectura modular y diseño para escalabilidad horizontal. Pipeline con Groq API y llama-3.3-70b para generar descripciones técnicas precisas via prompt engineering avanzado. Construido para escalar desde la arquitectura."
         },
         aura: {
           title: "Aura DJ Management System",
