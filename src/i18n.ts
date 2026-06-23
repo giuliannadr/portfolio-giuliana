@@ -148,6 +148,12 @@ const en = {
           description: "Business management platform for a DJ agency built as a Turborepo monorepo with 3 Next.js 15 apps.",
           longDescription: "End-to-end business management system for a DJ agency. Turborepo monorepo with 3 Next.js 15 (App Router) applications sharing a PostgreSQL database via Drizzle ORM on Supabase. Features: role-based access (facundo, aura_admin, aura_member), two-round booking system with unique tokens, client event portal, content CMS, and availability calendar. Supabase Auth with Row Level Security. In development."
         },
+        costear: {
+          title: "CosteAR",
+          category: "Full Stack · FinTech",
+          description: "Real-time financial copilot for cost analysts in agro-industrial SMEs — conversational WhatsApp interface + analytical dashboard.",
+          longDescription: "CosteAR is a real-time financial copilot built for cost professionals in Argentine agro-industrial SMEs. The system provides an asynchronous conversational interface via WhatsApp API (Node.js backend) for seamless data ingestion — users submit cost data through natural conversation. The dynamic analytics dashboard (React) processes and visualizes that data in real time: cost breakdowns by category, margin evolution, breakeven analysis and KPI cards. Split architecture: backend by Giuliana (Node.js, WhatsApp API, REST), frontend by Santiago Briz (React). In development."
+        },
         portfolio: {
           title: "Personal Portfolio",
           category: "Frontend + Design System",
@@ -396,6 +402,12 @@ const es = {
           category: "Desarrollo Creativo",
           description: "Invitación digital interactiva para una celebración de 15 años.",
           longDescription: "Diseño a medida para invitación de XV años. Animaciones suaves, tipografía personalizada y layout responsive que captura perfectamente la estética de la celebración."
+        },
+        costear: {
+          title: "CosteAR",
+          category: "Full Stack · FinTech",
+          description: "Copiloto financiero en tiempo real para costistas de PyMEs agroindustriales — interfaz conversacional por WhatsApp + dashboard analítico.",
+          longDescription: "CosteAR es un copiloto financiero en tiempo real diseñado para profesionales de costos en PyMEs agroindustriales argentinas. El sistema ofrece una interfaz conversacional asincrónica vía WhatsApp API (backend Node.js) para la ingesta de datos sin fricción — los usuarios ingresan información de costos a través de una conversación natural. El dashboard analítico dinámico (React) procesa y visualiza esos datos en tiempo real: desglose de costos por categoría, evolución de márgenes, análisis de punto de equilibrio y tarjetas de KPIs. Arquitectura dividida: backend por Giuliana (Node.js, WhatsApp API, REST), frontend por Santiago Briz (React). En desarrollo."
         },
         repostory: {
           title: "Repostory",
