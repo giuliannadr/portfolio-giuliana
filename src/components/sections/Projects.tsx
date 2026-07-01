@@ -185,6 +185,9 @@ export const Projects = () => {
   const [showAll,     setShowAll]     = useState(false);
 
   const rawData = [
+    { id: "pulseguard",     image: "./pulseguard.png",       liveUrl: "https://pulseguard-frontend.vercel.app/",                              type: "professional", inProgress: true, stack: ["Next.js", "NestJS", "TypeScript", "PostgreSQL", "Prisma", "Gemini AI"] },
+    { id: "hidrorescate",   image: "./hidrorescate-laptop.jpeg", liveUrl: "https://hidrorescate.com.ar/",                                      type: "professional", stack: ["React", "TypeScript", "Vite", "Tailwind CSS"] },
+    { id: "magicalduo",     image: "./magicalduo-mockup.png",   liveUrl: "https://themagicalduo.com/",                                        type: "professional", stack: ["React", "TypeScript", "Vite", "Tailwind CSS"] },
     { id: "repostory",      image: "./repostory-mockup.png",                                                                                    type: "professional", inProgress: true, stack: ["FastAPI", "Python", "Groq API", "llama-3.3-70b", "Next.js 15", "REST APIs", "Prompt Engineering"] },
     { id: "costear",        image: "./costear-mockup.png",   githubUrl: "https://github.com/giuliannadr/CosteAR-backend",                    type: "professional", inProgress: true, stack: ["Node.js", "Fastify", "React 19", "TypeScript", "Tailwind CSS v4", "TanStack Router", "Zustand", "Prisma", "PostgreSQL", "Redis", "BullMQ"] },
     { id: "aura",           image: "./aura-preview.png",                                                                                   githubUrl: "https://github.com/giuliannadr/FacuuJuarez-Aura",   type: "professional", inProgress: true, stack: ["Next.js 15 App Router", "Turborepo", "TypeScript", "Supabase", "PostgreSQL", "Drizzle ORM", "Supabase Auth", "Tailwind CSS v4", "Zod", "React Hook Form", "Vercel"] },

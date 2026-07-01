@@ -82,6 +82,24 @@ const en = {
         viewWork: "View Final Web"
       },
       items: {
+        pulseguard: {
+          title: "PulseGuard",
+          category: "Full Stack · AI Security Tooling",
+          description: "Full-stack uptime monitoring platform with an AI-powered static security scanner for GitHub repositories, built for a technical hiring challenge.",
+          longDescription: "Full-stack SaaS platform for real-time uptime and performance monitoring, paired with a static security scanner for GitHub repositories powered by the Google Gemini API. Frontend in Next.js (App Router) and TypeScript; backend in NestJS with Prisma ORM on PostgreSQL (Supabase). Features an interactive dashboard with 12-week status history, AI-driven commit audits flagging risks like SQL injection and exposed credentials, and configurable email and Discord/Slack webhook alerts. Built as a take-home technical challenge for a job application — it showcases backend architecture and AI integration, not just frontend."
+        },
+        hidrorescate: {
+          title: "Hidrorescate",
+          category: "Frontend Development",
+          description: "Service site for a multi-brand water pump and pressurization technician, built to convert visits into WhatsApp leads.",
+          longDescription: "Built the marketing site for Hidrorescate's multi-brand technical service (pump installation, repair and pressurization) across Buenos Aires and AMBA. React SPA with Vite and TypeScript, structured around trust signals — written warranty, real job photos, licensed technicians — with a WhatsApp-first contact flow and a lead-qualifying Pre-Diagnóstico form."
+        },
+        magicalduo: {
+          title: "The Magical Duo",
+          category: "Frontend Development",
+          description: "Travel agency site for Disney, Universal and Caribbean vacations, organized around pre-designed, bookable packages.",
+          longDescription: "Built the site for a travel agency specializing in Disney, Universal, cruise and Caribbean packages. React SPA with Vite and TypeScript, organized by destination and package type, designed to turn browsing into a direct quote request."
+        },
         unik: {
           title: "Unik Agency",
           category: "Frontend Development",
@@ -349,6 +367,24 @@ const es = {
         viewWork: "Ver Web Final"
       },
       items: {
+        pulseguard: {
+          title: "PulseGuard",
+          category: "Full Stack · AI Security Tooling",
+          description: "Plataforma full-stack de monitoreo de uptime con un motor de auditoría de seguridad por IA para repositorios de GitHub, desarrollada para un challenge técnico de selección laboral.",
+          longDescription: "Plataforma SaaS full-stack para monitorear uptime y rendimiento en tiempo real, junto con un motor de auditoría de seguridad estático para repositorios de GitHub potenciado por la API de Google Gemini. Frontend en Next.js (App Router) y TypeScript; backend en NestJS con Prisma ORM sobre PostgreSQL (Supabase). Incluye un dashboard interactivo con historial de 12 semanas, auditoría de commits por IA que detecta riesgos como inyecciones SQL y credenciales expuestas, y alertas configurables por email y webhooks a Discord/Slack. Desarrollado como challenge técnico para un proceso de selección laboral — muestra arquitectura de backend e integración de IA, no solo frontend."
+        },
+        hidrorescate: {
+          title: "Hidrorescate",
+          category: "Frontend Development",
+          description: "Sitio de servicio técnico multimarca de bombas de agua y presurizadores, pensado para convertir visitas en consultas por WhatsApp.",
+          longDescription: "Desarrollé el sitio de Hidrorescate, servicio técnico multimarca de instalación, reparación y presurización de bombas de agua en Buenos Aires y AMBA. SPA en React con Vite y TypeScript, estructurada en torno a señales de confianza — garantía por escrito, fotos reales de trabajos, técnicos matriculados — con un flujo de contacto WhatsApp-first y un formulario de Pre-Diagnóstico que califica leads."
+        },
+        magicalduo: {
+          title: "The Magical Duo",
+          category: "Frontend Development",
+          description: "Sitio para una agencia de viajes especializada en Disney, Universal y Caribe, organizado en paquetes prediseñados y listos para reservar.",
+          longDescription: "Desarrollé el sitio de una agencia de viajes especializada en paquetes de Disney, Universal, cruceros y Caribe. SPA en React con Vite y TypeScript, organizada por destino y tipo de paquete, pensada para convertir la navegación en una cotización directa."
+        },
         unik: {
           title: "Unik Agency",
           category: "Frontend Development",
