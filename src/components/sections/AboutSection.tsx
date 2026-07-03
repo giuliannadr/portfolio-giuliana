@@ -54,7 +54,7 @@ export const AboutSection = () => {
         style={{ background: "linear-gradient(to top, #F5F4F0, transparent)" }} />
 
       {/* Label */}
-      <div className="flex items-center gap-5 mb-12 relative z-10">
+      <div className="flex items-center gap-5 mb-14 relative z-10">
         <div className="flex items-center gap-2 font-mono text-[9px] text-[#CC1500] uppercase tracking-[0.25em]">
           <span>02</span>
           <span>//</span>
@@ -64,11 +64,11 @@ export const AboutSection = () => {
         <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>{badge}</span>
       </div>
 
-      {/* Redesigned Grid Layout with Integrated Headline in Left Column */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 max-w-7xl mx-auto items-stretch">
+      {/* Grid Layout: Top-aligned to prevent any vertical stretching */}
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 max-w-7xl mx-auto items-start">
         
-        {/* Left Column: Headline + Narrative + Principles */}
-        <div className="lg:col-span-7 flex flex-col justify-between gap-8">
+        {/* Left Column: Headline + Narrative + Principles (Tightly Grouped) */}
+        <div className="lg:col-span-7 flex flex-col justify-start gap-6">
           
           {/* Integrated Headline */}
           <div className="select-none">
@@ -87,13 +87,13 @@ export const AboutSection = () => {
             </motion.h2>
           </div>
 
-          {/* Narrative paragraphs */}
+          {/* Narrative paragraphs - grouped tightly with gap-3 */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-3 text-sm md:text-[15px]"
           >
-            <p className="font-medium text-[#0A0A0A]/75 leading-relaxed text-sm md:text-[15px]" style={{ fontFamily: "Poppins, sans-serif" }}>
+            <p className="font-medium text-[#0A0A0A]/75 leading-relaxed" style={{ fontFamily: "Poppins, sans-serif" }}>
               <Trans 
                 i18nKey="about.p1" 
                 components={[
@@ -102,23 +102,23 @@ export const AboutSection = () => {
                 ]} 
               />
             </p>
-            <p className="text-[#0A0A0A]/55 leading-relaxed text-sm md:text-[15px]">
+            <p className="text-[#0A0A0A]/55 leading-relaxed">
               {t("about.p2")}
             </p>
           </motion.div>
 
-          {/* Vertical principles list with thin dividers */}
+          {/* Vertical principles list - grouped tightly with py-4 */}
           <div className="flex flex-col border-t border-[#0A0A0A]/[0.08] mt-2">
             {principles.map((pr, idx) => (
               <motion.div
                 key={pr.num}
-                initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="py-4.5 border-b border-[#0A0A0A]/[0.08] flex flex-col md:flex-row gap-3 md:gap-7 items-start"
+                initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="py-4 border-b border-[#0A0A0A]/[0.08] flex flex-col md:flex-row gap-3 md:gap-7 items-start"
               >
                 <span className="font-mono text-xs font-black text-[#CC1500] tracking-wider shrink-0 md:pt-1">{pr.num}</span>
                 <div className="flex-1">
-                  <h3 className="font-black uppercase text-[#0A0A0A]/85 text-xs md:text-sm tracking-wider mb-1.5" style={{ fontFamily: "Poppins, sans-serif" }}>
+                  <h3 className="font-black uppercase text-[#0A0A0A]/85 text-xs md:text-sm tracking-wider mb-1" style={{ fontFamily: "Poppins, sans-serif" }}>
                     {pr.title}
                   </h3>
                   <p className="text-[#0A0A0A]/50 text-xs md:text-[13px] leading-relaxed">
@@ -138,13 +138,13 @@ export const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-md mx-auto lg:mx-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col h-full justify-between"
+            className="w-full max-w-md mx-auto lg:mx-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between"
           >
-            {/* Upper Photo Area with adjusted objectPosition to show face */}
-            <div className="w-full h-64 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
+            {/* Taller Photo Area to show face and avoid excessive cropping */}
+            <div className="w-full h-80 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
               <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
                 className="w-full h-full object-cover"
-                style={{ filter: "contrast(1.02) brightness(1.01)", objectPosition: "center 15%" }} />
+                style={{ filter: "contrast(1.02) brightness(1.01)", objectPosition: "center 0%" }} />
             </div>
 
             {/* Middle ID Credentials */}
@@ -162,7 +162,7 @@ export const AboutSection = () => {
             </div>
 
             {/* Integrated Technical Fiche Specifications Table */}
-            <div className="px-5 pb-5 pt-2 flex flex-col gap-2 font-mono text-xs border-t border-[#0A0A0A]/[0.05] bg-[#0A0A0A]/[0.01] flex-1 justify-center">
+            <div className="px-5 pb-5 pt-2 flex flex-col gap-2 font-mono text-xs border-t border-[#0A0A0A]/[0.05] bg-[#0A0A0A]/[0.01] justify-center">
               <div className="flex items-center gap-2 pb-2 mb-1 border-b border-[#0A0A0A]/[0.05]">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#CC1500]" />
                 <span className="text-[8px] font-black uppercase tracking-wider text-[#0A0A0A]/50">TECHNICAL SPECIFICATIONS</span>

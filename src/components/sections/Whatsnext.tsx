@@ -18,7 +18,15 @@ export const WhatsNext = () => {
   ];
 
   return (
-    <section ref={ref} id="whatsnext" className="bg-[#F5F4F0] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative overflow-hidden">
+    <section 
+      ref={ref} 
+      id="whatsnext" 
+      className="bg-[#F5F4F0] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative overflow-hidden"
+      style={{
+        backgroundImage: "radial-gradient(rgba(10,10,10,0.04) 1px, transparent 1px)",
+        backgroundSize: "24px 24px"
+      }}
+    >
 
       {/* Edge fades */}
       <div className="absolute inset-x-0 top-0 h-28 pointer-events-none z-10"
@@ -60,12 +68,12 @@ export const WhatsNext = () => {
       <div className="relative z-10 max-w-7xl mx-auto py-10 px-2">
         
         {/* Horizontal line for desktop (hidden on mobile) */}
-        <div className="hidden lg:block absolute left-4 right-4 top-[50%] h-[3px] bg-gradient-to-r from-emerald-500/30 via-[#CC1500]/30 to-purple-500/30 -translate-y-1/2 z-0" />
+        <div className="hidden lg:block absolute left-4 right-4 top-[50%] h-[3px] bg-gradient-to-r from-emerald-500/20 via-[#CC1500]/25 to-purple-500/20 -translate-y-1/2 z-0" />
         
         {/* Vertical line for mobile (hidden on desktop) */}
-        <div className="lg:hidden absolute left-[21px] top-6 bottom-6 w-[3px] bg-gradient-to-b from-emerald-500/30 via-[#CC1500]/30 to-purple-500/30 z-0" />
+        <div className="lg:hidden absolute left-[21px] top-6 bottom-6 w-[3px] bg-gradient-to-b from-emerald-500/20 via-[#CC1500]/25 to-purple-500/20 z-0" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 relative z-10 font-mono">
           
           {/* Station 1: Completed */}
           <motion.div
@@ -79,7 +87,7 @@ export const WhatsNext = () => {
             </div>
 
             {/* Station Card */}
-            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-emerald-500/30 p-6 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all duration-300 flex flex-col gap-3 font-mono text-xs border-l-4 border-l-emerald-500">
+            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-emerald-500/30 p-6 rounded-2xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-xs border-l-4 border-l-emerald-500">
               <div className="text-[9px] text-[#0A0A0A]/40 uppercase tracking-widest font-black flex justify-between items-center">
                 <span>[STATION 01]</span>
                 <span className="text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">{lang === "en" ? "COMPLETED" : "COMPLETADO"}</span>
@@ -95,7 +103,7 @@ export const WhatsNext = () => {
               </div>
               <div className="flex justify-between items-baseline pt-1 text-[10px] text-[#0A0A0A]/50">
                 <span>{lang === "en" ? "GPA / AVERAGE" : "PROMEDIO / RENDIMIENTO"}</span>
-                <span className="text-emerald-600 font-black text-xs">8.72 / 10</span>
+                <span className="text-emerald-600 font-bold text-xs">8.72 / 10</span>
               </div>
             </div>
           </motion.div>
@@ -113,8 +121,8 @@ export const WhatsNext = () => {
             </div>
 
             {/* Station Card */}
-            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-[#CC1500]/30 p-6 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all duration-300 flex flex-col gap-4 border-l-4 border-l-[#CC1500]">
-              <div className="font-mono text-[9px] text-[#0A0A0A]/40 uppercase tracking-widest font-black flex justify-between items-center">
+            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-[#CC1500]/30 p-6 rounded-2xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 flex flex-col gap-4 border-l-4 border-l-[#CC1500]">
+              <div className="text-[9px] text-[#0A0A0A]/40 uppercase tracking-widest font-black flex justify-between items-center">
                 <span>[STATION 02]</span>
                 <span className="text-[#CC1500] font-bold bg-[#CC1500]/5 px-2 py-0.5 rounded">{lang === "en" ? "IN PROGRESS" : "EN CURSO"}</span>
               </div>
@@ -124,7 +132,7 @@ export const WhatsNext = () => {
               </h3>
               
               {/* Vertical Stack list of items */}
-              <div className="flex flex-col gap-2 border-t border-[#0A0A0A]/[0.05] pt-3.5 font-mono text-[9.5px]">
+              <div className="flex flex-col gap-2 border-t border-[#0A0A0A]/[0.05] pt-3.5 text-[9.5px]">
                 {learningItems.map((item, i) => (
                   <div key={i} className="flex justify-between items-center py-1 border-b border-[#0A0A0A]/[0.03] last:border-0 last:pb-0">
                     <span className="text-[#0A0A0A]/70">{item.label}</span>
@@ -147,7 +155,7 @@ export const WhatsNext = () => {
             </div>
 
             {/* Station Card */}
-            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-purple-500/30 p-6 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all duration-300 flex flex-col gap-3 font-mono text-xs border-l-4 border-l-purple-500">
+            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-purple-500/30 p-6 rounded-2xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-xs border-l-4 border-l-purple-500">
               <div className="text-[9px] text-[#0A0A0A]/40 uppercase tracking-widest font-black flex justify-between items-center">
                 <span>[STATION 03]</span>
                 <span className="text-purple-600 font-bold bg-purple-50 px-2 py-0.5 rounded">{lang === "en" ? "UPCOMING" : "SIGUIENTE"}</span>
