@@ -65,19 +65,7 @@ export const ExperienceSection = () => {
   const badge    = lang === "en" ? "Experience"     : "Experiencia";
 
   return (
-    <section ref={ref} id="experience" className="bg-[#F5F5F5] pt-6 md:pt-10 pb-20 md:pb-32 px-5 sm:px-8 lg:px-10 relative">
-
-      {/* Edge fade bottom only — top connects directly to About */}
-      <div className="absolute inset-x-0 bottom-0 h-28 pointer-events-none z-10"
-        style={{ background: `linear-gradient(to top, ${BG}, transparent)` }} />
-
-      {/* Blobs */}
-      <motion.div className="absolute inset-0 pointer-events-none" style={{ y: blobY }}>
-        {BLOBS.map((b, i) => (
-          <div key={i} className={`${b.cls} absolute blur-3xl`}
-            style={{ background: b.color, width: b.w, height: b.w, left: b.x, top: b.y, opacity: b.op, transform: "translate(-50%,-50%)" }} />
-        ))}
-      </motion.div>
+    <section ref={ref} id="experience" className="bg-[#F5F5F5] pt-0 pb-20 md:pb-28 px-5 sm:px-8 lg:px-10 relative">
 
       {/* Label */}
       <div className="flex items-center gap-5 mb-14 relative z-10">
