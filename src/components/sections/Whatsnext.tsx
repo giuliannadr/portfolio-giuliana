@@ -1,8 +1,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { BookOpen, Code2, CheckCircle2, PlayCircle, CalendarRange } from "lucide-react";
-import { SPOTS_DARK } from "@/lib/textGradients";
+import { CheckCircle2, PlayCircle, CalendarRange } from "lucide-react";
 
 export const WhatsNext = () => {
   const { t, i18n } = useTranslation();
@@ -12,10 +11,10 @@ export const WhatsNext = () => {
   const badge = lang === "en" ? "Roadmap" : "Ruta";
 
   const learningItems = [
-    { label: t("whatsNext.items.litElement"),    tag: t("whatsNext.tags.building"),   icon: <Code2 className="w-3.5 h-3.5" /> },
-    { label: t("whatsNext.items.nextjs"),        tag: t("whatsNext.tags.exploring"),  icon: <Code2 className="w-3.5 h-3.5" /> },
-    { label: t("whatsNext.items.systemDesign"),  tag: t("whatsNext.tags.studying"),   icon: <Code2 className="w-3.5 h-3.5" /> },
-    { label: t("whatsNext.items.postgres"),      tag: t("whatsNext.tags.practicing"), icon: <Code2 className="w-3.5 h-3.5" /> },
+    { label: t("whatsNext.items.litElement"),    tag: t("whatsNext.tags.building") },
+    { label: t("whatsNext.items.nextjs"),        tag: t("whatsNext.tags.exploring") },
+    { label: t("whatsNext.items.systemDesign"),  tag: t("whatsNext.tags.studying") },
+    { label: t("whatsNext.items.postgres"),      tag: t("whatsNext.tags.practicing") },
   ];
 
   return (
@@ -46,120 +45,134 @@ export const WhatsNext = () => {
           initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="block font-black uppercase leading-[0.88] text-white"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.2rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.3rem, 6vw, 5.5rem)", letterSpacing: "-0.02em" }}
         >
-          <span style={{ backgroundImage: SPOTS_DARK, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-            {t("whatsNext.title")}
+          <span className="mr-3 select-none" style={{ WebkitTextStroke: "1.2px rgba(255,255,255,0.9)", WebkitTextFillColor: "transparent", color: "transparent" }}>
+            {lang === "en" ? "WHAT'S" : "QUÉ"}
+          </span>
+          <span className="text-white">
+            {lang === "en" ? "NEXT." : "SIGUE."}
           </span>
         </motion.h2>
       </div>
 
-      {/* Roadmap Pipeline Grid Layout */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-start">
+      {/* Connected Vertical Pipeline Roadmap */}
+      <div className="relative z-10 max-w-4xl mx-auto pl-7 md:pl-12">
         
-        {/* Phase 1: Completed */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-4 border border-white/[0.06] bg-white/[0.01] p-6 rounded-2xl h-full min-h-[300px]"
-        >
-          {/* Header */}
-          <div className="flex items-center justify-between pb-3 border-b border-white/[0.08] font-mono text-[9.5px]">
-            <div className="flex items-center gap-2 text-emerald-400 font-semibold uppercase">
+        {/* Connected Vertical line */}
+        <div className="absolute left-[9px] md:left-[13px] top-4 bottom-4 w-px bg-white/10" />
+
+        <div className="flex flex-col gap-12">
+          
+          {/* Phase 1: Completed */}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="relative flex flex-col gap-2.5 pl-6 md:pl-10"
+          >
+            {/* Circle Node */}
+            <div className="absolute left-[-24px] md:left-[-38px] top-1.5 w-[19px] h-[19px] rounded-full border border-emerald-500 bg-[#0F0F11] flex items-center justify-center z-20">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            </div>
+
+            {/* Header info */}
+            <div className="flex items-center gap-3 font-mono text-[9px] text-emerald-400 uppercase tracking-widest">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>{lang === "en" ? "COMPLETED" : "COMPLETADO"}</span>
+              <span>{lang === "en" ? "PHASE 01 // COMPLETED" : "FASE 01 // COMPLETADO"}</span>
             </div>
-            <span className="text-white/30">[PHASE-01]</span>
-          </div>
 
-          {/* Card */}
-          <div className="flex flex-col gap-3 p-5 bg-white/[0.02] border border-white/[0.05] rounded-xl font-mono text-xs">
-            <span className="text-[#CC1500] font-bold text-[9px] uppercase tracking-widest">
-              {lang === "en" ? "DEGREE COMPLETED" : "CARRERA COMPLETADA"}
-            </span>
-            <p className="text-white/80 font-black text-sm font-sans tracking-wide uppercase leading-tight pt-1">
-              {lang === "en" ? "Web Development Degree" : "Tecnicatura en Desarrollo Web"}
-            </p>
-            <div className="flex justify-between items-baseline pt-2 border-t border-white/[0.04] text-[10px] text-white/50">
-              <span>UNLaM</span>
-              <span>18/20 Materias</span>
-            </div>
-            <div className="flex justify-between items-baseline pt-1 text-[10px] text-white/50">
-              <span>GPA</span>
-              <span className="text-emerald-400 font-black">8.72</span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Phase 2: In Progress */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-4 border border-[#CC1500]/20 bg-[#CC1500]/2 p-6 rounded-2xl h-full min-h-[300px]"
-        >
-          {/* Header */}
-          <div className="flex items-center justify-between pb-3 border-b border-white/[0.08] font-mono text-[9.5px]">
-            <div className="flex items-center gap-2 text-[#CC1500] font-semibold uppercase">
-              <PlayCircle className="w-3.5 h-3.5" />
-              <span>{lang === "en" ? "IN PROGRESS" : "EN CURSO"}</span>
-            </div>
-            <span className="text-white/30">[PHASE-02]</span>
-          </div>
-
-          {/* Cards Stack */}
-          <div className="flex flex-col gap-3">
-            {learningItems.map((item, i) => (
-              <div 
-                key={i}
-                className="flex items-center justify-between p-4 bg-white/[0.02] border border-white/[0.06] rounded-xl hover:border-white/15 transition-all duration-300 group"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="flex items-center justify-center w-7 h-7 bg-white/5 border border-white/10 text-white/40 group-hover:text-[#CC1500] group-hover:border-[#CC1500]/30 transition-all duration-300 rounded-lg shrink-0">
-                    {item.icon}
-                  </div>
-                  <span className="text-white/70 text-xs font-medium truncate tracking-wide" style={{ fontFamily: "Poppins, sans-serif" }}>
-                    {item.label}
-                  </span>
-                </div>
-                <span className="font-mono text-[8px] uppercase tracking-wider text-white/30 shrink-0 group-hover:text-[#CC1500]/65 transition-colors">
-                  {item.tag}
-                </span>
+            {/* Card Content */}
+            <div className="border border-white/[0.06] bg-white/[0.01] p-5 rounded-2xl max-w-2xl font-mono text-xs flex flex-col gap-2">
+              <div className="text-[10px] text-[#CC1500] font-black uppercase tracking-wider">
+                {lang === "en" ? "DEGREE COMPLETED" : "CARRERA COMPLETADA"}
               </div>
-            ))}
-          </div>
-        </motion.div>
+              <h3 className="text-white/80 font-black text-sm font-sans tracking-wide uppercase leading-tight pt-1">
+                {lang === "en" ? "Web Development Degree" : "Tecnicatura en Desarrollo Web"}
+              </h3>
+              <div className="flex justify-between items-baseline pt-2 border-t border-white/[0.04] text-[10px] text-white/40">
+                <span>UNLaM</span>
+                <span>18/20 {lang === "en" ? "Subjects" : "Materias"}</span>
+              </div>
+              <div className="flex justify-between items-baseline pt-1 text-[10px] text-white/40">
+                <span>{lang === "en" ? "GPA / AVERAGE" : "PROMEDIO / RENDIMIENTO"}</span>
+                <span className="text-emerald-400 font-bold">8.72 / 10</span>
+              </div>
+            </div>
+          </motion.div>
 
-        {/* Phase 3: Upcoming */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-4 border border-white/[0.06] bg-white/[0.01] p-6 rounded-2xl h-full min-h-[300px]"
-        >
-          {/* Header */}
-          <div className="flex items-center justify-between pb-3 border-b border-white/[0.08] font-mono text-[9.5px]">
-            <div className="flex items-center gap-2 text-white/50 font-semibold uppercase">
+          {/* Phase 2: In Progress */}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            className="relative flex flex-col gap-2.5 pl-6 md:pl-10"
+          >
+            {/* Circle Node (Pulsing) */}
+            <div className="absolute left-[-24px] md:left-[-38px] top-1.5 w-[19px] h-[19px] rounded-full border border-[#CC1500] bg-[#0F0F11] flex items-center justify-center z-20">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#CC1500] animate-pulse" />
+            </div>
+
+            {/* Header info */}
+            <div className="flex items-center gap-3 font-mono text-[9px] text-[#CC1500] uppercase tracking-widest">
+              <PlayCircle className="w-3.5 h-3.5" />
+              <span>{lang === "en" ? "PHASE 02 // IN PROGRESS" : "FASE 02 // EN CURSO"}</span>
+            </div>
+
+            {/* Card Content */}
+            <div className="border border-[#CC1500]/25 bg-[#CC1500]/[0.01] p-5 rounded-2xl max-w-2xl flex flex-col gap-4">
+              <div className="font-mono text-[10px] text-[#CC1500] font-black uppercase tracking-wider">
+                {lang === "en" ? "SPECIALIZATION & FRONTIER TECH" : "ESPECIALIZACIÓN Y STACK AVANZADO"}
+              </div>
+              <h3 className="text-white/80 font-black text-sm uppercase tracking-wide leading-tight" style={{ fontFamily: "Poppins, sans-serif" }}>
+                {lang === "en" ? "Deepening Engineering & Optimization" : "Profundizando Arquitecturas & Optimización"}
+              </h3>
+              
+              {/* Grid list of technologies */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 border-t border-white/[0.04] pt-4 font-mono text-[10px]">
+                {learningItems.map((item, i) => (
+                  <div key={i} className="flex justify-between items-center p-2.5 bg-white/[0.02] border border-white/[0.05] rounded-lg">
+                    <span className="text-white/70">{item.label}</span>
+                    <span className="text-[#CC1500]/70 text-[8px] font-black uppercase tracking-widest">{item.tag}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Phase 3: Upcoming */}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+            className="relative flex flex-col gap-2.5 pl-6 md:pl-10"
+          >
+            {/* Circle Node */}
+            <div className="absolute left-[-24px] md:left-[-38px] top-1.5 w-[19px] h-[19px] rounded-full border border-white/20 bg-[#0F0F11] flex items-center justify-center z-20">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+            </div>
+
+            {/* Header info */}
+            <div className="flex items-center gap-3 font-mono text-[9px] text-white/40 uppercase tracking-widest">
               <CalendarRange className="w-3.5 h-3.5" />
-              <span>{lang === "en" ? "UPCOMING" : "SIGUIENTE"}</span>
+              <span>{lang === "en" ? "PHASE 03 // UPCOMING" : "FASE 03 // SIGUIENTE"}</span>
             </div>
-            <span className="text-white/30">[PHASE-03]</span>
-          </div>
 
-          {/* Card */}
-          <div className="flex flex-col gap-3 p-5 bg-white/[0.02] border border-white/[0.05] rounded-xl font-mono text-xs">
-            <span className="text-white/40 font-bold text-[9px] uppercase tracking-widest flex items-center gap-1.5">
-              <BookOpen className="w-3 h-3 text-[#CC1500]" />
-              {t("whatsNext.tags.starting")}
-            </span>
-            <p className="text-white/80 font-black text-sm font-sans tracking-wide uppercase leading-tight pt-1">
-              {t("whatsNext.items.utn")}
-            </p>
-            <div className="flex justify-between items-baseline pt-2 border-t border-white/[0.04] text-[10px] text-white/50">
-              <span>{t("whatsNext.items.utnSub")}</span>
+            {/* Card Content */}
+            <div className="border border-white/[0.06] bg-white/[0.01] p-5 rounded-2xl max-w-2xl font-mono text-xs flex flex-col gap-2">
+              <div className="text-[10px] text-white/30 font-black uppercase tracking-widest flex items-center gap-1.5">
+                {t("whatsNext.tags.starting")}
+              </div>
+              <h3 className="text-white/80 font-black text-sm font-sans tracking-wide uppercase leading-tight pt-1">
+                {t("whatsNext.items.utn")}
+              </h3>
+              <div className="flex justify-between items-baseline pt-2 border-t border-white/[0.04] text-[10px] text-white/40">
+                <span>{t("whatsNext.items.utnSub")}</span>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+        </div>
 
       </div>
+
     </section>
   );
 };

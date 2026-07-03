@@ -25,7 +25,7 @@ export const Navbar = () => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80;
+      const offset = 90;
       const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
@@ -40,12 +40,12 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60;
       if (isAtBottom) { setActiveSection("contact"); return; }
       const sections = document.querySelectorAll("section[id]");
       sections.forEach((section) => {
         const top = (section as HTMLElement).offsetTop;
-        if (window.scrollY >= top - window.innerHeight / 3) {
+        if (window.scrollY >= top - window.innerHeight / 2.5) {
           if (menuItems.some(item => item.id === section.id)) {
             setActiveSection(section.id);
           }
@@ -58,73 +58,78 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* ── DESKTOP NAV ── */}
+      {/* ── FLOATING DESKTOP PILL NAVBAR ── */}
       <nav
-        className={`hidden xl:flex fixed top-0 left-0 right-0 z-50 h-16 items-center justify-between px-10 xl:px-14 transition-all duration-300 ${
+        className={`hidden xl:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 h-14 items-center justify-between px-8 rounded-full transition-all duration-300 w-[90%] max-w-5xl backdrop-blur-md border ${
           scrolled
-            ? "bg-[#0A0A0A] border-b border-white/8 shadow-[0_1px_0_0_rgba(255,255,255,0.04)]"
-            : "bg-transparent"
+            ? "bg-[#0A0A0A]/85 border-white/10 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.5)]"
+            : "bg-[#0A0A0A]/40 border-white/[0.06] shadow-sm"
         }`}
       >
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "home")}
-          className="font-black tracking-tighter uppercase text-sm text-white hover:text-[#CC1500] transition-colors"
+          className="font-black tracking-tighter uppercase text-xs text-white hover:text-[#CC1500] transition-colors"
           style={{ fontFamily: "Poppins, sans-serif" }}
         >
           Giuliana Di Rocco
         </a>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-7">
           {menuItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => handleNavClick(e, item.id)}
-              className={`relative text-[10px] font-bold uppercase tracking-[0.2em] pb-0.5 transition-all ${
+              className={`relative text-[10px] font-bold uppercase tracking-[0.25em] transition-all py-1 ${
                 activeSection === item.id
                   ? "text-white"
-                  : "text-white/30 hover:text-white"
+                  : "text-white/40 hover:text-white"
               }`}
             >
               {item[lang]}
               {activeSection === item.id && (
                 <motion.div
                   layoutId="activeNavLine"
-                  className="absolute -bottom-1 left-0 right-0 h-[1px] bg-[#CC1500]"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#CC1500] rounded-full"
                 />
               )}
             </a>
           ))}
 
-          <a
-            href={lang === "en" ? "/CV_Giuliana_DiRocco_EN.pdf" : "/CV_Giuliana_DiRocco_ES.pdf"}
-            download
-            className="inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.2em] bg-white text-[#0A0A0A] hover:bg-white/85 px-3 py-1.5 transition-all duration-300"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            <Download size={10} />
-            CV
-          </a>
-          <button
-            onClick={toggleLanguage}
-            className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 hover:text-[#CC1500] transition-colors border-l border-white/10 pl-8"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            {lang === "en" ? "ES" : "EN"}
-          </button>
+          <div className="flex items-center gap-5 border-l border-white/10 pl-6">
+            <a
+              href={lang === "en" ? "/CV_Giuliana_DiRocco_EN.pdf" : "/CV_Giuliana_DiRocco_ES.pdf"}
+              download
+              className="inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.2em] bg-white text-[#0A0A0A] hover:bg-[#CC1500] hover:text-white px-3.5 py-1.5 transition-all duration-300 rounded-full"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              <Download size={9} />
+              CV
+            </a>
+            <button
+              onClick={toggleLanguage}
+              className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 hover:text-[#CC1500] transition-colors"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              {lang === "en" ? "ES" : "EN"}
+            </button>
+          </div>
         </div>
       </nav>
 
-      {/* ── MOBILE HEADER ── */}
+      {/* ── FLOATING MOBILE PILL NAVBAR ── */}
       <div
-        className={`xl:hidden fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-5 transition-all duration-300 ${
-          scrolled ? "bg-[#0A0A0A] border-b border-white/8" : "bg-transparent"
+        className={`xl:hidden fixed top-4 left-1/2 -translate-x-1/2 z-50 h-12 flex items-center justify-between px-5 rounded-full transition-all duration-300 w-[90%] backdrop-blur-md border ${
+          scrolled 
+            ? "bg-[#0A0A0A]/85 border-white/10 shadow-lg" 
+            : "bg-[#0A0A0A]/40 border-white/[0.06]"
         }`}
       >
         <a
           href="#home"
-          className="font-black tracking-tighter uppercase text-[11px] text-white"
+          onClick={(e) => handleNavClick(e, "home")}
+          className="font-black tracking-tighter uppercase text-[10px] text-white"
           style={{ fontFamily: "Poppins, sans-serif" }}
         >
           Giuliana Di Rocco
@@ -132,12 +137,12 @@ export const Navbar = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={toggleLanguage}
-            className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-[#CC1500] transition-colors"
+            className="text-[9px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-[#CC1500] transition-colors"
           >
             {lang === "en" ? "ES" : "EN"}
           </button>
-          <button onClick={() => setIsOpen(true)} className="p-1 text-white">
-            <Menu size={22} />
+          <button onClick={() => setIsOpen(true)} className="p-1 text-white hover:text-[#CC1500] transition-colors">
+            <Menu size={18} />
           </button>
         </div>
       </div>
@@ -150,9 +155,9 @@ export const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="xl:hidden fixed inset-0 z-[100] bg-[#0A0A0A] flex flex-col px-6 py-8"
+            className="xl:hidden fixed inset-0 z-[100] bg-[#0A0A0A]/98 backdrop-blur-lg flex flex-col px-6 py-8"
           >
-            <div className="flex justify-between items-center mb-16">
+            <div className="flex justify-between items-center mb-12">
               <span
                 className="font-black tracking-tighter uppercase text-[11px] text-white"
                 style={{ fontFamily: "Poppins, sans-serif" }}
@@ -163,11 +168,11 @@ export const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="p-2 text-white/40 hover:text-white transition-colors"
               >
-                <X size={22} />
+                <X size={20} />
               </button>
             </div>
 
-            <nav className="flex-1 flex flex-col justify-center">
+            <nav className="flex-1 flex flex-col justify-center gap-1">
               {menuItems.map((item, i) => (
                 <motion.a
                   key={item.id}
@@ -175,40 +180,38 @@ export const Navbar = () => {
                   onClick={(e) => handleNavClick(e, item.id)}
                   initial={{ x: -24, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-                  className="flex items-center justify-between py-5 border-b border-white/5 group"
+                  transition={{ delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex items-center justify-between py-4 border-b border-white/5 group"
                 >
                   <span
-                    className="text-4xl font-black uppercase tracking-tighter"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      backgroundImage: "linear-gradient(120deg, #CC1500 0%, #ffffff 45%, #7C3AED 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: activeSection === item.id ? "white" : "transparent",
-                      backgroundClip: "text",
-                    }}
+                    className={`text-3xl font-black uppercase tracking-tighter transition-colors ${
+                      activeSection === item.id ? "text-[#CC1500]" : "text-white/80 hover:text-[#CC1500]"
+                    }`}
+                    style={{ fontFamily: "Poppins, sans-serif" }}
                   >
                     {item[lang]}
                   </span>
-                  <span className="text-white/20 group-hover:text-[#CC1500] transition-colors text-2xl">
+                  <span className="text-white/20 group-hover:text-[#CC1500] transition-colors text-xl">
                     →
                   </span>
                 </motion.a>
               ))}
             </nav>
 
-            <a
-              href={lang === "en" ? "/CV_Giuliana_DiRocco_EN.pdf" : "/CV_Giuliana_DiRocco_ES.pdf"}
-              download
-              className="inline-flex items-center gap-2 mt-8 mb-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/35 hover:text-white transition-colors"
-              style={{ fontFamily: "Poppins, sans-serif" }}
-            >
-              <Download size={11} />
-              {lang === "en" ? "Download CV" : "Descargar CV"}
-            </a>
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/20">
-              © 2026 Giuliana Di Rocco
-            </p>
+            <div className="flex flex-col gap-4 mt-8">
+              <a
+                href={lang === "en" ? "/CV_Giuliana_DiRocco_EN.pdf" : "/CV_Giuliana_DiRocco_ES.pdf"}
+                download
+                className="inline-flex items-center justify-center gap-2 py-3.5 bg-white text-black hover:bg-[#CC1500] hover:text-white rounded-lg text-[10px] font-black uppercase tracking-[0.25em] transition-all duration-300"
+                style={{ fontFamily: "Poppins, sans-serif" }}
+              >
+                <Download size={11} />
+                {lang === "en" ? "Download CV" : "Descargar CV"}
+              </a>
+              <p className="text-[9px] font-mono uppercase tracking-[0.25em] text-white/20 text-center">
+                © 2026 Giuliana Di Rocco
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

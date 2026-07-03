@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { SPOTS_LIGHT } from "@/lib/textGradients";
+
 
 const BLOBS: { color: string; w: number; x: string; y: string; op: number; cls: string; }[] = [];
 
@@ -23,7 +23,8 @@ const CATEGORY_KEYS = [
 ];
 
 export const TechSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language === "en" ? "en" : "es";
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -74,10 +75,13 @@ export const TechSection = () => {
           initial={{ opacity: 0, y: 15 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="block font-black uppercase leading-[0.88] text-[#0A0A0A]"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.2rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.3rem, 6vw, 5.5rem)", letterSpacing: "-0.02em" }}
         >
-          <span style={{ backgroundImage: SPOTS_LIGHT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-            {t("tech.title")}
+          <span className="mr-3 select-none" style={{ WebkitTextStroke: "1.2px #0A0A0A", WebkitTextFillColor: "transparent", color: "transparent" }}>
+            {lang === "en" ? "MY" : "MIS"}
+          </span>
+          <span className="text-[#0A0A0A]">
+            {lang === "en" ? "STACK." : "HERRAMIENTAS."}
           </span>
         </motion.h2>
       </div>

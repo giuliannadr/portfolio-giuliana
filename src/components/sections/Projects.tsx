@@ -2,7 +2,7 @@ import { ArrowUpRight, X, Eye, ChevronLeft, ChevronRight, ChevronDown, Github } 
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { SPOTS_DARK } from "@/lib/textGradients";
+
 import { RAW_PROJECT_DATA } from "@/data/projectsData";
 
 const BG = "#0F0F11";
@@ -210,10 +210,13 @@ export const Projects = () => {
           initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="block font-black uppercase leading-[0.88] text-white"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(3rem, 9vw, 7.5rem)", letterSpacing: "-0.03em" }}
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.3rem, 6vw, 5.5rem)", letterSpacing: "-0.02em" }}
         >
-          <span style={{ backgroundImage: SPOTS_DARK, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-            {lang === "en" ? "My work." : "Mi trabajo."}
+          <span className="mr-3 select-none" style={{ WebkitTextStroke: "1.2px rgba(255,255,255,0.9)", WebkitTextFillColor: "transparent", color: "transparent" }}>
+            {lang === "en" ? "MY" : "MI"}
+          </span>
+          <span className="text-white">
+            {lang === "en" ? "WORK." : "TRABAJO."}
           </span>
         </motion.h2>
       </div>

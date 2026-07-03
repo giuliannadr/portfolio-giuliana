@@ -1,16 +1,13 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useTranslation, Trans } from "react-i18next";
-import { SPOTS_LIGHT } from "@/lib/textGradients";
-import { DEPLOYED_COUNT } from "@/data/projectsData";
 
 export const AboutSection = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language === "en" ? "en" : "es";
   const ref  = useRef<HTMLElement>(null);
 
-  const headline = lang === "en" ? "About me." : "Sobre mí.";
-  const badge    = lang === "en" ? "About" : "Sobre mí";
+  const badge = lang === "en" ? "About" : "Sobre mí";
 
   // Principles / Focus Areas (formerly Pillars)
   const principles = [
@@ -73,25 +70,28 @@ export const AboutSection = () => {
           initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="block font-black uppercase leading-[0.88] text-[#0A0A0A]"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.2rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.3rem, 6vw, 5.5rem)", letterSpacing: "-0.02em" }}
         >
-          <span style={{ backgroundImage: SPOTS_LIGHT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-            {headline}
+          <span className="mr-3 select-none" style={{ WebkitTextStroke: "1.2px #0A0A0A", WebkitTextFillColor: "transparent", color: "transparent" }}>
+            {lang === "en" ? "ABOUT" : "SOBRE"}
+          </span>
+          <span className="text-[#0A0A0A]">
+            {lang === "en" ? "ME." : "MÍ."}
           </span>
         </motion.h2>
       </div>
 
       {/* Redesigned Grid Layout */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 max-w-7xl mx-auto">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 max-w-7xl mx-auto items-stretch">
         
         {/* Left Column: Narrative + Principles */}
-        <div className="lg:col-span-7 flex flex-col gap-10">
+        <div className="lg:col-span-7 flex flex-col justify-between gap-10">
           
           {/* Narrative paragraphs */}
           <motion.div
             initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-5"
           >
             <p className="font-medium text-[#0A0A0A]/75 leading-relaxed text-sm md:text-base" style={{ fontFamily: "Poppins, sans-serif" }}>
               <Trans 
@@ -131,70 +131,61 @@ export const AboutSection = () => {
 
         </div>
 
-        {/* Right Column: Photo (Developer ID Card) + Technical Fiche */}
-        <div className="lg:col-span-5 flex flex-col gap-8">
+        {/* Right Column: Unified ID Card (Photo + Specs inside) */}
+        <div className="lg:col-span-5 flex flex-col justify-start">
           
           {/* Framed Profile Card (Developer ID Card) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex justify-center lg:justify-start"
+            className="w-full max-w-md mx-auto lg:mx-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col h-full justify-between"
           >
-            <div className="relative shrink-0 w-64 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
-              
-              {/* Photo Area */}
-              <div className="w-full h-56 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5">
-                <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
-                  className="w-full h-full object-cover object-center"
-                  style={{ filter: "contrast(1.02) brightness(1.01)" }} />
-              </div>
-
-              {/* ID Data Area inside card */}
-              <div className="p-4 flex flex-col gap-1.5 font-mono">
-                <div className="flex justify-between items-center text-[8.5px] text-[#0A0A0A]/40 uppercase tracking-widest">
-                  <span>SECURE CREDENTIAL</span>
-                  <span className="text-[#CC1500] font-black">GDR-98</span>
-                </div>
-                <div className="text-[12px] font-black uppercase text-[#0A0A0A] tracking-wider pt-0.5" style={{ fontFamily: "Poppins, sans-serif" }}>
-                  GIULIANA DI ROCCO
-                </div>
-                <div className="text-[9px] text-[#0A0A0A]/50 uppercase tracking-wider font-semibold">
-                  FULL STACK DEVELOPER
-                </div>
-                
-                {/* Embedded status indicator */}
-                <div className="flex items-center gap-2 mt-2 pt-2 border-t border-[#0A0A0A]/[0.05]">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[8px] font-black tracking-widest text-emerald-600 uppercase">
-                    {lang === "en" ? "OPEN TO WORK" : "DISPONIBLE"}
-                  </span>
-                </div>
-              </div>
-
+            {/* Upper Photo Area */}
+            <div className="w-full h-64 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
+              <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
+                className="w-full h-full object-cover object-center"
+                style={{ filter: "contrast(1.02) brightness(1.01)" }} />
             </div>
-          </motion.div>
 
-          {/* Technical Fiche Metadata Table */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="border border-[#0A0A0A]/[0.08] bg-white/[0.02] p-6 rounded-2xl flex flex-col gap-4 shadow-sm"
-          >
-            <div className="flex items-center gap-3 pb-3 border-b border-[#0A0A0A]/[0.08]">
-              <div className="w-2 h-2 rounded-full bg-[#CC1500]" />
-              <span className="font-mono text-[10px] font-black uppercase tracking-wider text-[#0A0A0A]/70">
-                {lang === "en" ? "TECHNICAL FICHE" : "FICHA TÉCNICA"}
+            {/* Middle ID Credentials */}
+            <div className="px-5 pt-4 pb-3 flex flex-col gap-1 font-mono shrink-0">
+              <div className="flex justify-between items-center text-[8px] text-[#0A0A0A]/40 uppercase tracking-widest">
+                <span>IDENTITY BADGE</span>
+                <span className="text-[#CC1500] font-black">GDR-9807</span>
+              </div>
+              <div className="text-[14px] font-black uppercase text-[#0A0A0A] tracking-wider pt-0.5" style={{ fontFamily: "Poppins, sans-serif" }}>
+                GIULIANA DI ROCCO
+              </div>
+              <div className="text-[9px] text-[#0A0A0A]/50 uppercase tracking-wider font-semibold">
+                FULL STACK DEVELOPER
+              </div>
+            </div>
+
+            {/* Integrated Technical Fiche Specifications Table */}
+            <div className="px-5 pb-5 pt-2 flex flex-col gap-2 font-mono text-xs border-t border-[#0A0A0A]/[0.05] bg-[#0A0A0A]/[0.01] flex-1 justify-center">
+              <div className="flex items-center gap-2 pb-2 mb-1 border-b border-[#0A0A0A]/[0.05]">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#CC1500]" />
+                <span className="text-[8px] font-black uppercase tracking-wider text-[#0A0A0A]/50">TECHNICAL SPECIFICATIONS</span>
+              </div>
+              
+              <div className="flex flex-col gap-2">
+                {metadata.map((item) => (
+                  <div key={item.label} className="flex justify-between items-baseline py-1 border-b border-[#0A0A0A]/[0.03] last:border-0 last:pb-0">
+                    <span className="text-[#0A0A0A]/40 uppercase text-[9px] tracking-wide">{item.label}</span>
+                    <span className="text-[#0A0A0A]/85 font-medium text-right max-w-[70%] truncate text-[11px]">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Card Footer Status Indicator */}
+            <div className="px-5 py-3.5 border-t border-[#0A0A0A]/[0.06] bg-[#0A0A0A]/[0.02] flex items-center gap-2 shrink-0">
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[8.5px] font-black tracking-widest text-emerald-600 uppercase">
+                {lang === "en" ? "OPEN TO WORK // AVAILABLE" : "DISPONIBLE // OPEN TO WORK"}
               </span>
             </div>
 
-            <div className="flex flex-col gap-3 font-mono text-xs">
-              {metadata.map((item) => (
-                <div key={item.label} className="flex justify-between items-baseline py-1.5 border-b border-[#0A0A0A]/[0.04] last:border-0 last:pb-0">
-                  <span className="text-[#0A0A0A]/40 uppercase text-[10px]">{item.label}</span>
-                  <span className="text-[#0A0A0A]/80 font-medium text-right max-w-[70%] truncate">{item.value}</span>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
         </div>
