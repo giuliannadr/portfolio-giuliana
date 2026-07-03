@@ -64,10 +64,10 @@ export const AboutSection = () => {
         <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>{badge}</span>
       </div>
 
-      {/* Grid Layout: Top-aligned to prevent any vertical stretching */}
+      {/* Grid Layout: Top-aligned and balanced */}
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 max-w-7xl mx-auto items-start">
         
-        {/* Left Column: Headline + Narrative + Principles (Tightly Grouped) */}
+        {/* Left Column: Headline + Narrative + Principles (Tightly Grouped, Untouched) */}
         <div className="lg:col-span-7 flex flex-col justify-start gap-6">
           
           {/* Integrated Headline */}
@@ -87,7 +87,7 @@ export const AboutSection = () => {
             </motion.h2>
           </div>
 
-          {/* Narrative paragraphs - grouped tightly with gap-3 */}
+          {/* Narrative paragraphs */}
           <motion.div
             initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -107,7 +107,7 @@ export const AboutSection = () => {
             </p>
           </motion.div>
 
-          {/* Vertical principles list - grouped tightly with py-4 */}
+          {/* Vertical principles list */}
           <div className="flex flex-col border-t border-[#0A0A0A]/[0.08] mt-2">
             {principles.map((pr, idx) => (
               <motion.div
@@ -131,33 +131,32 @@ export const AboutSection = () => {
 
         </div>
 
-        {/* Right Column: Unified ID Card (Photo + Specs inside) */}
+        {/* Right Column: Redesigned Developer Card (Wider, full-bleed photo, professional layout criteria) */}
         <div className="lg:col-span-5 flex flex-col justify-start">
           
-          {/* Framed Profile Card (Developer ID Card) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-[340px] mx-auto lg:mr-auto lg:ml-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between"
+            className="w-full max-w-[360px] mx-auto lg:mr-auto lg:ml-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between"
           >
-            {/* Taller Photo Area to show face and avoid excessive cropping */}
-            <div className="w-full h-72 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
+            {/* Full-bleed Photo Area: Fixed proportional height (h-[290px]) to show her face, hair and shoulders naturally */}
+            <div className="w-full h-[290px] overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
               <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
                 className="w-full h-full object-cover"
-                style={{ filter: "contrast(1.02) brightness(1.01)", objectPosition: "center 0%" }} />
+                style={{ filter: "contrast(1.02) brightness(1.01)", objectPosition: "center 8%" }} />
             </div>
 
-            {/* Middle ID Credentials */}
-            <div className="px-5 pt-4.5 pb-3 flex flex-col gap-0.5 font-mono shrink-0">
+            {/* Credentials Block: Beautifully spaced name and role, not cramped against photo */}
+            <div className="px-5 pt-5 pb-4 flex flex-col gap-1 font-mono shrink-0">
               <div className="text-[14px] font-black uppercase text-[#0A0A0A] tracking-wider" style={{ fontFamily: "Poppins, sans-serif" }}>
                 GIULIANA DI ROCCO
               </div>
-              <div className="text-[9px] text-[#0A0A0A]/50 uppercase tracking-wider font-semibold">
+              <div className="text-[9.5px] text-[#0A0A0A]/50 uppercase tracking-widest font-bold">
                 FULL STACK DEVELOPER
               </div>
             </div>
 
-            {/* Integrated Technical Fiche Specifications Table */}
+            {/* Specifications Table - Separated with clean border */}
             <div className="px-5 pb-5 pt-2 flex flex-col gap-2 font-mono text-xs border-t border-[#0A0A0A]/[0.05] bg-[#0A0A0A]/[0.01] justify-center">
               <div className="flex items-center gap-2 pb-2 mb-1 border-b border-[#0A0A0A]/[0.05]">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#CC1500]" />
@@ -174,7 +173,7 @@ export const AboutSection = () => {
               </div>
             </div>
 
-            {/* Card Footer Status Indicator */}
+            {/* Status Indicator Footer */}
             <div className="px-5 py-3.5 border-t border-[#0A0A0A]/[0.06] bg-[#0A0A0A]/[0.02] flex items-center gap-2 shrink-0">
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-[8.5px] font-black tracking-widest text-emerald-600 uppercase">
