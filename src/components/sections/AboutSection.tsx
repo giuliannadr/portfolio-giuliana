@@ -138,22 +138,18 @@ export const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-[340px] mx-auto lg:ml-auto lg:mr-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between"
+            className="w-full max-w-[340px] mx-auto lg:mr-auto lg:ml-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between"
           >
             {/* Taller Photo Area to show face and avoid excessive cropping */}
-            <div className="w-full h-64 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
+            <div className="w-full h-72 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
               <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
                 className="w-full h-full object-cover"
                 style={{ filter: "contrast(1.02) brightness(1.01)", objectPosition: "center 0%" }} />
             </div>
 
             {/* Middle ID Credentials */}
-            <div className="px-5 pt-4 pb-3 flex flex-col gap-1 font-mono shrink-0">
-              <div className="flex justify-between items-center text-[8px] text-[#0A0A0A]/40 uppercase tracking-widest">
-                <span>IDENTITY BADGE</span>
-                <span className="text-[#CC1500] font-black">GDR-9807</span>
-              </div>
-              <div className="text-[14px] font-black uppercase text-[#0A0A0A] tracking-wider pt-0.5" style={{ fontFamily: "Poppins, sans-serif" }}>
+            <div className="px-5 pt-4.5 pb-3 flex flex-col gap-0.5 font-mono shrink-0">
+              <div className="text-[14px] font-black uppercase text-[#0A0A0A] tracking-wider" style={{ fontFamily: "Poppins, sans-serif" }}>
                 GIULIANA DI ROCCO
               </div>
               <div className="text-[9px] text-[#0A0A0A]/50 uppercase tracking-wider font-semibold">
