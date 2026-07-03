@@ -8,21 +8,13 @@ import { useTranslation } from "react-i18next";
 import { DEPLOYED_COUNT } from "@/data/projectsData";
 
 // ─── Static fallback reviews ──────────────────────────────────────────────────
+// Temporarily empty — waiting on technical testimonials (Santi + one more) before re-populating.
 const STATIC_REVIEWS = {
-  es: [
-    { key: "s1", name: "Camila Grondona", initial: "C", color: "#06B6D4", isStatic: true, text: "Pasar de un PDF en Canva a una web profesional cambió totalmente cómo nos ven los clientes. Giuliana logró una identidad digital con animaciones que realmente rompe lo convencional.", role: "UNIK — Estrategia de Negocio" },
-    { key: "s2", name: "Iara Rotela",     initial: "I", color: "#7C3AED", isStatic: true, text: "Buscábamos que el acceso a nuestro trabajo y el contacto por WhatsApp fuera directo y profesional. Giuliana nos dio una solución impecable que simplificó la llegada de nuevos clientes.", role: "UNIK — Directora Creativa" },
-    { key: "s3", name: "Miri G.",         initial: "M", color: "#CC1500", isStatic: true, text: "Giuliana entendió de inmediato la calidez que quería transmitir. Desde que lanzamos la web, las consultas se volvieron más profesionales y el proceso de reservas es mucho más fluido.", role: "La Quinta Miri — Propietaria" },
-  ],
-  en: [
-    { key: "s1", name: "Camila Grondona", initial: "C", color: "#06B6D4", isStatic: true, text: "Moving from a Canva PDF to a professional website totally changed how clients see us. Giuliana achieved a digital identity with animations that really breaks the mold.", role: "UNIK — Business Strategy" },
-    { key: "s2", name: "Iara Rotela",     initial: "I", color: "#7C3AED", isStatic: true, text: "We wanted access to our work and WhatsApp contact to be direct and professional. Giuliana gave us a flawless solution that simplified the arrival of new clients.", role: "UNIK — Creative Director" },
-    { key: "s3", name: "Miri G.",         initial: "M", color: "#CC1500", isStatic: true, text: "Giuliana immediately understood the warmth I wanted to convey. Since we launched the web, inquiries have become more professional and the booking process is much smoother.", role: "La Quinta Miri — Owner" },
-  ],
+  es: [] as { key: string; name: string; initial: string; color: string; isStatic: boolean; text: string; role: string }[],
+  en: [] as { key: string; name: string; initial: string; color: string; isStatic: boolean; text: string; role: string }[],
 };
 
 const METRICS = [
-  { num: "100%",              color: "#CC1500", es: "Satisfacción · 3 clientes", en: "Satisfaction · 3 clients" },
   { num: `${DEPLOYED_COUNT}`, color: "#7C3AED", es: "Proyectos en producción",   en: "Production projects"      },
   { num: "B2/C1",             color: "#06B6D4", es: "Nivel de inglés",           en: "English level"            },
 ];
@@ -285,94 +277,96 @@ export const TrustSection = () => {
       </div>
 
       {/* ── Carousel ── */}
-      <motion.div
-        className="relative z-10 max-w-2xl mx-auto"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      >
-        {/* Card slide area */}
-        <div className="relative overflow-hidden" style={{ minHeight: "260px" }}>
-          <AnimatePresence custom={direction} mode="wait">
-            <motion.div
-              key={current}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.15}
-              onDragEnd={(_, info) => {
-                if (info.offset.x < -60) next();
-                else if (info.offset.x > 60) prev();
-              }}
-              style={{ cursor: "grab" }}
-            >
-              <ReviewCard item={items[current]} lang={lang} />
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Navigation row: arrow · dots · arrow */}
-        <div className="flex items-center justify-center gap-5 mt-7">
-          {/* Prev */}
-          <button
-            onClick={prev}
-            aria-label="Previous review"
-            className="w-9 h-9 flex items-center justify-center text-white/30 hover:text-white transition-colors duration-300"
-            style={{ border: "1px solid rgba(255,255,255,0.10)" }}
-          >
-            <ChevronLeft size={16} />
-          </button>
-
-          {/* Dots */}
-          <div className="flex items-center gap-2">
-            {items.map((item, i) => (
-              <button
-                key={item.key}
-                onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                aria-label={`Go to review ${i + 1}`}
-                className="h-1.5 rounded-full transition-all duration-300"
-                style={{
-                  width: i === current ? "1.75rem" : "0.375rem",
-                  background: i === current ? items[current].color : "rgba(255,255,255,0.18)",
+      {items.length > 0 && (
+        <motion.div
+          className="relative z-10 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {/* Card slide area */}
+          <div className="relative overflow-hidden" style={{ minHeight: "260px" }}>
+            <AnimatePresence custom={direction} mode="wait">
+              <motion.div
+                key={current}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.15}
+                onDragEnd={(_, info) => {
+                  if (info.offset.x < -60) next();
+                  else if (info.offset.x > 60) prev();
                 }}
+                style={{ cursor: "grab" }}
+              >
+                <ReviewCard item={items[current]} lang={lang} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation row: arrow · dots · arrow */}
+          <div className="flex items-center justify-center gap-5 mt-7">
+            {/* Prev */}
+            <button
+              onClick={prev}
+              aria-label="Previous review"
+              className="w-9 h-9 flex items-center justify-center text-white/30 hover:text-white transition-colors duration-300"
+              style={{ border: "1px solid rgba(255,255,255,0.10)" }}
+            >
+              <ChevronLeft size={16} />
+            </button>
+
+            {/* Dots */}
+            <div className="flex items-center gap-2">
+              {items.map((item, i) => (
+                <button
+                  key={item.key}
+                  onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+                  aria-label={`Go to review ${i + 1}`}
+                  className="h-1.5 rounded-full transition-all duration-300"
+                  style={{
+                    width: i === current ? "1.75rem" : "0.375rem",
+                    background: i === current ? items[current].color : "rgba(255,255,255,0.18)",
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Next */}
+            <button
+              onClick={next}
+              aria-label="Next review"
+              className="w-9 h-9 flex items-center justify-center text-white/30 hover:text-white transition-colors duration-300"
+              style={{ border: "1px solid rgba(255,255,255,0.10)" }}
+            >
+              <ChevronRight size={16} />
+            </button>
+          </div>
+
+          {/* Progress bar */}
+          {items.length > 1 && (
+            <div className="mt-4 h-px w-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+              <motion.div
+                key={`progress-${current}`}
+                className="h-full origin-left"
+                style={{ background: items[current].color }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 5, ease: "linear" }}
               />
-            ))}
-          </div>
-
-          {/* Next */}
-          <button
-            onClick={next}
-            aria-label="Next review"
-            className="w-9 h-9 flex items-center justify-center text-white/30 hover:text-white transition-colors duration-300"
-            style={{ border: "1px solid rgba(255,255,255,0.10)" }}
-          >
-            <ChevronRight size={16} />
-          </button>
-        </div>
-
-        {/* Progress bar */}
-        {items.length > 1 && (
-          <div className="mt-4 h-px w-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
-            <motion.div
-              key={`progress-${current}`}
-              className="h-full origin-left"
-              style={{ background: items[current].color }}
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 5, ease: "linear" }}
-            />
-          </div>
-        )}
-      </motion.div>
+            </div>
+          )}
+        </motion.div>
+      )}
 
       {/* Metrics */}
-      <div className="relative z-10 border-t border-white/[0.06] mt-12 pt-8 grid grid-cols-3 divide-x divide-white/[0.06]">
+      <div className="relative z-10 border-t border-white/[0.06] mt-12 pt-8 grid grid-cols-2 divide-x divide-white/[0.06]">
         {METRICS.map(({ num, color, es, en }, i) => (
           <motion.div
             key={i}

@@ -103,7 +103,7 @@ const ProcessOverlay = ({ project, lang, onClose }: { project: Project; lang: st
                     transition={{ duration: 0.55, delay: 0.22 + idx * 0.09, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => setLightboxIdx(idx)}
                     className={`group relative overflow-hidden bg-zinc-900 cursor-zoom-in ${idx === 0 ? "col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}>
-                    <img src={img} className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700" alt="" />
+                    <img src={img} className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700" alt={`${project.title} — ${lang === "en" ? "before" : "antes"} ${idx + 1}`} />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
                     <div className="absolute bottom-3 left-3">
                       <span className="px-2.5 py-1 bg-white/5 border border-white/10 text-white/40 text-[9px] uppercase tracking-widest font-black" style={{ fontFamily: "Poppins, sans-serif" }}>
@@ -129,7 +129,7 @@ const ProcessOverlay = ({ project, lang, onClose }: { project: Project; lang: st
                     transition={{ duration: 0.55, delay: 0.28 + idx * 0.09, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => setLightboxIdx(3 + idx)}
                     className={`group relative overflow-hidden bg-zinc-900 cursor-zoom-in ${idx === 0 ? "col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}>
-                    <img src={img} className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700" alt="" />
+                    <img src={img} className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700" alt={`${project.title} — ${lang === "en" ? "after" : "después"} ${idx + 1}`} />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                     <motion.div className="absolute top-0 left-0 right-0 h-[2px] origin-left" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
                       transition={{ duration: 0.5, delay: 0.35 + idx * 0.09 }} style={{ background: "#CC1500" }} />
@@ -157,7 +157,8 @@ const ProcessOverlay = ({ project, lang, onClose }: { project: Project; lang: st
             <motion.div key={lightboxIdx} initial={{ scale: 0.93, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.93, opacity: 0 }}
               className="relative max-w-5xl w-full overflow-hidden border border-white/8"
               onClick={e => e.stopPropagation()}>
-              <img src={all[lightboxIdx]} className="w-full h-auto object-contain" alt="" />
+              <img src={all[lightboxIdx]} className="w-full h-auto object-contain"
+                alt={`${project.title} — ${lightboxIdx < 3 ? (lang === "en" ? "before" : "antes") : (lang === "en" ? "after" : "después")} ${(lightboxIdx < 3 ? lightboxIdx : lightboxIdx - 3) + 1}`} />
               <div className="absolute bottom-4 left-4">
                 <span className={`px-3 py-1.5 text-[9px] uppercase tracking-[0.2em] font-black border ${lightboxIdx < 3 ? "bg-white/5 border-white/10 text-white/50" : "bg-[#CC1500] border-[#CC1500] text-white"}`}
                   style={{ fontFamily: "Poppins, sans-serif" }}>
@@ -310,7 +311,7 @@ export const Projects = () => {
                   {p.video
                     ? <AutoplayVideo src={p.video} className="w-full h-full object-cover" />
                     : p.image
-                      ? <img src={p.image} alt="" className="w-full h-full object-cover" />
+                      ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
                       : <div className="w-full h-full" style={{ background: `radial-gradient(ellipse 65% 80% at 28% 40%, ${accent}45 0%, transparent 62%), radial-gradient(ellipse 45% 55% at 72% 68%, ${accent}22 0%, transparent 55%), #0A0A0A` }} />
                   }
                 </motion.div>
@@ -468,7 +469,7 @@ export const Projects = () => {
                     {selected.video
                       ? <AutoplayVideo src={selected.video} className="w-full h-full object-cover" />
                       : selected.image
-                        ? <img src={selected.image} className="w-full h-full object-cover" alt="" />
+                        ? <img src={selected.image} className="w-full h-full object-cover" alt={selected.title} />
                         : (() => {
                             const idx = projects.findIndex(p => p.id === selected.id);
                             const ac = ACCENTS[idx % ACCENTS.length];
