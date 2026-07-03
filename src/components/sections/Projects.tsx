@@ -24,6 +24,7 @@ interface Project {
   video?: string;
   liveUrl?: string;
   githubUrl?: string;
+  githubBackendUrl?: string;
   visitLabel?: string;
   inProgress?: boolean;
   stack: string[];
@@ -185,11 +186,11 @@ export const Projects = () => {
   const [showAll,     setShowAll]     = useState(false);
 
   const rawData = [
-    { id: "pulseguard",     image: "./pulseguard.png",       liveUrl: "https://pulseguard-frontend.vercel.app/",                              type: "professional", inProgress: true, stack: ["Next.js", "NestJS", "TypeScript", "PostgreSQL", "Prisma", "Gemini AI"] },
+    { id: "pulseguard",     image: "./pulseguard.png",       liveUrl: "https://pulseguard-frontend.vercel.app/", githubUrl: "https://github.com/giuliannadr/pulseguard-frontend", githubBackendUrl: "https://github.com/giuliannadr/pulseguard-backend", type: "professional", inProgress: true, stack: ["Next.js", "NestJS", "TypeScript", "PostgreSQL", "Prisma", "Gemini AI"] },
     { id: "hidrorescate",   image: "./hidrorescate-laptop.jpeg", liveUrl: "https://hidrorescate.com.ar/",                                      type: "professional", stack: ["React", "TypeScript", "Vite", "Tailwind CSS"] },
     { id: "magicalduo",     image: "./magicalduo-mockup.png",   liveUrl: "https://themagicalduo.com/",                                        type: "professional", stack: ["React", "TypeScript", "Vite", "Tailwind CSS"] },
     { id: "repostory",      image: "./repostory-mockup.png",                                                                                    type: "professional", inProgress: true, stack: ["FastAPI", "Python", "Groq API", "llama-3.3-70b", "Next.js 15", "REST APIs", "Prompt Engineering"] },
-    { id: "costear",        image: "./costear-mockup.png",   githubUrl: "https://github.com/giuliannadr/CosteAR-backend",                    type: "professional", inProgress: true, stack: ["Node.js", "Fastify", "React 19", "TypeScript", "Tailwind CSS v4", "TanStack Router", "Zustand", "Prisma", "PostgreSQL", "Redis", "BullMQ"] },
+    { id: "costear",        image: "./costear-mockup.png",   liveUrl: "https://costear-frontend.vercel.app/", githubUrl: "https://github.com/SantiagoBriz/CosteAR-frontend", githubBackendUrl: "https://github.com/giuliannadr/CosteAR-backend", type: "professional", inProgress: true, stack: ["Node.js", "Fastify", "React 19", "TypeScript", "Tailwind CSS v4", "TanStack Router", "Zustand", "Prisma", "PostgreSQL", "Redis", "BullMQ"] },
     { id: "aura",           image: "./aura-preview.png",                                                                                   githubUrl: "https://github.com/giuliannadr/FacuuJuarez-Aura",   type: "professional", inProgress: true, stack: ["Next.js 15 App Router", "Turborepo", "TypeScript", "Supabase", "PostgreSQL", "Drizzle ORM", "Supabase Auth", "Tailwind CSS v4", "Zod", "React Hook Form", "Vercel"] },
     { id: "portfolio",      image: "./portfolio-preview.png", liveUrl: `https://dev.giulianadirocco.com/design-system?lang=${lang}`, visitLabel: lang === "en" ? "View Design System" : "Ver Design System", githubUrl: "https://github.com/giuliannadr/portfolio-giuliana", type: "professional", stack: ["React 18", "TypeScript", "Vite", "Framer Motion", "react-i18next", "Firebase Firestore", "Lit Element 3", "Web Components", "Vercel"] },
     { id: "9669",           image: "./9669-preview.png",      liveUrl: "https://av-admin-dashboard.vercel.app",     githubUrl: "https://github.com/giuliannadr/9669club",           type: "professional", inProgress: true, stack: ["React 18", "TypeScript", "Vite", "Next.js 15", "Turborepo", "LiveKit", "WebRTC", "Canvas API", "Vercel Functions", "pnpm Workspaces"] },
@@ -383,7 +384,14 @@ export const Projects = () => {
                             <a href={p.githubUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
                               className="flex items-center gap-2 px-4 py-2 border border-white/20 text-white/60 font-black text-[10px] uppercase tracking-widest hover:border-white/50 hover:text-white transition-all"
                               style={{ fontFamily: "Poppins, sans-serif" }}>
-                              <Github size={11} /> GitHub
+                              <Github size={11} /> {p.githubBackendUrl ? "Front" : "GitHub"}
+                            </a>
+                          )}
+                          {p.githubBackendUrl && (
+                            <a href={p.githubBackendUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+                              className="flex items-center gap-2 px-4 py-2 border border-white/20 text-white/60 font-black text-[10px] uppercase tracking-widest hover:border-white/50 hover:text-white transition-all"
+                              style={{ fontFamily: "Poppins, sans-serif" }}>
+                              <Github size={11} /> Back
                             </a>
                           )}
                           {p.process && (
@@ -527,7 +535,15 @@ export const Projects = () => {
                               className="flex-1 flex items-center justify-center gap-3 py-4 bg-white/5 text-white border border-white/10 font-black text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all group"
                               style={{ fontFamily: "Poppins, sans-serif" }}>
                               <Github size={14} className="text-[#CC1500] group-hover:scale-110 transition-transform" />
-                              GitHub
+                              {selected.githubBackendUrl ? "Frontend" : "GitHub"}
+                            </a>
+                          )}
+                          {selected.githubBackendUrl && (
+                            <a href={selected.githubBackendUrl} target="_blank" rel="noreferrer"
+                              className="flex-1 flex items-center justify-center gap-3 py-4 bg-white/5 text-white border border-white/10 font-black text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all group"
+                              style={{ fontFamily: "Poppins, sans-serif" }}>
+                              <Github size={14} className="text-[#CC1500] group-hover:scale-110 transition-transform" />
+                              Backend
                             </a>
                           )}
                         </div>

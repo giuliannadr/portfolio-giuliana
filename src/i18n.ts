@@ -13,7 +13,7 @@ const en = {
       contact: "Let's talk"
     },
     profileCard: {
-      role: "Hi! I'm Giuliana — a Full Stack Developer with a GPA of 8.72 and 3 production projects shipped."
+      role: "Hi! I'm Giuliana — a Full Stack Developer with a GPA of 8.72 and 7 production projects shipped."
     },
     about: {
       badge: "Full Stack Development",
@@ -24,7 +24,7 @@ const en = {
       stats: {
         exp: "8.72",
         expLabel: "GPA",
-        dedication: "3",
+        dedication: "7",
         dedicationLabel: "Production projects"
       }
     },
@@ -41,7 +41,7 @@ const en = {
         },
         direct: {
           label: "Production projects",
-          value: "3",
+          value: "7",
           tooltip: "End-to-end delivery: from architecture and development to deployment and post-launch support."
         },
         modern: {
@@ -169,8 +169,8 @@ const en = {
         costear: {
           title: "CosteAR",
           category: "Full Stack · Enterprise Tools",
-          description: "Financial copilot and operator portal for agro-industrial SMEs. Features a custom operator chat for natural data ingestion (text/images/PDFs) and real-time cost analytics dashboard. Developed for the Emprende U 2026 competition.",
-          longDescription: "CosteAR is a financial copilot and cost management system designed for agro-industrial SMEs. Instead of using generic messaging apps, it features a built-in custom operator portal where workshop operators can submit raw cost data, invoices, and PDFs directly through an integrated chat interface. An automated AI assistant parses these documents for the cost analyst, who reviews them via a dynamic dashboard. Built with Clean Architecture on the backend (Node.js, Fastify, Prisma, PostgreSQL, Redis, BullMQ) and React 19 (TypeScript, TanStack Router, Tailwind CSS v4) on the frontend. Currently in development for the Emprende U 2026 competition."
+          description: "Financial copilot and operator portal for agro-industrial SMEs — co-founded project and semifinalist at Emprende U 2026. Custom operator chat for data ingestion and real-time cost analytics dashboard.",
+          longDescription: "CosteAR is a financial copilot and cost management system designed for agro-industrial SMEs. Co-founded and built end-to-end. Instead of using generic messaging apps, it features a built-in custom operator portal where workshop operators can submit raw cost data, invoices, and PDFs directly through an integrated chat interface. An automated AI assistant parses these documents for the cost analyst, who reviews them via a dynamic dashboard. Built with Clean Architecture on the backend (Node.js, Fastify, Prisma, PostgreSQL, Redis, BullMQ) and React 19 (TypeScript, TanStack Router, Tailwind CSS v4) on the frontend. Currently a semifinalist at Emprende U 2026."
         },
         portfolio: {
           title: "Personal Portfolio",
@@ -298,7 +298,7 @@ const es = {
       contact: "Hablemos"
     },
     profileCard: {
-      role: "¡Hola! Soy Giuliana — Desarrolladora Full Stack con promedio 8.72 y 3 proyectos en producción."
+      role: "¡Hola! Soy Giuliana — Desarrolladora Full Stack con promedio 8.72 y 7 proyectos en producción."
     },
     about: {
       badge: "Desarrollo Full Stack",
@@ -309,7 +309,7 @@ const es = {
       stats: {
         exp: "8.72",
         expLabel: "Promedio",
-        dedication: "3",
+        dedication: "7",
         dedicationLabel: "Proyectos en producción"
       }
     },
@@ -326,7 +326,7 @@ const es = {
         },
         direct: {
           label: "Proyectos en producción",
-          value: "3",
+          value: "7",
           tooltip: "Entrega end-to-end: desde arquitectura y desarrollo hasta deploy y soporte post-lanzamiento."
         },
         modern: {
@@ -442,8 +442,8 @@ const es = {
         costear: {
           title: "CosteAR",
           category: "Full Stack · Herramientas Enterprise",
-          description: "Copiloto financiero y portal de operarios para PyMEs agroindustriales. Cuenta con un chat propio de operarios para ingesta de datos (texto/imágenes/PDFs) y dashboard analítico en tiempo real. Desarrollado para el concurso Emprende U 2026.",
-          longDescription: "CosteAR es un copiloto financiero y sistema de gestión de costos diseñado para PyMEs agroindustriales. En lugar de usar apps de mensajería genéricas, cuenta con un portal propio integrado donde los operarios de taller envían datos de costos, facturas y remitos mediante un chat interno. Un asistente de IA analiza automáticamente estos documentos para el analista de costos, quien los valida y gestiona desde un dashboard analítico en tiempo real. Desarrollado bajo Clean Architecture en el backend (Node.js, Fastify, Prisma, PostgreSQL, Redis, BullMQ) y React 19 (TypeScript, TanStack Router, Tailwind CSS v4) en el frontend. Actualmente en desarrollo para el concurso Emprende U 2026."
+          description: "Copiloto financiero y portal de operarios para PyMEs agroindustriales — proyecto co-fundado y semifinalista de Emprende U 2026. Chat propio para ingesta de datos y dashboard analítico en tiempo real.",
+          longDescription: "CosteAR es un copiloto financiero y sistema de gestión de costos diseñado para PyMEs agroindustriales. Proyecto co-fundado y desarrollado de punta a punta. En lugar de usar apps de mensajería genéricas, cuenta con un portal propio integrado donde los operarios de taller envían datos de costos, facturas y remitos mediante un chat interno. Un asistente de IA analiza automáticamente estos documentos para el analista de costos, quien los valida y gestiona desde un dashboard analítico en tiempo real. Desarrollado bajo Clean Architecture en el backend (Node.js, Fastify, Prisma, PostgreSQL, Redis, BullMQ) y React 19 (TypeScript, TanStack Router, Tailwind CSS v4) en el frontend. Actualmente semifinalista en Emprende U 2026."
         },
         repostory: {
           title: "Repostory",
