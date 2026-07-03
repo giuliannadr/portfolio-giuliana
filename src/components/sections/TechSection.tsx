@@ -80,7 +80,7 @@ export const TechSection = () => {
           <span className="mr-3 select-none" style={{ WebkitTextStroke: "1.2px #0A0A0A", WebkitTextFillColor: "transparent", color: "transparent" }}>
             {lang === "en" ? "MY" : "MIS"}
           </span>
-          <span className="text-[#0A0A0A]">
+          <span className="text-[#0A0A0A] block sm:inline">
             {lang === "en" ? "STACK." : "HERRAMIENTAS."}
           </span>
         </motion.h2>

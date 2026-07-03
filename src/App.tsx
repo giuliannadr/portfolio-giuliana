@@ -1,6 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
 import { Hero } from "@/components/sections/Hero";
-import { Marquee } from "@/components/ui/Marquee";
 import { AboutSection } from "./components/sections/AboutSection";
 import { ExperienceSection } from "./components/sections/ExperienceSection";
 
@@ -15,7 +14,6 @@ function App() {
       <Loader onDone={() => {}} />
       <Layout>
         <Hero />
-        <Marquee />
         <AboutSection />
         <ExperienceSection />
         {/* <TrustSection /> */}

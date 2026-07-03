@@ -1,31 +1,67 @@
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { CheckCircle2, PlayCircle, CalendarRange } from "lucide-react";
 
 export const WhatsNext = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language === "en" ? "en" : "es";
   const ref = useRef<HTMLElement>(null);
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const badge = lang === "en" ? "Roadmap" : "Ruta";
 
-  const learningItems = [
-    { label: t("whatsNext.items.litElement"),    tag: t("whatsNext.tags.building") },
-    { label: t("whatsNext.items.nextjs"),        tag: t("whatsNext.tags.exploring") },
-    { label: t("whatsNext.items.systemDesign"),  tag: t("whatsNext.tags.studying") },
-    { label: t("whatsNext.items.postgres"),      tag: t("whatsNext.tags.practicing") },
+  const STATIONS = [
+    {
+      num: "01",
+      color: "#10B981",
+      status: { es: "Completado", en: "Completed" },
+      title:  { es: "Tecnicatura en Desarrollo Web", en: "Web Development Degree" },
+      ctx:    "UNLaM",
+      body: {
+        es: "18 de 20 materias aprobadas con promedio de 8.72. Egreso estimado en julio 2026.",
+        en: "18 out of 20 subjects completed with an 8.72 GPA. Graduating in July 2026.",
+      },
+      tags: [] as string[],
+    },
+    {
+      num: "02",
+      color: "#CC1500",
+      status: { es: "En curso", en: "In Progress" },
+      title:  { es: "Especialización & Arquitecturas", en: "Deepening Engineering & Design" },
+      ctx:    lang === "en" ? "Freelance + self-directed study" : "Freelance + estudio autodidacta",
+      body: {
+        es: "Profundizando en diseño de sistemas, arquitectura de componentes y bases de datos mientras sigo shippeando proyectos reales.",
+        en: "Deepening system design, component architecture and databases while shipping real projects.",
+      },
+      tags: [
+        t("whatsNext.items.litElement"),
+        t("whatsNext.items.nextjs"),
+        t("whatsNext.items.systemDesign"),
+        t("whatsNext.items.postgres"),
+      ],
+    },
+    {
+      num: "03",
+      color: "#7C3AED",
+      status: { es: "Siguiente", en: "Upcoming" },
+      title:  { es: t("whatsNext.items.utn"), en: t("whatsNext.items.utn") },
+      ctx:    t("whatsNext.items.utnSub"),
+      body: {
+        es: "Formación de posgrado en IA para complementar el perfil full stack con machine learning y sistemas inteligentes.",
+        en: "Postgraduate AI training to complement the full stack profile with machine learning and intelligent systems.",
+      },
+      tags: [] as string[],
+    },
   ];
 
+  const activeItem = STATIONS[activeIndex];
+
   return (
-    <section 
-      ref={ref} 
-      id="whatsnext" 
+    <section
+      ref={ref}
+      id="whatsnext"
       className="bg-[#F5F4F0] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative overflow-hidden"
-      style={{
-        backgroundImage: "radial-gradient(rgba(10,10,10,0.04) 1px, transparent 1px)",
-        backgroundSize: "24px 24px"
-      }}
     >
 
       {/* Edge fades */}
@@ -58,122 +94,100 @@ export const WhatsNext = () => {
           <span className="mr-3 select-none" style={{ WebkitTextStroke: "1.2px #0A0A0A", WebkitTextFillColor: "transparent", color: "transparent" }}>
             {lang === "en" ? "WHAT'S" : "QUÉ"}
           </span>
-          <span className="text-[#CC1500]">
+          <span className="text-[#0A0A0A]">
             {lang === "en" ? "NEXT." : "SIGUE."}
           </span>
         </motion.h2>
       </div>
 
-      {/* Connected Infographic Roadmap Station Grid (Metro Line Style) */}
-      <div className="relative z-10 max-w-7xl mx-auto py-10 px-2">
-        
-        {/* Horizontal line for desktop (hidden on mobile) */}
-        <div className="hidden lg:block absolute left-4 right-4 top-[50%] h-[3px] bg-gradient-to-r from-emerald-500/20 via-[#CC1500]/25 to-purple-500/20 -translate-y-1/2 z-0" />
-        
-        {/* Vertical line for mobile (hidden on desktop) */}
-        <div className="lg:hidden absolute left-[21px] top-6 bottom-6 w-[3px] bg-gradient-to-b from-emerald-500/20 via-[#CC1500]/25 to-purple-500/20 z-0" />
+      {/* Interactive tabs + detail panel — same pattern as Experience */}
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 max-w-7xl mx-auto">
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 relative z-10 font-mono">
-          
-          {/* Station 1: Completed */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-6 lg:items-center relative"
-          >
-            {/* Metro Dot Indicator */}
-            <div className="w-11 h-11 rounded-full bg-white border-2 border-emerald-500 flex items-center justify-center shadow-sm shrink-0 z-10 self-start lg:self-center">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-            </div>
+        {/* Left column: station selector */}
+        <div className="md:col-span-4 flex flex-col gap-3">
+          {STATIONS.map((item, idx) => {
+            const isActive = idx === activeIndex;
+            return (
+              <button
+                key={item.num}
+                onClick={() => setActiveIndex(idx)}
+                className={`w-full text-left p-5 border transition-all duration-300 flex flex-col gap-1.5 rounded-xl ${
+                  isActive
+                    ? "bg-white border-[#0A0A0A]/[0.08] shadow-sm"
+                    : "border-transparent hover:bg-white/40 hover:border-[#0A0A0A]/[0.04]"
+                }`}
+              >
+                <div className="flex justify-between items-center font-mono text-[9px] uppercase tracking-wider">
+                  <span className="font-black" style={{ color: isActive ? item.color : "rgba(10,10,10,0.4)" }}>
+                    {item.status[lang]}
+                  </span>
+                  <span style={{ color: isActive ? `${item.color}B0` : "rgba(10,10,10,0.2)" }}>
+                    {item.num}
+                  </span>
+                </div>
+                <div
+                  className={`text-[12px] font-black uppercase tracking-wide transition-colors ${
+                    isActive ? "text-[#0A0A0A]" : "text-[#0A0A0A]/45"
+                  }`}
+                  style={{ fontFamily: "Poppins, sans-serif" }}
+                >
+                  {item.title[lang]}
+                </div>
+                <div className={`text-[10px] truncate ${isActive ? "text-[#0A0A0A]/50 font-medium" : "text-[#0A0A0A]/35"}`}>
+                  {item.ctx}
+                </div>
+              </button>
+            );
+          })}
+        </div>
 
-            {/* Station Card */}
-            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-emerald-500/30 p-6 rounded-2xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-xs border-l-4 border-l-emerald-500">
-              <div className="text-[9px] text-[#0A0A0A]/40 uppercase tracking-widest font-black flex justify-between items-center">
-                <span>[STATION 01]</span>
-                <span className="text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">{lang === "en" ? "COMPLETED" : "COMPLETADO"}</span>
+        {/* Right column: active station detail */}
+        <div className="md:col-span-8 flex flex-col">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="border border-[#0A0A0A]/[0.08] bg-white/[0.02] p-8 md:p-10 rounded-2xl shadow-sm flex flex-col gap-6 relative"
+            >
+              <div className="flex justify-between items-center pb-4 border-b border-[#0A0A0A]/[0.08] font-mono text-[9.5px]">
+                <div className="flex items-center gap-2 text-[#0A0A0A]/70 font-semibold uppercase">
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: activeItem.color }} />
+                  <span>{activeItem.ctx}</span>
+                </div>
+                <span className="uppercase tracking-wider font-black" style={{ color: activeItem.color }}>
+                  {activeItem.status[lang]}
+                </span>
               </div>
-              
-              <h3 className="text-[#0A0A0A] font-black text-[13px] font-sans tracking-wide uppercase leading-tight pt-1">
-                {lang === "en" ? "Web Development Degree" : "Tecnicatura en Desarrollo Web"}
+
+              <h3
+                className="font-black uppercase text-[#0A0A0A] leading-tight"
+                style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.1rem, 2vw, 1.45rem)", letterSpacing: "-0.01em" }}
+              >
+                {activeItem.title[lang]}
               </h3>
-              
-              <div className="flex justify-between items-baseline pt-3 border-t border-[#0A0A0A]/[0.05] text-[10px] text-[#0A0A0A]/50">
-                <span>UNLaM</span>
-                <span>18 / 20 {lang === "en" ? "Subjects" : "Materias"}</span>
-              </div>
-              <div className="flex justify-between items-baseline pt-1 text-[10px] text-[#0A0A0A]/50">
-                <span>{lang === "en" ? "GPA / AVERAGE" : "PROMEDIO / RENDIMIENTO"}</span>
-                <span className="text-emerald-600 font-bold text-xs">8.72 / 10</span>
-              </div>
-            </div>
-          </motion.div>
 
-          {/* Station 2: In Progress */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-6 lg:items-center relative"
-          >
-            {/* Metro Dot Indicator (Pulsing Red) */}
-            <div className="w-11 h-11 rounded-full bg-white border-2 border-[#CC1500] flex items-center justify-center shadow-sm shrink-0 z-10 self-start lg:self-center relative">
-              <PlayCircle className="w-5 h-5 text-[#CC1500]" />
-              <div className="absolute inset-0 rounded-full border border-[#CC1500] animate-ping opacity-75" />
-            </div>
+              <p className="text-[#0A0A0A]/55 text-sm leading-relaxed max-w-2xl">
+                {activeItem.body[lang]}
+              </p>
 
-            {/* Station Card */}
-            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-[#CC1500]/30 p-6 rounded-2xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 flex flex-col gap-4 border-l-4 border-l-[#CC1500]">
-              <div className="text-[9px] text-[#0A0A0A]/40 uppercase tracking-widest font-black flex justify-between items-center">
-                <span>[STATION 02]</span>
-                <span className="text-[#CC1500] font-bold bg-[#CC1500]/5 px-2 py-0.5 rounded">{lang === "en" ? "IN PROGRESS" : "EN CURSO"}</span>
-              </div>
-
-              <h3 className="text-[#0A0A0A] font-black text-[13px] uppercase tracking-wide leading-tight" style={{ fontFamily: "Poppins, sans-serif" }}>
-                {lang === "en" ? "Deepening Engineering & Design" : "Especialización & Arquitecturas"}
-              </h3>
-              
-              {/* Vertical Stack list of items */}
-              <div className="flex flex-col gap-2 border-t border-[#0A0A0A]/[0.05] pt-3.5 text-[9.5px]">
-                {learningItems.map((item, i) => (
-                  <div key={i} className="flex justify-between items-center py-1 border-b border-[#0A0A0A]/[0.03] last:border-0 last:pb-0">
-                    <span className="text-[#0A0A0A]/70">{item.label}</span>
-                    <span className="text-[#CC1500] text-[8px] font-black uppercase tracking-widest">{item.tag}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Station 3: Upcoming */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-6 lg:items-center relative"
-          >
-            {/* Metro Dot Indicator (Purple) */}
-            <div className="w-11 h-11 rounded-full bg-white border-2 border-purple-500 flex items-center justify-center shadow-sm shrink-0 z-10 self-start lg:self-center">
-              <CalendarRange className="w-5 h-5 text-purple-500" />
-            </div>
-
-            {/* Station Card */}
-            <div className="w-full bg-white border border-[#0A0A0A]/[0.06] hover:border-purple-500/30 p-6 rounded-2xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-xs border-l-4 border-l-purple-500">
-              <div className="text-[9px] text-[#0A0A0A]/40 uppercase tracking-widest font-black flex justify-between items-center">
-                <span>[STATION 03]</span>
-                <span className="text-purple-600 font-bold bg-purple-50 px-2 py-0.5 rounded">{lang === "en" ? "UPCOMING" : "SIGUIENTE"}</span>
-              </div>
-
-              <h3 className="text-[#0A0A0A] font-black text-[13px] font-sans tracking-wide uppercase leading-tight pt-1">
-                {t("whatsNext.items.utn")}
-              </h3>
-              
-              <div className="flex justify-between items-baseline pt-3 border-t border-[#0A0A0A]/[0.05] text-[10px] text-[#0A0A0A]/50">
-                <span>{t("whatsNext.items.utnSub")}</span>
-              </div>
-              <div className="pt-1 text-[8.5px] text-purple-600 font-black tracking-widest uppercase">
-                {t("whatsNext.tags.starting")}
-              </div>
-            </div>
-          </motion.div>
-
+              {activeItem.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#0A0A0A]/[0.06]">
+                  {activeItem.tags.map(tag => (
+                    <span
+                      key={tag}
+                      className="text-[9px] font-mono uppercase tracking-[0.2em] px-3 py-1.5"
+                      style={{ color: activeItem.color, background: `${activeItem.color}0F`, border: `1px solid ${activeItem.color}26` }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
       </div>
