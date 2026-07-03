@@ -24,8 +24,8 @@ const PILLARS = [
   },
   {
     num: "02", color: "#7C3AED",
-    es: { title: "Experiencia en producción", body: `${DEPLOYED_COUNT} proyectos reales deployados y funcionando. Trabajo freelance desde diciembre 2025. Cada uno implicó planificación real, deadlines reales y clientes reales.` },
-    en: { title: "Production experience",   body: `${DEPLOYED_COUNT} real projects deployed and running. Freelance work since December 2025. Each one involved real planning, real deadlines and real clients.` },
+    es: { title: "Experiencia en producción", body: `${DEPLOYED_COUNT} proyectos reales deployados y en producción. Co-fundadora de CosteAR — startup B2B para PyMEs agroindustriales, semifinalista de Emprende U 2026. Freelance desde diciembre 2025.` },
+    en: { title: "Production experience",   body: `${DEPLOYED_COUNT} real projects deployed and running. Co-founder of CosteAR — B2B startup for agro-industrial SMEs, semifinalist at Emprende U 2026. Freelance since December 2025.` },
   },
   {
     num: "03", color: "#06B6D4",

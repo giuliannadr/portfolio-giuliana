@@ -18,8 +18,8 @@ const TIMELINE = [
     role: { es: "Desarrolladora Web Full-Stack", en: "Full-Stack Web Developer" },
     ctx:  { es: "Freelance",                     en: "Freelance"                },
     body: {
-      es: "Transformación de requerimientos de negocio en soluciones técnicas: plataformas web y e-commerce con React, TypeScript y Node.js de punta a punta. Optimización de performance en Vercel con reducción del 30% en tiempos de carga. GitFlow, CI/CD con GitHub Actions y documentación de APIs REST bajo Scrum.",
-      en: "Business requirements into technical solutions: web platforms and e-commerce with React, TypeScript and Node.js end to end. Performance optimization on Vercel with 30% reduction in load times. GitFlow, CI/CD with GitHub Actions and REST API documentation under Scrum.",
+      es: "Transformación de requerimientos de negocio en soluciones técnicas: plataformas web y e-commerce con React, TypeScript y Node.js de punta a punta. Co-fundadora de CosteAR — startup B2B semifinalista de Emprende U 2026. GitFlow, CI/CD con GitHub Actions y documentación de APIs REST bajo Scrum.",
+      en: "Business requirements into technical solutions: web platforms and e-commerce with React, TypeScript and Node.js end to end. Co-founder of CosteAR — B2B startup semifinalist at Emprende U 2026. GitFlow, CI/CD with GitHub Actions and REST API documentation under Scrum.",
     },
     tags: ["React", "TypeScript", "Node.js", "Next.js", "GitHub Actions", "Vercel"],
   },
