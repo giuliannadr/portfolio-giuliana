@@ -65,11 +65,9 @@ export const ExperienceSection = () => {
   const badge    = lang === "en" ? "Experience"     : "Experiencia";
 
   return (
-    <section ref={ref} id="experience" className="bg-[#F5F5F5] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative">
+    <section ref={ref} id="experience" className="bg-[#F5F5F5] pt-6 md:pt-10 pb-20 md:pb-32 px-5 sm:px-8 lg:px-10 relative">
 
-      {/* Edge fades */}
-      <div className="absolute inset-x-0 top-0 h-28 pointer-events-none z-10"
-        style={{ background: `linear-gradient(to bottom, ${BG}, transparent)` }} />
+      {/* Edge fade bottom only — top connects directly to About */}
       <div className="absolute inset-x-0 bottom-0 h-28 pointer-events-none z-10"
         style={{ background: `linear-gradient(to top, ${BG}, transparent)` }} />
 
