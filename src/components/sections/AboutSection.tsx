@@ -54,7 +54,7 @@ export const AboutSection = () => {
         style={{ background: "linear-gradient(to top, #F5F4F0, transparent)" }} />
 
       {/* Label */}
-      <div className="flex items-center gap-5 mb-14 relative z-10">
+      <div className="flex items-center gap-5 mb-12 relative z-10">
         <div className="flex items-center gap-2 font-mono text-[9px] text-[#CC1500] uppercase tracking-[0.25em]">
           <span>02</span>
           <span>//</span>
@@ -64,36 +64,36 @@ export const AboutSection = () => {
         <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>{badge}</span>
       </div>
 
-      {/* Headline */}
-      <div className="mb-16 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="block font-black uppercase leading-[0.88] text-[#0A0A0A]"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.3rem, 6vw, 5.5rem)", letterSpacing: "-0.02em" }}
-        >
-          <span className="mr-3 select-none" style={{ WebkitTextStroke: "1.2px #0A0A0A", WebkitTextFillColor: "transparent", color: "transparent" }}>
-            {lang === "en" ? "ABOUT" : "SOBRE"}
-          </span>
-          <span className="text-[#0A0A0A]">
-            {lang === "en" ? "ME." : "MÍ."}
-          </span>
-        </motion.h2>
-      </div>
-
-      {/* Redesigned Grid Layout */}
+      {/* Redesigned Grid Layout with Integrated Headline in Left Column */}
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 max-w-7xl mx-auto items-stretch">
         
-        {/* Left Column: Narrative + Principles */}
-        <div className="lg:col-span-7 flex flex-col justify-between gap-10">
+        {/* Left Column: Headline + Narrative + Principles */}
+        <div className="lg:col-span-7 flex flex-col justify-between gap-8">
           
+          {/* Integrated Headline */}
+          <div className="select-none">
+            <motion.h2
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-black uppercase leading-[0.85] text-[#0A0A0A]"
+              style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.3rem, 5.5vw, 4.8rem)", letterSpacing: "-0.02em" }}
+            >
+              <span className="mr-3 select-none" style={{ WebkitTextStroke: "1.2px #0A0A0A", WebkitTextFillColor: "transparent", color: "transparent" }}>
+                {lang === "en" ? "ABOUT" : "SOBRE"}
+              </span>
+              <span className="text-[#0A0A0A]">
+                {lang === "en" ? "ME." : "MÍ."}
+              </span>
+            </motion.h2>
+          </div>
+
           {/* Narrative paragraphs */}
           <motion.div
             initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-4"
           >
-            <p className="font-medium text-[#0A0A0A]/75 leading-relaxed text-sm md:text-base" style={{ fontFamily: "Poppins, sans-serif" }}>
+            <p className="font-medium text-[#0A0A0A]/75 leading-relaxed text-sm md:text-[15px]" style={{ fontFamily: "Poppins, sans-serif" }}>
               <Trans 
                 i18nKey="about.p1" 
                 components={[
@@ -102,26 +102,26 @@ export const AboutSection = () => {
                 ]} 
               />
             </p>
-            <p className="text-[#0A0A0A]/55 leading-relaxed text-sm md:text-base">
+            <p className="text-[#0A0A0A]/55 leading-relaxed text-sm md:text-[15px]">
               {t("about.p2")}
             </p>
           </motion.div>
 
           {/* Vertical principles list with thin dividers */}
-          <div className="flex flex-col border-t border-[#0A0A0A]/[0.08]">
+          <div className="flex flex-col border-t border-[#0A0A0A]/[0.08] mt-2">
             {principles.map((pr, idx) => (
               <motion.div
                 key={pr.num}
                 initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="py-6 border-b border-[#0A0A0A]/[0.08] flex flex-col md:flex-row gap-4 md:gap-8 items-start"
+                className="py-4.5 border-b border-[#0A0A0A]/[0.08] flex flex-col md:flex-row gap-3 md:gap-7 items-start"
               >
                 <span className="font-mono text-xs font-black text-[#CC1500] tracking-wider shrink-0 md:pt-1">{pr.num}</span>
                 <div className="flex-1">
-                  <h3 className="font-black uppercase text-[#0A0A0A]/85 text-xs md:text-sm tracking-wider mb-2" style={{ fontFamily: "Poppins, sans-serif" }}>
+                  <h3 className="font-black uppercase text-[#0A0A0A]/85 text-xs md:text-sm tracking-wider mb-1.5" style={{ fontFamily: "Poppins, sans-serif" }}>
                     {pr.title}
                   </h3>
-                  <p className="text-[#0A0A0A]/50 text-xs md:text-sm leading-relaxed">
+                  <p className="text-[#0A0A0A]/50 text-xs md:text-[13px] leading-relaxed">
                     {pr.body}
                   </p>
                 </div>
@@ -140,11 +140,11 @@ export const AboutSection = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="w-full max-w-md mx-auto lg:mx-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col h-full justify-between"
           >
-            {/* Upper Photo Area */}
+            {/* Upper Photo Area with adjusted objectPosition to show face */}
             <div className="w-full h-64 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
               <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
-                className="w-full h-full object-cover object-center"
-                style={{ filter: "contrast(1.02) brightness(1.01)" }} />
+                className="w-full h-full object-cover"
+                style={{ filter: "contrast(1.02) brightness(1.01)", objectPosition: "center 15%" }} />
             </div>
 
             {/* Middle ID Credentials */}

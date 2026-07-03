@@ -14,12 +14,12 @@ const CATEGORY_KEYS = [
   "languages",
   "frontend",
   "backend",
-  "databases",
-  "methodologies",
-  "ci_cd",
+  "security",
+  "database",
   "architecture",
   "testing",
-  "tools",
+  "devops",
+  "methodologies",
 ];
 
 export const TechSection = () => {
