@@ -53,20 +53,21 @@ export const Loader = ({ onDone }: { onDone: () => void }) => {
               </motion.span>
             </div>
 
-            {/* Di Rocco — Playfair italic, faded */}
+            {/* Di Rocco — Sans-serif, uppercase, faded */}
             <div className="overflow-hidden -mt-1">
               <motion.span
                 initial={{ y: "105%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="block font-serif italic font-light leading-none"
+                className="block font-black uppercase leading-none"
                 style={{
+                  fontFamily: "Poppins, sans-serif",
                   fontSize: "clamp(1.8rem, 8vw, 6rem)",
-                  letterSpacing: "-0.01em",
-                  color: "rgba(255,255,255,0.20)",
+                  letterSpacing: "-0.04em",
+                  color: "rgba(255,255,255,0.15)",
                 }}
               >
-                Di Rocco
+                DI ROCCO
               </motion.span>
             </div>
           </div>

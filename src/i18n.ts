@@ -7,24 +7,24 @@ const en = {
       badge: "Open to new opportunities",
       title1: "FULL STACK",
       title2: "DEVELOPER",
-      description: "Full Stack Developer specializing in TypeScript, Angular and React. I transform business requirements into technical solutions within agile teams — from component architecture to production deployment.",
+      description: "Full Stack Developer. I write structured code, design efficient databases, and deploy web applications that work. I don't just study theory: I co-founded a B2B startup and have shipped 13 production projects.",
       viewWork: "View my projects",
       downloadCV: "Download CV",
       contact: "Let's talk"
     },
     profileCard: {
-      role: "Hi! I'm Giuliana — a Full Stack Developer with a GPA of 8.72 and 7 production projects shipped."
+      role: "Hi! I'm Giuliana — a Full Stack Developer with a GPA of 8.72 and 13 production projects shipped."
     },
     about: {
       badge: "Full Stack Development",
       title: "Clean code,",
-      titleItalic: "scalable solutions.",
-      p1: "Hi! I'm <0>Giuliana</0>. I'm finishing my degree in Web Development, a journey where I've learned that my true strength lies in <1>merging solid backend architecture with clean, functional frontend experiences</1>.",
-      p2: "I build with React, Node.js, TypeScript, Angular, Java and .NET, with a focus on microservice and event-driven architectures, clean APIs and code quality. I also integrate Generative AI tools — Groq API, Claude and FastAPI/Python — into real products, from architecture to production.",
+      titleItalic: "resilient software.",
+      p1: "Hi! I'm <0>Giuliana</0>. I recently graduated in Web Development from UNLaM with an 8.72 GPA. For me, coding isn't just about passing tests or completing tutorials; it's about building software that solves actual, day-to-day problems and delivers real value.",
+      p2: "I work comfortably across both backend and frontend systems. I design robust APIs in Node.js, C#, or Java, model relational databases, and build fast, responsive interfaces with React or Angular. If a technology is right for the job, I learn it and ship it.",
       stats: {
         exp: "8.72",
         expLabel: "GPA",
-        dedication: "7",
+        dedication: "13",
         dedicationLabel: "Production projects"
       }
     },
@@ -292,24 +292,24 @@ const es = {
       badge: "Disponible para nuevas oportunidades",
       title1: "DESARROLLADORA",
       title2: "FULL STACK",
-      description: "Desarrolladora Full Stack especializada en TypeScript, Angular y React. Transformo requerimientos de negocio en soluciones técnicas dentro de equipos ágiles — desde la arquitectura de componentes hasta el deploy en producción.",
+      description: "Desarrolladora Full Stack. Escribo código estructurado, diseño bases de datos eficientes y deployo aplicaciones web que funcionan. No me quedo en la teoría: co-fundé una startup y tengo 13 proyectos reales puestos en producción.",
       viewWork: "Ver mis proyectos",
       downloadCV: "Descargar CV",
       contact: "Hablemos"
     },
     profileCard: {
-      role: "¡Hola! Soy Giuliana — Desarrolladora Full Stack con promedio 8.72 y 7 proyectos en producción."
+      role: "¡Hola! Soy Giuliana — Desarrolladora Full Stack con promedio 8.72 y 13 proyectos en producción."
     },
     about: {
       badge: "Desarrollo Full Stack",
       title: "Código limpio,",
-      titleItalic: "soluciones escalables.",
-      p1: "¡Hola! Soy <0>Giuliana</0>. Estoy en la etapa final de mi formación como Desarrolladora Web, un camino donde descubrí que mi verdadera fortaleza está en <1>combinar arquitectura backend sólida con experiencias frontend limpias y funcionales</1>.",
-      p2: "Construyo con React, Node.js, TypeScript, Angular, Java y .NET, con foco en arquitecturas de microservicios y orientadas a eventos, APIs limpias y calidad de código. También integro herramientas de IA Generativa — Groq API, Claude y FastAPI/Python — en productos reales, desde la arquitectura hasta producción.",
+      titleItalic: "software resiliente.",
+      p1: "¡Hola! Soy <0>Giuliana</0>. Recientemente me gradué como técnica en desarrollo web en la UNLaM con un promedio de 8.72. Para mí, programar no es solo resolver challenges de código; es construir herramientas reales que solucionen problemas cotidianos y aporten valor real.",
+      p2: "Me muevo con soltura entre el backend y el frontend. Escribo APIs estructuradas en Node.js, C# o Java, modelo bases de datos relacionales y construyo interfaces rápidas e interactivas en React o Angular. Si una herramienta es la indicada para resolver el problema, la aprendo y la implemento.",
       stats: {
         exp: "8.72",
         expLabel: "Promedio",
-        dedication: "7",
+        dedication: "13",
         dedicationLabel: "Proyectos en producción"
       }
     },

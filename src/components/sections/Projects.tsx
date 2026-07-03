@@ -2,16 +2,12 @@ import { ArrowUpRight, X, Eye, ChevronLeft, ChevronRight, ChevronDown, Github } 
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { SPOTS_LIGHT } from "@/lib/textGradients";
+import { SPOTS_DARK } from "@/lib/textGradients";
 import { RAW_PROJECT_DATA } from "@/data/projectsData";
 
-const BG = "#F5F5F5";
-const BLOBS = [
-  { color: "#CC1500", w: 420, x: "90%", y: "20%", op: 0.07, cls: "blob-1" },
-  { color: "#7C3AED", w: 360, x: "5%",  y: "65%", op: 0.06, cls: "blob-2" },
-  { color: "#D97706", w: 260, x: "55%", y: "90%", op: 0.05, cls: "blob-1" },
-];
-const ACCENTS = ["#CC1500", "#7C3AED", "#06B6D4", "#EC4899", "#D4A017"];
+const BG = "#0F0F11";
+const BLOBS: { color: string; w: number; x: string; y: string; op: number; cls: string; }[] = [];
+const ACCENTS = ["#CC1500", "#CC1500", "#CC1500", "#CC1500", "#CC1500"];
 
 type ProjectCategory = "professional" | "academic";
 
@@ -82,8 +78,8 @@ const ProcessOverlay = ({ project, lang, onClose }: { project: Project; lang: st
               style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(3rem, 9vw, 8rem)", letterSpacing: "-0.03em" }}>
               {project.title}
             </h2>
-            <span className="block font-serif italic font-light text-white/20 leading-none mt-1"
-              style={{ fontSize: "clamp(1.8rem, 5vw, 4.5rem)" }}>
+            <span className="block font-black uppercase text-white/15 leading-none mt-1"
+              style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.2rem, 4vw, 2.5rem)", letterSpacing: "-0.02em" }}>
               {lang === "en" ? "before & after." : "antes & después."}
             </span>
           </motion.div>
@@ -212,7 +208,7 @@ export const Projects = () => {
 
   const filtered    = projects.filter(p => p.type === activeTab);
   const visible     = showAll ? filtered : filtered.slice(0, VISIBLE_COUNT);
-  const hasMore     = !showAll && filtered.length > VISIBLE_COUNT;
+
   const selected    = projects.find(p => p.id === selectedId);
   const processProj = projects.find(p => p.id === processId);
 
@@ -226,7 +222,7 @@ export const Projects = () => {
   }, [selectedId, processId]);
 
   return (
-    <section ref={ref} id="projects" className="bg-[#F5F5F5] pt-14 md:pt-20 pb-20 md:pb-28 px-5 sm:px-8 lg:px-10 relative overflow-hidden">
+    <section ref={ref} id="projects" className="bg-[#0F0F11] pt-14 md:pt-20 pb-20 md:pb-28 px-5 sm:px-8 lg:px-10 relative overflow-hidden">
 
       {/* Edge fades */}
       <div className="absolute inset-x-0 top-0 h-24 pointer-events-none z-10"
@@ -245,10 +241,10 @@ export const Projects = () => {
       </div>
 
       {/* Label */}
-      <div className="flex items-center gap-5 mb-14 relative z-20 border-b border-[#0A0A0A]/[0.07] pb-8">
-        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>05</span>
-        <div className="h-px flex-1 bg-[#0A0A0A]/[0.08]" />
-        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>{t("projects.subtitle")}</span>
+      <div className="flex items-center gap-5 mb-14 relative z-20 border-b border-white/10 pb-8">
+        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white/20" style={{ fontFamily: "Poppins, sans-serif" }}>05</span>
+        <div className="h-px flex-1 bg-white/10" />
+        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white/20" style={{ fontFamily: "Poppins, sans-serif" }}>{t("projects.subtitle")}</span>
       </div>
 
       {/* Title */}
@@ -257,27 +253,27 @@ export const Projects = () => {
           initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="block font-black uppercase leading-[0.88]"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(3rem, 9vw, 7.5rem)", letterSpacing: "-0.03em", backgroundImage: SPOTS_LIGHT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(3rem, 9vw, 7.5rem)", letterSpacing: "-0.03em", backgroundImage: SPOTS_DARK, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
         >
           {lang === "en" ? "My work." : "Mi trabajo."}
         </motion.h2>
         <motion.h2
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="block font-serif italic font-light leading-[1.1] text-[#0A0A0A]/20"
-          style={{ fontSize: "clamp(1.8rem, 5vw, 4.5rem)" }}
+          className="block font-black uppercase leading-[1.1] text-[#0A0A0A]/15 mt-1"
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.2rem, 4vw, 3.2rem)", letterSpacing: "-0.02em" }}
         >
           {lang === "en" ? "selected." : "seleccionado."}
         </motion.h2>
       </div>
 
       {/* Tabs */}
-      <div className="relative z-20 flex gap-10 border-b border-[#0A0A0A]/[0.08] mb-10">
+      <div className="relative z-20 flex gap-10 border-b border-white/10 mb-10">
         {(["professional", "academic"] as const).map(tab => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`pb-5 text-[11px] font-black uppercase tracking-[0.3em] transition-all relative ${activeTab === tab ? "text-[#0A0A0A]" : "text-[#0A0A0A]/30 hover:text-[#0A0A0A]/60"}`}
+            className={`pb-5 text-[11px] font-black uppercase tracking-[0.3em] transition-all relative ${activeTab === tab ? "text-white" : "text-white/40 hover:text-white/70"}`}
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
             {t(`projects.tabs.${tab}`)}
@@ -414,7 +410,7 @@ export const Projects = () => {
         >
           <button
             onClick={() => setShowAll(prev => !prev)}
-            className="flex items-center gap-2.5 px-7 py-3.5 border border-[#0A0A0A]/[0.14] text-[#0A0A0A]/35 font-black text-[9px] uppercase tracking-[0.3em] hover:border-[#CC1500] hover:text-[#CC1500] transition-all duration-300"
+            className="flex items-center gap-2.5 px-7 py-3.5 border border-white/10 text-white/40 hover:border-[#CC1500] hover:text-[#CC1500] transition-all duration-300"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
             {showAll
@@ -489,8 +485,8 @@ export const Projects = () => {
                           </span>
                         </div>
                       )}
-                      <h2 className="font-black tracking-tighter italic leading-[0.88] text-white mb-6"
-                        style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                      <h2 className="font-black tracking-tighter uppercase leading-[0.88] text-white mb-6"
+                        style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                         {selected.title}
                       </h2>
 

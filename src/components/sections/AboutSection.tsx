@@ -1,70 +1,61 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { useTranslation, Trans } from "react-i18next";
 import { SPOTS_LIGHT } from "@/lib/textGradients";
 import { DEPLOYED_COUNT } from "@/data/projectsData";
 
-const BLOBS = [
-  { color: "#CC1500", w: 480, x: "88%", y: "28%", op: 0.06, cls: "blob-1" },
-  { color: "#7C3AED", w: 360, x: "4%",  y: "66%", op: 0.05, cls: "blob-2" },
-  { color: "#EC4899", w: 260, x: "46%", y: "95%", op: 0.04, cls: "blob-1" },
-];
-
-const STATS = [
-  { es: "8.72 · Promedio UNLaM",                                en: "8.72 · GPA UNLaM",                               color: "#CC1500" },
-  { es: `${DEPLOYED_COUNT} proyectos en producción`,             en: `${DEPLOYED_COUNT} production projects`,           color: "#7C3AED" },
-  { es: "UNLAM · Egreso Jul 2026",                               en: "UNLAM · Graduating Jul 2026",                    color: "#06B6D4" },
-];
-
-const PILLARS = [
-  {
-    num: "01", color: "#CC1500",
-    es: { title: "Base académica sólida",   body: "Tecnicatura en Desarrollo Web — UNLaM. 18/20 materias, promedio 8.72. Egreso julio 2026. Formación en backend, bases de datos, ingeniería de software y redes." },
-    en: { title: "Strong academic base",    body: "Web Development Degree — UNLaM. 18/20 subjects, 8.72 GPA. Graduating July 2026. Training in backend, databases, software engineering and networking." },
-  },
-  {
-    num: "02", color: "#7C3AED",
-    es: { title: "Experiencia en producción", body: `${DEPLOYED_COUNT} proyectos reales deployados y en producción. Co-fundadora de CosteAR — startup B2B para PyMEs agroindustriales, semifinalista de Emprende U 2026. Freelance desde diciembre 2025.` },
-    en: { title: "Production experience",   body: `${DEPLOYED_COUNT} real projects deployed and running. Co-founder of CosteAR — B2B startup for agro-industrial SMEs, semifinalist at Emprende U 2026. Freelance since December 2025.` },
-  },
-  {
-    num: "03", color: "#06B6D4",
-    es: { title: "Stack moderno y versátil", body: "React, Node.js, TypeScript, Angular, Java y .NET. No me limito a un lenguaje — elijo la mejor herramienta para cada problema y aprendo lo que haga falta." },
-    en: { title: "Modern & versatile stack", body: "React, Node.js, TypeScript, Angular, Java and .NET. I'm not limited to one language — I pick the best tool for each problem and learn whatever's needed." },
-  },
-];
-
 export const AboutSection = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const lang = i18n.language === "en" ? "en" : "es";
   const ref  = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
 
   const headline = lang === "en" ? "About me." : "Sobre mí.";
   const italic   = lang === "en" ? "what makes me different." : "lo que me hace diferente.";
   const badge    = lang === "en" ? "About" : "Sobre mí";
-  const quote    = lang === "en"
-    ? `Hi! I'm Giuliana — a Full Stack Developer with a GPA of 8.72 and ${DEPLOYED_COUNT} production projects shipped.`
-    : `¡Hola! Soy Giuliana — Desarrolladora Full Stack con promedio 8.72 y ${DEPLOYED_COUNT} proyectos en producción.`;
+
+  // Principles / Focus Areas (formerly Pillars)
+  const principles = [
+    {
+      num: "01",
+      title: lang === "en" ? "Academic Base" : "Base Académica",
+      body: lang === "en" 
+        ? "Degree in Web Development at UNLaM. 18 out of 20 subjects completed with an 8.72 GPA. Graduating in July 2026. Specialized in backend engineering, database modeling, and software architectures."
+        : "Tecnicatura en Desarrollo Web en la UNLaM. 18 de 20 materias aprobadas con promedio de 8.72. Egreso estimado en julio 2026. Formación sólida en backend, bases de datos y arquitectura de software.",
+    },
+    {
+      num: "02",
+      title: lang === "en" ? "Production Shipped" : "Producción Real",
+      body: lang === "en"
+        ? `13 real-world projects deployed and running. Co-founder of CosteAR (B2B SaaS startup for agribusiness costs, semifinalist at Emprende U 2026). Active freelancer building robust web applications.`
+        : `13 proyectos reales deployados y en producción. Co-fundadora de CosteAR (SaaS B2B para costos agroindustriales, semifinalista de Emprende U 2026). Freelancer activa creando apps estables y rápidas.`,
+    },
+    {
+      num: "03",
+      title: lang === "en" ? "Versatile Stack" : "Stack Versátil",
+      body: lang === "en"
+        ? "Fluent in React, Node.js, TypeScript, Angular, Java (Spring), C# (.NET 9), and SQL. I don't write code tied to a single framework; I pick the best tool for the problem at hand."
+        : "Domino React, Node.js, TypeScript, Angular, Java (Spring), C# (.NET 9) y SQL. No me ato a un solo lenguaje; selecciono la herramienta ideal para solucionar el problema técnico.",
+    },
+  ];
+
+  // Technical Fiche / Metadata
+  const metadata = [
+    { label: lang === "en" ? "GPA" : "Promedio", value: "8.72 / 10" },
+    { label: lang === "en" ? "Graduation" : "Graduación", value: lang === "en" ? "July 2026" : "Julio 2026" },
+    { label: lang === "en" ? "Degree" : "Carrera", value: "Desarrollo Web (UNLaM)" },
+    { label: lang === "en" ? "Startup" : "Startup", value: "Co-founder @ CosteAR" },
+    { label: lang === "en" ? "English" : "Inglés", value: "B2 / C1 Level" },
+    { label: lang === "en" ? "Location" : "Ubicación", value: "Buenos Aires, ARG" },
+  ];
 
   return (
-    <section ref={ref} id="about" className="bg-[#F5F5F5] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative">
+    <section ref={ref} id="about" className="bg-[#F5F4F0] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative overflow-hidden">
 
       {/* Edge fades */}
       <div className="absolute inset-x-0 top-0 h-28 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to bottom, #F5F5F5, transparent)" }} />
+        style={{ background: "linear-gradient(to bottom, #F5F4F0, transparent)" }} />
       <div className="absolute inset-x-0 bottom-0 h-28 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to top, #F5F5F5, transparent)" }} />
-
-      {/* Blobs */}
-      <motion.div className="absolute inset-0 pointer-events-none" style={{ y: blobY }}>
-        {BLOBS.map((b, i) => (
-          <div key={i} className={`${b.cls} absolute blur-3xl`}
-            style={{ background: b.color, width: b.w, height: b.w, left: b.x, top: b.y, opacity: b.op, transform: "translate(-50%,-50%)" }} />
-        ))}
-      </motion.div>
+        style={{ background: "linear-gradient(to top, #F5F4F0, transparent)" }} />
 
       {/* Label */}
       <div className="flex items-center gap-5 mb-14 relative z-10">
@@ -74,7 +65,7 @@ export const AboutSection = () => {
       </div>
 
       {/* Headline */}
-      <div className="mb-14 relative z-10">
+      <div className="mb-16 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -86,86 +77,117 @@ export const AboutSection = () => {
         <motion.h2
           initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="block font-serif italic font-light leading-[1.05] text-[#0A0A0A]/20"
-          style={{ fontSize: "clamp(2rem, 5vw, 5.5rem)" }}
+          className="block font-black uppercase leading-[1.05] text-[#0A0A0A]/15 mt-1"
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.2rem, 4vw, 3.2rem)", letterSpacing: "-0.02em" }}
         >
           {italic}
         </motion.h2>
       </div>
 
-      {/* Photo + quote + identity */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 flex justify-center mb-14"
-      >
-        <div className="flex flex-col sm:flex-row items-center gap-8">
-          {/* Circular photo */}
-          <div className="relative shrink-0">
-            <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden"
-              style={{ boxShadow: "0 0 0 2px rgba(0,0,0,0.08), 0 0 0 4px rgba(204,21,0,0.20)" }}>
-              <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
-                className="w-full h-full object-cover object-center"
-                style={{ filter: "contrast(1.08) saturate(1.1) brightness(1.02)" }} />
-            </div>
-            <div className="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-[#F5F5F5] flex items-center justify-center"
-              style={{ boxShadow: "0 0 0 2px rgba(0,0,0,0.08)" }}>
-              <div className="w-4 h-4 rounded-full bg-emerald-500 animate-pulse" />
-            </div>
+      {/* Redesigned Grid Layout */}
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 max-w-7xl mx-auto">
+        
+        {/* Left Column: Narrative + Principles */}
+        <div className="lg:col-span-7 flex flex-col gap-10">
+          
+          {/* Narrative paragraphs */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col gap-6"
+          >
+            <p className="font-medium text-[#0A0A0A]/75 leading-relaxed text-sm md:text-base" style={{ fontFamily: "Poppins, sans-serif" }}>
+              <Trans 
+                i18nKey="about.p1" 
+                components={[
+                  <strong className="text-black font-black" key="0" />, 
+                  <span className="text-[#CC1500]" key="1" />
+                ]} 
+              />
+            </p>
+            <p className="text-[#0A0A0A]/55 leading-relaxed text-sm md:text-base">
+              {t("about.p2")}
+            </p>
+          </motion.div>
+
+          {/* Vertical principles list with thin dividers */}
+          <div className="flex flex-col border-t border-[#0A0A0A]/[0.08]">
+            {principles.map((pr, idx) => (
+              <motion.div
+                key={pr.num}
+                initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="py-6 border-b border-[#0A0A0A]/[0.08] flex flex-col md:flex-row gap-4 md:gap-8 items-start"
+              >
+                <span className="font-mono text-xs font-black text-[#CC1500] tracking-wider shrink-0 md:pt-1">{pr.num}</span>
+                <div className="flex-1">
+                  <h3 className="font-black uppercase text-[#0A0A0A]/85 text-xs md:text-sm tracking-wider mb-2" style={{ fontFamily: "Poppins, sans-serif" }}>
+                    {pr.title}
+                  </h3>
+                  <p className="text-[#0A0A0A]/50 text-xs md:text-sm leading-relaxed">
+                    {pr.body}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Quote + identity + stats */}
-          <div className="flex flex-col gap-4 text-center sm:text-left">
-            <p className="font-serif italic text-[#0A0A0A]/60 leading-snug" style={{ fontSize: "clamp(1.1rem, 2vw, 1.7rem)" }}>
-              "{quote}"
-            </p>
-            <div className="flex flex-wrap justify-center sm:justify-start items-center gap-x-3 gap-y-1">
-              <span className="font-black text-[#0A0A0A]/70 text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>Giuliana Di Rocco</span>
-              <span className="text-[#0A0A0A]/15">·</span>
-              <span className="text-[9px] font-black uppercase tracking-[0.25em] text-[#0A0A0A]/30" style={{ fontFamily: "Poppins, sans-serif" }}>
-                {lang === "en" ? "Full Stack Developer · UNLAM" : "Desarrolladora Full Stack · UNLAM"}
-              </span>
-              <span className="text-[#0A0A0A]/15">·</span>
-              <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[9px] font-black uppercase tracking-[0.25em] text-[#0A0A0A]/30" style={{ fontFamily: "Poppins, sans-serif" }}>
+        </div>
+
+        {/* Right Column: Photo + Technical Fiche */}
+        <div className="lg:col-span-5 flex flex-col gap-8">
+          
+          {/* Photo frame with green status dot */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex justify-center lg:justify-start"
+          >
+            <div className="relative shrink-0">
+              <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden"
+                style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 8px 30px rgba(0,0,0,0.04)" }}>
+                <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
+                  className="w-full h-full object-cover object-center"
+                  style={{ filter: "contrast(1.03) brightness(1.02)" }} />
+              </div>
+              
+              {/* Status pill overlay */}
+              <div className="absolute -bottom-3 right-4 bg-white px-3 py-1.5 rounded-full flex items-center gap-2 border border-[#0A0A0A]/[0.08] shadow-sm">
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#0A0A0A]/50" style={{ fontFamily: "Poppins, sans-serif" }}>
                   {lang === "en" ? "Open to work" : "Disponible"}
                 </span>
               </div>
             </div>
-            <div className="flex flex-wrap justify-center sm:justify-start gap-2">
-              {STATS.map((s, i) => (
-                <span key={i} className="text-[8.5px] font-black uppercase tracking-[0.2em] px-3 py-1.5"
-                  style={{ fontFamily: "Poppins, sans-serif", color: s.color, background: `${s.color}10`, border: `1px solid ${s.color}22` }}>
-                  {lang === "en" ? s.en : s.es}
-                </span>
+          </motion.div>
+
+          {/* Technical Fiche Metadata Table */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="border border-[#0A0A0A]/[0.08] bg-white/[0.02] p-6 rounded-2xl flex flex-col gap-4 shadow-sm"
+          >
+            <div className="flex items-center gap-3 pb-3 border-b border-[#0A0A0A]/[0.08]">
+              <div className="w-2 h-2 rounded-full bg-[#CC1500]" />
+              <span className="font-mono text-[10px] font-black uppercase tracking-wider text-[#0A0A0A]/70">
+                {lang === "en" ? "TECHNICAL FICHE" : "FICHA TÉCNICA"}
+              </span>
+            </div>
+
+            <div className="flex flex-col gap-3 font-mono text-xs">
+              {metadata.map((item) => (
+                <div key={item.label} className="flex justify-between items-baseline py-1.5 border-b border-[#0A0A0A]/[0.04] last:border-0 last:pb-0">
+                  <span className="text-[#0A0A0A]/40 uppercase text-[10px]">{item.label}</span>
+                  <span className="text-[#0A0A0A]/80 font-medium text-right max-w-[70%] truncate">{item.value}</span>
+                </div>
               ))}
             </div>
-          </div>
-        </div>
-      </motion.div>
+          </motion.div>
 
-      {/* Pillars */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#0A0A0A]/[0.06]">
-        {PILLARS.map((p, i) => {
-          const c = lang === "en" ? p.en : p.es;
-          return (
-            <motion.div
-              key={p.num}
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="py-8 md:px-8 first:md:pl-0 last:md:pr-0"
-            >
-              <motion.div className="h-[2px] w-8 mb-6 origin-left" style={{ background: p.color }}
-                initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }} />
-              <span className="block font-black mb-3 leading-none" style={{ fontFamily: "Poppins, sans-serif", fontSize: "0.65rem", letterSpacing: "0.15em", color: p.color }}>{p.num}</span>
-              <h3 className="font-black uppercase leading-none text-[#0A0A0A] mb-3" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1rem, 2vw, 1.35rem)", letterSpacing: "-0.02em" }}>{c.title}</h3>
-              <p className="text-[#0A0A0A]/40 text-sm leading-relaxed">{c.body}</p>
-            </motion.div>
-          );
-        })}
+        </div>
+
       </div>
+
     </section>
   );
 };

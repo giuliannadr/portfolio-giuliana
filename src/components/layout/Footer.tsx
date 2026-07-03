@@ -3,11 +3,7 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from "fram
 import { ArrowUpRight, Copy, Check, Linkedin, Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const BLOBS = [
-  { color: "#ff2200", w: 500, x: "75%", y: "30%", op: 0.18, cls: "blob-1" },
-  { color: "#7C3AED", w: 350, x: "15%", y: "60%", op: 0.10, cls: "blob-2" },
-  { color: "#EC4899", w: 280, x: "50%", y: "85%", op: 0.08, cls: "blob-1" },
-];
+const BLOBS: { color: string; w: number; x: string; y: string; op: number; cls: string; }[] = [];
 
 export const Footer = () => {
   const { i18n } = useTranslation();

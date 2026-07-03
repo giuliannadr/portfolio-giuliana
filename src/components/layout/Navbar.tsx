@@ -9,7 +9,6 @@ const menuItems = [
   { id: "home",       es: "Inicio",       en: "Home"       },
   { id: "about",      es: "Sobre mí",     en: "About"      },
   { id: "experience", es: "Experiencia",  en: "Experience" },
-  { id: "trust",      es: "Feedback",     en: "Feedback"   },
   { id: "projects",   es: "Proyectos",    en: "Projects"   },
   { id: "tech",       es: "Tecnologías",  en: "Tech"       },
   { id: "contact",    es: "Contacto",     en: "Contact"    },
