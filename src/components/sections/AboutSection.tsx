@@ -10,7 +10,6 @@ export const AboutSection = () => {
   const ref  = useRef<HTMLElement>(null);
 
   const headline = lang === "en" ? "About me." : "Sobre mí.";
-  const italic   = lang === "en" ? "what makes me different." : "lo que me hace diferente.";
   const badge    = lang === "en" ? "About" : "Sobre mí";
 
   // Principles / Focus Areas (formerly Pillars)
@@ -59,7 +58,11 @@ export const AboutSection = () => {
 
       {/* Label */}
       <div className="flex items-center gap-5 mb-14 relative z-10">
-        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>02</span>
+        <div className="flex items-center gap-2 font-mono text-[9px] text-[#CC1500] uppercase tracking-[0.25em]">
+          <span>02</span>
+          <span>//</span>
+          <span>PROFILE</span>
+        </div>
         <div className="h-px flex-1 bg-[#0A0A0A]/[0.08]" />
         <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>{badge}</span>
       </div>
@@ -67,20 +70,14 @@ export const AboutSection = () => {
       {/* Headline */}
       <div className="mb-16 relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="block font-black uppercase leading-[0.88]"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.5rem, 6vw, 6.5rem)", letterSpacing: "-0.03em", backgroundImage: SPOTS_LIGHT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+          initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="block font-black uppercase leading-[0.88] text-[#0A0A0A]"
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.2rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
         >
-          {headline}
-        </motion.h2>
-        <motion.h2
-          initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="block font-black uppercase leading-[1.05] text-[#0A0A0A]/15 mt-1"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.2rem, 4vw, 3.2rem)", letterSpacing: "-0.02em" }}
-        >
-          {italic}
+          <span style={{ backgroundImage: SPOTS_LIGHT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            {headline}
+          </span>
         </motion.h2>
       </div>
 
@@ -134,30 +131,46 @@ export const AboutSection = () => {
 
         </div>
 
-        {/* Right Column: Photo + Technical Fiche */}
+        {/* Right Column: Photo (Developer ID Card) + Technical Fiche */}
         <div className="lg:col-span-5 flex flex-col gap-8">
           
-          {/* Photo frame with green status dot */}
+          {/* Framed Profile Card (Developer ID Card) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="flex justify-center lg:justify-start"
           >
-            <div className="relative shrink-0">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden"
-                style={{ boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 8px 30px rgba(0,0,0,0.04)" }}>
+            <div className="relative shrink-0 w-64 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+              
+              {/* Photo Area */}
+              <div className="w-full h-56 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5">
                 <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
                   className="w-full h-full object-cover object-center"
-                  style={{ filter: "contrast(1.03) brightness(1.02)" }} />
+                  style={{ filter: "contrast(1.02) brightness(1.01)" }} />
               </div>
-              
-              {/* Status pill overlay */}
-              <div className="absolute -bottom-3 right-4 bg-white px-3 py-1.5 rounded-full flex items-center gap-2 border border-[#0A0A0A]/[0.08] shadow-sm">
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#0A0A0A]/50" style={{ fontFamily: "Poppins, sans-serif" }}>
-                  {lang === "en" ? "Open to work" : "Disponible"}
-                </span>
+
+              {/* ID Data Area inside card */}
+              <div className="p-4 flex flex-col gap-1.5 font-mono">
+                <div className="flex justify-between items-center text-[8.5px] text-[#0A0A0A]/40 uppercase tracking-widest">
+                  <span>SECURE CREDENTIAL</span>
+                  <span className="text-[#CC1500] font-black">GDR-98</span>
+                </div>
+                <div className="text-[12px] font-black uppercase text-[#0A0A0A] tracking-wider pt-0.5" style={{ fontFamily: "Poppins, sans-serif" }}>
+                  GIULIANA DI ROCCO
+                </div>
+                <div className="text-[9px] text-[#0A0A0A]/50 uppercase tracking-wider font-semibold">
+                  FULL STACK DEVELOPER
+                </div>
+                
+                {/* Embedded status indicator */}
+                <div className="flex items-center gap-2 mt-2 pt-2 border-t border-[#0A0A0A]/[0.05]">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-[8px] font-black tracking-widest text-emerald-600 uppercase">
+                    {lang === "en" ? "OPEN TO WORK" : "DISPONIBLE"}
+                  </span>
+                </div>
               </div>
+
             </div>
           </motion.div>
 

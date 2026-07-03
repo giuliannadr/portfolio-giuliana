@@ -19,8 +19,8 @@ const en = {
       badge: "Full Stack Development",
       title: "Clean code,",
       titleItalic: "resilient software.",
-      p1: "Hi! I'm <0>Giuliana</0>. I recently graduated in Web Development from UNLaM with an 8.72 GPA. For me, coding isn't just about passing tests or completing tutorials; it's about building software that solves actual, day-to-day problems and delivers real value.",
-      p2: "I work comfortably across both backend and frontend systems. I design robust APIs in Node.js, C#, or Java, model relational databases, and build fast, responsive interfaces with React or Angular. If a technology is right for the job, I learn it and ship it.",
+      p1: "Hi! I'm <0>Giuliana</0>. I'm a Web Development graduate from UNLaM (8.72 GPA). I build software that solves real, day-to-day problems and delivers actual business value.",
+      p2: "I work across the full stack: designing robust APIs in Node.js, Java, or C#, modeling relational databases, and crafting fast, responsive frontends with React or Angular.",
       stats: {
         exp: "8.72",
         expLabel: "GPA",
@@ -304,8 +304,8 @@ const es = {
       badge: "Desarrollo Full Stack",
       title: "Código limpio,",
       titleItalic: "software resiliente.",
-      p1: "¡Hola! Soy <0>Giuliana</0>. Recientemente me gradué como técnica en desarrollo web en la UNLaM con un promedio de 8.72. Para mí, programar no es solo resolver challenges de código; es construir herramientas reales que solucionen problemas cotidianos y aporten valor real.",
-      p2: "Me muevo con soltura entre el backend y el frontend. Escribo APIs estructuradas en Node.js, C# o Java, modelo bases de datos relacionales y construyo interfaces rápidas e interactivas en React o Angular. Si una herramienta es la indicada para resolver el problema, la aprendo y la implemento.",
+      p1: "¡Hola! Soy <0>Giuliana</0>. Me gradué en Desarrollo Web en la UNLaM con un promedio de 8.72. Escribo código para resolver problemas reales del día a día y aportar valor tangible.",
+      p2: "Trabajo en todo el stack: diseño APIs estructuradas en Node.js, Java o C#, modelo bases de datos relacionales y construyo interfaces interactivas con React o Angular.",
       stats: {
         exp: "8.72",
         expLabel: "Promedio",

@@ -59,28 +59,26 @@ export const TechSection = () => {
 
       {/* Label */}
       <div className="flex items-center gap-5 mb-14 relative z-10">
-        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>06</span>
+        <div className="flex items-center gap-2 font-mono text-[9px] text-[#CC1500] uppercase tracking-[0.25em]">
+          <span>06</span>
+          <span>//</span>
+          <span>STACK</span>
+        </div>
         <div className="h-px flex-1 bg-[#0A0A0A]/[0.08]" />
         <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>{t("tech.subtitle")}</span>
       </div>
 
       {/* Headline */}
-      <div className="mb-14 relative z-10">
+      <div className="mb-16 relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 22 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, y: 15 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="block font-black uppercase leading-[0.88]"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.5rem, 6vw, 6.5rem)", letterSpacing: "-0.03em", backgroundImage: SPOTS_LIGHT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+          className="block font-black uppercase leading-[0.88] text-[#0A0A0A]"
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.2rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
         >
-          {t("tech.title")}
-        </motion.h2>
-        <motion.h2
-          initial={{ opacity: 0, y: 18 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="block font-black uppercase leading-[1.05] text-[#0A0A0A]/15 mt-1"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.2rem, 4vw, 3.2rem)", letterSpacing: "-0.02em" }}
-        >
-          {t("tech.titleItalic")}
+          <span style={{ backgroundImage: SPOTS_LIGHT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            {t("tech.title")}
+          </span>
         </motion.h2>
       </div>
 
