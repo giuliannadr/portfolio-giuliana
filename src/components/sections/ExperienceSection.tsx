@@ -39,7 +39,7 @@ const TIMELINE = [
   {
     num: "03",
     color: "#06B6D4",
-    from: { es: "2024",    en: "2024"    },
+    from: { es: "2024",     en: "2024"     },
     to:   { es: "Jul 2026", en: "Jul 2026" },
     role: { es: "Tecnicatura en Desarrollo Web", en: "Web Development Degree" },
     ctx:  { es: "UNLaM · 18/20 materias · Promedio 8.72 · Egreso julio 2026", en: "UNLaM · 18/20 subjects · GPA 8.72 · Graduating July 2026" },
@@ -106,14 +106,77 @@ export const ExperienceSection = () => {
         </motion.h2>
       </div>
 
-      {/* Timeline */}
-      <div className="relative z-10 max-w-3xl">
+      {/* ── DESKTOP: 3 columnas en fila ── */}
+      <div className="hidden lg:block relative z-10">
+        {/* Línea horizontal conectora */}
+        <div className="absolute top-[5px] left-0 right-0 h-px pointer-events-none"
+          style={{ background: "linear-gradient(to right, #CC150025 0%, #CC150060 15%, #7C3AED60 50%, #06B6D460 85%, #06B6D425 100%)" }} />
+
+        <div className="flex gap-10 xl:gap-14">
+          {TIMELINE.map((item, i) => (
+            <motion.div
+              key={item.num}
+              initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.65, delay: i * 0.13, ease: [0.16, 1, 0.3, 1] }}
+              className="flex-1 min-w-0"
+            >
+              {/* Dot */}
+              <motion.div
+                className="w-3 h-3 rounded-full mb-7 shrink-0"
+                style={{ background: item.color, boxShadow: `0 0 0 4px ${item.color}20` }}
+                initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }}
+                transition={{ delay: 0.15 + i * 0.13, type: "spring", stiffness: 300 }}
+              />
+
+              {/* Date */}
+              <span
+                className="block text-[9px] font-black uppercase tracking-[0.25em] mb-2"
+                style={{ fontFamily: "Poppins, sans-serif", color: item.color }}
+              >
+                {item.from[lang]} — {item.to[lang]}
+              </span>
+
+              {/* Role */}
+              <h3
+                className="font-black uppercase text-white leading-tight mb-0.5"
+                style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(0.95rem, 1.4vw, 1.2rem)", letterSpacing: "-0.02em" }}
+              >
+                {item.role[lang]}
+              </h3>
+
+              {/* Context */}
+              <p className="text-[9px] font-black uppercase tracking-[0.22em] text-white/25 mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>
+                {item.ctx[lang]}
+              </p>
+
+              {/* Body */}
+              <p className="text-white/40 text-sm leading-relaxed mb-5">{item.body[lang]}</p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {item.tags.map(tag => (
+                  <span
+                    key={tag}
+                    className="text-[8px] font-black uppercase tracking-[0.2em] px-2.5 py-1"
+                    style={{ fontFamily: "Poppins, sans-serif", color: item.color, background: `${item.color}10`, border: `1px solid ${item.color}22` }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── MOBILE: timeline vertical ── */}
+      <div className="lg:hidden relative z-10 max-w-3xl">
         {TIMELINE.map((item, i) => (
           <motion.div
             key={item.num}
             initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.65, delay: i * 0.13, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex gap-7 md:gap-10 pb-14 last:pb-0"
+            className="relative flex gap-7 pb-14 last:pb-0"
           >
             {/* Dot + vertical line */}
             <div className="flex flex-col items-center shrink-0 pt-1.5">
@@ -153,9 +216,7 @@ export const ExperienceSection = () => {
                 {item.ctx[lang]}
               </p>
 
-              <p className="text-white/40 text-sm leading-relaxed mb-4 max-w-xl">
-                {item.body[lang]}
-              </p>
+              <p className="text-white/40 text-sm leading-relaxed mb-4 max-w-xl">{item.body[lang]}</p>
 
               <div className="flex flex-wrap gap-2">
                 {item.tags.map(tag => (
