@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { SPOTS_LIGHT } from "@/lib/textGradients";
+import { DEPLOYED_COUNT } from "@/data/projectsData";
 
 const BLOBS = [
   { color: "#CC1500", w: 480, x: "88%", y: "28%", op: 0.06, cls: "blob-1" },
@@ -10,9 +11,9 @@ const BLOBS = [
 ];
 
 const STATS = [
-  { es: "8.72 · Promedio UNLaM",         en: "8.72 · GPA UNLaM",              color: "#CC1500" },
-  { es: "7 proyectos en producción",      en: "7 production projects",          color: "#7C3AED" },
-  { es: "UNLAM · Egreso Jul 2026",          en: "UNLAM · Graduating Jul 2026",    color: "#06B6D4" },
+  { es: "8.72 · Promedio UNLaM",                                en: "8.72 · GPA UNLaM",                               color: "#CC1500" },
+  { es: `${DEPLOYED_COUNT} proyectos en producción`,             en: `${DEPLOYED_COUNT} production projects`,           color: "#7C3AED" },
+  { es: "UNLAM · Egreso Jul 2026",                               en: "UNLAM · Graduating Jul 2026",                    color: "#06B6D4" },
 ];
 
 const PILLARS = [
@@ -23,8 +24,8 @@ const PILLARS = [
   },
   {
     num: "02", color: "#7C3AED",
-    es: { title: "Experiencia en producción", body: "3 proyectos reales deployados y funcionando. Trabajo freelance desde diciembre 2025. Cada uno implicó planificación real, deadlines reales y clientes reales." },
-    en: { title: "Production experience",   body: "3 real projects deployed and running. Freelance work since December 2025. Each one involved real planning, real deadlines and real clients." },
+    es: { title: "Experiencia en producción", body: `${DEPLOYED_COUNT} proyectos reales deployados y funcionando. Trabajo freelance desde diciembre 2025. Cada uno implicó planificación real, deadlines reales y clientes reales.` },
+    en: { title: "Production experience",   body: `${DEPLOYED_COUNT} real projects deployed and running. Freelance work since December 2025. Each one involved real planning, real deadlines and real clients.` },
   },
   {
     num: "03", color: "#06B6D4",
@@ -45,8 +46,8 @@ export const AboutSection = () => {
   const italic   = lang === "en" ? "what makes me different." : "lo que me hace diferente.";
   const badge    = lang === "en" ? "About" : "Sobre mí";
   const quote    = lang === "en"
-    ? "Hi! I'm Giuliana — a Full Stack Developer with a GPA of 8.72 and 3 production projects shipped."
-    : "¡Hola! Soy Giuliana — Desarrolladora Full Stack con promedio 8.72 y 3 proyectos en producción.";
+    ? `Hi! I'm Giuliana — a Full Stack Developer with a GPA of 8.72 and ${DEPLOYED_COUNT} production projects shipped.`
+    : `¡Hola! Soy Giuliana — Desarrolladora Full Stack con promedio 8.72 y ${DEPLOYED_COUNT} proyectos en producción.`;
 
   return (
     <section ref={ref} id="about" className="bg-[#F5F5F5] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative">

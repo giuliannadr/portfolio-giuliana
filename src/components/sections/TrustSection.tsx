@@ -5,6 +5,7 @@ import { SPOTS_DARK } from "@/lib/textGradients";
 import { ReviewForm } from "@/components/ui/ReviewForm";
 import { fetchPublishedReviews, type Review as DynReview } from "@/lib/firebase";
 import { useTranslation } from "react-i18next";
+import { DEPLOYED_COUNT } from "@/data/projectsData";
 
 // ─── Static fallback reviews ──────────────────────────────────────────────────
 const STATIC_REVIEWS = {
@@ -21,9 +22,9 @@ const STATIC_REVIEWS = {
 };
 
 const METRICS = [
-  { num: "100%", color: "#CC1500", es: "Satisfacción · 3 clientes", en: "Satisfaction · 3 clients" },
-  { num: "3",    color: "#7C3AED", es: "Proyectos en producción",    en: "Production projects"      },
-  { num: "B2/C1", color: "#06B6D4", es: "Nivel de inglés",          en: "English level"             },
+  { num: "100%",              color: "#CC1500", es: "Satisfacción · 3 clientes", en: "Satisfaction · 3 clients" },
+  { num: `${DEPLOYED_COUNT}`, color: "#7C3AED", es: "Proyectos en producción",   en: "Production projects"      },
+  { num: "B2/C1",             color: "#06B6D4", es: "Nivel de inglés",           en: "English level"            },
 ];
 
 const PALETTE = ["#CC1500", "#7C3AED", "#06B6D4", "#EC4899", "#F59E0B", "#10B981"];
