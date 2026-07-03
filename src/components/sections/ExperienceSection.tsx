@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { SPOTS_DARK } from "@/lib/textGradients";
+import { SPOTS_LIGHT } from "@/lib/textGradients";
+
+const BG = "#F5F5F5";
 
 const BLOBS = [
   { color: "#CC1500", w: 380, x: "88%", y: "22%", op: 0.07, cls: "blob-1" },
@@ -63,13 +65,13 @@ export const ExperienceSection = () => {
   const badge    = lang === "en" ? "Experience"     : "Experiencia";
 
   return (
-    <section ref={ref} id="experience" className="bg-[#0A0A0A] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative">
+    <section ref={ref} id="experience" className="bg-[#F5F5F5] py-20 md:py-32 px-5 sm:px-8 lg:px-10 relative">
 
       {/* Edge fades */}
       <div className="absolute inset-x-0 top-0 h-28 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to bottom, #0A0A0A, transparent)" }} />
+        style={{ background: `linear-gradient(to bottom, ${BG}, transparent)` }} />
       <div className="absolute inset-x-0 bottom-0 h-28 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to top, #0A0A0A, transparent)" }} />
+        style={{ background: `linear-gradient(to top, ${BG}, transparent)` }} />
 
       {/* Blobs */}
       <motion.div className="absolute inset-0 pointer-events-none" style={{ y: blobY }}>
@@ -81,9 +83,9 @@ export const ExperienceSection = () => {
 
       {/* Label */}
       <div className="flex items-center gap-5 mb-14 relative z-10">
-        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white/25" style={{ fontFamily: "Poppins, sans-serif" }}>03</span>
-        <div className="h-px flex-1 bg-white/[0.06]" />
-        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white/25" style={{ fontFamily: "Poppins, sans-serif" }}>{badge}</span>
+        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>03</span>
+        <div className="h-px flex-1 bg-[#0A0A0A]/[0.08]" />
+        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#0A0A0A]/25" style={{ fontFamily: "Poppins, sans-serif" }}>{badge}</span>
       </div>
 
       {/* Headline */}
@@ -92,14 +94,14 @@ export const ExperienceSection = () => {
           initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="block font-black uppercase leading-[0.88]"
-          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.5rem, 6vw, 6.5rem)", letterSpacing: "-0.03em", backgroundImage: SPOTS_DARK, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+          style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.5rem, 6vw, 6.5rem)", letterSpacing: "-0.03em", backgroundImage: SPOTS_LIGHT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
         >
           {headline}
         </motion.h2>
         <motion.h2
           initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="block font-serif italic font-light leading-[1.05] text-white/20"
+          className="block font-serif italic font-light leading-[1.05] text-[#0A0A0A]/20"
           style={{ fontSize: "clamp(2rem, 5vw, 5.5rem)" }}
         >
           {italic}
@@ -110,7 +112,7 @@ export const ExperienceSection = () => {
       <div className="hidden lg:block relative z-10">
         {/* Línea horizontal conectora */}
         <div className="absolute top-[5px] left-0 right-0 h-px pointer-events-none"
-          style={{ background: "linear-gradient(to right, #CC150025 0%, #CC150060 15%, #7C3AED60 50%, #06B6D460 85%, #06B6D425 100%)" }} />
+          style={{ background: "linear-gradient(to right, #CC150035 0%, #CC150070 15%, #7C3AED70 50%, #06B6D470 85%, #06B6D435 100%)" }} />
 
         <div className="flex gap-10 xl:gap-14">
           {TIMELINE.map((item, i) => (
@@ -138,19 +140,19 @@ export const ExperienceSection = () => {
 
               {/* Role */}
               <h3
-                className="font-black uppercase text-white leading-tight mb-0.5"
+                className="font-black uppercase text-[#0A0A0A] leading-tight mb-0.5"
                 style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(0.95rem, 1.4vw, 1.2rem)", letterSpacing: "-0.02em" }}
               >
                 {item.role[lang]}
               </h3>
 
               {/* Context */}
-              <p className="text-[9px] font-black uppercase tracking-[0.22em] text-white/25 mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>
+              <p className="text-[9px] font-black uppercase tracking-[0.22em] text-[#0A0A0A]/30 mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>
                 {item.ctx[lang]}
               </p>
 
               {/* Body */}
-              <p className="text-white/40 text-sm leading-relaxed mb-5">{item.body[lang]}</p>
+              <p className="text-[#0A0A0A]/50 text-sm leading-relaxed mb-5">{item.body[lang]}</p>
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
@@ -206,17 +208,17 @@ export const ExperienceSection = () => {
               </span>
 
               <h3
-                className="font-black uppercase text-white leading-tight mb-0.5"
+                className="font-black uppercase text-[#0A0A0A] leading-tight mb-0.5"
                 style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1rem, 2.2vw, 1.4rem)", letterSpacing: "-0.02em" }}
               >
                 {item.role[lang]}
               </h3>
 
-              <p className="text-[9px] font-black uppercase tracking-[0.22em] text-white/25 mb-3.5" style={{ fontFamily: "Poppins, sans-serif" }}>
+              <p className="text-[9px] font-black uppercase tracking-[0.22em] text-[#0A0A0A]/30 mb-3.5" style={{ fontFamily: "Poppins, sans-serif" }}>
                 {item.ctx[lang]}
               </p>
 
-              <p className="text-white/40 text-sm leading-relaxed mb-4 max-w-xl">{item.body[lang]}</p>
+              <p className="text-[#0A0A0A]/50 text-sm leading-relaxed mb-4 max-w-xl">{item.body[lang]}</p>
 
               <div className="flex flex-wrap gap-2">
                 {item.tags.map(tag => (
