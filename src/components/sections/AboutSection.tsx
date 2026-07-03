@@ -138,10 +138,10 @@ export const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-md mx-auto lg:mx-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between"
+            className="w-full max-w-[340px] mx-auto lg:ml-auto lg:mr-0 border border-[#0A0A0A]/[0.08] bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between"
           >
             {/* Taller Photo Area to show face and avoid excessive cropping */}
-            <div className="w-full h-80 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
+            <div className="w-full h-64 overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
               <img src="/giuliprofile.jpeg" alt="Giuliana Di Rocco"
                 className="w-full h-full object-cover"
                 style={{ filter: "contrast(1.02) brightness(1.01)", objectPosition: "center 0%" }} />
