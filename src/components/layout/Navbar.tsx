@@ -60,7 +60,7 @@ export const Navbar = () => {
     <>
       {/* ── FLOATING DESKTOP PILL NAVBAR ── */}
       <nav
-        className={`hidden xl:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 h-14 items-center justify-between px-8 rounded-full transition-all duration-300 w-[90%] max-w-5xl backdrop-blur-md border ${
+        className={`hidden lg:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 h-14 items-center justify-between px-8 rounded-full transition-all duration-300 w-[90%] max-w-5xl backdrop-blur-md border ${
           scrolled
             ? "bg-[#0A0A0A]/85 border-white/10 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.5)]"
             : "bg-[#0A0A0A]/40 border-white/[0.06] shadow-sm"
@@ -120,7 +120,7 @@ export const Navbar = () => {
 
       {/* ── FLOATING MOBILE PILL NAVBAR ── */}
       <div
-        className={`xl:hidden fixed top-4 left-1/2 -translate-x-1/2 z-50 h-12 flex items-center justify-between px-5 rounded-full transition-all duration-300 w-[90%] backdrop-blur-md border ${
+        className={`lg:hidden fixed top-4 left-1/2 -translate-x-1/2 z-50 h-12 flex items-center justify-between px-5 rounded-full transition-all duration-300 w-[90%] backdrop-blur-md border ${
           scrolled 
             ? "bg-[#0A0A0A]/85 border-white/10 shadow-lg" 
             : "bg-[#0A0A0A]/40 border-white/[0.06]"
@@ -155,7 +155,7 @@ export const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="xl:hidden fixed inset-0 z-[100] bg-[#0A0A0A]/98 backdrop-blur-lg flex flex-col px-6 py-8"
+            className="lg:hidden fixed inset-0 z-[100] bg-[#0A0A0A]/98 backdrop-blur-lg flex flex-col px-6 py-8"
           >
             <div className="flex justify-between items-center mb-12">
               <span

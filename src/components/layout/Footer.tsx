@@ -3,7 +3,10 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from "fram
 import { ArrowUpRight, Copy, Check, Linkedin, Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const BLOBS: { color: string; w: number; x: string; y: string; op: number; cls: string; }[] = [];
+const BLOBS = [
+  { color: "#CC1500", w: 400, x: "20%", y: "30%", op: 0.05, cls: "blob-1" },
+  { color: "#7C3AED", w: 450, x: "80%", y: "60%", op: 0.06, cls: "blob-2" },
+];
 
 export const Footer = () => {
   const { i18n } = useTranslation();
@@ -228,17 +231,19 @@ export const Footer = () => {
       </motion.div>
 
       {/* Copyright line */}
-      <div className="absolute bottom-0 inset-x-0 border-t border-white/[0.07] flex items-center justify-between px-5 sm:px-8 lg:px-10 py-4">
-        <p className="text-[9px] font-black uppercase tracking-[0.4em] text-white/50" style={{ fontFamily: "Poppins, sans-serif" }}>
-          © {new Date().getFullYear()} — Giuliana Di Rocco
-        </p>
-        <a
-          href="#home"
-          className="text-[9px] font-black uppercase tracking-[0.4em] text-white/50 hover:text-white transition-colors"
-          style={{ fontFamily: "Poppins, sans-serif" }}
-        >
-          {lang === "en" ? "Back to top" : "Volver arriba"} ↑
-        </a>
+      <div className="absolute bottom-0 inset-x-0 border-t border-white/[0.07] px-5 sm:px-8 lg:px-10 py-4">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+          <p className="text-[9px] font-black uppercase tracking-[0.4em] text-white/50" style={{ fontFamily: "Poppins, sans-serif" }}>
+            © {new Date().getFullYear()} — Giuliana Di Rocco
+          </p>
+          <a
+            href="#home"
+            className="text-[9px] font-black uppercase tracking-[0.4em] text-white/50 hover:text-white transition-colors"
+            style={{ fontFamily: "Poppins, sans-serif" }}
+          >
+            {lang === "en" ? "Back to top" : "Volver arriba"} ↑
+          </a>
+        </div>
       </div>
     </footer>
   );

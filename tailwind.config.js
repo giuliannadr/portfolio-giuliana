@@ -17,7 +17,8 @@ export default {
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        serif: ['"Playfair Display"', 'serif'],
+        serif: ['"Instrument Serif"', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
         poppins: ['Poppins', 'sans-serif'],
       }
     },

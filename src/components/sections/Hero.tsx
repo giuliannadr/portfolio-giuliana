@@ -293,14 +293,15 @@ export const Hero = () => {
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.92, duration: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12 w-full sm:w-auto px-2 sm:px-0">
           <HeroProjBtn lang={lang} />
-          <a
+          <motion.a
             href={lang === "en" ? "/CV_Giuliana_DiRocco_EN.pdf" : "/CV_Giuliana_DiRocco_ES.pdf"}
             download
+            whileTap={{ scale: 0.97 }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 border border-white/18 text-white/50 font-black text-[9px] uppercase tracking-[0.3em] hover:border-[#CC1500] hover:text-white transition-all duration-300"
             style={{ fontFamily: "Poppins, sans-serif" }}>
             <Download size={10} />
             {lang === "en" ? "Download CV" : "Descargar CV"}
-          </a>
+          </motion.a>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.05 }}

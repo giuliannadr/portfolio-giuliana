@@ -56,7 +56,7 @@ export const AboutSection = () => {
         style={{ background: "linear-gradient(to top, #F5F4F0, transparent)" }} />
 
       {/* Label */}
-      <div className="flex items-center gap-5 mb-14 relative z-10">
+      <div className="flex items-center gap-5 mb-14 relative z-10 max-w-7xl mx-auto w-full">
         <div className="flex items-center gap-2 font-mono text-[9px] text-[#CC1500] uppercase tracking-[0.25em]">
           <span>02</span>
           <span>//</span>
@@ -67,9 +67,9 @@ export const AboutSection = () => {
       </div>
 
       {/* Headline + narrative (order-1, top row) · Card (order-2 mobile, right column desktop) · Principles (order-3, bottom-left desktop) */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-16 lg:gap-y-10 items-start">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-16 lg:gap-y-10 items-start max-w-7xl mx-auto w-full">
 
-        <div className="order-1 lg:order-none lg:col-span-7 lg:row-start-1 flex flex-col gap-6 select-none">
+        <div className="order-1 lg:order-none lg:col-span-6 lg:col-start-2 lg:row-start-1 flex flex-col gap-6 select-none">
           <motion.h2
             initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -104,7 +104,7 @@ export const AboutSection = () => {
           </motion.div>
         </div>
 
-        <div className="order-2 lg:order-none lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:row-span-2 flex flex-col justify-start">
+        <div className="order-2 lg:order-none lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-2 flex flex-col justify-start">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -154,7 +154,7 @@ export const AboutSection = () => {
           </motion.div>
         </div>
 
-        <div className="order-3 lg:order-none lg:col-span-7 lg:row-start-2 flex flex-col justify-start">
+        <div className="order-3 lg:order-none lg:col-span-6 lg:col-start-2 lg:row-start-2 flex flex-col justify-start">
           <div className="flex flex-col border-t border-[#0A0A0A]/[0.08]">
             {principles.map((pr, idx) => (
               <motion.div
