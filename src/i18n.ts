@@ -130,6 +130,12 @@ const en = {
           description: "Natural Language Processing (NLP) platform for automated assessment.",
           longDescription: "Implementation of a semantic engine under .NET 9. I worked on the persistence layer with Entity Framework and data processing logic for dynamic analytical report generation."
         },
+        nido: {
+          title: "Nido",
+          category: "Home Management Platform",
+          description: "Home management platform with AI-assisted recipes, shared finances, chore tracking and OCR receipt scanning.",
+          longDescription: "Final degree project developed with an 8-person team, shipping the MVP in about 2 months. I worked on the backend and the go-to-market communication strategy. Nido centralizes a shared household's pantry, recipes, chores and finances, with AI recipe recommendations, an in-recipe cooking assistant chat, automatic receipt scanning via OCR, and price comparison across supermarkets."
+        },
         muda: {
           title: "MUDA",
           category: "Full Stack Development",
@@ -414,6 +420,12 @@ const es = {
           category: "Software Architecture",
           description: "Plataforma de procesamiento de lenguaje natural (NLP) para evaluación automatizada.",
           longDescription: "Implementación de un motor semántico bajo .NET 9. Trabajé en la capa de persistencia con Entity Framework y en la lógica de procesamiento de datos para la generación dinámica de reportes analíticos."
+        },
+        nido: {
+          title: "Nido",
+          category: "Plataforma de Gestión del Hogar",
+          description: "Plataforma de gestión del hogar con recetas asistidas por IA, finanzas compartidas, gestión de tareas y escaneo OCR de tickets.",
+          longDescription: "Proyecto final de carrera desarrollado en equipo de 8 personas, con MVP entregado en aproximadamente 2 meses. Trabajé en el backend y en la estrategia de comunicación del lanzamiento. Nido centraliza la alacena, las recetas, las tareas y las finanzas de un hogar compartido, con recomendación de recetas por IA, un chat asistente de cocina dentro de cada receta, escaneo automático de tickets por OCR y comparación de precios entre supermercados."
         },
         muda: {
           title: "MUDA",
