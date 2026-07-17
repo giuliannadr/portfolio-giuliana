@@ -35,8 +35,8 @@ const TIMELINE = [
     color: "#CC1500",
     from: { es: "Mar 2024", en: "Mar 2024" },
     to:   { es: "Jul 2026", en: "Jul 2026" },
-    role: { es: "Tecnicatura en Desarrollo Web", en: "Web Development Degree" },
-    ctx:  { es: "UNLaM · 18/20 materias",            en: "UNLaM · 18/20 subjects"     },
+    role: { es: "Técnica Universitaria en Desarrollo Web", en: "Web Dev Technician Degree" },
+    ctx:  { es: "UNLaM · Finalizada",            en: "UNLaM · Finished"     },
     body: {
       es: "Carrera universitaria de desarrollo full stack. Materias clave: Algoritmos y Estructuras de Datos, Programación Orientada a Objetos, Bases de Datos Relacionales, Ingeniería de Software y Redes.",
       en: "University full stack development degree. Key subjects: Algorithms & Data Structures, OOP, Relational Databases, Software Engineering, and Networks.",
