@@ -13,13 +13,13 @@ const en = {
       contact: "Let's talk"
     },
     profileCard: {
-      role: "Hi! I'm Giuliana — a Full Stack Developer with a GPA of 8.72 and 13 production projects shipped."
+      role: "Hi! I'm Giuliana — a Full Stack Developer, Web Dev Technician (UNLaM, 8.72 GPA), with 13 production projects shipped."
     },
     about: {
       badge: "Full Stack Development",
       title: "Clean code,",
       titleItalic: "resilient software.",
-      p1: "Hi! I'm <0>Giuliana</0>. I'm a Web Development graduate from UNLaM (8.72 GPA). I build software that solves real, day-to-day problems and delivers actual business value.",
+      p1: "Hi! I'm <0>Giuliana</0>. I'm a Universitary Technician in Web Development from UNLaM (8.72 GPA), starting a Bachelor's in AI at UBP in August 2026. I build software that solves real, day-to-day problems and delivers actual business value.",
       p2: "I work across the full stack: designing robust APIs in Node.js, Java, or C#, modeling relational databases, and crafting fast, responsive frontends with React or Angular.",
       stats: {
         exp: "8.72",
@@ -47,7 +47,7 @@ const en = {
         modern: {
           label: "GPA",
           value: "8.72",
-          tooltip: "18 of 20 subjects completed at Universidad Nacional de La Matanza, graduating July 2026."
+          tooltip: "Universitary Technician in Web Development, finished at Universidad Nacional de La Matanza."
         }
       },
       testimonials: {
@@ -298,13 +298,13 @@ const es = {
       contact: "Hablemos"
     },
     profileCard: {
-      role: "¡Hola! Soy Giuliana — Desarrolladora Full Stack con promedio 8.72 y 13 proyectos en producción."
+      role: "¡Hola! Soy Giuliana — Desarrolladora Full Stack, Técnica en Desarrollo Web (UNLaM, promedio 8.72), con 13 proyectos en producción."
     },
     about: {
       badge: "Desarrollo Full Stack",
       title: "Código limpio,",
       titleItalic: "software resiliente.",
-      p1: "¡Hola! Soy <0>Giuliana</0>. Me gradué en Desarrollo Web en la UNLaM con un promedio de 8.72. Escribo código para resolver problemas reales del día a día y aportar valor tangible.",
+      p1: "¡Hola! Soy <0>Giuliana</0>. Soy Técnica Universitaria en Desarrollo Web (UNLaM, promedio 8.72) y en agosto de 2026 empiezo la Licenciatura en Inteligencia Artificial en la UBP. Escribo código para resolver problemas reales del día a día y aportar valor tangible.",
       p2: "Trabajo en todo el stack: diseño APIs estructuradas en Node.js, Java o C#, modelo bases de datos relacionales y construyo interfaces interactivas con React o Angular.",
       stats: {
         exp: "8.72",
@@ -332,7 +332,7 @@ const es = {
         modern: {
           label: "Promedio académico",
           value: "8.72",
-          tooltip: "18 de 20 materias promocionadas en la Universidad Nacional de La Matanza, egreso julio 2026."
+          tooltip: "Técnica Universitaria en Desarrollo Web finalizada en la Universidad Nacional de La Matanza."
         }
       },
       testimonials: {

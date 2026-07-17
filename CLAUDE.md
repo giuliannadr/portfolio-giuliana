@@ -19,7 +19,8 @@ SIEMPRE modificar ambos idiomas en paralelo cuando se toque cualquier texto.
 
 ## Perfil profesional de Giuliana
 - Junior Full Stack Developer especializada en React, Node.js y TypeScript
-- Estudiante avanzada UNLaM (18/20 materias, promedio 8.72, egreso estimado 2025)
+- Técnica Universitaria en Desarrollo Web — UNLaM (finalizada, promedio 8.72)
+- Comienza la Licenciatura en Inteligencia Artificial en la UBP (Universidad Blas Pascal) en agosto de 2026
 - Experiencia freelance desde enero 2025
 - Mentora técnica desde 2024
 - Inglés B2/C1

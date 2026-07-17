@@ -17,8 +17,8 @@ export const WhatsNext = () => {
       title:  { es: "Tecnicatura en Desarrollo Web", en: "Web Development Degree" },
       ctx:    "UNLaM",
       body: {
-        es: "18 de 20 materias aprobadas con promedio de 8.72. Egreso estimado en julio 2026.",
-        en: "18 out of 20 subjects completed with an 8.72 GPA. Graduating in July 2026.",
+        es: "Técnica Universitaria en Desarrollo Web finalizada con promedio de 8.72.",
+        en: "Universitary Technician in Web Development finished with an 8.72 GPA.",
       },
       tags: [] as string[],
     },
