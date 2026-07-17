@@ -139,7 +139,7 @@ export const AboutSection = () => {
                 {metadata.map((item) => (
                   <div key={item.label} className="flex flex-col gap-0.5 min-w-0">
                     <span className="text-[#0A0A0A]/35 uppercase text-[8px] tracking-wide">{item.label}</span>
-                    <span className="text-[#0A0A0A]/85 font-medium text-[11px] truncate">{item.value}</span>
+                    <span className="text-[#0A0A0A]/85 font-medium text-[10.5px] leading-snug">{item.value}</span>
                   </div>
                 ))}
               </div>
