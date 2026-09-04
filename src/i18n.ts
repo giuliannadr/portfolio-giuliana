@@ -3,53 +3,13 @@ import { initReactI18next } from 'react-i18next';
 
 const en = {
   translation: {
-    hero: {
-      badge: "Open to new opportunities",
-      title1: "FULL STACK",
-      title2: "DEVELOPER",
-      description: "Full Stack Developer. I write structured code, design efficient databases, and deploy web applications that work. I don't just study theory: I co-founded a B2B startup and have shipped 13 production projects.",
-      viewWork: "View my projects",
-      downloadCV: "Download CV",
-      contact: "Let's talk"
-    },
-    profileCard: {
-      role: "Hi! I'm Giuliana — a Full Stack Developer, Web Dev Technician (UNLaM, 8.72 GPA), with 13 production projects shipped."
-    },
     about: {
-      badge: "Full Stack Development",
-      title: "Clean code,",
-      titleItalic: "resilient software.",
-      p1: "Hi! I'm <0>Giuliana</0>. I'm a Universitary Technician in Web Development from UNLaM (8.72 GPA), starting a Bachelor's in AI at UBP in August 2026. I build software that solves real, day-to-day problems and delivers actual business value.",
-      p2: "I work across the full stack: designing robust APIs in Node.js, Java, or C#, modeling relational databases, and crafting fast, responsive frontends with React or Angular.",
-      stats: {
-        exp: "8.72",
-        expLabel: "GPA",
-        dedication: "13",
-        dedicationLabel: "Production projects"
-      }
+      p1: "Hi! I'm <0>Giuliana</0>. I'm a Universitary Technician in Web Development from UNLaM (8.72 GPA), currently studying a Bachelor's in AI at UBP. I build software that solves real, day-to-day problems and delivers actual business value.",
+      p2: "I work across the full stack: designing robust APIs in Node.js, Java, or C#, modeling relational databases, and crafting fast, responsive frontends with React or Angular."
     },
     trust: {
-      badge: "Quality Assurance",
-      title: "Impactful projects,",
-      titleFaded: "precision code.",
-      description: "I get involved in every stage of development to ensure the final product exceeds both technical and visual expectations.",
-      metrics: {
-        speed: {
-          label: "Load time",
-          value: "-30%",
-          tooltip: "Performance optimization on Vercel through asset compression, lazy loading and cache configuration."
-        },
-        direct: {
-          label: "Production projects",
-          value: "7",
-          tooltip: "End-to-end delivery: from architecture and development to deployment and post-launch support."
-        },
-        modern: {
-          label: "GPA",
-          value: "8.72",
-          tooltip: "Universitary Technician in Web Development, finished at Universidad Nacional de La Matanza."
-        }
-      },
+      // Not currently rendered: TrustSection.STATIC_REVIEWS is empty while we wait
+      // for the technical testimonials. Kept here so the translated copy isn't lost.
       testimonials: {
         miri: {
           role: "La Quinta Miri — Client",
@@ -67,19 +27,9 @@ const en = {
     },
     projects: {
       subtitle: "Selected Works",
-      title: "Technical quality,",
-      titleFaded: "business results.",
       tabs: {
         professional: "Freelance",
         academic: "Academic Projects"
-      },
-      labels: {
-        challenge: "Technical Challenge",
-        stack: "Core Stack",
-        github: "View on GitHub",
-        live: "Live Site",
-        viewProcess: "View Design Process",
-        viewWork: "View Final Web"
       },
       items: {
         pulseguard: {
@@ -134,7 +84,7 @@ const en = {
           title: "Nido",
           category: "Home Management Platform",
           description: "Home management platform with AI-assisted recipes, shared finances, chore tracking and OCR receipt scanning.",
-          longDescription: "Final degree project developed with an 8-person team, shipping the MVP in about 2 months. I worked on the backend and the go-to-market communication strategy. Nido centralizes a shared household's pantry, recipes, chores and finances, with AI recipe recommendations, an in-recipe cooking assistant chat, automatic receipt scanning via OCR, and price comparison across supermarkets."
+          longDescription: "Final degree project developed with an 8-person team, shipping the MVP in about 2 months. I worked full stack with Angular and .NET 9 under Clean Architecture. Nido centralizes a shared household's pantry, recipes, chores and finances, with AI recipe recommendations, an in-recipe cooking assistant chat, automatic receipt scanning via OCR, and price comparison across supermarkets."
         },
         muda: {
           title: "MUDA",
@@ -160,23 +110,23 @@ const en = {
           description: "Interactive digital invitation for a XV years celebration.",
           longDescription: "Custom design for a XV years party invitation. Smooth animations, custom typography and a responsive layout that captures the celebration's aesthetic perfectly."
         },
-        repostory: {
-          title: "Repostory",
-          category: "SaaS · Generative AI",
-          description: "SaaS that analyzes GitHub repositories with Generative AI — automated technical descriptions via advanced prompt engineering.",
-          longDescription: "SaaS in active development that analyzes GitHub repositories with Generative AI. Backend in FastAPI with authenticated REST endpoints, modular architecture and horizontal scalability design. Pipeline with Groq API and llama-3.3-70b to generate precise technical descriptions through advanced prompt engineering. Built to scale from the ground up."
+        craftstudio: {
+          title: "Craft Studio",
+          category: "Website + Custom Page Builder",
+          description: "Site for a branding studio, plus a custom CRM where the team composes each case study from typed layout blocks — no code, no developer in the loop.",
+          longDescription: "Public site and private CRM for Craft Studio, a brand identity and strategic communication studio in Buenos Aires. The site is React 19 + Vite with Three.js and React Three Fiber for the 3D work, GSAP and Lenis for motion and smooth scrolling, and Tailwind CSS v4 — sections for services, projects, the studio, Craft Lab and contact, with case studies and lab entries read from Supabase and images served through Cloudinary. The interesting half is the CRM: rather than a plain admin form, it's a visual page builder. Each case study is composed from typed layout blocks — single image, image pair, image + text, feature triptych, keywords, testimonials, stats — and every block exposes real layout control: column split (50/50, 60/40, 70/30 and more), aspect ratio, which side the main image sits on, mobile ordering and stacking, text alignment, optional container, and per-breakpoint typography. The builder renders a live preview from the same block contract the public site consumes, so what the team arranges is exactly what ships. The studio publishes and restyles its own portfolio without a developer in the loop."
         },
-        aura: {
-          title: "Aura DJ Management System",
-          category: "Full Stack — Turborepo Monorepo",
-          description: "Business management platform for a DJ agency built as a Turborepo monorepo with 3 Next.js 15 apps.",
-          longDescription: "End-to-end business management system for a DJ agency. Turborepo monorepo with 3 Next.js 15 (App Router) applications sharing a PostgreSQL database via Drizzle ORM on Supabase. Features: role-based access (facundo, aura_admin, aura_member), two-round booking system with unique tokens, client event portal, content CMS, and availability calendar. Supabase Auth with Row Level Security. In development."
+        fidalgoselect: {
+          title: "AF Select",
+          category: "Marketplace + Custom CRM",
+          description: "Luxury vehicle and property marketplace with a custom-built CRM — dynamic catalog sections, lead capture and USD/ARS portfolio valuation.",
+          longDescription: "Two applications built end to end for AF Select, a curated marketplace for high-end vehicles and properties across Tucumán, Salta and Buenos Aires. The public site is a React 18 + Vite SPA on Supabase: filterable catalog, listing detail pages, map views with Leaflet, a sell-your-asset form, testimonials, and inquiry flows that open WhatsApp with the message already composed from the listing's title, price and link. Full technical SEO — dynamic meta tags, JSON-LD structured data, robots.txt, sitemap and Search Console verification. The second application is a private CRM the client runs themselves: a listings manager with image upload and deletion, a section manager where each catalog section defines its own configurable fields, hero management, a leads inbox, and a dashboard with catalog valuation KPIs split by USD and ARS using es-AR price formatting. The client publishes, edits and prices everything without touching code."
         },
         costear: {
           title: "CosteAR",
           category: "Full Stack · Enterprise Tools",
-          description: "Financial copilot and operator portal for agro-industrial SMEs — co-founded project and semifinalist at Emprende U 2026. Custom operator chat for data ingestion and real-time cost analytics dashboard.",
-          longDescription: "CosteAR is a financial copilot and cost management system designed for agro-industrial SMEs. Co-founded and built end-to-end. The goal isn't to replace the cost analyst, but to save them time: a process that used to be manual and paper-based is now digitized, with a direct communication bridge between the plant operator and the analyst. Instead of using generic messaging apps, it features a built-in custom operator portal where workshop operators can submit raw cost data, invoices, and PDFs directly through an integrated chat interface. An automated AI assistant classifies these documents for the cost analyst, who validates them via a dynamic dashboard. Two background job queues (Redis + BullMQ) handle work that can't run inline: syncing macroeconomic data from external sources and recalculating cost structures whenever those variables change. Queuing this work keeps the app responsive and resilient — requests return immediately, and failed jobs retry automatically instead of breaking the flow. Built with Clean Architecture on the backend (Node.js, Fastify, Prisma, PostgreSQL, Redis, BullMQ) and React 19 (TypeScript, TanStack Router, Tailwind CSS v4) on the frontend. The concept has been validated in multiple meetings with agro-industrial professionals, with consistently positive feedback. Currently a semifinalist at Emprende U 2026, featured in La Gaceta (Tucumán)."
+          description: "Financial copilot for agro-industrial SMEs — co-founded project, semifinalist at Emprende U 2026. RAG advisor grounded in the team's knowledge vault, operator chat for data ingestion and real-time cost analytics.",
+          longDescription: "CosteAR is a financial copilot and cost management system designed for agro-industrial SMEs. Co-founded and built end to end. The goal isn't to replace the cost analyst, but to save them time: a process that used to be manual and paper-based is now digitized, with a direct communication bridge between the plant operator and the analyst. Instead of generic messaging apps, operators submit cost data, invoices and delivery notes through a built-in chat, and an AI classifier files them for the analyst, who validates everything from a real-time dashboard. The core differentiator is a retrieval-augmented advisor that answers cost-accounting questions using only the team's knowledge vault — an Obsidian/Markdown repository of lecture notes from cost-accounting professors — never the model's general knowledge. Notes are chunked by heading rather than by fixed size, embedded with Voyage AI (voyage-4-large, 1024 dimensions) and stored as vectors in pgvector on the existing PostgreSQL, with no separate vector database. Every chunk carries a SHA-256 content hash and the vault commit it came from, so re-indexing is idempotent and each answer traces back to a specific note. At query time the question is embedded and matched by cosine distance against a similarity threshold, and the model is forced to cite its sources and to refuse when the retrieved context doesn't support an answer — each response returns a confidence level. Questions the vault couldn't answer are logged as signals for a nightly pipeline that drafts vault edits for a human administrator to approve, so the knowledge base improves from real usage instead of guesswork. Two background job queues (Redis + BullMQ) handle work that can't run inline: syncing macroeconomic data from external sources and recalculating cost structures whenever those variables change — requests return immediately and failed jobs retry on their own. Multi-tenant with row-level security, JWT RS256 with refresh tokens, and Sentry for error tracking and performance profiling across the API and the internal back-office. Clean Architecture on the backend (Node.js 22, Fastify, Prisma, PostgreSQL, pgvector, Redis, BullMQ), React 19 (TypeScript, TanStack Router/Query, Tailwind CSS v4) on the client app, plus a separate admin panel for user management, vault curation and system alerts. The concept has been validated in multiple meetings with agro-industrial professionals, with consistently positive feedback. Currently a semifinalist at Emprende U 2026, featured in La Gaceta (Tucumán)."
         },
         portfolio: {
           title: "Personal Portfolio",
@@ -189,12 +139,6 @@ const en = {
           category: "Real-time Engineering",
           description: "Live event streaming: guests broadcast from their phones via WebRTC, admin selects up to 4 simultaneous feeds, projector shows them with retro film effects — all in real time.",
           longDescription: "Real-time live streaming platform for events — parties, shows, concerts. Three roles: Guest scans a QR code on their phone and streams from their camera via WebRTC — no app install needed. Admin has a control panel with all connected cameras visible in real time, selects up to 4 simultaneous feeds for the projector, controls visual effects (Retro B&W filter + event name overlay) and generates the guest QR. Stage/Projector displays fullscreen the feeds chosen by the admin — with the retro filter: B&W video, film grain, VHS glitches and an old-camera HUD with timecode and event name. Effects are applied only in the projector view; guests always stream in original quality. QR never shown on the projector. Built with LiveKit Cloud for WebRTC, Turborepo monorepo with pnpm workspaces, Vercel Functions. In development."
-        },
-        atout: {
-          title: "Atout",
-          category: "Cross-platform App",
-          description: "All-in-one platform for freelancers and digital agencies — project management, content calendars, invoicing, booking and team in one codebase for web, desktop and mobile.",
-          longDescription: "All-in-one management platform for freelancers and digital agencies. Five core modules: Project management with phases, deliverables, review rounds and a client portal where clients track progress in real time — without accessing the admin panel. Community Manager with monthly content calendar, Kanban pipeline (Draft → Scheduled → Published), per-post metadata (caption, platforms, priority, cover image, media via Supabase Storage, inspiration links, performance metrics) and client-facing calendar sharing. Task system with priorities, subtasks, deadlines and team assignment. Invoice generator with payment tracking. Booking system with configurable availability (/book/your-name public link). Team management with shared resources and internal notes. Plans: free / pro / agency. Single React 19/TypeScript codebase on web (Vercel), desktop (Electron for Win/Mac/Linux) and mobile (Capacitor for Android/iOS). Supabase: PostgreSQL, Auth, Storage, Row Level Security. Zustand, GitHub Actions CI/CD, PWA. In development."
         },
         "design-system": {
           title: "Web Components Design System",
@@ -261,86 +205,28 @@ const en = {
         }
       }
     },
-   whatsNext: {
-  badge: "Growth mindset",
-  title: "Always",
-  titleItalic: "moving forward.",
-  tags: {
-    starting:   "Starting Aug 2026",
-    exploring:  "Exploring",
-    studying:   "Studying",
-    practicing: "Practicing",
-    building:   "Building",
-  },
-  items: {
-    utn:        "Bachelor's in Artificial Intelligence",
-    utnSub:     "UBP — Universidad Blas Pascal · Starting August 2026",
-    nextjs:     "Next.js App Router & Server Components",
-    systemDesign: "System Design & Scalable Architectures",
-    postgres:   "PostgreSQL — advanced queries & performance",
-    litElement: "Lit Element 3 — Web Components Design System",
-  },
-},
-    footer: {
-      status: "Available for new opportunities",
-      titleLine1: "Let's work",
-      titleLine2: "together.",
-      location: "Buenos Aires, Argentina",
-      backToTop: "Back to top",
-      emailSubject: "Contact from Portfolio — "
+    whatsNext: {
+      items: {
+        utn:          "Bachelor's in Artificial Intelligence",
+        utnSub:       "UBP — Universidad Blas Pascal · 1st semester in progress",
+        nextjs:       "Next.js App Router & Server Components",
+        systemDesign: "System Design & Scalable Architectures",
+        postgres:     "PostgreSQL — advanced queries & performance",
+        litElement:   "Lit Element 3 — Web Components Design System"
+      }
     }
   }
 };
 
 const es = {
   translation: {
-    hero: {
-      badge: "Disponible para nuevas oportunidades",
-      title1: "DESARROLLADORA",
-      title2: "FULL STACK",
-      description: "Desarrolladora Full Stack. Escribo código estructurado, diseño bases de datos eficientes y deployo aplicaciones web que funcionan. No me quedo en la teoría: co-fundé una startup y tengo 13 proyectos reales puestos en producción.",
-      viewWork: "Ver mis proyectos",
-      downloadCV: "Descargar CV",
-      contact: "Hablemos"
-    },
-    profileCard: {
-      role: "¡Hola! Soy Giuliana — Desarrolladora Full Stack, Técnica en Desarrollo Web (UNLaM, promedio 8.72), con 13 proyectos en producción."
-    },
     about: {
-      badge: "Desarrollo Full Stack",
-      title: "Código limpio,",
-      titleItalic: "software resiliente.",
-      p1: "¡Hola! Soy <0>Giuliana</0>. Soy Técnica Universitaria en Desarrollo Web (UNLaM, promedio 8.72) y en agosto de 2026 empiezo la Licenciatura en Inteligencia Artificial en la UBP. Escribo código para resolver problemas reales del día a día y aportar valor tangible.",
-      p2: "Trabajo en todo el stack: diseño APIs estructuradas en Node.js, Java o C#, modelo bases de datos relacionales y construyo interfaces interactivas con React o Angular.",
-      stats: {
-        exp: "8.72",
-        expLabel: "Promedio",
-        dedication: "13",
-        dedicationLabel: "Proyectos en producción"
-      }
+      p1: "¡Hola! Soy <0>Giuliana</0>. Soy Técnica Universitaria en Desarrollo Web (UNLaM, promedio 8.72) y actualmente curso la Licenciatura en Inteligencia Artificial en la UBP. Escribo código para resolver problemas reales del día a día y aportar valor tangible.",
+      p2: "Trabajo en todo el stack: diseño APIs estructuradas en Node.js, Java o C#, modelo bases de datos relacionales y construyo interfaces interactivas con React o Angular."
     },
     trust: {
-      badge: "Garantía de calidad",
-      title: "Proyectos con impacto,",
-      titleFaded: "código de precisión.",
-      description: "Me involucro en cada etapa del desarrollo para asegurar que el producto final supere las expectativas técnicas y visuales.",
-      metrics: {
-        speed: {
-          label: "Tiempo de carga",
-          value: "-30%",
-          tooltip: "Optimización de performance en Vercel mediante compresión de assets, lazy loading y configuración de caché."
-        },
-        direct: {
-          label: "Proyectos en producción",
-          value: "7",
-          tooltip: "Entrega end-to-end: desde arquitectura y desarrollo hasta deploy y soporte post-lanzamiento."
-        },
-        modern: {
-          label: "Promedio académico",
-          value: "8.72",
-          tooltip: "Técnica Universitaria en Desarrollo Web finalizada en la Universidad Nacional de La Matanza."
-        }
-      },
+      // No se renderiza hoy: TrustSection.STATIC_REVIEWS está vacío mientras
+      // esperamos los testimonios técnicos. Se conserva para no perder la copy.
       testimonials: {
         miri: {
           role: "La Quinta Miri — Cliente",
@@ -358,19 +244,9 @@ const es = {
     },
     projects: {
       subtitle: "Trabajos Seleccionados",
-      title: "Calidad técnica,",
-      titleFaded: "resultados de negocio.",
       tabs: {
         professional: "Freelance",
         academic: "Proyectos Académicos"
-      },
-      labels: {
-        challenge: "Desafío Técnico",
-        stack: "Stack Principal",
-        github: "Ver en GitHub",
-        live: "Sitio en Vivo",
-        viewProcess: "Ver Proceso de Diseño",
-        viewWork: "Ver Web Final"
       },
       items: {
         pulseguard: {
@@ -425,7 +301,7 @@ const es = {
           title: "Nido",
           category: "Plataforma de Gestión del Hogar",
           description: "Plataforma de gestión del hogar con recetas asistidas por IA, finanzas compartidas, gestión de tareas y escaneo OCR de tickets.",
-          longDescription: "Proyecto final de carrera desarrollado en equipo de 8 personas, con MVP entregado en aproximadamente 2 meses. Trabajé en el backend y en la estrategia de comunicación del lanzamiento. Nido centraliza la alacena, las recetas, las tareas y las finanzas de un hogar compartido, con recomendación de recetas por IA, un chat asistente de cocina dentro de cada receta, escaneo automático de tickets por OCR y comparación de precios entre supermercados."
+          longDescription: "Proyecto final de carrera desarrollado en equipo de 8 personas, con MVP entregado en aproximadamente 2 meses. Trabajé full stack con Angular y .NET 9 bajo Clean Architecture. Nido centraliza la alacena, las recetas, las tareas y las finanzas de un hogar compartido, con recomendación de recetas por IA, un chat asistente de cocina dentro de cada receta, escaneo automático de tickets por OCR y comparación de precios entre supermercados."
         },
         muda: {
           title: "MUDA",
@@ -454,20 +330,20 @@ const es = {
         costear: {
           title: "CosteAR",
           category: "Full Stack · Herramientas Enterprise",
-          description: "Copiloto financiero y portal de operarios para PyMEs agroindustriales — proyecto co-fundado y semifinalista de Emprende U 2026. Chat propio para ingesta de datos y dashboard analítico en tiempo real.",
-          longDescription: "CosteAR es un copiloto financiero y sistema de gestión de costos diseñado para PyMEs agroindustriales. Proyecto co-fundado y desarrollado de punta a punta. El objetivo no es reemplazar al costista, sino ahorrarle tiempo: un proceso que antes era manual y en papel ahora está digitalizado, con un puente de comunicación directo entre el operario de planta y el costista. En lugar de usar apps de mensajería genéricas, cuenta con un portal propio integrado donde los operarios envían datos de costos, facturas y remitos mediante un chat interno. Un asistente de IA clasifica automáticamente estos documentos para el analista de costos, quien los valida desde un dashboard analítico en tiempo real. Dos colas de trabajo en segundo plano (Redis + BullMQ) manejan las tareas que no pueden correr en el mismo request: sincronizar datos macroeconómicos externos y recalcular las estructuras de costos cuando esas variables cambian. Encolar ese trabajo mantiene la app responsiva y resiliente — las respuestas son inmediatas, y los jobs fallidos reintentan solos en vez de romper el flujo. Desarrollado bajo Clean Architecture en el backend (Node.js, Fastify, Prisma, PostgreSQL, Redis, BullMQ) y React 19 (TypeScript, TanStack Router, Tailwind CSS v4) en el frontend. La propuesta fue validada en múltiples reuniones con profesionales del sector agroindustrial, con devolución consistentemente positiva. Actualmente semifinalista en Emprende U 2026, con cobertura en La Gaceta (Tucumán)."
+          description: "Copiloto financiero para PyMEs agroindustriales — proyecto co-fundado y semifinalista de Emprende U 2026. Consejero RAG anclado a la bóveda de conocimiento del equipo, chat de operarios y dashboard analítico en tiempo real.",
+          longDescription: "CosteAR es un copiloto financiero y sistema de gestión de costos diseñado para PyMEs agroindustriales. Proyecto co-fundado y desarrollado de punta a punta. El objetivo no es reemplazar al costista, sino ahorrarle tiempo: un proceso que antes era manual y en papel ahora está digitalizado, con un puente de comunicación directo entre el operario de planta y el costista. En lugar de apps de mensajería genéricas, los operarios envían datos de costos, facturas y remitos por un chat propio integrado, y un clasificador de IA los ordena para el analista, que valida todo desde un dashboard en tiempo real. El diferencial técnico es un consejero con RAG que responde preguntas de costeo usando únicamente la bóveda de conocimiento del equipo — un repositorio Obsidian/Markdown con las notas de clase de los profesores de costos — y nunca el conocimiento general del modelo. Las notas se trocean por headers en vez de por tamaño fijo, se embeddean con Voyage AI (voyage-4-large, 1024 dimensiones) y se guardan como vectores en pgvector sobre el PostgreSQL que ya existía, sin sumar una base vectorial aparte. Cada chunk lleva un hash SHA-256 de su contenido y el commit de la bóveda del que salió, así la reindexación es idempotente y cada respuesta se puede trazar hasta una nota concreta. En tiempo de consulta la pregunta se embeddea y se busca por distancia coseno contra un umbral de similitud, y el modelo está obligado a citar sus fuentes y a negarse cuando el contexto recuperado no alcanza — cada respuesta devuelve un nivel de confianza. Las preguntas que la bóveda no supo responder quedan registradas como señales para un pipeline nocturno que redacta propuestas de edición de la bóveda para que las apruebe un administrador humano, de modo que la base de conocimiento mejora con uso real y no a ciegas. Dos colas de trabajo en segundo plano (Redis + BullMQ) manejan las tareas que no pueden correr en el mismo request: sincronizar datos macroeconómicos externos y recalcular las estructuras de costos cuando esas variables cambian — las respuestas son inmediatas y los jobs fallidos reintentan solos. Multi-tenancy con row-level security, JWT RS256 con refresh tokens, y Sentry para error tracking y performance profiling tanto en la API como en el back-office interno. Clean Architecture en el backend (Node.js 22, Fastify, Prisma, PostgreSQL, pgvector, Redis, BullMQ), React 19 (TypeScript, TanStack Router/Query, Tailwind CSS v4) en la app del cliente, más un panel de administración aparte para gestión de usuarios, curaduría de la bóveda y alertas del sistema. La propuesta fue validada en múltiples reuniones con profesionales del sector agroindustrial, con devolución consistentemente positiva. Actualmente semifinalista en Emprende U 2026, con cobertura en La Gaceta (Tucumán)."
         },
-        repostory: {
-          title: "Repostory",
-          category: "SaaS · IA Generativa",
-          description: "SaaS que analiza repositorios GitHub con IA Generativa — descripciones técnicas automatizadas via prompt engineering avanzado.",
-          longDescription: "SaaS en desarrollo activo que analiza repositorios GitHub con IA Generativa. Backend en FastAPI con endpoints REST autenticados, arquitectura modular y diseño para escalabilidad horizontal. Pipeline con Groq API y llama-3.3-70b para generar descripciones técnicas precisas via prompt engineering avanzado. Construido para escalar desde la arquitectura."
+        craftstudio: {
+          title: "Craft Studio",
+          category: "Sitio Web + Page Builder Propio",
+          description: "Sitio del estudio de branding, más un CRM propio donde el equipo arma cada case study con bloques de layout tipados — sin código y sin depender de un desarrollador.",
+          longDescription: "Sitio público y CRM privado para Craft Studio, estudio de identidad visual y comunicación estratégica en Buenos Aires. El sitio es React 19 + Vite con Three.js y React Three Fiber para las piezas 3D, GSAP y Lenis para el movimiento y el scroll suave, y Tailwind CSS v4 — secciones de servicios, proyectos, el estudio, Craft Lab y contacto, con los case studies y las entradas del lab leídos desde Supabase e imágenes servidas por Cloudinary. La mitad interesante es el CRM: en lugar de un ABM tradicional, es un page builder visual. Cada case study se compone con bloques de layout tipados — imagen sola, par de imágenes, imagen + texto, tríptico destacado, keywords, testimonios, métricas — y cada bloque expone control real de maquetado: split de columnas (50/50, 60/40, 70/30 y más), aspect ratio, de qué lado va la imagen principal, orden y apilado en mobile, alineación del texto, contenedor opcional y tipografía por breakpoint. El builder muestra un preview en vivo usando el mismo contrato de bloques que consume el sitio público, así lo que el equipo arma es exactamente lo que sale publicado. El estudio publica y reordena su propio portfolio sin necesitar un desarrollador."
         },
-        aura: {
-          title: "Aura DJ Management System",
-          category: "Full Stack — Turborepo Monorepo",
-          description: "Plataforma de gestión para una agencia de DJs construida como monorepo Turborepo con 3 apps Next.js 15.",
-          longDescription: "Sistema de gestión end-to-end para una agencia de DJs. Monorepo Turborepo con 3 aplicaciones Next.js 15 (App Router) que comparten una base de datos PostgreSQL via Drizzle ORM en Supabase. Incluye: control de acceso por roles (facundo, aura_admin, aura_member), sistema de reservas de dos rondas con tokens únicos, portal de eventos para clientes, CMS de contenido y calendario de disponibilidad. Supabase Auth con Row Level Security. En desarrollo."
+        fidalgoselect: {
+          title: "AF Select",
+          category: "Marketplace + CRM Propio",
+          description: "Marketplace de vehículos de alta gama y propiedades con CRM propio — secciones de catálogo dinámicas, captación de leads y valuación de cartera en USD y ARS.",
+          longDescription: "Dos aplicaciones desarrolladas de punta a punta para AF Select, un marketplace curado de vehículos de alta gama y propiedades en Tucumán, Salta y Buenos Aires. El sitio público es una SPA React 18 + Vite sobre Supabase: catálogo con filtros, fichas de detalle, vistas de mapa con Leaflet, formulario para vender, testimonios y flujos de consulta que abren WhatsApp con el mensaje ya redactado a partir del título, el precio y el link de la publicación. SEO técnico completo — meta tags dinámicos, datos estructurados JSON-LD, robots.txt, sitemap y verificación en Search Console. La segunda aplicación es un CRM privado que opera el propio cliente: gestor de publicaciones con carga y borrado de imágenes, administrador de secciones donde cada sección del catálogo define sus propios campos configurables, gestión del hero, bandeja de leads y un dashboard con KPIs de valuación del catálogo separados en USD y ARS con formato de precios es-AR. El cliente publica, edita y cotiza todo sin tocar código."
         },
         portfolio: {
           title: "Portfolio Personal",
@@ -480,12 +356,6 @@ const es = {
           category: "Ingeniería en Tiempo Real",
           description: "Streaming en vivo para eventos: los invitados transmiten desde el celular via WebRTC, el admin selecciona hasta 4 feeds simultáneos, el proyector los muestra con efectos retro — todo en tiempo real.",
           longDescription: "Plataforma de streaming en vivo en tiempo real para eventos — fiestas, shows, conciertos. Tres roles: el Invitado escanea un QR desde su celular y transmite su cámara via WebRTC — sin instalar nada. El Admin tiene un panel de control con todas las cámaras conectadas en tiempo real, selecciona hasta 4 feeds simultáneos para el proyector, controla efectos visuales (filtro Retro B&N + nombre del evento) y genera el QR para los invitados. El Proyector/Stage muestra en fullscreen los feeds elegidos por el admin — con filtro retro: video en blanco y negro, grano de película, glitches de VHS y HUD de cámara antigua con timecode y nombre del evento. Los efectos se aplican solo en la vista del proyector; los invitados siempre graban en calidad original. El QR nunca aparece en el proyector. Construido con LiveKit Cloud para WebRTC, monorepo Turborepo con pnpm workspaces, Vercel Functions. En desarrollo."
-        },
-        atout: {
-          title: "Atout",
-          category: "App Multiplataforma",
-          description: "Plataforma todo-en-uno para freelancers y agencias digitales — gestión de proyectos, calendarios de contenido, facturación, reservas y equipo en un codebase para web, desktop y mobile.",
-          longDescription: "Plataforma de gestión todo-en-uno para freelancers y agencias digitales. Cinco módulos principales: Gestión de proyectos con fases, entregables, rondas de revisión y portal del cliente en tiempo real — los clientes ven el progreso sin acceder al panel interno. Community Manager con calendario de contenido mensual, pipeline Kanban (Borrador → Programado → Publicado), metadatos por post (caption, plataformas, prioridad, imagen de portada, archivos multimedia via Supabase Storage, links de inspiración, métricas de performance) y calendario compartible con el cliente. Sistema de tareas con prioridades, subtareas, fechas límite y asignación de equipo. Generador de facturas + seguimiento de pagos. Sistema de reservas con disponibilidad configurable (link público /book/tu-nombre). Gestión de equipo con recursos compartidos y notas internas. Planes: free / pro / agency. Un único codebase React 19/TypeScript en web (Vercel), desktop (Electron para Win/Mac/Linux) y mobile (Capacitor para Android/iOS). Supabase: PostgreSQL, Auth, Storage, Row Level Security. Zustand, GitHub Actions CI/CD, PWA. En desarrollo."
         },
         "design-system": {
           title: "Design System con Web Components",
@@ -553,33 +423,15 @@ const es = {
       }
     },
     whatsNext: {
-  badge: "Crecimiento continuo",
-  title: "Siempre",
-  titleItalic: "en movimiento.",
-  tags: {
-    starting:   "Agosto 2026",
-    exploring:  "Explorando",
-    studying:   "Estudiando",
-    practicing: "Practicando",
-    building:   "Construyendo",
-  },
-  items: {
-    utn:        "Licenciatura en Inteligencia Artificial",
-    utnSub:     "UBP — Universidad Blas Pascal · Inicio: agosto 2026",
-    nextjs:     "Next.js App Router & Server Components",
-    systemDesign: "System Design & Arquitecturas Escalables",
-    postgres:   "PostgreSQL — queries avanzadas y performance",
-    litElement: "Lit Element 3 — Design System con Web Components",
-  },
-},
-    footer: {
-      status: "Disponible para nuevas oportunidades",
-      titleLine1: "Trabajemos",
-      titleLine2: "juntos.",
-      location: "Buenos Aires, Argentina",
-      backToTop: "Volver arriba",
-      emailSubject: "Contacto desde Portfolio — "
-    }
+      items: {
+        utn:          "Licenciatura en Inteligencia Artificial",
+        utnSub:       "UBP — Universidad Blas Pascal · Cursando 1er cuatrimestre",
+        nextjs:       "Next.js App Router & Server Components",
+        systemDesign: "System Design & Arquitecturas Escalables",
+        postgres:     "PostgreSQL — queries avanzadas y performance",
+        litElement:   "Lit Element 3 — Design System con Web Components"
+      }
+    },
   }
 };
 

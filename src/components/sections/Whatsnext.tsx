@@ -42,12 +42,12 @@ export const WhatsNext = () => {
     {
       num: "03",
       color: "#7C3AED",
-      status: { es: "Siguiente", en: "Upcoming" },
+      status: { es: "En curso", en: "In Progress" },
       title:  { es: t("whatsNext.items.utn"), en: t("whatsNext.items.utn") },
       ctx:    t("whatsNext.items.utnSub"),
       body: {
-        es: "Formación de posgrado en IA para complementar el perfil full stack con machine learning y sistemas inteligentes.",
-        en: "Postgraduate AI training to complement the full stack profile with machine learning and intelligent systems.",
+        es: "Cursando el primer cuatrimestre (6 materias) para complementar el perfil full stack con machine learning y sistemas inteligentes.",
+        en: "Currently taking the first semester (6 courses) to complement the full stack profile with machine learning and intelligent systems.",
       },
       tags: [] as string[],
     },

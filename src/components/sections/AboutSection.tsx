@@ -16,8 +16,8 @@ export const AboutSection = () => {
       color: "#CC1500",
       title: lang === "en" ? "Academic Base" : "Base Académica",
       body: lang === "en"
-        ? "Universitary Technician in Web Development from UNLaM, finished with an 8.72 GPA. Starting a Bachelor's in Artificial Intelligence at UBP in August 2026. Solid foundation in backend engineering, database modeling, and software architectures."
-        : "Técnica Universitaria en Desarrollo Web en la UNLaM, finalizada con un promedio de 8.72. Comienzo la Licenciatura en Inteligencia Artificial en la UBP en agosto de 2026. Formación sólida en backend, bases de datos y arquitectura de software.",
+        ? "Universitary Technician in Web Development from UNLaM, finished with an 8.72 GPA — 20 of 20 courses passed. Currently taking the first semester of a Bachelor's in Artificial Intelligence at UBP. Solid foundation in backend engineering, database modeling, and software architectures."
+        : "Técnica Universitaria en Desarrollo Web en la UNLaM, finalizada con un promedio de 8.72 — 20 de 20 materias aprobadas. Actualmente cursando el primer cuatrimestre de la Licenciatura en Inteligencia Artificial en la UBP. Formación sólida en backend, bases de datos y arquitectura de software.",
     },
     {
       num: "02",
@@ -40,7 +40,7 @@ export const AboutSection = () => {
   const metadata = [
     { label: lang === "en" ? "GPA" : "Promedio", value: "8.72 / 10" },
     { label: lang === "en" ? "Degree" : "Título", value: lang === "en" ? "Web Dev Technician (UNLaM)" : "Técnica en Desarrollo Web (UNLaM)" },
-    { label: lang === "en" ? "Next" : "Próximo", value: lang === "en" ? "AI Bachelor's (UBP) — Aug 2026" : "Lic. en IA (UBP) — Ago 2026" },
+    { label: lang === "en" ? "Studying" : "Cursando", value: lang === "en" ? "AI Bachelor's (UBP) — 1st semester" : "Lic. en IA (UBP) — 1er cuatrimestre" },
     { label: lang === "en" ? "Startup" : "Startup", value: lang === "en" ? "Co-founder @ CosteAR" : "Co-fundadora @ CosteAR" },
     { label: lang === "en" ? "English" : "Inglés", value: lang === "en" ? "B2 / C1 Level" : "Nivel B2 / C1" },
     { label: lang === "en" ? "Location" : "Ubicación", value: "Buenos Aires, ARG" },
