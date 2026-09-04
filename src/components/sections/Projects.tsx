@@ -85,7 +85,7 @@ const ProcessOverlay = ({ project, lang, onClose }: { project: Project; lang: st
               {before.map((img, i) => (
                 <div key={i} className="relative aspect-video bg-white/5 overflow-hidden border border-white/10 cursor-zoom-in hover:border-white/30 transition-all rounded-xl"
                   onClick={() => setLightboxIdx(i)}>
-                  <img src={img} alt="Before" className="w-full h-full object-cover" />
+                  <img src={img} alt={`${project.title} — antes del rediseño`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
@@ -96,7 +96,7 @@ const ProcessOverlay = ({ project, lang, onClose }: { project: Project; lang: st
               {after.map((img, i) => (
                 <div key={i} className="relative aspect-video bg-white/5 overflow-hidden border border-white/10 cursor-zoom-in hover:border-white/30 transition-all rounded-xl"
                   onClick={() => setLightboxIdx(i + before.length)}>
-                  <img src={img} alt="After" className="w-full h-full object-cover" />
+                  <img src={img} alt={`${project.title} — después del rediseño`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
@@ -126,7 +126,7 @@ const ProcessOverlay = ({ project, lang, onClose }: { project: Project; lang: st
               </button>
             )}
             <div className="max-w-5xl max-h-[80vh] overflow-hidden" onClick={(e) => e.stopPropagation()}>
-              <img src={all[lightboxIdx]} alt="Zoomed" className="max-w-full max-h-[80vh] object-contain rounded-xl" />
+              <img src={all[lightboxIdx]} alt="" loading="lazy" decoding="async" className="max-w-full max-h-[80vh] object-contain rounded-xl" />
             </div>
             <div className="absolute bottom-6 text-white/40 font-mono text-[10px]">
               {lightboxIdx + 1} / {all.length} — {lightboxIdx < before.length ? "BEFORE" : "AFTER"}
@@ -282,7 +282,7 @@ export const Projects = () => {
                       {p.video ? (
                         <AutoplayVideo src={p.video} className="w-full h-full object-cover" />
                       ) : p.image ? (
-                        <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                        <img src={p.image} alt={p.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                       ) : (
                         <div className="w-full h-full" style={{ background: `radial-gradient(ellipse 65% 80% at 28% 40%, ${accent}30 0%, transparent 62%), #0A0A0A` }} />
                       )}
@@ -402,7 +402,7 @@ export const Projects = () => {
                   {selected.video ? (
                     <AutoplayVideo src={selected.video} className="w-full h-full object-cover" />
                   ) : selected.image ? (
-                    <img src={selected.image} className="w-full h-full object-cover" alt={selected.title} />
+                    <img src={selected.image} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={selected.title} />
                   ) : (
                     <div className="w-full h-full" style={{ background: `radial-gradient(ellipse 80% 80% at 35% 45%, #CC150045 0%, transparent 60%), #0A0A0A` }} />
                   )}

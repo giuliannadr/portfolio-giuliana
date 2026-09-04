@@ -113,7 +113,7 @@ export const AboutSection = () => {
             <div className="h-1 w-full shrink-0" style={{ background: "linear-gradient(to right, #CC1500, #7C3AED, #06B6D4)" }} />
 
             <div className="w-full h-64 lg:h-[280px] overflow-hidden border-b border-[#0A0A0A]/[0.08] relative bg-[#0A0A0A]/5 shrink-0">
-              <img src="/giuliprofile.jpeg?v=2" alt="Giuliana Di Rocco"
+              <img src="/giuliprofile.webp?v=2" alt="Giuliana Di Rocco"
                 className="w-full h-full object-cover"
                 style={{ filter: "contrast(1.02) brightness(1.01)", objectPosition: "center 40%" }} />
             </div>

@@ -444,4 +444,15 @@ i18n
     interpolation: { escapeValue: false }
   });
 
+// Mantiene <html lang> en sincronía con el idioma activo. Sin esto el atributo
+// queda fijo en "es" y Google indexa la versión en inglés como si fuera español,
+// además de que los lectores de pantalla la leen con pronunciación castellana.
+const syncHtmlLang = (lng: string) => {
+  if (typeof document !== "undefined") {
+    document.documentElement.lang = lng.startsWith("en") ? "en" : "es";
+  }
+};
+syncHtmlLang(i18n.language);
+i18n.on("languageChanged", syncHtmlLang);
+
 export default i18n;

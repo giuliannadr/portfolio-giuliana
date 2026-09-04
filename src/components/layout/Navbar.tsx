@@ -141,7 +141,7 @@ export const Navbar = () => {
           >
             {lang === "en" ? "ES" : "EN"}
           </button>
-          <button onClick={() => setIsOpen(true)} className="p-1 text-white hover:text-[#CC1500] transition-colors">
+          <button onClick={() => setIsOpen(true)} aria-label={lang === "en" ? "Open menu" : "Abrir menú"} className="p-1 text-white hover:text-[#CC1500] transition-colors">
             <Menu size={18} />
           </button>
         </div>
@@ -167,6 +167,7 @@ export const Navbar = () => {
               </span>
               <button
                 onClick={() => setIsOpen(false)}
+                aria-label={lang === "en" ? "Close menu" : "Cerrar menú"}
                 className="p-2 text-white/40 hover:text-white transition-colors"
               >
                 <X size={20} />

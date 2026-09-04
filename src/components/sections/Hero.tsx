@@ -251,25 +251,28 @@ export const Hero = () => {
         </motion.p>
 
         {/* Name */}
-        <div className="mb-1 mt-6 sm:mt-0">
+        {/* Un solo <h1> con el nombre completo: antes eran dos, uno por linea,
+            y la pagina quedaba con dos encabezados de nivel 1. Los spans son
+            block, asi que el render y las animaciones no cambian. */}
+        <h1 className="mb-1 mt-6 sm:mt-0">
           <div className="overflow-hidden">
-            <motion.h1 initial={{ y: "105%" }} animate={{ y: 0 }}
+            <motion.span initial={{ y: "105%" }} animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
               className="block font-black uppercase text-[clamp(2.8rem,17vw,4.5rem)] sm:text-[clamp(3.2rem,12vw,16rem)]"
               style={{ fontFamily: "Poppins, sans-serif", letterSpacing: "-0.04em", lineHeight: 0.84, backgroundImage: line1Gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               GIULIANA
-            </motion.h1>
+            </motion.span>
           </div>
           <div className="overflow-hidden">
-            <motion.h1 initial={{ y: "105%" }} animate={{ y: 0 }}
+            <motion.span initial={{ y: "105%" }} animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.54, ease: [0.16, 1, 0.3, 1] }}
               className="block text-[clamp(2rem,13vw,3.4rem)] sm:text-[clamp(2.4rem,10vw,13rem)] font-light uppercase"
               style={{ fontFamily: "Poppins, sans-serif", letterSpacing: "-0.04em", lineHeight: 0.92, backgroundImage: line2Gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
             >
               DI ROCCO
-            </motion.h1>
+            </motion.span>
           </div>
-        </div>
+        </h1>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }} className="mt-4 sm:mt-0">
           <TypewriterWord lang={lang} />
@@ -283,7 +286,7 @@ export const Hero = () => {
           className="text-white/50 leading-relaxed mb-10 text-[0.72rem] sm:text-[clamp(1rem,1.9vw,1.25rem)]"
           style={{ maxWidth: "min(580px,88vw)" }}>
           {lang === "en" ? (
-            <>Junior Full Stack Developer specializing in{" "}<Highlight>React, Node.js and TypeScript</Highlight>. I build scalable web applications end to end — from architecture to production deployment.</>
+            <>Full Stack Developer specializing in{" "}<Highlight>React, Node.js and TypeScript</Highlight>. I build scalable web applications end to end — from architecture to production deployment.</>
           ) : (
             <>Desarrolladora Full Stack especializada en{" "}<Highlight>React, Node.js y TypeScript</Highlight>. Construyo aplicaciones web escalables de punta a punta — desde la arquitectura hasta el deploy en producción.</>
           )}
