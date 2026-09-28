@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Check, Copy, Download, Github, Linkedin } from "lucide-react";
-import { CV, EMAIL, GITHUB, LINKEDIN, ui } from "../content";
+import { Check, Copy, Download, Github, Linkedin, MessageCircle } from "lucide-react";
+import { CV, EMAIL, GITHUB, LINKEDIN, WHATSAPP, ui } from "../content";
 import { useLang } from "../lang";
 
 export const Contact = () => {
@@ -35,6 +35,16 @@ export const Contact = () => {
           <li>
             <a className="btn" href={LINKEDIN} target="_blank" rel="noreferrer">
               <Linkedin size={16} aria-hidden="true" /> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              className="btn"
+              href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t(ui.contact.whatsappMessage))}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MessageCircle size={16} aria-hidden="true" /> WhatsApp
             </a>
           </li>
           <li>

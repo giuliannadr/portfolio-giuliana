@@ -38,6 +38,7 @@ const crmCode: L = { es: "Código del CRM", en: "CRM code" };
 export const EMAIL = "giulianadiroccodev@gmail.com";
 export const LINKEDIN = "https://linkedin.com/in/giulianadirocco";
 export const GITHUB = "https://github.com/giuliannadr";
+export const WHATSAPP = "5491128341223";
 export const CV: L = { es: "/CV_Giuliana_DiRocco_ES.pdf", en: "/CV_Giuliana_DiRocco_EN.pdf" };
 
 export const ui = {
@@ -97,6 +98,10 @@ export const ui = {
     },
     copy: { es: "Copiar email", en: "Copy email" },
     copied: { es: "Email copiado", en: "Email copied" },
+    whatsappMessage: {
+      es: "¡Hola Giuliana! Vi tu portfolio y me gustaría hablar sobre una oportunidad.",
+      en: "Hi Giuliana! I saw your portfolio and I'd like to talk about an opportunity.",
+    },
   },
 };
 
@@ -337,8 +342,8 @@ export const jobs: Job[] = [
     role: { es: "Cofundadora y desarrolladora", en: "Co-founder and developer" },
     org: { es: "Heacky", en: "Heacky" },
     body: {
-      es: "App para entrenadores personales que desarrollo con un socio, para gestionar clientes, planes y cobros. Backend en Java 21 y Spring Boot con Clean Architecture, web en React. Está en etapa inicial.",
-      en: "An app for personal trainers that I'm building with a partner, to manage clients, plans and payments. Java 21 and Spring Boot backend with Clean Architecture, React web app. Early stage.",
+      es: "App que desarrollo con un socio para que los entrenadores personales compartan con cada cliente su rutina siempre actualizada y, si quieren, un plan de alimentación. Más adelante va a sumar pasos, sueño y otras métricas desde el smartwatch del cliente. Backend en Java 21 y Spring Boot con Clean Architecture, web en React. Está en etapa inicial.",
+      en: "An app I'm building with a partner so personal trainers can share an always up-to-date routine with each client, plus an optional meal plan. Later it will add steps, sleep and other metrics from the client's smartwatch. Java 21 and Spring Boot backend with Clean Architecture, React web app. Early stage.",
     },
   },
   {
