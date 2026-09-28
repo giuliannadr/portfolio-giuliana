@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, ChevronLeft, ChevronRight, Github, Plus, X } from "lucide-react";
-import { clientSites, featured, more, ui, type ProjectLink } from "../content";
+import { ArrowUpRight, ChevronDown, ChevronLeft, ChevronRight, Github, Plus, X } from "lucide-react";
+import { clientSites, featured, more, ui, type Featured, type ProjectLink } from "../content";
 import { useLang } from "../lang";
 
 const isRepo = (href: string) => href.startsWith("https://github.com/");
@@ -160,6 +160,56 @@ const MoreProjects = () => {
   );
 };
 
+// En mobile el detalle de cada destacado arranca plegado: el resumen se corta en
+// pocas líneas y "Lo que resolví" y el stack aparecen al tocar "Ver más".
+// En desktop el botón no se muestra y todo queda visible.
+const Feature = ({ p }: { p: Featured }) => {
+  const { t } = useLang();
+  const [expanded, setExpanded] = useState(false);
+  const detailsId = `${p.id}-details`;
+
+  return (
+    <article className="feature" aria-labelledby={`${p.id}-title`}>
+      <div className="feature-media frame">
+        <img
+          src={p.image.src}
+          alt={p.name}
+          width={p.image.w}
+          height={p.image.h}
+          loading="lazy"
+          decoding="async"
+          style={{ objectPosition: p.image.position ?? "center" }}
+        />
+      </div>
+      <div className={expanded ? "feature-text is-expanded" : "feature-text"}>
+        <h3 id={`${p.id}-title`} className="feature-name">{p.name}</h3>
+        <p className="context">{t(p.context)}</p>
+        <p className="feature-summary">{t(p.summary)}</p>
+        <div id={detailsId} className="feature-details">
+          <h4 className="feature-subhead">{t(ui.projects.solved)}</h4>
+          <ul className="feature-points">
+            {p.points.map(point => (
+              <li key={point.es}>{t(point)}</li>
+            ))}
+          </ul>
+          <p className="stack-line">{p.stack.join(", ")}</p>
+        </div>
+        <button
+          type="button"
+          className="feature-toggle"
+          aria-expanded={expanded}
+          aria-controls={detailsId}
+          onClick={() => setExpanded(e => !e)}
+        >
+          {t(expanded ? ui.projects.showLess : ui.projects.showMore)}
+          <ChevronDown size={16} aria-hidden="true" />
+        </button>
+        <Links links={p.links} primary />
+      </div>
+    </article>
+  );
+};
+
 export const Projects = () => {
   const { t } = useLang();
 
@@ -172,32 +222,7 @@ export const Projects = () => {
 
       <div className="features">
         {featured.map(p => (
-          <article key={p.id} className="feature" aria-labelledby={`${p.id}-title`}>
-            <div className="feature-media frame">
-              <img
-                src={p.image.src}
-                alt={p.name}
-                width={p.image.w}
-                height={p.image.h}
-                loading="lazy"
-                decoding="async"
-                style={{ objectPosition: p.image.position ?? "center" }}
-              />
-            </div>
-            <div className="feature-text">
-              <h3 id={`${p.id}-title`} className="feature-name">{p.name}</h3>
-              <p className="context">{t(p.context)}</p>
-              <p className="feature-summary">{t(p.summary)}</p>
-              <h4 className="feature-subhead">{t(ui.projects.solved)}</h4>
-              <ul className="feature-points">
-                {p.points.map(point => (
-                  <li key={point.es}>{t(point)}</li>
-                ))}
-              </ul>
-              <p className="stack-line">{p.stack.join(", ")}</p>
-              <Links links={p.links} primary />
-            </div>
-          </article>
+          <Feature key={p.id} p={p} />
         ))}
       </div>
 

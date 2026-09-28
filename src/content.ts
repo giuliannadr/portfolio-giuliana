@@ -73,6 +73,8 @@ export const ui = {
     solved: { es: "Lo que resolví", en: "What I solved" },
     moreTitle: { es: "Más proyectos", en: "More projects" },
     details: { es: "Ver detalle", en: "View details" },
+    showMore: { es: "Ver más", en: "See more" },
+    showLess: { es: "Ver menos", en: "See less" },
     close: { es: "Cerrar", en: "Close" },
     prev: { es: "Proyecto anterior", en: "Previous project" },
     next: { es: "Proyecto siguiente", en: "Next project" },
