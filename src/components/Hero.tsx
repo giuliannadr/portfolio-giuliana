@@ -11,7 +11,7 @@ export const Hero = () => {
         <span className="hero-line">
           <span className="hero-word">Giuliana</span>
           <span className="hero-photo">
-            <img src="/giuliprofile.webp" alt="" width={800} height={463} />
+            <img src="/giuliprofile.webp" alt="" width={1230} height={820} />
           </span>
         </span>{" "}
         <span className="hero-line">
