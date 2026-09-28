@@ -1,28 +1,33 @@
-import { Layout } from "@/components/layout/Layout";
-import { Hero } from "@/components/sections/Hero";
-import { AboutSection } from "./components/sections/AboutSection";
-import { ExperienceSection } from "./components/sections/ExperienceSection";
+import { Contact } from "./components/Contact";
+import { Experience } from "./components/Experience";
+import { Hero } from "./components/Hero";
+import { Nav } from "./components/Nav";
+import { Projects } from "./components/Projects";
+import { Stack } from "./components/Stack";
+import { ui } from "./content";
+import { LangProvider, useLang } from "./lang";
 
-import { Projects } from "@/components/sections/Projects";
-import { TechSection } from "./components/sections/TechSection";
-import { WhatsNext } from "./components/sections/Whatsnext";
-import { Loader } from "@/components/ui/Loader";
-
-function App() {
+const Page = () => {
+  const { t } = useLang();
   return (
     <>
-      <Loader onDone={() => {}} />
-      <Layout>
+      <a href="#main" className="skip-link">{t(ui.skip)}</a>
+      <Nav />
+      <main id="main">
         <Hero />
-        <AboutSection />
-        <ExperienceSection />
-        {/* <TrustSection /> */}
         <Projects />
-        <TechSection />
-        <WhatsNext />
-      </Layout>
+        <Experience />
+        <Stack />
+      </main>
+      <Contact />
     </>
   );
-}
+};
+
+const App = () => (
+  <LangProvider>
+    <Page />
+  </LangProvider>
+);
 
 export default App;

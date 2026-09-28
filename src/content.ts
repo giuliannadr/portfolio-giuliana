@@ -1,0 +1,426 @@
+// Todo el texto del sitio vive acá, en los dos idiomas lado a lado.
+// Regla: nada que no esté respaldado por un proyecto, el CV o un repo.
+
+export type Lang = "es" | "en";
+export type L = Record<Lang, string>;
+
+export type ProjectLink = { label: L; href: string };
+
+export type Featured = {
+  id: string;
+  name: string;
+  image: { src: string; w: number; h: number; position?: string };
+  context: L;
+  summary: L;
+  points: L[];
+  stack: string[];
+  links: ProjectLink[];
+};
+
+export type MoreProject = {
+  id: string;
+  name: string;
+  image: { src: string; w: number; h: number; position?: string };
+  context: L;
+  summary: L;
+  stack: string[];
+  links: ProjectLink[];
+};
+
+export type ClientSite = { name: string; summary: L; href: string };
+
+const site: L = { es: "Ver sitio", en: "Visit site" };
+const code: L = { es: "Código", en: "Code" };
+const frontendCode: L = { es: "Código frontend", en: "Frontend code" };
+const backendCode: L = { es: "Código backend", en: "Backend code" };
+const crmCode: L = { es: "Código del CRM", en: "CRM code" };
+
+export const EMAIL = "giulianadiroccodev@gmail.com";
+export const LINKEDIN = "https://linkedin.com/in/giulianadirocco";
+export const GITHUB = "https://github.com/giuliannadr";
+export const CV: L = { es: "/CV_Giuliana_DiRocco_ES.pdf", en: "/CV_Giuliana_DiRocco_EN.pdf" };
+
+export const ui = {
+  skip: { es: "Saltar al contenido", en: "Skip to content" },
+  nav: {
+    projects: { es: "Proyectos", en: "Projects" },
+    experience: { es: "Experiencia", en: "Experience" },
+    stack: { es: "Stack", en: "Stack" },
+    contact: { es: "Contacto", en: "Contact" },
+    switchTo: { es: "View in English", en: "Ver en español" },
+    cv: { es: "CV", en: "CV" },
+  },
+  hero: {
+    role: { es: "Desarrolladora full stack en Buenos Aires.", en: "Full stack developer based in Buenos Aires." },
+    lead: {
+      es: "Trabajo con React, Node.js y TypeScript, del modelo de datos al deploy. Cofundé CosteAR, un copiloto de costos con IA para pymes agroindustriales, y armo CRMs a medida para que mis clientes publiquen su contenido sin depender de un desarrollador.",
+      en: "I work with React, Node.js and TypeScript, from the data model to the deploy. I co-founded CosteAR, an AI cost copilot for agro-industrial SMEs, and I build custom CRMs so my clients can publish their own content without needing a developer.",
+    },
+    projects: { es: "Ver proyectos", en: "See projects" },
+    cv: { es: "Descargar CV", en: "Download CV" },
+    status: {
+      es: "Disponible para puestos full stack, remoto o en Buenos Aires.",
+      en: "Open to full stack roles, remote or in Buenos Aires.",
+    },
+  },
+  projects: {
+    title: { es: "Proyectos", en: "Projects" },
+    intro: {
+      es: "Los cuatro trabajos que mejor muestran cómo resuelvo problemas: qué construí, qué decisiones técnicas tomé y dónde verlo andando.",
+      en: "The four projects that best show how I solve problems: what I built, the technical decisions behind it, and where to see it running.",
+    },
+    solved: { es: "Lo que resolví", en: "What I solved" },
+    moreTitle: { es: "Más proyectos", en: "More projects" },
+    sitesTitle: { es: "Sitios para clientes", en: "Client websites" },
+    sitesIntro: {
+      es: "Sitios institucionales y landings, diseñados y desarrollados de punta a punta.",
+      en: "Company sites and landing pages, designed and built end to end.",
+    },
+    newTab: { es: "(se abre en otra pestaña)", en: "(opens in a new tab)" },
+  },
+  experience: {
+    title: { es: "Experiencia", en: "Experience" },
+    education: { es: "Formación", en: "Education" },
+  },
+  stack: {
+    title: { es: "Stack", en: "Stack" },
+    intro: {
+      es: "Todo lo que figura acá lo usé en proyectos, no solo en cursos.",
+      en: "Everything listed here I have used in actual projects, not just courses.",
+    },
+  },
+  contact: {
+    title: { es: "Hablemos", en: "Let's talk" },
+    body: {
+      es: "Si tenés un puesto o un proyecto en mente, escribime.",
+      en: "If you have a role or a project in mind, write to me.",
+    },
+    copy: { es: "Copiar email", en: "Copy email" },
+    copied: { es: "Email copiado", en: "Email copied" },
+  },
+};
+
+export const featured: Featured[] = [
+  {
+    id: "costear",
+    name: "CosteAR",
+    image: { src: "/costear-mockup.webp", w: 1024, h: 548, position: "left top" },
+    context: {
+      es: "Startup que cofundé, semifinalista de Emprende U 2026. En desarrollo.",
+      en: "Startup I co-founded, semifinalist at Emprende U 2026. In development.",
+    },
+    summary: {
+      es: "Copiloto financiero para pymes agroindustriales. Los operarios de planta cargan costos, facturas y remitos desde un chat, un clasificador con IA los ordena y el analista los valida desde un tablero en tiempo real.",
+      en: "A financial copilot for agro-industrial SMEs. Plant operators submit costs, invoices and delivery notes through a chat, an AI classifier files them, and the analyst validates everything from a real-time dashboard.",
+    },
+    points: [
+      {
+        es: "Un asesor con RAG que responde solo con la base de conocimiento del equipo: cita la nota de la que sale cada respuesta y se niega a contestar cuando no tiene respaldo.",
+        en: "A RAG advisor that answers only from the team's knowledge base: it cites the note behind every answer and refuses when nothing supports one.",
+      },
+      {
+        es: "Embeddings de Voyage AI en pgvector, sobre el mismo PostgreSQL, con un hash por fragmento para que reindexar sea idempotente.",
+        en: "Voyage AI embeddings stored in pgvector on the same PostgreSQL, with a hash per chunk so re-indexing is idempotent.",
+      },
+      {
+        es: "Colas con Redis y BullMQ para sincronizar variables macroeconómicas y recalcular estructuras de costos sin bloquear la API.",
+        en: "Redis and BullMQ queues that sync macroeconomic data and recalculate cost structures without blocking the API.",
+      },
+      {
+        es: "Multi-tenant con row-level security, JWT RS256 con refresh tokens y Sentry en la API y el back-office.",
+        en: "Multi-tenant with row-level security, RS256 JWTs with refresh tokens, and Sentry across the API and back-office.",
+      },
+    ],
+    stack: ["Node.js 22", "Fastify", "Prisma", "PostgreSQL", "pgvector", "Redis", "BullMQ", "React 19", "TanStack Router", "Tailwind CSS"],
+    links: [
+      { label: site, href: "https://coste-ar.com" },
+      { label: frontendCode, href: "https://github.com/SantiagoBriz/CosteAR-frontend" },
+      { label: backendCode, href: "https://github.com/giuliannadr/CosteAR-backend" },
+    ],
+  },
+  {
+    id: "craftstudio",
+    name: "Craft Studio",
+    image: { src: "/craftstudio-preview.webp", w: 1600, h: 1000 },
+    context: { es: "Cliente freelance. Sitio público y CRM propio.", en: "Freelance client. Public site and custom CRM." },
+    summary: {
+      es: "Sitio para un estudio de identidad de marca de Buenos Aires, con trabajo 3D en Three.js, y un CRM donde el equipo arma y publica sus casos de estudio sin pasar por un desarrollador.",
+      en: "A site for a brand identity studio in Buenos Aires, with 3D work in Three.js, plus a CRM where the team composes and publishes its own case studies without a developer.",
+    },
+    points: [
+      {
+        es: "El CRM es un editor visual: cada caso se compone con nueve tipos de bloque, como imagen sola, par de imágenes, imagen con texto, testimonios o métricas.",
+        en: "The CRM is a visual page builder: each case study is composed from nine block types, such as single image, image pair, image with text, testimonials or stats.",
+      },
+      {
+        es: "Cada bloque controla la división de columnas, la relación de aspecto, el orden en mobile y la tipografía por breakpoint, con vista previa en vivo.",
+        en: "Every block controls column split, aspect ratio, mobile ordering and per-breakpoint typography, with a live preview.",
+      },
+      {
+        es: "El CRM comparte el esquema de bloques del sitio público, guardado en Supabase, y las imágenes se sirven desde Cloudinary.",
+        en: "The CRM shares the public site's block schema, stored in Supabase, and images are served through Cloudinary.",
+      },
+    ],
+    stack: ["React 19", "TypeScript", "Three.js", "React Three Fiber", "GSAP", "Supabase", "Cloudinary"],
+    links: [
+      { label: site, href: "https://craftstudio.com.ar/" },
+      { label: code, href: "https://github.com/CraftStudioAR/CraftStudio" },
+      { label: crmCode, href: "https://github.com/CraftStudioAR/CraftStudio-CRM" },
+    ],
+  },
+  {
+    id: "afselect",
+    name: "AF Select",
+    image: { src: "/fidalgoselect-preview.webp", w: 1600, h: 1000 },
+    context: { es: "Cliente freelance. Marketplace y CRM propio.", en: "Freelance client. Marketplace and custom CRM." },
+    summary: {
+      es: "Marketplace de autos y propiedades de alta gama en Tucumán, Salta y Buenos Aires. El cliente publica, edita y cotiza todo desde un CRM hecho a medida.",
+      en: "A marketplace for high-end cars and properties across Tucumán, Salta and Buenos Aires. The client publishes, edits and prices everything from a custom CRM.",
+    },
+    points: [
+      {
+        es: "Catálogo con filtros, mapas con Leaflet y consultas que abren WhatsApp con el título, el precio y el link de la publicación ya escritos.",
+        en: "Filterable catalog, Leaflet maps, and enquiries that open WhatsApp with the listing's title, price and link already written.",
+      },
+      {
+        es: "En el CRM, cada sección del catálogo define sus propios campos. Incluye bandeja de leads y carga de imágenes.",
+        en: "In the CRM, each catalog section defines its own fields. It includes a leads inbox and image uploads.",
+      },
+      {
+        es: "Un tablero con la valuación del catálogo separada en dólares y pesos.",
+        en: "A dashboard with the catalog's valuation split into US dollars and pesos.",
+      },
+      {
+        es: "SEO técnico: meta tags dinámicos, JSON-LD, sitemap y Search Console.",
+        en: "Technical SEO: dynamic meta tags, JSON-LD, sitemap and Search Console.",
+      },
+    ],
+    stack: ["React 18", "JavaScript", "Supabase", "PostgreSQL", "Leaflet", "Tailwind CSS"],
+    links: [
+      { label: site, href: "https://fidalgoselect.com/" },
+      { label: code, href: "https://github.com/AFSelection/AFSelection" },
+      { label: crmCode, href: "https://github.com/AFSelection/AFSelection-CRM" },
+    ],
+  },
+  {
+    id: "pulseguard",
+    name: "PulseGuard",
+    image: { src: "/pulseguard.webp", w: 1437, h: 920, position: "center top" },
+    context: { es: "Challenge técnico para un proceso de selección.", en: "Take-home challenge for a hiring process." },
+    summary: {
+      es: "Plataforma de monitoreo de uptime con un escáner de seguridad para repositorios de GitHub que usa la API de Gemini.",
+      en: "An uptime monitoring platform with a security scanner for GitHub repositories powered by the Gemini API.",
+    },
+    points: [
+      {
+        es: "Backend en NestJS con Prisma sobre PostgreSQL y frontend en Next.js con App Router.",
+        en: "NestJS backend with Prisma on PostgreSQL, and a Next.js App Router frontend.",
+      },
+      {
+        es: "Auditorías de commits con IA que marcan riesgos como inyección SQL o credenciales expuestas.",
+        en: "AI commit audits that flag risks such as SQL injection or exposed credentials.",
+      },
+      {
+        es: "Historial de estado de 12 semanas y alertas por email y por webhooks de Discord o Slack.",
+        en: "A 12-week status history, with alerts by email and Discord or Slack webhooks.",
+      },
+    ],
+    stack: ["Next.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "Gemini API"],
+    links: [
+      { label: site, href: "https://pulseguard-frontend.vercel.app/" },
+      { label: frontendCode, href: "https://github.com/giuliannadr/pulseguard-frontend" },
+      { label: backendCode, href: "https://github.com/giuliannadr/pulseguard-backend" },
+    ],
+  },
+];
+
+export const more: MoreProject[] = [
+  {
+    id: "9669",
+    name: "9669 Club",
+    image: { src: "/9669-preview.webp", w: 1080, h: 1350, position: "center 55%" },
+    context: { es: "Proyecto propio, en desarrollo.", en: "Personal project, in development." },
+    summary: {
+      es: "Streaming en vivo para eventos: los invitados transmiten desde el celular por WebRTC, sin instalar nada, y un admin elige hasta cuatro cámaras para el proyector.",
+      en: "Live streaming for events: guests broadcast from their phones over WebRTC, no install needed, and an admin picks up to four feeds for the projector.",
+    },
+    stack: ["LiveKit", "WebRTC", "Next.js 15", "React", "Turborepo"],
+    links: [
+      { label: { es: "Ver panel", en: "View panel" }, href: "https://av-admin-dashboard.vercel.app" },
+      { label: code, href: "https://github.com/giuliannadr/9669club" },
+    ],
+  },
+  {
+    id: "muda",
+    name: "MUDA",
+    image: { src: "/muda-mockup.webp", w: 1600, h: 1200 },
+    context: { es: "Cliente freelance.", en: "Freelance client." },
+    summary: {
+      es: "Sitio y panel de administración para un estudio creativo de moda. Modelos y fotógrafos se postulan desde el sitio, y al aceptar la postulación el perfil se publica solo.",
+      en: "Site and admin panel for a creative fashion studio. Models and photographers apply on the site, and accepting an application publishes their profile automatically.",
+    },
+    stack: ["React", "TypeScript", "Supabase", "Cloudinary"],
+    links: [
+      { label: site, href: "https://mudaagcy.com/" },
+      { label: code, href: "https://github.com/Muda-Studio/MUDA" },
+    ],
+  },
+  {
+    id: "nido",
+    name: "Nido",
+    image: { src: "/nido-mockup.webp", w: 1600, h: 900 },
+    context: { es: "Proyecto final de la tecnicatura, equipo de 8.", en: "Final degree project, team of 8." },
+    summary: {
+      es: "Gestión del hogar compartido con recetas recomendadas por IA, escaneo de tickets con OCR y finanzas en común. El MVP salió en dos meses; trabajé full stack.",
+      en: "Shared household management with AI recipe suggestions, OCR receipt scanning and shared finances. We shipped the MVP in two months; I worked full stack.",
+    },
+    stack: ["Angular", ".NET 9", "C#", "PostgreSQL", "Clean Architecture"],
+    links: [
+      { label: site, href: "https://nidoapp.online" },
+      { label: frontendCode, href: "https://github.com/nicolassbon/nido-frontend" },
+      { label: backendCode, href: "https://github.com/nicolassbon/nido-backend" },
+    ],
+  },
+];
+
+export const clientSites: ClientSite[] = [
+  {
+    name: "Hidrorescate",
+    summary: {
+      es: "Servicio técnico de bombas de agua, con formulario de prediagnóstico y contacto por WhatsApp.",
+      en: "Water pump repair service, with a pre-diagnosis form and WhatsApp contact.",
+    },
+    href: "https://hidrorescate.com.ar/",
+  },
+  {
+    name: "The Magical Duo",
+    summary: { es: "Agencia de viajes a Disney, Universal y el Caribe.", en: "Travel agency for Disney, Universal and the Caribbean." },
+    href: "https://themagicalduo.com/",
+  },
+  {
+    name: "Luciana Thibaut",
+    summary: {
+      es: "Portfolio de una ingeniera civil, con láminas de planos navegables por especialidad.",
+      en: "Portfolio for a civil engineer, with drawing sheets browsable by discipline.",
+    },
+    href: "https://lucianathibaut.vercel.app/",
+  },
+  {
+    name: "Emme Digital",
+    summary: { es: "Agencia de marketing digital.", en: "Digital marketing agency." },
+    href: "https://www.emmedigital.com.ar/",
+  },
+  {
+    name: "Unik",
+    summary: {
+      es: "Agencia de publicidad que pasó de un portfolio en Canva a un sitio en Next.js.",
+      en: "Advertising agency that moved from a Canva portfolio to a Next.js site.",
+    },
+    href: "https://somosunik.vercel.app/",
+  },
+  {
+    name: "La Quinta Miri",
+    summary: {
+      es: "Alquiler de una quinta en Ituzaingó, con SEO local y consultas directas.",
+      en: "Country house rental in Ituzaingó, with local SEO and direct enquiries.",
+    },
+    href: "https://laquintamiri.vercel.app/",
+  },
+];
+
+export type Job = { from: L; to: L; role: L; org: L; body: L };
+
+export const jobs: Job[] = [
+  {
+    from: { es: "Sep 2026", en: "Sep 2026" },
+    to: { es: "hoy", en: "now" },
+    role: { es: "Cofundadora y desarrolladora", en: "Co-founder and developer" },
+    org: { es: "Heacky", en: "Heacky" },
+    body: {
+      es: "App para entrenadores personales que desarrollo con un socio, para gestionar clientes, planes y cobros. Backend en Java 21 y Spring Boot con Clean Architecture, web en React. Está en etapa inicial.",
+      en: "An app for personal trainers that I'm building with a partner, to manage clients, plans and payments. Java 21 and Spring Boot backend with Clean Architecture, React web app. Early stage.",
+    },
+  },
+  {
+    from: { es: "Dic 2025", en: "Dec 2025" },
+    to: { es: "hoy", en: "now" },
+    role: { es: "Desarrolladora full stack", en: "Full stack developer" },
+    org: { es: "Freelance y CosteAR", en: "Freelance and CosteAR" },
+    body: {
+      es: "Sitios y sistemas a medida para estudios, agencias y comercios: arquitectura, frontend, APIs, CRMs propios y deploy en Vercel. En paralelo cofundé CosteAR, donde trabajo en el backend y en el asesor con RAG.",
+      en: "Custom sites and systems for studios, agencies and small businesses: architecture, frontend, APIs, custom CRMs and deployment on Vercel. Alongside it I co-founded CosteAR, where I work on the backend and the RAG advisor.",
+    },
+  },
+  {
+    from: { es: "Ago 2024", en: "Aug 2024" },
+    to: { es: "Mar 2026", en: "Mar 2026" },
+    role: { es: "Mentora técnica", en: "Technical mentor" },
+    org: { es: "Estudiantes de la UNLaM", en: "UNLaM students" },
+    body: {
+      es: "Planes de estudio y code reviews en JavaScript, Java, React, Node.js y SQL, con foco en código limpio, Git y diseño de bases de datos.",
+      en: "Study plans and code reviews in JavaScript, Java, React, Node.js and SQL, focused on clean code, Git and database design.",
+    },
+  },
+];
+
+export type Study = { when: L; title: L; org: string; note: L };
+
+export const studies: Study[] = [
+  {
+    when: { es: "2024 a 2026", en: "2024 to 2026" },
+    title: { es: "Técnica Universitaria en Desarrollo Web", en: "Associate degree in Web Development" },
+    org: "UNLaM",
+    note: { es: "Egresada con promedio 8,72 y las 20 materias aprobadas.", en: "Graduated with an 8.72 GPA, all 20 courses passed." },
+  },
+  {
+    when: { es: "2026, en curso", en: "2026, in progress" },
+    title: { es: "Licenciatura en Inteligencia Artificial", en: "Bachelor's in Artificial Intelligence" },
+    org: "Universidad Blas Pascal",
+    note: { es: "Cursando el primer cuatrimestre.", en: "Taking the first semester." },
+  },
+  {
+    when: { es: "2026", en: "2026" },
+    title: { es: "Claude Code in Action", en: "Claude Code in Action" },
+    org: "Anthropic Academy",
+    note: {
+      es: "Contexto, hooks, subagentes, GitHub Actions y servidores MCP.",
+      en: "Context management, hooks, subagents, GitHub Actions and MCP servers.",
+    },
+  },
+];
+
+export const stackGroups: { title: L; items: L }[] = [
+  {
+    title: { es: "Frontend", en: "Frontend" },
+    items: {
+      es: "React, Next.js, TypeScript, Angular, TanStack Router y Query, Zustand, Tailwind CSS, Three.js",
+      en: "React, Next.js, TypeScript, Angular, TanStack Router and Query, Zustand, Tailwind CSS, Three.js",
+    },
+  },
+  {
+    title: { es: "Backend", en: "Backend" },
+    items: {
+      es: "Node.js, Fastify, NestJS, Java con Spring Boot, C# con .NET 9, APIs REST",
+      en: "Node.js, Fastify, NestJS, Java with Spring Boot, C# with .NET 9, REST APIs",
+    },
+  },
+  {
+    title: { es: "Datos", en: "Data" },
+    items: {
+      es: "PostgreSQL, Prisma, Supabase con RLS, Redis y BullMQ, MySQL, SQL Server",
+      en: "PostgreSQL, Prisma, Supabase with RLS, Redis and BullMQ, MySQL, SQL Server",
+    },
+  },
+  {
+    title: { es: "IA", en: "AI" },
+    items: { es: "RAG con Voyage AI y pgvector, API de Gemini", en: "RAG with Voyage AI and pgvector, Gemini API" },
+  },
+  {
+    title: { es: "Infraestructura", en: "Infrastructure" },
+    items: { es: "Vercel, GitHub Actions, Docker, Sentry, Turborepo", en: "Vercel, GitHub Actions, Docker, Sentry, Turborepo" },
+  },
+  {
+    title: { es: "Idiomas", en: "Languages" },
+    items: { es: "Español nativo, inglés B2/C1", en: "Spanish (native), English B2/C1" },
+  },
+];
