@@ -54,8 +54,8 @@ export const ui = {
   hero: {
     role: { es: "Desarrolladora full stack en Buenos Aires.", en: "Full stack developer based in Buenos Aires." },
     lead: {
-      es: "Trabajo con React, Node.js y TypeScript, del modelo de datos al deploy. Cofundé CosteAR, un copiloto de costos con IA para pymes agroindustriales, y armo CRMs a medida para que mis clientes publiquen su contenido sin depender de un desarrollador.",
-      en: "I work with React, Node.js and TypeScript, from the data model to the deploy. I co-founded CosteAR, an AI cost copilot for agro-industrial SMEs, and I build custom CRMs so my clients can publish their own content without needing a developer.",
+      es: "Trabajo con React, Node.js y TypeScript, del modelo de datos al deploy. Cofundé CosteAR, una plataforma de costeo con IA para pymes argentinas, y armo CRMs a medida para que mis clientes publiquen su contenido sin depender de un desarrollador.",
+      en: "I work with React, Node.js and TypeScript, from the data model to the deploy. I co-founded CosteAR, an AI costing platform for Argentine SMEs, and I build custom CRMs so my clients can publish their own content without needing a developer.",
     },
     projects: { es: "Ver proyectos", en: "See projects" },
     cv: { es: "Descargar CV", en: "Download CV" },
@@ -113,14 +113,14 @@ export const featured: Featured[] = [
   {
     id: "costear",
     name: "CosteAR",
-    image: { src: "/costear-mockup.webp", w: 1024, h: 548, position: "left top" },
+    image: { src: "/costear-mockup.webp", w: 1600, h: 1000 },
     context: {
-      es: "Startup que cofundé, semifinalista de Emprende U 2026. En desarrollo.",
-      en: "Startup I co-founded, semifinalist at Emprende U 2026. In development.",
+      es: "Startup que cofundé, semifinalista de Emprende U 2026. En producción con su primer cliente desde agosto de 2026.",
+      en: "Startup I co-founded, semifinalist at Emprende U 2026. In production with its first client since August 2026.",
     },
     summary: {
-      es: "Copiloto financiero para pymes agroindustriales. Los operarios de planta cargan costos, facturas y remitos desde un chat, un clasificador con IA los ordena y el analista los valida desde un tablero en tiempo real.",
-      en: "A financial copilot for agro-industrial SMEs. Plant operators submit costs, invoices and delivery notes through a chat, an AI classifier files them, and the analyst validates everything from a real-time dashboard.",
+      es: "Plataforma de costeo para pymes argentinas que actualiza los costos por inflación, dólar y paritarias con datos del BCRA y el INDEC. Los operarios cargan costos, facturas y remitos por Telegram o WhatsApp, un clasificador con IA los ordena y el dueño ve margen, contribución marginal y punto de equilibrio en un tablero.",
+      en: "A costing platform for Argentine SMEs that keeps costs up to date with inflation, the exchange rate and wage agreements using BCRA and INDEC data. Operators submit costs, invoices and delivery notes over Telegram or WhatsApp, an AI classifier files them, and the owner sees margin, contribution margin and break-even on a dashboard.",
     },
     points: [
       {
@@ -128,16 +128,16 @@ export const featured: Featured[] = [
         en: "A RAG advisor that answers only from the team's knowledge base: it cites the note behind every answer and refuses when nothing supports one.",
       },
       {
-        es: "Embeddings de Voyage AI en pgvector, sobre el mismo PostgreSQL, con un hash por fragmento para que reindexar sea idempotente.",
-        en: "Voyage AI embeddings stored in pgvector on the same PostgreSQL, with a hash per chunk so re-indexing is idempotent.",
+        es: "Búsqueda híbrida (pgvector y texto completo sobre el mismo PostgreSQL) con reranking de Voyage AI, y un set dorado de preguntas que corre en CI y frena el merge si la calidad baja.",
+        en: "Hybrid search (pgvector plus full-text on the same PostgreSQL) with Voyage AI reranking, and a golden question set that runs in CI and blocks the merge if quality drops.",
       },
       {
-        es: "Colas con Redis y BullMQ para sincronizar variables macroeconómicas y recalcular estructuras de costos sin bloquear la API.",
-        en: "Redis and BullMQ queues that sync macroeconomic data and recalculate cost structures without blocking the API.",
+        es: "Motor de cálculo con decimal.js, sin floats en montos: costeo variable, punto de equilibrio y capacidad ociosa, con paquetes por rubro como avícola y construcción modular. Redis y BullMQ recalculan sin bloquear la API.",
+        en: "A calculation engine built on decimal.js, with no floats in amounts: variable costing, break-even and idle capacity, with industry packages such as poultry and modular construction. Redis and BullMQ recalculate without blocking the API.",
       },
       {
-        es: "Multi-tenant con row-level security, JWT RS256 con refresh tokens y Sentry en la API y el back-office.",
-        en: "Multi-tenant with row-level security, RS256 JWTs with refresh tokens, and Sentry across the API and back-office.",
+        es: "Multi-tenant con row-level security y un rol de Postgres sin BYPASSRLS, JWT RS256 con refresh tokens, Sentry y más de 2.000 tests automatizados en CI.",
+        en: "Multi-tenant with row-level security and a Postgres role without BYPASSRLS, RS256 JWTs with refresh tokens, Sentry, and over 2,000 automated tests in CI.",
       },
     ],
     stack: ["Node.js 22", "Fastify", "Prisma", "PostgreSQL", "pgvector", "Redis", "BullMQ", "React 19", "TanStack Router", "Tailwind CSS"],
@@ -179,7 +179,7 @@ export const featured: Featured[] = [
   },
   {
     id: "afselect",
-    name: "AF Select",
+    name: "Fidalgo Select",
     image: { src: "/fidalgoselect-preview.webp", w: 1600, h: 1000 },
     context: { es: "Cliente freelance. Marketplace y CRM propio.", en: "Freelance client. Marketplace and custom CRM." },
     summary: {
@@ -212,33 +212,37 @@ export const featured: Featured[] = [
     ],
   },
   {
-    id: "pulseguard",
-    name: "PulseGuard",
-    image: { src: "/pulseguard.webp", w: 1437, h: 920, position: "center top" },
-    context: { es: "Challenge técnico para un proceso de selección.", en: "Take-home challenge for a hiring process." },
+    id: "nido",
+    name: "Nido",
+    image: { src: "/nido-mockup.webp", w: 1600, h: 900 },
+    context: { es: "Proyecto final de la tecnicatura, en equipo de 8. Trabajé full stack.", en: "Final degree project, team of 8. I worked full stack." },
     summary: {
-      es: "Plataforma de monitoreo de uptime con un escáner de seguridad para repositorios de GitHub que usa la API de Gemini.",
-      en: "An uptime monitoring platform with a security scanner for GitHub repositories powered by the Gemini API.",
+      es: "App para organizar un hogar compartido: qué cocinar, qué comprar, qué hay en la alacena y cómo se reparten los gastos. Sacamos el MVP en dos meses.",
+      en: "An app for running a shared household: what to cook, what to buy, what is in the pantry and how expenses are split. We shipped the MVP in two months.",
     },
     points: [
       {
-        es: "Backend en NestJS con Prisma sobre PostgreSQL y frontend en Next.js con App Router.",
-        en: "NestJS backend with Prisma on PostgreSQL, and a Next.js App Router frontend.",
+        es: "Asistente de recetas con IA, planificador de comidas y lista de compras.",
+        en: "An AI recipe assistant, a meal planner and a shopping list.",
       },
       {
-        es: "Auditorías de commits con IA que marcan riesgos como inyección SQL o credenciales expuestas.",
-        en: "AI commit audits that flag risks such as SQL injection or exposed credentials.",
+        es: "Escaneo de tickets con OCR para cargar la compra en la alacena sin tipear.",
+        en: "OCR receipt scanning to add groceries to the pantry without typing.",
       },
       {
-        es: "Historial de estado de 12 semanas y alertas por email y por webhooks de Discord o Slack.",
-        en: "A 12-week status history, with alerts by email and Discord or Slack webhooks.",
+        es: "Finanzas compartidas del hogar, con los gastos de cada integrante.",
+        en: "Shared household finances, tracking what each member spends.",
+      },
+      {
+        es: "Backend en .NET 9 con Clean Architecture sobre PostgreSQL y frontend en Angular.",
+        en: ".NET 9 backend with Clean Architecture on PostgreSQL, and an Angular frontend.",
       },
     ],
-    stack: ["Next.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "Gemini API"],
+    stack: ["Angular", ".NET 9", "C#", "PostgreSQL", "Clean Architecture"],
     links: [
-      { label: site, href: "https://pulseguard-frontend.vercel.app/" },
-      { label: frontendCode, href: "https://github.com/giuliannadr/pulseguard-frontend" },
-      { label: backendCode, href: "https://github.com/giuliannadr/pulseguard-backend" },
+      { label: site, href: "https://nidoapp.online" },
+      { label: frontendCode, href: "https://github.com/nicolassbon/nido-frontend" },
+      { label: backendCode, href: "https://github.com/nicolassbon/nido-backend" },
     ],
   },
 ];
@@ -253,7 +257,7 @@ export const more: MoreProject[] = [
       es: "Streaming en vivo para eventos: los invitados transmiten desde el celular por WebRTC, sin instalar nada, y un admin elige hasta cuatro cámaras para el proyector.",
       en: "Live streaming for events: guests broadcast from their phones over WebRTC, no install needed, and an admin picks up to four feeds for the projector.",
     },
-    stack: ["LiveKit", "WebRTC", "Next.js 15", "React", "Turborepo"],
+    stack: ["LiveKit", "WebRTC", "React", "Vite", "Next.js 14", "pnpm workspaces"],
     links: [
       { label: { es: "Ver panel", en: "View panel" }, href: "https://av-admin-dashboard.vercel.app" },
       { label: code, href: "https://github.com/giuliannadr/9669club" },
@@ -275,19 +279,19 @@ export const more: MoreProject[] = [
     ],
   },
   {
-    id: "nido",
-    name: "Nido",
-    image: { src: "/nido-mockup.webp", w: 1600, h: 900 },
-    context: { es: "Proyecto final de la tecnicatura, equipo de 8.", en: "Final degree project, team of 8." },
+    id: "pulseguard",
+    name: "PulseGuard",
+    image: { src: "/pulseguard.webp", w: 1437, h: 920, position: "center top" },
+    context: { es: "Challenge técnico de una semana para un proceso de selección.", en: "One-week take-home challenge for a hiring process." },
     summary: {
-      es: "Gestión del hogar compartido con recetas recomendadas por IA, escaneo de tickets con OCR y finanzas en común. El MVP salió en dos meses; trabajé full stack.",
-      en: "Shared household management with AI recipe suggestions, OCR receipt scanning and shared finances. We shipped the MVP in two months; I worked full stack.",
+      es: "Monitoreo de uptime con alertas por email, Discord o Slack, y auditorías de commits de GitHub con la API de Gemini que marcan riesgos como inyección SQL o credenciales expuestas.",
+      en: "Uptime monitoring with email, Discord or Slack alerts, plus GitHub commit audits using the Gemini API that flag risks such as SQL injection or exposed credentials.",
     },
-    stack: ["Angular", ".NET 9", "C#", "PostgreSQL", "Clean Architecture"],
+    stack: ["Next.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "Gemini API"],
     links: [
-      { label: site, href: "https://nidoapp.online" },
-      { label: frontendCode, href: "https://github.com/nicolassbon/nido-frontend" },
-      { label: backendCode, href: "https://github.com/nicolassbon/nido-backend" },
+      { label: site, href: "https://pulseguard-frontend.vercel.app/" },
+      { label: frontendCode, href: "https://github.com/giuliannadr/pulseguard-frontend" },
+      { label: backendCode, href: "https://github.com/giuliannadr/pulseguard-backend" },
     ],
   },
 ];
@@ -356,8 +360,8 @@ export const jobs: Job[] = [
     role: { es: "Cofundadora", en: "Co-founder" },
     org: { es: "CosteAR", en: "CosteAR" },
     body: {
-      es: "Copiloto financiero con IA para pymes agroindustriales, semifinalista de Emprende U 2026. Trabajo en el backend y en el asesor con RAG, y soy la responsable del dominio de costeo: reviso y apruebo los cambios del motor de costos.",
-      en: "An AI financial copilot for agro-industrial SMEs, semifinalist at Emprende U 2026. I work on the backend and the RAG advisor, and I own the costing domain: I review and approve changes to the cost engine.",
+      es: "Plataforma de costeo con IA para pymes argentinas, semifinalista de Emprende U 2026 y en producción con su primer cliente. Trabajo en el backend y en el asesor con RAG, y soy la responsable del dominio de costeo: reviso y apruebo los cambios del motor de costos.",
+      en: "An AI costing platform for Argentine SMEs, semifinalist at Emprende U 2026 and in production with its first client. I work on the backend and the RAG advisor, and I own the costing domain: I review and approve changes to the cost engine.",
     },
   },
   {
@@ -392,19 +396,16 @@ export const studies: Study[] = [
     note: { es: "Egresada con promedio 8,72 y las 20 materias aprobadas.", en: "Graduated with an 8.72 GPA, all 20 courses passed." },
   },
   {
-    when: { es: "2026, en curso", en: "2026, in progress" },
+    when: { es: "2026 a dic 2027", en: "2026 to Dec 2027" },
     title: { es: "Licenciatura en Inteligencia Artificial", en: "Bachelor's in Artificial Intelligence" },
     org: "Universidad Blas Pascal",
-    note: { es: "Cursando el primer cuatrimestre.", en: "Taking the first semester." },
+    note: { es: "En curso, en modalidad asincrónica. Termino en diciembre de 2027.", en: "In progress, fully asynchronous. Graduating in December 2027." },
   },
   {
-    when: { es: "2026", en: "2026" },
-    title: { es: "Claude Code in Action", en: "Claude Code in Action" },
-    org: "Anthropic Academy",
-    note: {
-      es: "Contexto, hooks, subagentes, GitHub Actions y servidores MCP.",
-      en: "Context management, hooks, subagents, GitHub Actions and MCP servers.",
-    },
+    when: { es: "Desde 2027", en: "Starting 2027" },
+    title: { es: "Licenciatura en Ciberdefensa", en: "Bachelor's in Cyber Defense" },
+    org: "Universidad de la Defensa Nacional (UNDEF)",
+    note: { es: "Próximo paso: empiezo en 2027, en modalidad asincrónica.", en: "Next step: starting in 2027, fully asynchronous." },
   },
 ];
 
@@ -432,14 +433,17 @@ export const stackGroups: { title: L; items: L }[] = [
   },
   {
     title: { es: "IA", en: "AI" },
-    items: { es: "RAG con Voyage AI y pgvector, API de Gemini", en: "RAG with Voyage AI and pgvector, Gemini API" },
+    items: {
+      es: "RAG con Voyage AI y pgvector, API de Gemini. Desarrollo con agentes: Claude Code, Antigravity y dos agentes de Codex orquestados sobre PRs y CI",
+      en: "RAG with Voyage AI and pgvector, Gemini API. Agentic development: Claude Code, Antigravity and two orchestrated Codex agents working through PRs and CI",
+    },
   },
   {
     title: { es: "Infraestructura", en: "Infrastructure" },
-    items: { es: "Vercel, GitHub Actions, Docker, Sentry, Turborepo", en: "Vercel, GitHub Actions, Docker, Sentry, Turborepo" },
+    items: { es: "Vercel, Railway, GitHub Actions, Docker, Sentry", en: "Vercel, Railway, GitHub Actions, Docker, Sentry" },
   },
   {
     title: { es: "Idiomas", en: "Languages" },
-    items: { es: "Español nativo, inglés B2/C1", en: "Spanish (native), English B2/C1" },
+    items: { es: "Español nativo, inglés B2 (upper intermediate)", en: "Spanish (native), English B2 (upper intermediate)" },
   },
 ];
