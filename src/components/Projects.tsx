@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Github, Plus, X } from "lucide-react";
 import { clientSites, featured, more, ui, type ProjectLink } from "../content";
 import { useLang } from "../lang";
 
@@ -24,6 +25,138 @@ const Links = ({ links, primary = false }: { links: ProjectLink[]; primary?: boo
         </li>
       ))}
     </ul>
+  );
+};
+
+// Los proyectos no destacados van en un carrusel compacto: imagen y título a la
+// vista, y la descripción en un diálogo que se abre al tocar la tarjeta.
+const MoreProjects = () => {
+  const { t } = useLang();
+  const track = useRef<HTMLUListElement>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const [edges, setEdges] = useState({ start: true, end: true });
+  const [openId, setOpenId] = useState<string | null>(null);
+  const open = more.find(p => p.id === openId);
+
+  const updateEdges = () => {
+    const el = track.current;
+    if (!el) return;
+    setEdges({
+      start: el.scrollLeft <= 1,
+      end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 1,
+    });
+  };
+
+  useEffect(() => {
+    updateEdges();
+    window.addEventListener("resize", updateEdges);
+    return () => window.removeEventListener("resize", updateEdges);
+  }, []);
+
+  useEffect(() => {
+    if (open) dialog.current?.showModal();
+  }, [open]);
+
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = track.current;
+    const card = el?.querySelector("li");
+    if (!el || !card) return;
+    el.scrollBy({ left: dir * (card.offsetWidth + 16), behavior: "smooth" });
+  };
+
+  const scrollable = !(edges.start && edges.end);
+
+  return (
+    <>
+      <div className="more-head">
+        <h3 className="subsection-title">{t(ui.projects.moreTitle)}</h3>
+        {scrollable ? (
+          <div className="more-arrows">
+            <button
+              type="button"
+              className="round-btn"
+              onClick={() => scrollByCard(-1)}
+              disabled={edges.start}
+              aria-label={t(ui.projects.prev)}
+            >
+              <ChevronLeft size={18} aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              className="round-btn"
+              onClick={() => scrollByCard(1)}
+              disabled={edges.end}
+              aria-label={t(ui.projects.next)}
+            >
+              <ChevronRight size={18} aria-hidden="true" />
+            </button>
+          </div>
+        ) : null}
+      </div>
+
+      <ul className="more-track" ref={track} onScroll={updateEdges}>
+        {more.map(p => (
+          <li key={p.id}>
+            <button type="button" className="more-card" onClick={() => setOpenId(p.id)}>
+              <span className="frame more-media">
+                <img
+                  src={p.image.src}
+                  alt=""
+                  width={p.image.w}
+                  height={p.image.h}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ objectPosition: p.image.position ?? "center" }}
+                />
+              </span>
+              <span className="more-name">{p.name}</span>
+              <span className="more-context">{t(p.context)}</span>
+              <span className="more-cta">
+                {t(ui.projects.details)}
+                <Plus size={14} aria-hidden="true" />
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      <dialog
+        ref={dialog}
+        className="more-dialog"
+        aria-labelledby="more-dialog-title"
+        onClose={() => setOpenId(null)}
+        onClick={e => {
+          if (e.target === e.currentTarget) dialog.current?.close();
+        }}
+      >
+        {open ? (
+          <div className="more-dialog-body">
+            <button
+              type="button"
+              className="round-btn more-dialog-close"
+              onClick={() => dialog.current?.close()}
+              aria-label={t(ui.projects.close)}
+            >
+              <X size={18} aria-hidden="true" />
+            </button>
+            <div className="frame more-dialog-media">
+              <img
+                src={open.image.src}
+                alt={open.name}
+                width={open.image.w}
+                height={open.image.h}
+                style={{ objectPosition: open.image.position ?? "center" }}
+              />
+            </div>
+            <h4 id="more-dialog-title" className="more-dialog-name">{open.name}</h4>
+            <p className="context">{t(open.context)}</p>
+            <p className="more-summary">{t(open.summary)}</p>
+            <p className="stack-line">{open.stack.join(", ")}</p>
+            <Links links={open.links} />
+          </div>
+        ) : null}
+      </dialog>
+    </>
   );
 };
 
@@ -68,29 +201,7 @@ export const Projects = () => {
         ))}
       </div>
 
-      <h3 className="subsection-title">{t(ui.projects.moreTitle)}</h3>
-      <div className="more">
-        {more.map(p => (
-          <article key={p.id} className="more-item" aria-labelledby={`${p.id}-title`}>
-            <div className="frame more-media">
-              <img
-                src={p.image.src}
-                alt={p.name}
-                width={p.image.w}
-                height={p.image.h}
-                loading="lazy"
-                decoding="async"
-                style={{ objectPosition: p.image.position ?? "center" }}
-              />
-            </div>
-            <h4 id={`${p.id}-title`} className="more-name">{p.name}</h4>
-            <p className="context">{t(p.context)}</p>
-            <p className="more-summary">{t(p.summary)}</p>
-            <p className="stack-line">{p.stack.join(", ")}</p>
-            <Links links={p.links} />
-          </article>
-        ))}
-      </div>
+      <MoreProjects />
 
       <div className="sites-head">
         <h3 className="subsection-title">{t(ui.projects.sitesTitle)}</h3>

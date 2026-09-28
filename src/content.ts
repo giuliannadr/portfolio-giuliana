@@ -72,6 +72,10 @@ export const ui = {
     },
     solved: { es: "Lo que resolví", en: "What I solved" },
     moreTitle: { es: "Más proyectos", en: "More projects" },
+    details: { es: "Ver detalle", en: "View details" },
+    close: { es: "Cerrar", en: "Close" },
+    prev: { es: "Proyecto anterior", en: "Previous project" },
+    next: { es: "Proyecto siguiente", en: "Next project" },
     sitesTitle: { es: "Sitios para clientes", en: "Client websites" },
     sitesIntro: {
       es: "Sitios institucionales y landings, diseñados y desarrollados de punta a punta.",

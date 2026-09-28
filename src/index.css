@@ -429,6 +429,16 @@ a {
   background: linear-gradient(var(--line), var(--line)) center top / calc(100% - var(--gutter) * 2) 1px no-repeat;
 }
 
+/* Franja de fondo apenas distinta para separar Experiencia sin competir con Contacto. */
+.section.section--band {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+.section--band + .section {
+  background: none;
+}
+
 .section-head h2 {
   font-size: clamp(2.5rem, 6.4vw, 4.4rem);
   font-weight: 700;
@@ -559,39 +569,169 @@ a {
 }
 
 /* ── More projects ──────────────────────────────────────────────────────── */
-.more {
-  display: grid;
-  gap: 3rem 2rem;
-  margin-top: 1.75rem;
+/* Carrusel compacto: la descripción vive en un <dialog>. */
+.more-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.more-arrows {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.round-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s, opacity 0.2s;
+}
+
+.round-btn:hover:not(:disabled) {
+  border-color: var(--ink);
+}
+
+.round-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.more-track {
+  display: flex;
+  gap: 1rem;
+  margin: 1.75rem calc(var(--gutter) * -1) 0;
+  padding: 0 var(--gutter) 0.5rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: none;
+}
+
+.more-track::-webkit-scrollbar {
+  display: none;
+}
+
+.more-track li {
+  flex: 0 0 clamp(15rem, 72vw, 18.5rem);
+  scroll-snap-align: start;
+}
+
+.more-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .more-media {
+  display: block;
   aspect-ratio: 4 / 3;
 }
 
+.more-media img {
+  transition: transform 0.6s var(--ease-out);
+}
+
+.more-card:hover .more-media img {
+  transform: scale(1.04);
+}
+
 .more-name {
-  margin-top: 1.1rem;
-  font-size: 1.4rem;
+  margin-top: 0.9rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.more-context {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.more-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.more-card:hover .more-cta {
+  color: var(--accent);
+}
+
+.more-summary {
+  margin-top: 0.8rem;
+  font-size: 0.98rem;
+}
+
+.more-dialog {
+  width: min(34rem, calc(100% - 2 * var(--gutter)));
+  max-height: calc(100dvh - 2 * var(--gutter));
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  overflow-y: auto;
+}
+
+.more-dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+.more-dialog[open] {
+  animation: fade-up 0.35s var(--ease-out);
+}
+
+.more-dialog-body {
+  position: relative;
+  padding: 1rem 1rem 1.5rem;
+}
+
+.more-dialog-close {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  z-index: 1;
+  background: var(--paper);
+}
+
+.more-dialog-media {
+  aspect-ratio: 16 / 10;
+}
+
+.more-dialog-name {
+  margin-top: 1.2rem;
+  padding-inline: 0.25rem;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.15;
 }
 
-.more-summary {
-  margin-top: 0.6rem;
-  font-size: 0.98rem;
-}
-
-@media (min-width: 640px) {
-  .more {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 960px) {
-  .more {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.more-dialog-body > p,
+.more-dialog-body > .project-links {
+  padding-inline: 0.25rem;
 }
 
 /* ── Client sites ───────────────────────────────────────────────────────── */
