@@ -54,8 +54,8 @@ export const ui = {
   hero: {
     role: { es: "Desarrolladora full stack en Buenos Aires.", en: "Full stack developer based in Buenos Aires." },
     lead: {
-      es: "Trabajo con React, Node.js y TypeScript, del modelo de datos al deploy. Cofundé CosteAR, una plataforma de costeo con IA para pymes argentinas, y armo CRMs a medida para que mis clientes publiquen su contenido sin depender de un desarrollador.",
-      en: "I work with React, Node.js and TypeScript, from the data model to the deploy. I co-founded CosteAR, an AI costing platform for Argentine SMEs, and I build custom CRMs so my clients can publish their own content without needing a developer.",
+      es: "Trabajo con React, Node.js y TypeScript, del modelo de datos al deploy. Cofundé Costear, una plataforma de costeo con IA para pymes argentinas, y armo CRMs a medida para que mis clientes publiquen su contenido sin depender de un desarrollador.",
+      en: "I work with React, Node.js and TypeScript, from the data model to the deploy. I co-founded Costear, an AI costing platform for Argentine SMEs, and I build custom CRMs so my clients can publish their own content without needing a developer.",
     },
     projects: { es: "Ver proyectos", en: "See projects" },
     cv: { es: "Descargar CV", en: "Download CV" },
@@ -112,7 +112,7 @@ export const ui = {
 export const featured: Featured[] = [
   {
     id: "costear",
-    name: "CosteAR",
+    name: "Costear",
     image: { src: "/costear-mockup.webp", w: 1600, h: 1000 },
     context: {
       es: "Startup que cofundé, semifinalista de Emprende U 2026. En producción con su primer cliente desde agosto de 2026.",
@@ -358,7 +358,7 @@ export const jobs: Job[] = [
     from: { es: "2026", en: "2026" },
     to: { es: "hoy", en: "now" },
     role: { es: "Cofundadora", en: "Co-founder" },
-    org: { es: "CosteAR", en: "CosteAR" },
+    org: { es: "Costear", en: "Costear" },
     body: {
       es: "Plataforma de costeo con IA para pymes argentinas, semifinalista de Emprende U 2026 y en producción con su primer cliente. Trabajo en el backend y en el asesor con RAG, y soy la responsable del dominio de costeo: reviso y apruebo los cambios del motor de costos.",
       en: "An AI costing platform for Argentine SMEs, semifinalist at Emprende U 2026 and in production with its first client. I work on the backend and the RAG advisor, and I own the costing domain: I review and approve changes to the cost engine.",
