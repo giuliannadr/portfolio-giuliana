@@ -290,25 +290,17 @@ export const more: MoreProject[] = [
 
 export const clientSites: ClientSite[] = [
   {
-    name: "Hidrorescate",
-    summary: {
-      es: "Servicio técnico de bombas de agua, con formulario de prediagnóstico y contacto por WhatsApp.",
-      en: "Water pump repair service, with a pre-diagnosis form and WhatsApp contact.",
-    },
-    href: "https://hidrorescate.com.ar/",
-  },
-  {
-    name: "The Magical Duo",
-    summary: { es: "Agencia de viajes a Disney, Universal y el Caribe.", en: "Travel agency for Disney, Universal and the Caribbean." },
-    href: "https://themagicalduo.com/",
-  },
-  {
     name: "Luciana Thibaut",
     summary: {
       es: "Portfolio de una ingeniera civil, con láminas de planos navegables por especialidad.",
       en: "Portfolio for a civil engineer, with drawing sheets browsable by discipline.",
     },
     href: "https://lucianathibaut.vercel.app/",
+  },
+  {
+    name: "The Magical Duo",
+    summary: { es: "Agencia de viajes a Disney, Universal y el Caribe.", en: "Travel agency for Disney, Universal and the Caribbean." },
+    href: "https://themagicalduo.com/",
   },
   {
     name: "Emme Digital",
@@ -331,6 +323,14 @@ export const clientSites: ClientSite[] = [
     },
     href: "https://laquintamiri.vercel.app/",
   },
+  {
+    name: "Hidrorescate",
+    summary: {
+      es: "Servicio técnico de bombas de agua, con formulario de prediagnóstico y contacto por WhatsApp.",
+      en: "Water pump repair service, with a pre-diagnosis form and WhatsApp contact.",
+    },
+    href: "https://hidrorescate.com.ar/",
+  },
 ];
 
 export type Job = { from: L; to: L; role: L; org: L; body: L };
@@ -339,7 +339,7 @@ export const jobs: Job[] = [
   {
     from: { es: "Sep 2026", en: "Sep 2026" },
     to: { es: "hoy", en: "now" },
-    role: { es: "Cofundadora y desarrolladora", en: "Co-founder and developer" },
+    role: { es: "Cofundadora", en: "Co-founder" },
     org: { es: "Heacky", en: "Heacky" },
     body: {
       es: "App que desarrollo con un socio para que los entrenadores personales compartan con cada cliente su rutina siempre actualizada y, si quieren, un plan de alimentación. Más adelante va a sumar pasos, sueño y otras métricas desde el smartwatch del cliente. Backend en Java 21 y Spring Boot con Clean Architecture, web en React. Está en etapa inicial.",
@@ -347,13 +347,23 @@ export const jobs: Job[] = [
     },
   },
   {
+    from: { es: "2026", en: "2026" },
+    to: { es: "hoy", en: "now" },
+    role: { es: "Cofundadora", en: "Co-founder" },
+    org: { es: "CosteAR", en: "CosteAR" },
+    body: {
+      es: "Copiloto financiero con IA para pymes agroindustriales, semifinalista de Emprende U 2026. Trabajo en el backend y en el asesor con RAG, y soy la responsable del dominio de costeo: reviso y apruebo los cambios del motor de costos.",
+      en: "An AI financial copilot for agro-industrial SMEs, semifinalist at Emprende U 2026. I work on the backend and the RAG advisor, and I own the costing domain: I review and approve changes to the cost engine.",
+    },
+  },
+  {
     from: { es: "Dic 2025", en: "Dec 2025" },
     to: { es: "hoy", en: "now" },
     role: { es: "Desarrolladora full stack", en: "Full stack developer" },
-    org: { es: "Freelance y CosteAR", en: "Freelance and CosteAR" },
+    org: { es: "Freelance", en: "Freelance" },
     body: {
-      es: "Sitios y sistemas a medida para estudios, agencias y comercios: arquitectura, frontend, APIs, CRMs propios y deploy en Vercel. En paralelo cofundé CosteAR, donde trabajo en el backend y en el asesor con RAG.",
-      en: "Custom sites and systems for studios, agencies and small businesses: architecture, frontend, APIs, custom CRMs and deployment on Vercel. Alongside it I co-founded CosteAR, where I work on the backend and the RAG advisor.",
+      es: "Sitios y sistemas a medida para estudios, agencias y comercios: arquitectura, frontend, APIs, CRMs propios y deploy en Vercel.",
+      en: "Custom sites and systems for studios, agencies and small businesses: architecture, frontend, APIs, custom CRMs and deployment on Vercel.",
     },
   },
   {
